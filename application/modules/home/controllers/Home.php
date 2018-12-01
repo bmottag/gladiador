@@ -21,7 +21,9 @@ class Home extends MX_Controller {
 	 */
 	public function zona_psicologos()
 	{	
-			$this->load->view('zona_psicologos');
+			$data["view_header"] = 'header_psicologos';
+			$data["view"] = 'zona_psicologos';
+			$this->load->view("layout_secundario", $data);
 	}
 	
 	/**
@@ -29,6 +31,7 @@ class Home extends MX_Controller {
 	 */
 	public function contacto()
 	{	
+			$data["view_header"] = 'header_contacto';
 			$data["view"] = 'contacto';
 			$this->load->view("layout_secundario", $data);
 	}

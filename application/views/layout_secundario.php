@@ -42,8 +42,14 @@
         </nav>
       </div>
     </header>
-	
-		<?php $this->load->view("template/header_contacto"); ?>
+			
+ 			<!-- Start of content -->
+			<?php
+			if (isset($view_header) && ($view_header != '')) {
+				$this->load->view("template/" . $view_header);
+			}
+			?>
+			<!-- End of content -->  
 		
   </section>
 
