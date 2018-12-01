@@ -23,6 +23,14 @@ class Home extends MX_Controller {
 	{	
 			$this->load->view('zona_psicologos');
 	}
+	
+	/**
+	 * Contacto
+	 */
+	public function contacto()
+	{	
+			$this->load->view('contacto');
+	}
 
 	
 }
