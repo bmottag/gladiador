@@ -46,7 +46,7 @@
  			<!-- Start of content -->
 			<?php
 			if (isset($view_header) && ($view_header != '')) {
-				$this->load->view("template/" . $view_header);
+				$this->load->view($view_header);
 			}
 			?>
 			<!-- End of content -->  

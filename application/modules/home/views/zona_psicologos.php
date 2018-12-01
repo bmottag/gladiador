@@ -8,7 +8,7 @@
             <p>Let's make the lorem ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's sit amet auctor lacus vestibulum standard dummy text ever since.</p>
             <p>Let's make the lorem ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's sit amet auctor standard dummy text ever since.</p>
             <a class="btn btn-primary btn-lg btn-effect-ujarak" href="#"><span>Registro nuevos</span></a>
-			<a class="btn btn-primary btn-lg btn-effect-ujarak" href="#"><span>Inicio sesión</span></a>
+			<a class="btn btn-primary btn-lg btn-effect-ujarak" href="<?php echo base_url("login"); ?>"><span>Inicio sesión</span></a>
 		  </div>
         </div>
         <div class="col-sm-10 col-lg-6"><img src="images/img-01.png" alt="" class="img-responsive"></div>
