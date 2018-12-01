@@ -29,7 +29,8 @@ class Home extends MX_Controller {
 	 */
 	public function contacto()
 	{	
-			$this->load->view('contacto');
+			$data["view"] = 'contacto';
+			$this->load->view("layout_secundario", $data);
 	}
 
 	

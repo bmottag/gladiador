@@ -12,7 +12,6 @@
 <link href="<?php echo base_url("estilos/css/style.css"); ?>" rel="stylesheet">
 <link href="<?php echo base_url("estilos/css/custom.css"); ?>" rel="stylesheet">
 <link href="<?php echo base_url("estilos/css/novi.css"); ?>" rel="stylesheet">
-
 <!--[if lt IE 10]><div style="background: #212121; padding: 10px 0; box-shadow: 3px 3px 5px 0 rgba(0,0,0,.3); clear: both; text-align:center; position: relative; z-index:1;"><a href="http://windows.microsoft.com/en-US/internet-explorer/"><img src="images/ie8-panel/warning_bar_0000_us.jpg" border="0" height="42" width="820" alt="You are using an outdated browser. For a faster, safer browsing experience, upgrade for free today."></a></div><script src="js/html5shiv.min.js"></script><![endif]-->
 </head>
 <body>
@@ -26,76 +25,35 @@
   <section class="section">
     <header class="page-header">
       <div class="rd-navbar-wrap">
-        <nav class="rd-navbar rd-navbar-transparent" data-layout="rd-navbar-fixed" data-sm-layout="rd-navbar-fixed" data-sm-device-layout="rd-navbar-fixed" data-md-layout="rd-navbar-static" data-md-device-layout="rd-navbar-fixed" data-lg-device-layout="rd-navbar-static" data-lg-layout="rd-navbar-static" data-body-class="rd-navbar-absolute-linked" data-stick-up-clone="false" data-md-stick-up-offset="72px" data-lg-stick-up-offset="72px" data-stick-up="true" data-sm-stick-up="true" data-md-stick-up="true" data-lg-stick-up="true">
-          <div class="rd-navbar-top-panel novi-background">
-            <div class="rd-navbar-top-panel-toggle" data-rd-navbar-toggle=".rd-navbar-top-panel"><span></span></div>
-            <div class="rd-navbar-top-panel-content">
-              <div class="rd-navbar-top-panel-content-inner">
-                <ul class="inline-list-xs">
-                  <li><a class="icon novi-icon icon-xs icon-white fa fa-facebook" href="#"></a></li>
-                  <li><a class="icon novi-icon icon-xs icon-white fa fa-twitter" href="#"></a></li>
-                  <li><a class="icon novi-icon icon-xs icon-white fa fa-google-plus" href="#"></a></li>
-                  <li><a class="icon novi-icon icon-xs icon-white fa fa-pinterest-p" href="#"></a></li>
-                </ul>
-                <address class="contact-info">
-                5860 Barnes Wallis hwy, 358744, USA
-                </address>
-              </div>
-              <div class="object-inline"><span class="icon novi-icon icon-sm icon-gray material-icons-phone"></span><a class="link link-sm link-white" href="callto:#">+1 (123) 456–7890</a></div>
-            </div>
-          </div>
+        <nav class="rd-navbar rd-navbar-default novi-background" data-layout="rd-navbar-fixed" data-sm-layout="rd-navbar-fixed" data-sm-device-layout="rd-navbar-fixed" data-md-layout="rd-navbar-static" data-md-device-layout="rd-navbar-fixed" data-lg-device-layout="rd-navbar-static" data-lg-layout="rd-navbar-static" data-stick-up-clone="true" data-md-stick-up-offset="190px" data-lg-stick-up-offset="190px" data-stick-up="true" data-sm-stick-up="true" data-md-stick-up="true" data-lg-stick-up="true">
           <div class="rd-navbar-inner">
             <div class="rd-navbar-panel">
-              <div class="rd-navbar-panel-background">
-                <div class="rd-navbar-panel-background-inner novi-background"></div>
-              </div>
               <button class="rd-navbar-toggle" data-rd-navbar-toggle=".rd-navbar-nav-wrap"><span></span></button>
-              <div class="rd-navbar-brand"><a class="brand-name" href="index.html"><img src="<?php echo base_url("images/logo-15.png"); ?>" alt="" width="100" height="28"></a></div>
+              <div class="rd-navbar-brand"><a class="brand-name" href="index.html"><img src="<?php echo base_url("images/logo-13.png"); ?>" alt="" width="100" height="28"></a></div>
             </div>
             <div class="rd-navbar-nav-wrap">
-              <div class="rd-navbar-nav-wrap-bg">
-                <div class="rd-navbar-nav-wrap-bg-inner novi-background"></div>
-              </div>
-              <div class="rd-navbar-nav-wrap-inner">
-                <ul class="rd-navbar-items-list rd-navbar-search_collapsable">
-                  <li>
-                    <button class="rd-navbar-search__toggle rd-navbar-fixed--hidden" data-rd-navbar-toggle=".rd-navbar-search_toggled"></button>
-                  </li>
-                  <li class="rd-navbar-nav-wrap__shop"><a class="icon novi-icon fl-bigmug-line-shopping202 link-white" href="#">(2)</a></li>
-                </ul>
-                <div class="rd-navbar-search rd-navbar-search_toggled rd-navbar-search_not-collapsable">
-                  <div class="rd-navbar-search-inner">
-                    <div class="rd-navbar-search-inner-bg novi-background"></div>
-                  </div>
-                  <form class="rd-search" action="search-results.html" method="GET" data-search-live="rd-search-results-live">
-                    <div class="form-wrap">
-                      <input class="form-input" id="rd-navbar-search-form-input" type="text" name="s" autocomplete="off" placeholder="Search...">
-                    </div>
-                    <button class="rd-search__submit" type="submit"></button>
-                    <div class="rd-search-results-live" id="rd-search-results-live"></div>
-                  </form>
-                </div>
-              </div>
+              <ul class="rd-navbar-nav">
 			  
-			  <?php $this->load->view("template/top_menu"); ?>
-
+				<?php $this->load->view("template/top_menu"); ?>
+			  
+              </ul>
             </div>
           </div>
         </nav>
       </div>
     </header>
-	<?php $this->load->view("template/header_contacto"); ?>
+	
+		<?php $this->load->view("template/header_contacto"); ?>
+		
   </section>
-  
-  
+
  			<!-- Start of content -->
 			<?php
 			if (isset($view) && ($view != '')) {
 				$this->load->view($view);
 			}
 			?>
-			<!-- End of content -->
-  
+			<!-- End of content -->  
   
   <footer class="page-footer">
     <section class="section pre-footer-minimal bg-style-1 novi-background bg-image">
@@ -111,14 +69,14 @@
                   <li><i class="fa fa-map-marker"></i>
                     <p>5353 S Lake Ave #789, Los Angeles, CA 91152, USA</p>
                   </li>
-                  <li><i class="fa fa-phone"></i><a href="callto:#">+1 (123) 456 7890</a></li>
-                  <li><i class="fa fa-envelope-o"></i><a href="mailto:#">info@yourdomain.com</a></li>
+                  <li><i class="fa fa-phone"></i> <a href="callto:#">+1 (123) 456 7890</a></li>
+                  <li><i class="fa fa-envelope-o"></i> <a href="mailto:#">info@yourdomain.com</a></li>
                 </ul>
                 <ul class="inline-list-xxs mar-top-2">
-                  <li><a class="icon novi-icon icon-xxs icon-circle icon-gray-outline icon-effect-1 fa fa-instagram" href="#"></a></li>
-                  <li><a class="icon novi-icon icon-xxs icon-circle icon-gray-outline icon-effect-1 fa fa-facebook" href="#"></a></li>
-                  <li><a class="icon novi-icon icon-xxs icon-circle icon-gray-outline icon-effect-1 fa fa-twitter" href="#"></a></li>
-                  <li><a class="icon novi-icon icon-xxs icon-circle icon-gray-outline icon-effect-1 fa fa-google-plus" href="#"></a></li>
+                  <li> <a class="icon novi-icon icon-xxs icon-circle icon-gray-outline icon-effect-1 fa fa-instagram" href="#"></a> </li>
+                  <li> <a class="icon novi-icon icon-xxs icon-circle icon-gray-outline icon-effect-1 fa fa-facebook" href="#"></a> </li>
+                  <li> <a class="icon novi-icon icon-xxs icon-circle icon-gray-outline icon-effect-1 fa fa-twitter" href="#"></a> </li>
+                  <li> <a class="icon novi-icon icon-xxs icon-circle icon-gray-outline icon-effect-1 fa fa-google-plus" href="#"></a> </li>
                 </ul>
               </div>
             </div>
@@ -185,7 +143,7 @@
       <div class="container">
         <div class="row copyright style-1">
           <div class="col-lg-6 text-xl-left">
-            <div class="brand-sm"><a href="index-11.html"><img src="<?php echo base_url("images/logo-white-small.png"); ?>" alt=""></a></div>
+            <div class="brand-sm"> <a href="index-11.html"> <img src="<?php echo base_url("images/logo-white-small.png"); ?>" alt=""> </a> </div>
           </div>
           <div class="col-lg-6 text-xl-right">
             <p class="rights">© 2018 yourdomian.com - All rights reserved.</p>

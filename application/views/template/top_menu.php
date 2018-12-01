@@ -1,29 +1,9 @@
 <!-- top navigation -->
-<div class="top_nav">
-  <div class="nav_menu">
-	<nav>
-	  <div class="nav toggle">
-		<a id="menu_toggle"><i class="fa fa-bars"></i></a>
-	  </div>
-
-	  <ul class="nav navbar-nav navbar-right">	  
-	  
-		<li class="">
-		  <a href="<?php echo base_url("menu/salir"); ?>" class="user-profile" aria-expanded="false">
-			<i class="fa fa-sign-out"></i> Logout
-		  </a>
-		</li>
-		
-		<?php echo $topMenu; ?>
-		
-		<li class="">
-		  <a href="<?php echo base_url("dashboard"); ?>" class="user-profile" aria-expanded="false">
-			<i class="fa fa-home"></i> Home
-		  </a>
-		</li>
-
-	  </ul>
-	</nav>
-  </div>
-</div>
+	<ul class="rd-navbar-nav">
+		<li><a href="<?php echo base_url(); ?>">Inicio</a></li>
+		<li><a href="<?php echo base_url(); ?>">Encontrar Psicólogo</a></li>
+		<li><a href="<?php echo base_url(); ?>">Acercad de</a></li>
+		<li><a href="<?php echo base_url("home/zona_psicologos"); ?>">Zona Psicólogos</a></li>
+		<li><a href="<?php echo base_url("home/contacto"); ?>">Contacto</a></li>
+	</ul>
 <!-- /top navigation -->
