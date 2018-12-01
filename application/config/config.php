@@ -1,7 +1,6 @@
 <?php
 defined('BASEPATH') OR exit('No direct script access allowed');
 
-date_default_timezone_set('America/Edmonton');//Time zone
 /*
 |--------------------------------------------------------------------------
 | Base Site URL
@@ -24,7 +23,7 @@ date_default_timezone_set('America/Edmonton');//Time zone
 | a PHP script and you can easily do that on your own.
 |
 */
-$config['base_url'] = '';
+$config['base_url'] = 'http://thibot.com/tuapoyo/';
 
 /*
 |--------------------------------------------------------------------------
