@@ -1,32 +1,84 @@
-    <section>
-      <div class="bg-image novi-background page-title page-title-custom" style="background-image: url(<?php echo base_url("images/slide-14-3.jpg"); ?>)">
-        <div class="page-title-text mar-bottom-4">Login</div>
-        <div class="col-sm-10 col-lg-10 col-xl-3 section-auto">
-          <form class="rd-mailform text-left" data-form-output="form-output-global" data-form-type="forms" method="post" action="bat/rd-mailform.php">
-            <div class="row spacing-20">
-              <div class="col-sm-12">
-                <div class="form-group form-wrap-validation">
-                  <label class="form-label rd-input-label" for="forms-name2">E-mail</label>
-                  <input class="form-control" id="forms-name2" type="text" name="name" data-constraints="@Required">
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <!-- Meta, title, CSS, favicons, etc. -->
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+	<meta name="baseurl" content="<?php echo base_url(); ?>" />
+	<link rel="icon" href="<?php echo base_url("images/favicon.ico"); ?>" type="image/ico" />
+
+    <title>TuApoyo</title>
+
+    <!-- Bootstrap -->
+	<link href="<?php echo base_url("assets/bootstrap/vendors/bootstrap/dist/css/bootstrap.min.css"); ?>" rel="stylesheet">
+    <!-- Font Awesome -->
+	<link href="<?php echo base_url("assets/bootstrap/vendors/font-awesome/css/font-awesome.min.css"); ?>" rel="stylesheet">
+    <!-- NProgress -->
+	<link href="<?php echo base_url("assets/bootstrap/vendors/nprogress/nprogress.css"); ?>" rel="stylesheet">
+    <!-- Animate.css -->
+	<link href="<?php echo base_url("assets/bootstrap/vendors/animate.css/animate.min.css"); ?>" rel="stylesheet">
+
+    <!-- Custom Theme Style -->
+	<link href="<?php echo base_url("assets/bootstrap/build/css/custom.min.css"); ?>" rel="stylesheet">
+	
+    <!-- jQuery -->
+    <script src="<?php echo base_url("assets/bootstrap/vendors/jquery/dist/jquery.min.js"); ?>"></script>
+	
+	<!-- jQuery validate-->
+	<script type="text/javascript" src="<?php echo base_url("assets/js/general/jquery.validate.js"); ?>"></script>
+	<script type="text/javascript" src="<?php echo base_url("assets/js/validate/login/login.js"); ?>"></script>
+	
+    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+        <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+        <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+	
+  </head>
+  
+  <body class="login">
+    <div>
+
+      <div class="login_wrapper">
+        <div class="animate form login_form">
+          <section class="login_content">
+		  
+			<?php if(isset($msj)){?>
+					<div class="alert alert-danger"><span class="glyphicon glyphicon-remove">&nbsp;</span>
+						<?php echo $msj;//mensaje de error ?>
+					</div>
+			<?php } ?>
+		  
+			<form  name="form" id="form" role="form" method="post" action="<?php echo base_url("login/validateUser"); ?>" >
+              <h1>Sign in</h1>
+              <div>
+                <input type="text" id="inputLogin" name="inputLogin" class="form-control" placeholder="User" maxlength="25" data-minlength="5" required />
+              </div>
+              <div>
+                <input type="password" id="inputPassword" name="inputPassword" class="form-control" placeholder="Password" required />
+              </div>
+              <div>
+				<button type="submit" class="btn btn-primary" id='btnSubmit' name='btnSubmit'>
+					Login <i class="fa fa-sign-in"></i>
+				</button>
+              </div>
+
+              <div class="clearfix"></div>
+
+              <div class="separator">
+                <div>
+					<h1><img src="<?php echo base_url("images/logo_eap.png"); ?>" /></h1>
+					<p>©2018 All Rights Reserved.</p>
                 </div>
               </div>
-              <div class="col-sm-12">
-                <div class="form-group form-wrap-validation">
-                  <label class="form-label rd-input-label" for="forms-last-name2">Password</label>
-                  <input class="form-control" id="forms-last-name2" type="text" name="last-name" data-constraints="@Required">
-                </div>
-              </div>
-              <div class="col col-6"><a class="text-white" href="#">Forgot password?</a></div>
-              <div class="col col-6">
-                <label class="checkbox text-white">
-                  <input type="checkbox" name="remember" checked="">
-                  <i></i>Keep me logged in</label>
-              </div>
-              <div class="col-sm-12 form-button">
-                <button class="btn btn-primary btn-block btn-effect-ujarak" type="submit">Login</button>
-              </div>
-            </div>
-          </form>
+            </form>
+          </section>
         </div>
+
       </div>
-    </section>
+    </div>
+  </body>
+</html>

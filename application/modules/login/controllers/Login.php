@@ -14,16 +14,14 @@ class Login extends MX_Controller {
 	public function index()
 	{	
 			$this->session->sess_destroy();
-			$data["view_header"] = 'login';
-			$data["view"] = '';
-			$this->load->view("layout_secundario", $data);
+			$this->load->view("login");
 	}
 	
 	public function validateUser()
 	{
 			$login = $this->security->xss_clean($this->input->post("inputLogin"));
 			$passwd = $this->security->xss_clean($this->input->post("inputPassword"));
-			
+
 			$this->load->model("general_model");
 			//busco datos del usuario
 			$arrParam = array(
