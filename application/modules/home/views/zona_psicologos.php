@@ -7,7 +7,7 @@
             <h3>Your Complete Web Solution Partner</h3>
             <p>Let's make the lorem ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's sit amet auctor lacus vestibulum standard dummy text ever since.</p>
             <p>Let's make the lorem ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's sit amet auctor standard dummy text ever since.</p>
-            <a class="btn btn-primary btn-lg btn-effect-ujarak" href="#"><span>Registro nuevos</span></a>
+            <a class="btn btn-primary btn-lg btn-effect-ujarak" href="<?php echo base_url("psicologo/registro"); ?>"><span>Registro nuevos</span></a>
 			<a class="btn btn-primary btn-lg btn-effect-ujarak" href="<?php echo base_url("login"); ?>"><span>Inicio sesión</span></a>
 		  </div>
         </div>

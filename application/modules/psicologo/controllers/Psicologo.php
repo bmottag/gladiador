@@ -17,24 +17,22 @@ class Psicologo extends MX_Controller {
 	}
 	
 	/**
-	 * Zona psicologos
+	 * Registro psicologos
 	 */
-	public function zona_psicologos()
+	public function registro()
 	{	
-			$data["view_header"] = 'template/header_psicologos';
-			$data["view"] = 'zona_psicologos';
-			$this->load->view("layout_secundario", $data);
+			$data["view"] = 'form_psicologo';
+			$this->load->view("layout_forms", $data);
+	}
+
+	/**
+	 * Registro psicologos
+	 */
+	public function registration_send()
+	{	
+			pr($_POST);
 	}
 	
-	/**
-	 * Contacto
-	 */
-	public function contacto()
-	{	
-			$data["view_header"] = 'template/header_contacto';
-			$data["view"] = 'contacto';
-			$this->load->view("layout_secundario", $data);
-	}
 
 	
 }

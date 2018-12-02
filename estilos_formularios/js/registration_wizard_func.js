@@ -1,7 +1,7 @@
 	/*  Wizard */
 	jQuery(function ($) {
 		"use strict";
-		$('form#wrapped').attr('action', 'registration_send.php');
+		$('form#wrapped').attr('action', 'registration_send');
 		$("#wizard_container").wizard({
 			stepsWrapper: "#wrapped",
 			submit: ".submit",
@@ -31,6 +31,8 @@
 				$("#location").text("(" + state.stepsComplete + "/" + state.stepsPossible + ")");
 			}
 		});
+		
+		$("#telephone").bloquearTexto().maxlength(15);
 		/* Submit loader mask */
 		$('form').on('submit',function() {
 			var form = $("form#wrapped");

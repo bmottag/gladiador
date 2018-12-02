@@ -22,8 +22,8 @@ class Home {
                         $error = TRUE;
                     }
                 }
-            } else if ($this->ci->uri->segment(1) == "gh_asistencia") {
-                $arrControllers = array($this->ci->uri->segment(1), "index", "insertarAsisDiario", "registro", "userAuth", "validaSesion");
+            } else if ($this->ci->uri->segment(1) == "psicologo") {
+                $arrControllers = array($this->ci->uri->segment(1), "index", "registration_send", "registro", "userAuth", "validaSesion");
                 if ($this->ci->uri->segment(2) != FALSE && !in_array($this->ci->uri->segment(2), $arrControllers)) {
                     if (isset($this->ci->session) && $this->ci->session->userdata('id') == FALSE) {
                         $error = TRUE;
@@ -35,35 +35,7 @@ class Home {
                 }
             }
             
-            if ($error == FALSE) {
-                // oagarzond - 2016-05-25 - Se consulta si la ruta actual tiene permiso o no en el sistema
-                $this->ci->load->model('menu/menu_model', 'mm');
-                $ruta_validar = '';
-                for ($i = 1; $i <= 5; $i++) {
-                    if ($this->ci->uri->segment($i)) {
-                        $ruta_validar .= ($i == 1) ? $this->ci->uri->segment($i) : '/' . $this->ci->uri->segment($i);
-                    }
-                }
-                
-                $arrParam = array('enlace' => $ruta_validar);
-                $ruta_valida = $this->ci->mm->consultar_enlaces($arrParam);
-                //pr($ruta_valida); exit;
-                if(count($ruta_valida) > 0) {
-                    // oagarzond - 2016-05-25 - Se consulta si el usuario actual tiene permiso para ver la ruta actual
-                    $arrParam = array(
-                        'idPers' => $this->ci->session->userdata('id'),
-                        'enlace' => $ruta_validar
-                    );
-                    $permiso = $this->ci->mm->consultar_permisos_enlace($arrParam);
-                    //pr($permiso); exit;
-                    if (count($permiso) > 0) {
-                        $sessionData = array('idModulo' => $permiso[0]['FK_ID_MODULOS']);
-                        $this->ci->session->set_userdata($sessionData);
-                    } else {
-                        $error = TRUE;
-                    }
-                }
-            }
+
         }
         
         if ($error) {
