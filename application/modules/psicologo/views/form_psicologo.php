@@ -56,7 +56,7 @@
 						<div class="form-group">
 							<label class="control-label col-md-3 col-sm-3 col-xs-12" for="type">En cuál rango de edad te encuentras? <span class="required">*</span></label>
 							<div class="col-md-6 col-sm-6 col-xs-12">
-								<select class="form-control" name="edad">
+								<select class="form-control" id="edad" name="edad" required="required">
 									<option value="">Seleccione</option>
 									<option value="1">23-27</option>
 									<option value="2">28-35</option>
@@ -68,11 +68,11 @@
 						</div>
 						
 						<div class="form-group">
-							<label class="control-label col-md-3 col-sm-3 col-xs-12" for="company_name">Por qué quiero ayudarte?<span class="required">*</span>
+							<label class="control-label col-md-3 col-sm-3 col-xs-12" for="company_name">Por qué quiero ayudarte? <span class="required">*</span>
 							<br><small>Respuesta personal sobre por qué quieren ayudar a las personas (no sobre formación, capacitación, experiencia)</small>
 							</label>
 							<div class="col-md-6 col-sm-6 col-xs-12">
-								<textarea id="description" name="description" placeholder="Por qué quiero ayudarte?"  class="form-control" rows="3"><?php echo $information?$information[0]["description"]:""; ?></textarea>
+								<textarea id="ayudarte" name="ayudarte" placeholder="Por qué quiero ayudarte?" class="form-control" rows="3" required="required"><?php echo $information?$information[0]["description"]:""; ?></textarea>
 							</div>
 						</div>
 												
@@ -80,14 +80,14 @@
 							<label class="control-label col-md-3 col-sm-3 col-xs-12" for="hora_real">Formación <span class="required">*</span>
 							<br><small>Universidad - nivel de educación - Matrícula profesional (títulos)</small></label>
 							<div class="col-md-6 col-sm-6 col-xs-12">
-								<textarea id="description" name="description" placeholder="Formación"  class="form-control" rows="3"><?php echo $information?$information[0]["description"]:""; ?></textarea>
+								<textarea id="formacion" name="formacion" placeholder="Formación" class="form-control" rows="3" required="required"><?php echo $information?$information[0]["description"]:""; ?></textarea>
 							</div>
 						</div>
 						
 						<div class="form-group">
 							<label class="control-label col-md-3 col-sm-3 col-xs-12" for="hora_contrato">Cuántos años de experiencia en consulta tienes? <span class="required">*</span></label>
 							<div class="col-md-6 col-sm-6 col-xs-12">
-								<input type="text" id="hora_contrato" required="required" name="hora_contrato" class="form-control col-md-7 col-xs-12" value="<?php echo $information?$information[0]["hora_contrato_cad"]:""; ?>" maxlength=5 placeholder="Cuántos años de experiencia en consulta tienes?">
+								<input type="text" id="anios_experiencia" name="anios_experiencia" required="required" class="form-control col-md-7 col-xs-12" value="<?php echo $information?$information[0]["hora_contrato_cad"]:""; ?>" maxlength=5 placeholder="Cuántos años de experiencia en consulta tienes?">
 							</div>
 						</div>
 						
@@ -102,7 +102,7 @@
 						<div class="form-group">
 							<label class="control-label col-md-3 col-sm-3 col-xs-12" for="hora_contrato">Dirección de tu consultorio <span class="required">*</span></label>
 							<div class="col-md-6 col-sm-6 col-xs-12">
-								<input type="text" id="hora_contrato" required="required" name="hora_contrato" class="form-control col-md-7 col-xs-12 has-feedback-left" value="<?php echo $information?$information[0]["hora_contrato_cad"]:""; ?>" maxlength=5 placeholder="Dirección de tu consultorio">
+								<input type="text" id="direccion" name="direccion" required="required" class="form-control col-md-7 col-xs-12 has-feedback-left" value="<?php echo $information?$information[0]["hora_contrato_cad"]:""; ?>" maxlength=5 placeholder="Dirección de tu consultorio">
 								<span class="fa fa-home form-control-feedback left" aria-hidden="true"></span>
 							</div>
 						</div>
@@ -110,13 +110,13 @@
 						<div class="form-group">
 							<label class="control-label col-md-3 col-sm-3 col-xs-12" for="hora_contrato">Cuál es tu tarifa por sesión? <span class="required">*</span></label>
 							<div class="col-md-6 col-sm-6 col-xs-12">
-								<input type="text" id="hora_contrato" required="required" name="hora_contrato" class="form-control col-md-7 col-xs-12 has-feedback-left" value="<?php echo $information?$information[0]["hora_contrato_cad"]:""; ?>" maxlength=5 placeholder="Cuál es tu tarifa por sesión?">
+								<input type="text" id="tarifa" name="tarifa" required="required" class="form-control col-md-7 col-xs-12 has-feedback-left" value="<?php echo $information?$information[0]["hora_contrato_cad"]:""; ?>" maxlength=5 placeholder="Cuál es tu tarifa por sesión?">
 								<span class="fa fa-dollar form-control-feedback left" aria-hidden="true"></span>
 							</div>
 						</div>
 						
 						<div class="form-group">
-							<label class="control-label col-md-3 col-sm-3 col-xs-12" for="hora_contrato">Cuáles enfoques utilizas? 
+							<label class="control-label col-md-3 col-sm-3 col-xs-12" for="hora_contrato">Cuáles enfoques utilizas? <span class="required">*</span>
 							<br><small>(mínimo 1, máximo 2) </small></label>
 							<div class="col-md-3 col-sm-3 col-xs-6">
 								  <div class="checkbox">
@@ -159,35 +159,35 @@
 							<div class="col-md-1 col-sm-1 col-xs-12">
 								<div class="radio">
 									<label>
-									  <input type="radio" value="option1" id="optionsRadios1" name="optionsRadios"> 1
+									  <input type="radio" value="option1" id="optionsAnsiedad1" name="optionsAnsiedad"> 1
 									</label>
 								</div>
 							</div>
 							<div class="col-md-1 col-sm-1 col-xs-12">
 								<div class="radio">
 									<label>
-									  <input type="radio" value="option2" id="optionsRadios2" name="optionsRadios"> 2
+									  <input type="radio" value="option2" id="optionsAnsiedad2" name="optionsAnsiedad"> 2
 									</label>
 								</div>
 							</div>
 							<div class="col-md-1 col-sm-1 col-xs-12">
 								<div class="radio">
 									<label>
-									  <input type="radio" value="option2" id="optionsRadios2" name="optionsRadios"> 3
+									  <input type="radio" value="option2" id="optionsAnsiedad3" name="optionsAnsiedad"> 3
 									</label>
 								</div>
 							</div>
 							<div class="col-md-1 col-sm-1 col-xs-12">
 								<div class="radio">
 									<label>
-									  <input type="radio" value="option2" id="optionsRadios2" name="optionsRadios"> 4
+									  <input type="radio" value="option2" id="optionsAnsiedad4" name="optionsAnsiedad"> 4
 									</label>
 								</div>
 							</div>
 							<div class="col-md-1 col-sm-1 col-xs-12">
 								<div class="radio">
 									<label>
-									  <input type="radio" value="option2" id="optionsRadios2" name="optionsRadios"> 5
+									  <input type="radio" value="option2" id="optionsAnsiedad5" name="optionsAnsiedad"> 5
 									</label>
 								</div>
 							</div>
@@ -428,15 +428,15 @@
 						</div>
 						
 						<div class="form-group">
-							<label class="control-label col-md-3 col-sm-3 col-xs-12" for="company_name">Cómo manejas tu propia salud emocional para poder servirle a otros?<span class="required">*</span>
+							<label class="control-label col-md-3 col-sm-3 col-xs-12" for="salud">Cómo manejas tu propia salud emocional para poder servirle a otros? <span class="required">*</span>
 							</label>
 							<div class="col-md-6 col-sm-6 col-xs-12">
-								<textarea id="description" name="description" placeholder="Cómo manejas tu propia salud emocional para poder servirle a otros?"  class="form-control" rows="3"><?php echo $information?$information[0]["description"]:""; ?></textarea>
+								<textarea id="salud" name="salud" placeholder="Cómo manejas tu propia salud emocional para poder servirle a otros?"  class="form-control" rows="3" required="required"><?php echo $information?$information[0]["description"]:""; ?></textarea>
 							</div>
 						</div>
 						
 						<div class="form-group">
-							<label class="control-label col-md-3 col-sm-3 col-xs-12" for="hora_contrato">Ofreces consultas en persona, virtuales, o ambas?</label>
+							<label class="control-label col-md-3 col-sm-3 col-xs-12" for="hora_contrato">Ofreces consultas en persona, virtuales, o ambas? <span class="required">*</span></label>
 							<div class="col-md-3 col-sm-3 col-xs-12">
 								<div class="radio">
 									<label>
@@ -457,7 +457,7 @@
 						</div>
 
 						<div class="form-group">
-							<label class="control-label col-md-3 col-sm-3 col-xs-12" for="hora_contrato">En qué idioma ofreces consultas?</label>
+							<label class="control-label col-md-3 col-sm-3 col-xs-12" for="hora_contrato">En qué idioma ofreces consultas? <span class="required">*</span></label>
 							<div class="col-md-3 col-sm-3 col-xs-12">
 								<div class="radio">
 									<label>
@@ -531,7 +531,7 @@
 							<label class="control-label col-md-3 col-sm-3 col-xs-12" for="nombres">Cuáles son tus horarios de atención? <span class="required">*</span>
 							</label>
 							<div class="col-md-6 col-sm-6 col-xs-12">
-								<input type="text" id="nombres" name="nombres" required="required" class="form-control col-md-7 col-xs-12 has-feedback-left" value="<?php echo $information?$information[0]["first_name"]:""; ?>" maxlength=30 placeholder="Cuáles son tus horarios de atención?">
+								<input type="text" id="horarios" name="horarios" required="required" class="form-control col-md-7 col-xs-12 has-feedback-left" value="<?php echo $information?$information[0]["first_name"]:""; ?>" maxlength=30 placeholder="Cuáles son tus horarios de atención?">
 								<span class="fa fa-calendar form-control-feedback left" aria-hidden="true"></span>
 							</div>
 						</div>
