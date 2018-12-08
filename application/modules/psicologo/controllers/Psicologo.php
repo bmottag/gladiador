@@ -5,6 +5,7 @@ class Psicologo extends MX_Controller {
 	
     public function __construct() {
         parent::__construct();
+		$this->load->model("psicologo_model");
     }
 
 	/**
@@ -27,20 +28,74 @@ class Psicologo extends MX_Controller {
 	}
 	
 	/**
-	 * Registro psicologos
+	 * Guardar psicologo
+     * @since 8/12/2018
 	 */
-	public function registro_borrar()
-	{	
-			$data["view"] = 'form_psicologo';
-			$this->load->view("layout_forms", $data);
-	}
+	public function save_psicologo()
+	{			
+			header('Content-Type: application/json');
+			
+			$idUser = $this->input->post('hddId');
+			$log_user = $this->input->post('usuario');
+			$email = $this->input->post('email');
 
+			$msj = "You have add a new User!!";
+			if ($idUser != '') {
+				$msj = "You have update the User!!";
+			}	
+			
+			$result_email = false;
+			
+			//verificar si ya existe el correo
+			$arrParam = array(
+				"idUser" => $idUser,
+				"column" => "email",
+				"value" => $email
+			);
+			$result_email = $this->psicologo_model->verifyUser($arrParam);
+
+			if ($result_email) {
+				$data["result"] = "error";
+				$data["mensaje"] = " Error. El email ya existe.";
+				$this->session->set_flashdata('retornoError', '<strong>Error!!!</strong> El Email ya existe.');
+			} else {
+			
+				if ($idUser = $this->psicologo_model->saveUsuario()) {
+					$data["result"] = true;
+					$data["idRecord"] = $idUser;
+					$this->session->set_flashdata('retornoExito', $msj);
+				} else {
+					$data["result"] = "error";
+					$data["idRecord"] = '';
+					$this->session->set_flashdata('retornoError', '<strong>Error!!!</strong> Ask for help, contact the Admin.');
+				}
+			
+			}
+
+			echo json_encode($data);
+    }
+	
 	/**
-	 * Registro psicologos
+	 * info psicologos
+     * @since 29/3/2018
+     * @author BMOTTAG
 	 */
-	public function registration_send()
+	public function info($idUser = 'x')
 	{	
-			pr($_POST);
+		$this->load->model("general_model");
+		$data['information'] = FALSE;
+		
+		//si envio el id, entonces busco la informacion 
+		if ($idUser != 'x') {
+			$arrParam = array("idUser" => $idUser);
+			$data['information'] = $this->general_model->get_user_list($arrParam);//info cliente
+		}
+
+		
+		pr($data['information']); exit;
+		
+		$data["view"] = 'form_usuario';
+		$this->load->view("layout", $data);
 	}
 	
 

@@ -92,15 +92,15 @@
 						</div>
 						
 						<div class="form-group">
-							<label class="control-label col-md-3 col-sm-3 col-xs-12" for="hora_contrato">Página web personal </label>
+							<label class="control-label col-md-3 col-sm-3 col-xs-12" for="pagina_web">Página web personal </label>
 							<div class="col-md-6 col-sm-6 col-xs-12">
-								<input type="text" id="hora_contrato" name="hora_contrato" class="form-control col-md-7 col-xs-12 has-feedback-left" value="<?php echo $information?$information[0]["hora_contrato_cad"]:""; ?>" maxlength=5 placeholder="Página web personal">
+								<input type="text" id="pagina_web" name="pagina_web" class="form-control col-md-7 col-xs-12 has-feedback-left" value="<?php echo $information?$information[0]["hora_contrato_cad"]:""; ?>" maxlength=5 placeholder="Página web personal">
 								<span class="fa fa-globe form-control-feedback left" aria-hidden="true"></span>
 							</div>
 						</div>
 						
 						<div class="form-group">
-							<label class="control-label col-md-3 col-sm-3 col-xs-12" for="hora_contrato">Dirección de tu consultorio <span class="required">*</span></label>
+							<label class="control-label col-md-3 col-sm-3 col-xs-12" for="direccion">Dirección de tu consultorio <span class="required">*</span></label>
 							<div class="col-md-6 col-sm-6 col-xs-12">
 								<input type="text" id="direccion" name="direccion" required="required" class="form-control col-md-7 col-xs-12 has-feedback-left" value="<?php echo $information?$information[0]["hora_contrato_cad"]:""; ?>" maxlength=5 placeholder="Dirección de tu consultorio">
 								<span class="fa fa-home form-control-feedback left" aria-hidden="true"></span>

@@ -8,16 +8,8 @@ $( document ).ready( function () {
 		rules: {
 			nombres:			{ required: true, minlength: 3, maxlength:25 },
 			apellidos: 			{ required: true, minlength: 3, maxlength:25 },
-			usuario: 			{ required: true, minlength: 5, maxlength:25 },
 			email: 				{ required: true, email: true, maxlength:50 },
-			celular:	 		{ required: true, number: true, maxlength:12 },
-			type:		 		{ required: true },
-			company_name:		{ maxlength: 150, subcontractor: "#type" },
-			gst_number:			{ maxlength: 100, subcontractor: "#type" },
-			hora_real:	 		{ required: true, number: true, maxlength:5 },
-			hora_contrato: 		{ number: true, maxlength:5 },
-			rol:		 		{ required: true },
-			state:	 			{ required: true }
+			celular:	 		{ required: true, number: true, maxlength:12 }
 		},
 		errorElement: "em",
 		errorPlacement: function ( error, element ) {
@@ -48,7 +40,7 @@ $( document ).ready( function () {
 			
 				$.ajax({
 					type: "POST",	
-					url: base_url + "admin/save_usuario",	
+					url: base_url + "psicologo/save_psicologo",	
 					data: $("#form").serialize(),
 					dataType: "json",
 					contentType: "application/x-www-form-urlencoded;charset=UTF-8",
@@ -58,6 +50,7 @@ $( document ).ready( function () {
                                             
 						if( data.result == "error" )
 						{
+							alert(data.mensaje);
 							$("#div_load").css("display", "none");
 							$("#div_error").css("display", "inline");
 							$("#span_msj").html(data.mensaje);
@@ -69,7 +62,7 @@ $( document ).ready( function () {
 						{	                                                        
 							$("#div_load").css("display", "none");
 							$('#btnSubmit').removeAttr('disabled');
-							var url = base_url + "admin/usuarios";
+							var url = base_url + "psicologo/info/" + data.idRecord;
 							$(location).attr("href", url);
 						}
 						else
