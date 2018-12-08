@@ -1,107 +1,575 @@
-		<div id="form_container">
-			<div class="row">
-				<div class="col-lg-5">
-					<div id="left_form">
-						<figure><img src="<?php echo base_url("estilos_formularios/img/registration_bg.svg"); ?>" alt=""></figure>
-						<h2>Registro</h2>
-						<p>Tation argumentum et usu, dicit viderer evertitur te has. Eu dictas concludaturque usu, facete detracto patrioque an per, lucilius pertinacia eu vel.</p>
-						<a href="#0" id="more_info" data-toggle="modal" data-target="#more-info"><i class="pe-7s-info"></i></a>
-					</div>
-				</div>
-				<div class="col-lg-7">
+<script type="text/javascript" src="<?php echo base_url("assets/js/validate/psicologo/form_psicologo.js"); ?>"></script>
 
-					<div id="wizard_container">
-						<div id="top-wizard">
-							<div id="progressbar"></div>
+<div class="right_col" role="main">
+	<div class="row">
+		<div class="col-md-12 col-sm-12 col-xs-12">
+			<div class="x_panel">
+				<div class="x_title">
+					<h2><i class='fa fa-users'></i> Registro</h2>
+					<ul class="nav navbar-right panel_toolbox">
+						<li><a class="collapse-link"><i class="fa fa-chevron-up"></i></a>
+						</li>
+					</ul>
+					<div class="clearfix"></div>
+				</div>
+				<div class="x_content">
+
+					<div class="alert alert-success alert-dismissible fade in" role="alert">
+						<strong>Info:</strong> Cuestionario Psicólogos.
+					</div>
+				
+					<form id="form" data-parsley-validate class="form-horizontal form-label-left">
+						<input type="hidden" id="hddId" name="hddId" value="<?php echo $information?$information[0]["id_user"]:""; ?>"/>
+
+						<div class="form-group">
+							<label class="control-label col-md-3 col-sm-3 col-xs-12" for="nombres">Nombres <span class="required">*</span>
+							</label>
+							<div class="col-md-6 col-sm-6 col-xs-12">
+								<input type="text" id="nombres" name="nombres" required="required" class="form-control col-md-7 col-xs-12 has-feedback-left" value="<?php echo $information?$information[0]["first_name"]:""; ?>" maxlength=30 placeholder="Nombres">
+								<span class="fa fa-user form-control-feedback left" aria-hidden="true"></span>
+							</div>
 						</div>
-						<!-- /top-wizard -->
-						<form name="example-1" id="wrapped" method="POST">
-							<input id="website" name="website" type="text" value="">
-							<!-- Leave for security protection, read docs for details -->
-							<div id="middle-wizard">
-
-								<div class="step">
-									<h3 class="main_question"><strong>1/3</strong>Cuestionario Psicólogos</h3>
-									<div class="row">
-										<div class="col-md-6">
-											<div class="form-group">
-												<input type="text" name="firstname" class="form-control required" placeholder="Nombres">
-											</div>
-										</div>
-										<div class="col-md-6">
-											<div class="form-group">
-												<input type="text" name="lastname" class="form-control required" placeholder="Apellidos">
-											</div>
-										</div>
-									</div>
-									<!-- /row -->
-
-									<div class="row">
-										<div class="col-md-6">
-											<div class="form-group">
-												<input type="email" name="email" class="form-control required" placeholder="Email">
-											</div>
-										</div>
-										<div class="col-md-6">
-											<div class="form-group">
-												<input type="text" name="telephone" id="telephone" class="form-control required" placeholder="Número de contacto">
-											</div>
-										</div>
-									</div>
-									<!-- /row -->
-									
-									<div class="row">
-										<div class="col-md-12">
-											<div class="form-group">
-												<div class="styled-select">
-													<select class="required" name="edad">
-														<option value="" selected>En cuál rango de edad te encuentras?</option>
-														<option value="1">23-27</option>
-														<option value="2">28-35</option>
-														<option value="3">36-45</option>
-														<option value="4">45-55</option>
-														<option value="5">Mayor de 55</option>
-													</select>
-												</div>
-											</div>
-										</div>
-									</div>
-									<!-- /row -->
-
-								</div>
-								<!-- /step-->
-
-								<div class="step">
-									<h3 class="main_question"><strong>2/3</strong>Por qué quiero ayudarte?</h3>Respuesta personal sobre por qué quieren ayudar a las personas (no sobre formación, capacitación, experiencia)
-									<div class="form-group">
-										<textarea name="ayudarte" class="form-control" style="height:80px;" placeholder=""></textarea>
-									</div>
-									
-									<h3 class="main_question">Formación</h3>Universidad - nivel de educación - Matrícula profesional (títulos)
-									<div class="form-group">
-										<textarea name="formacion" class="form-control" style="height:80px;" placeholder=""></textarea>
-									</div>
-								</div>
-								<!-- /step-->
-
-								<div class="submit step">
-									<h3 class="main_question"><strong>3/3</strong>Cuántos años de experiencia en consulta tienes?</h3>
-									<div class="form-group">
-										<textarea name="annios_experiencia" class="form-control" style="height:150px;" placeholder=""></textarea>
-									</div>
-								</div>
-								<!-- /step-->
+						
+						<div class="form-group">
+							<label class="control-label col-md-3 col-sm-3 col-xs-12" for="apellidos">Apellidos <span class="required">*</span>
+							</label>
+							<div class="col-md-6 col-sm-6 col-xs-12">
+								<input type="text" id="apellidos" name="apellidos" required="required" class="form-control col-md-7 col-xs-12 has-feedback-left" value="<?php echo $information?$information[0]["last_name"]:""; ?>" maxlength=30 placeholder="Apellidos">
+								<span class="fa fa-user form-control-feedback left" aria-hidden="true"></span>
 							</div>
-							<!-- /middle-wizard -->
-							<div id="bottom-wizard">
-								<button type="button" name="backward" class="backward">Atrás </button>
-								<button type="button" name="forward" class="forward">Siguiente</button>
-								<button type="submit" name="process" class="submit">Enviar</button>
+						</div>
+						<div class="form-group">
+							<label for="email" class="control-label col-md-3 col-sm-3 col-xs-12">Email <span class="required">*</span></label>
+							<div class="col-md-6 col-sm-6 col-xs-12">
+								<input id="email" name="email" required="required" class="form-control col-md-7 col-xs-12 has-feedback-left" type="text" value="<?php echo $information?$information[0]["email"]:""; ?>" maxlength=50 placeholder="Email">
+								<span class="fa fa-envelope form-control-feedback left" aria-hidden="true"></span>
 							</div>
-							<!-- /bottom-wizard -->
-						</form>
+						</div>
+						<div class="form-group">
+							<label for="celular" class="control-label col-md-3 col-sm-3 col-xs-12">Número de contacto <span class="required">*</span></label>
+							<div class="col-md-6 col-sm-6 col-xs-12">
+								<input id="celular" name="celular" required="required" class="form-control col-md-7 col-xs-12 has-feedback-left" type="text" value="<?php echo $information?$information[0]["movil"]:""; ?>" maxlength=12 placeholder="Número de contacto">
+								<span class="fa fa-phone form-control-feedback left" aria-hidden="true"></span>
+							</div>
+						</div>
+						
+						<div class="form-group">
+							<label class="control-label col-md-3 col-sm-3 col-xs-12" for="type">En cuál rango de edad te encuentras? <span class="required">*</span></label>
+							<div class="col-md-6 col-sm-6 col-xs-12">
+								<select class="form-control" name="edad">
+									<option value="">Seleccione</option>
+									<option value="1">23-27</option>
+									<option value="2">28-35</option>
+									<option value="3">36-45</option>
+									<option value="4">45-55</option>
+									<option value="5">Mayor de 55</option>
+								</select>
+							</div>
+						</div>
+						
+						<div class="form-group">
+							<label class="control-label col-md-3 col-sm-3 col-xs-12" for="company_name">Por qué quiero ayudarte?<span class="required">*</span>
+							<br><small>Respuesta personal sobre por qué quieren ayudar a las personas (no sobre formación, capacitación, experiencia)</small>
+							</label>
+							<div class="col-md-6 col-sm-6 col-xs-12">
+								<textarea id="description" name="description" placeholder="Por qué quiero ayudarte?"  class="form-control" rows="3"><?php echo $information?$information[0]["description"]:""; ?></textarea>
+							</div>
+						</div>
+												
+						<div class="form-group">
+							<label class="control-label col-md-3 col-sm-3 col-xs-12" for="hora_real">Formación <span class="required">*</span>
+							<br><small>Universidad - nivel de educación - Matrícula profesional (títulos)</small></label>
+							<div class="col-md-6 col-sm-6 col-xs-12">
+								<textarea id="description" name="description" placeholder="Formación"  class="form-control" rows="3"><?php echo $information?$information[0]["description"]:""; ?></textarea>
+							</div>
+						</div>
+						
+						<div class="form-group">
+							<label class="control-label col-md-3 col-sm-3 col-xs-12" for="hora_contrato">Cuántos años de experiencia en consulta tienes? <span class="required">*</span></label>
+							<div class="col-md-6 col-sm-6 col-xs-12">
+								<input type="text" id="hora_contrato" required="required" name="hora_contrato" class="form-control col-md-7 col-xs-12" value="<?php echo $information?$information[0]["hora_contrato_cad"]:""; ?>" maxlength=5 placeholder="Cuántos años de experiencia en consulta tienes?">
+							</div>
+						</div>
+						
+						<div class="form-group">
+							<label class="control-label col-md-3 col-sm-3 col-xs-12" for="hora_contrato">Página web personal </label>
+							<div class="col-md-6 col-sm-6 col-xs-12">
+								<input type="text" id="hora_contrato" name="hora_contrato" class="form-control col-md-7 col-xs-12 has-feedback-left" value="<?php echo $information?$information[0]["hora_contrato_cad"]:""; ?>" maxlength=5 placeholder="Página web personal">
+								<span class="fa fa-globe form-control-feedback left" aria-hidden="true"></span>
+							</div>
+						</div>
+						
+						<div class="form-group">
+							<label class="control-label col-md-3 col-sm-3 col-xs-12" for="hora_contrato">Dirección de tu consultorio <span class="required">*</span></label>
+							<div class="col-md-6 col-sm-6 col-xs-12">
+								<input type="text" id="hora_contrato" required="required" name="hora_contrato" class="form-control col-md-7 col-xs-12 has-feedback-left" value="<?php echo $information?$information[0]["hora_contrato_cad"]:""; ?>" maxlength=5 placeholder="Dirección de tu consultorio">
+								<span class="fa fa-home form-control-feedback left" aria-hidden="true"></span>
+							</div>
+						</div>
+						
+						<div class="form-group">
+							<label class="control-label col-md-3 col-sm-3 col-xs-12" for="hora_contrato">Cuál es tu tarifa por sesión? <span class="required">*</span></label>
+							<div class="col-md-6 col-sm-6 col-xs-12">
+								<input type="text" id="hora_contrato" required="required" name="hora_contrato" class="form-control col-md-7 col-xs-12 has-feedback-left" value="<?php echo $information?$information[0]["hora_contrato_cad"]:""; ?>" maxlength=5 placeholder="Cuál es tu tarifa por sesión?">
+								<span class="fa fa-dollar form-control-feedback left" aria-hidden="true"></span>
+							</div>
+						</div>
+						
+						<div class="form-group">
+							<label class="control-label col-md-3 col-sm-3 col-xs-12" for="hora_contrato">Cuáles enfoques utilizas? 
+							<br><small>(mínimo 1, máximo 2) </small></label>
+							<div class="col-md-3 col-sm-3 col-xs-6">
+								  <div class="checkbox">
+									<label>
+									  <input type="checkbox" class="flat"> Cognitivo Conductual
+									</label>
+								  </div>
+								  <div class="checkbox">
+									<label>
+									  <input type="checkbox" class="flat"> Psicoanálisis
+									</label>
+								  </div>
+								  <div class="checkbox">
+									<label>
+									  <input type="checkbox" class="flat"> Sistémico
+									</label>
+								  </div>
+							</div>
+							<div class="col-md-3 col-sm-3 col-xs-6">
+								  <div class="checkbox">
+									<label>
+									  <input type="checkbox" class="flat"> Transpersonal
+									</label>
+								  </div>
+								  <div class="checkbox">
+									<label>
+									  <input type="checkbox" class="flat"> Humanista
+									</label>
+								  </div>
+							</div>
+						</div>
+						
+					<div class="alert alert-success alert-dismissible fade in" role="alert">
+						<strong>Especialidades del psicólogo</strong> 
+						<br>En una escala de 1 a 5, autocalificar su capacidad y experiencia frente a cada tema (7 temas). Hay un máximo de 25 puntos, por ende tienen que escoger cuáles dominan y cuáles no y distribuir los puntos de forma acorde.
 					</div>
-					<!-- /Wizard container -->
+					
+						<div class="form-group">
+							<label class="control-label col-md-3 col-sm-3 col-xs-12" for="hora_contrato">Ansiedad</label>
+							<div class="col-md-1 col-sm-1 col-xs-12">
+								<div class="radio">
+									<label>
+									  <input type="radio" value="option1" id="optionsRadios1" name="optionsRadios"> 1
+									</label>
+								</div>
+							</div>
+							<div class="col-md-1 col-sm-1 col-xs-12">
+								<div class="radio">
+									<label>
+									  <input type="radio" value="option2" id="optionsRadios2" name="optionsRadios"> 2
+									</label>
+								</div>
+							</div>
+							<div class="col-md-1 col-sm-1 col-xs-12">
+								<div class="radio">
+									<label>
+									  <input type="radio" value="option2" id="optionsRadios2" name="optionsRadios"> 3
+									</label>
+								</div>
+							</div>
+							<div class="col-md-1 col-sm-1 col-xs-12">
+								<div class="radio">
+									<label>
+									  <input type="radio" value="option2" id="optionsRadios2" name="optionsRadios"> 4
+									</label>
+								</div>
+							</div>
+							<div class="col-md-1 col-sm-1 col-xs-12">
+								<div class="radio">
+									<label>
+									  <input type="radio" value="option2" id="optionsRadios2" name="optionsRadios"> 5
+									</label>
+								</div>
+							</div>
+						</div>
+						
+						<div class="form-group">
+							<label class="control-label col-md-3 col-sm-3 col-xs-12" for="hora_contrato">Depresión</label>
+							<div class="col-md-1 col-sm-1 col-xs-12">
+								<div class="radio">
+									<label>
+									  <input type="radio" value="option1" id="optionsRadios1" name="optionsRadios"> 1
+									</label>
+								</div>
+							</div>
+							<div class="col-md-1 col-sm-1 col-xs-12">
+								<div class="radio">
+									<label>
+									  <input type="radio" value="option2" id="optionsRadios2" name="optionsRadios"> 2
+									</label>
+								</div>
+							</div>
+							<div class="col-md-1 col-sm-1 col-xs-12">
+								<div class="radio">
+									<label>
+									  <input type="radio" value="option2" id="optionsRadios2" name="optionsRadios"> 3
+									</label>
+								</div>
+							</div>
+							<div class="col-md-1 col-sm-1 col-xs-12">
+								<div class="radio">
+									<label>
+									  <input type="radio" value="option2" id="optionsRadios2" name="optionsRadios"> 4
+									</label>
+								</div>
+							</div>
+							<div class="col-md-1 col-sm-1 col-xs-12">
+								<div class="radio">
+									<label>
+									  <input type="radio" value="option2" id="optionsRadios2" name="optionsRadios"> 5
+									</label>
+								</div>
+							</div>
+						</div>
+						
+						<div class="form-group">
+							<label class="control-label col-md-3 col-sm-3 col-xs-12" for="hora_contrato">Consumo de sustancias</label>
+							<div class="col-md-1 col-sm-1 col-xs-12">
+								<div class="radio">
+									<label>
+									  <input type="radio" value="option1" id="optionsRadios1" name="optionsRadios"> 1
+									</label>
+								</div>
+							</div>
+							<div class="col-md-1 col-sm-1 col-xs-12">
+								<div class="radio">
+									<label>
+									  <input type="radio" value="option2" id="optionsRadios2" name="optionsRadios"> 2
+									</label>
+								</div>
+							</div>
+							<div class="col-md-1 col-sm-1 col-xs-12">
+								<div class="radio">
+									<label>
+									  <input type="radio" value="option2" id="optionsRadios2" name="optionsRadios"> 3
+									</label>
+								</div>
+							</div>
+							<div class="col-md-1 col-sm-1 col-xs-12">
+								<div class="radio">
+									<label>
+									  <input type="radio" value="option2" id="optionsRadios2" name="optionsRadios"> 4
+									</label>
+								</div>
+							</div>
+							<div class="col-md-1 col-sm-1 col-xs-12">
+								<div class="radio">
+									<label>
+									  <input type="radio" value="option2" id="optionsRadios2" name="optionsRadios"> 5
+									</label>
+								</div>
+							</div>
+						</div>
+						
+						<div class="form-group">
+							<label class="control-label col-md-3 col-sm-3 col-xs-12" for="hora_contrato">Salud y Bienestar Físico</label>
+							<div class="col-md-1 col-sm-1 col-xs-12">
+								<div class="radio">
+									<label>
+									  <input type="radio" value="option1" id="optionsRadios1" name="optionsRadios"> 1
+									</label>
+								</div>
+							</div>
+							<div class="col-md-1 col-sm-1 col-xs-12">
+								<div class="radio">
+									<label>
+									  <input type="radio" value="option2" id="optionsRadios2" name="optionsRadios"> 2
+									</label>
+								</div>
+							</div>
+							<div class="col-md-1 col-sm-1 col-xs-12">
+								<div class="radio">
+									<label>
+									  <input type="radio" value="option2" id="optionsRadios2" name="optionsRadios"> 3
+									</label>
+								</div>
+							</div>
+							<div class="col-md-1 col-sm-1 col-xs-12">
+								<div class="radio">
+									<label>
+									  <input type="radio" value="option2" id="optionsRadios2" name="optionsRadios"> 4
+									</label>
+								</div>
+							</div>
+							<div class="col-md-1 col-sm-1 col-xs-12">
+								<div class="radio">
+									<label>
+									  <input type="radio" value="option2" id="optionsRadios2" name="optionsRadios"> 5
+									</label>
+								</div>
+							</div>
+						</div>
+						
+						<div class="form-group">
+							<label class="control-label col-md-3 col-sm-3 col-xs-12" for="hora_contrato">Autoestima</label>
+							<div class="col-md-1 col-sm-1 col-xs-12">
+								<div class="radio">
+									<label>
+									  <input type="radio" value="option1" id="optionsRadios1" name="optionsRadios"> 1
+									</label>
+								</div>
+							</div>
+							<div class="col-md-1 col-sm-1 col-xs-12">
+								<div class="radio">
+									<label>
+									  <input type="radio" value="option2" id="optionsRadios2" name="optionsRadios"> 2
+									</label>
+								</div>
+							</div>
+							<div class="col-md-1 col-sm-1 col-xs-12">
+								<div class="radio">
+									<label>
+									  <input type="radio" value="option2" id="optionsRadios2" name="optionsRadios"> 3
+									</label>
+								</div>
+							</div>
+							<div class="col-md-1 col-sm-1 col-xs-12">
+								<div class="radio">
+									<label>
+									  <input type="radio" value="option2" id="optionsRadios2" name="optionsRadios"> 4
+									</label>
+								</div>
+							</div>
+							<div class="col-md-1 col-sm-1 col-xs-12">
+								<div class="radio">
+									<label>
+									  <input type="radio" value="option2" id="optionsRadios2" name="optionsRadios"> 5
+									</label>
+								</div>
+							</div>
+						</div>
+						
+						<div class="form-group">
+							<label class="control-label col-md-3 col-sm-3 col-xs-12" for="hora_contrato">Conflictos de Pareja</label>
+							<div class="col-md-1 col-sm-1 col-xs-12">
+								<div class="radio">
+									<label>
+									  <input type="radio" value="option1" id="optionsRadios1" name="optionsRadios"> 1
+									</label>
+								</div>
+							</div>
+							<div class="col-md-1 col-sm-1 col-xs-12">
+								<div class="radio">
+									<label>
+									  <input type="radio" value="option2" id="optionsRadios2" name="optionsRadios"> 2
+									</label>
+								</div>
+							</div>
+							<div class="col-md-1 col-sm-1 col-xs-12">
+								<div class="radio">
+									<label>
+									  <input type="radio" value="option2" id="optionsRadios2" name="optionsRadios"> 3
+									</label>
+								</div>
+							</div>
+							<div class="col-md-1 col-sm-1 col-xs-12">
+								<div class="radio">
+									<label>
+									  <input type="radio" value="option2" id="optionsRadios2" name="optionsRadios"> 4
+									</label>
+								</div>
+							</div>
+							<div class="col-md-1 col-sm-1 col-xs-12">
+								<div class="radio">
+									<label>
+									  <input type="radio" value="option2" id="optionsRadios2" name="optionsRadios"> 5
+									</label>
+								</div>
+							</div>
+						</div>
+						
+						<div class="form-group">
+							<label class="control-label col-md-3 col-sm-3 col-xs-12" for="hora_contrato">Autolesión/Suicidio</label>
+							<div class="col-md-1 col-sm-1 col-xs-12">
+								<div class="radio">
+									<label>
+									  <input type="radio" value="option1" id="optionsRadios1" name="optionsRadios"> 1
+									</label>
+								</div>
+							</div>
+							<div class="col-md-1 col-sm-1 col-xs-12">
+								<div class="radio">
+									<label>
+									  <input type="radio" value="option2" id="optionsRadios2" name="optionsRadios"> 2
+									</label>
+								</div>
+							</div>
+							<div class="col-md-1 col-sm-1 col-xs-12">
+								<div class="radio">
+									<label>
+									  <input type="radio" value="option2" id="optionsRadios2" name="optionsRadios"> 3
+									</label>
+								</div>
+							</div>
+							<div class="col-md-1 col-sm-1 col-xs-12">
+								<div class="radio">
+									<label>
+									  <input type="radio" value="option2" id="optionsRadios2" name="optionsRadios"> 4
+									</label>
+								</div>
+							</div>
+							<div class="col-md-1 col-sm-1 col-xs-12">
+								<div class="radio">
+									<label>
+									  <input type="radio" value="option2" id="optionsRadios2" name="optionsRadios"> 5
+									</label>
+								</div>
+							</div>
+						</div>
+						
+						<div class="form-group">
+							<label class="control-label col-md-3 col-sm-3 col-xs-12" for="company_name">Cómo manejas tu propia salud emocional para poder servirle a otros?<span class="required">*</span>
+							</label>
+							<div class="col-md-6 col-sm-6 col-xs-12">
+								<textarea id="description" name="description" placeholder="Cómo manejas tu propia salud emocional para poder servirle a otros?"  class="form-control" rows="3"><?php echo $information?$information[0]["description"]:""; ?></textarea>
+							</div>
+						</div>
+						
+						<div class="form-group">
+							<label class="control-label col-md-3 col-sm-3 col-xs-12" for="hora_contrato">Ofreces consultas en persona, virtuales, o ambas?</label>
+							<div class="col-md-3 col-sm-3 col-xs-12">
+								<div class="radio">
+									<label>
+									  <input type="radio" value="option1" id="optionsRadios1" name="optionsRadios"> Ambas
+									</label>
+								</div>
+								<div class="radio">
+									<label>
+									  <input type="radio" value="option2" id="optionsRadios2" name="optionsRadios"> Solo en persona
+									</label>
+								</div>
+								<div class="radio">
+									<label>
+									  <input type="radio" value="option2" id="optionsRadios2" name="optionsRadios"> Solo virtual
+									</label>
+								</div>
+							</div>
+						</div>
+
+						<div class="form-group">
+							<label class="control-label col-md-3 col-sm-3 col-xs-12" for="hora_contrato">En qué idioma ofreces consultas?</label>
+							<div class="col-md-3 col-sm-3 col-xs-12">
+								<div class="radio">
+									<label>
+									  <input type="radio" value="option1" id="optionsRadios1" name="optionsRadios"> Solo español
+									</label>
+								</div>
+								<div class="radio">
+									<label>
+									  <input type="radio" value="option2" id="optionsRadios2" name="optionsRadios"> Español o inglés
+									</label>
+								</div>
+							</div>
+						</div>						
+						
+						<div class="form-group">
+							<label class="control-label col-md-3 col-sm-3 col-xs-12" for="hora_contrato">Por favor selecciona 6 valores que sean de alta importancia para ti, tanto en el ejercicio de tu profesión como en tu vida personal <span class="required">*</span></label>
+							<div class="col-md-3 col-sm-3 col-xs-6">
+								  <div class="checkbox">
+									<label>
+									  <input type="checkbox" class="flat"> Autosuficiencia
+									</label>
+								  </div>
+								  <div class="checkbox">
+									<label>
+									  <input type="checkbox" class="flat"> Bondad
+									</label>
+								  </div>
+								  <div class="checkbox">
+									<label>
+									  <input type="checkbox" class="flat"> Certidumbre
+									</label>
+								  </div>
+							</div>
+							<div class="col-md-3 col-sm-3 col-xs-6">
+								  <div class="checkbox">
+									<label>
+									  <input type="checkbox" class="flat"> Compasión
+									</label>
+								  </div>
+								  <div class="checkbox">
+									<label>
+									  <input type="checkbox" class="flat"> Confianza
+									</label>
+								  </div>
+								  <div class="checkbox">
+									<label>
+									  <input type="checkbox" class="flat"> Coperación
+									</label>
+								  </div>
+							</div>
+							<div class="col-md-3 col-sm-3 col-xs-6">
+								  <div class="checkbox">
+									<label>
+									  <input type="checkbox" class="flat"> Coraje
+									</label>
+								  </div>
+								  <div class="checkbox">
+									<label>
+									  <input type="checkbox" class="flat"> Curiosidad
+									</label>
+								  </div>
+								  <div class="checkbox">
+									<label>
+									  <input type="checkbox" class="flat"> Equidad
+									</label>
+								  </div>
+							</div>
+						</div>
+
+						<div class="form-group">
+							<label class="control-label col-md-3 col-sm-3 col-xs-12" for="nombres">Cuáles son tus horarios de atención? <span class="required">*</span>
+							</label>
+							<div class="col-md-6 col-sm-6 col-xs-12">
+								<input type="text" id="nombres" name="nombres" required="required" class="form-control col-md-7 col-xs-12 has-feedback-left" value="<?php echo $information?$information[0]["first_name"]:""; ?>" maxlength=30 placeholder="Cuáles son tus horarios de atención?">
+								<span class="fa fa-calendar form-control-feedback left" aria-hidden="true"></span>
+							</div>
+						</div>
+						
+						
+						<div class="ln_solid"></div>
+						<div class="form-group">
+							<div class="col-md-6 col-sm-6 col-xs-12 col-md-offset-3">
+								<div class="row" align="center">
+									<div style="width:50%;" align="center">
+										<button type="button" id="btnSubmit" name="btnSubmit" class='btn btn-success'>
+												Save <span class="glyphicon glyphicon-floppy-disk" aria-hidden="true">
+										</button>								
+									</div>
+								</div>
+							</div>
+						</div>
+												
+						<div class="form-group">
+							<div class="col-md-6 col-sm-6 col-xs-12 col-md-offset-3">
+								
+								<div id="div_load" style="display:none">		
+									<div class="progress progress-striped active">
+										<div class="progress-bar" role="progressbar" aria-valuenow="45" aria-valuemin="0" aria-valuemax="100" style="width: 45%">
+											<span class="sr-only">45% completado</span>
+										</div>
+									</div>
+								</div>
+								<div id="div_error" style="display:none">			
+									<div class="alert alert-danger"><span class="glyphicon glyphicon-remove" id="span_msj"> &nbsp;</span></div>
+								</div>	
+								
+							</div>
+						</div>
+
+					</form>
 				</div>
-			</div><!-- /Row -->
-		</div><!-- /Form_container -->
+			</div>
+		</div>
+	</div>
+</div>

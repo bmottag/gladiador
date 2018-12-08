@@ -1,10 +1,23 @@
 $( document ).ready( function () {
-
-	$("#skill").convertirMayuscula().bloquearNumeros().maxlength(150);
-	
+			
+	$("#nombres").convertirMayuscula().maxlength(25);
+	$("#apellidos").convertirMayuscula().maxlength(25);
+	$("#celular").bloquearTexto().maxlength(12);
+			
 	$( "#form" ).validate( {
 		rules: {
-			skill:				{ required: true, minlength: 3, maxlength:150 }
+			nombres:			{ required: true, minlength: 3, maxlength:25 },
+			apellidos: 			{ required: true, minlength: 3, maxlength:25 },
+			usuario: 			{ required: true, minlength: 5, maxlength:25 },
+			email: 				{ required: true, email: true, maxlength:50 },
+			celular:	 		{ required: true, number: true, maxlength:12 },
+			type:		 		{ required: true },
+			company_name:		{ maxlength: 150, subcontractor: "#type" },
+			gst_number:			{ maxlength: 100, subcontractor: "#type" },
+			hora_real:	 		{ required: true, number: true, maxlength:5 },
+			hora_contrato: 		{ number: true, maxlength:5 },
+			rol:		 		{ required: true },
+			state:	 			{ required: true }
 		},
 		errorElement: "em",
 		errorPlacement: function ( error, element ) {
@@ -14,10 +27,10 @@ $( document ).ready( function () {
 
 		},
 		highlight: function ( element, errorClass, validClass ) {
-			$( element ).parents( ".col-sm-12" ).addClass( "has-error" ).removeClass( "has-success" );
+			$( element ).parents( ".col-sm-6" ).addClass( "has-error" ).removeClass( "has-success" );
 		},
 		unhighlight: function (element, errorClass, validClass) {
-			$( element ).parents( ".col-sm-12" ).addClass( "has-success" ).removeClass( "has-error" );
+			$( element ).parents( ".col-sm-6" ).addClass( "has-success" ).removeClass( "has-error" );
 		},
 		submitHandler: function (form) {
 			return true;
@@ -35,7 +48,7 @@ $( document ).ready( function () {
 			
 				$.ajax({
 					type: "POST",	
-					url: base_url + "programming/save_skill",	
+					url: base_url + "admin/save_usuario",	
 					data: $("#form").serialize(),
 					dataType: "json",
 					contentType: "application/x-www-form-urlencoded;charset=UTF-8",
@@ -46,6 +59,8 @@ $( document ).ready( function () {
 						if( data.result == "error" )
 						{
 							$("#div_load").css("display", "none");
+							$("#div_error").css("display", "inline");
+							$("#span_msj").html(data.mensaje);
 							$('#btnSubmit').removeAttr('disabled');							
 							return false;
 						} 
@@ -54,8 +69,7 @@ $( document ).ready( function () {
 						{	                                                        
 							$("#div_load").css("display", "none");
 							$('#btnSubmit').removeAttr('disabled');
-
-							var url = base_url + "programming/skills";
+							var url = base_url + "admin/usuarios";
 							$(location).attr("href", url);
 						}
 						else
@@ -78,4 +92,5 @@ $( document ).ready( function () {
 		
 		}//if			
 	});
+
 });

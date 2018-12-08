@@ -35,6 +35,14 @@ class Home extends MX_Controller {
 			$data["view"] = 'contacto';
 			$this->load->view("layout_secundario", $data);
 	}
+	
+	/**
+	 * Registro psicologos
+	 */
+	public function psicologos()
+	{	
+			$this->load->view("layout_wraper", $data);
+	}
 
 	
 }

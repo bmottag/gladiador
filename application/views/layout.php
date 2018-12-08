@@ -1,203 +1,128 @@
 <!DOCTYPE html>
-<html class="wide wow-animation" lang="en">
-<head>
-<title>TuApoyo</title>
-<meta name="format-detection" content="telephone=no">
-<meta name="viewport" content="width=device-width, height=device-height, initial-scale=1.0, maximum-scale=1.0, user-scalable=0">
-<meta http-equiv="X-UA-Compatible" content="IE=edge">
-<meta charset="utf-8">
-<link rel="icon" type="image/x-icon" href="<?php echo base_url("images/faviocn.png"); ?>">
-<link rel="stylesheet" type="text/css" href="//fonts.googleapis.com/css?family=Montserrat:400,700%7CRoboto:100,300,400,700,900">
-<link href="<?php echo base_url("estilos/css/bootstrap.css"); ?>" rel="stylesheet">
-<link href="<?php echo base_url("estilos/css/style.css"); ?>" rel="stylesheet">
-<link href="<?php echo base_url("estilos/css/custom.css"); ?>" rel="stylesheet">
-<link href="<?php echo base_url("estilos/css/novi.css"); ?>" rel="stylesheet">
+<html lang="en">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <!-- Meta, title, CSS, favicons, etc. -->
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+	<meta name="baseurl" content="<?php echo base_url()?>" />
+	<link rel="icon" href="<?php echo base_url("images/favicon.ico"); ?>" type="image/ico" />
 
-<!--[if lt IE 10]><div style="background: #212121; padding: 10px 0; box-shadow: 3px 3px 5px 0 rgba(0,0,0,.3); clear: both; text-align:center; position: relative; z-index:1;"><a href="http://windows.microsoft.com/en-US/internet-explorer/"><img src="images/ie8-panel/warning_bar_0000_us.jpg" border="0" height="42" width="820" alt="You are using an outdated browser. For a faster, safer browsing experience, upgrade for free today."></a></div><script src="js/html5shiv.min.js"></script><![endif]-->
-</head>
-<body>
-<div class="page-loader">
-  <div class="brand-name"><img src="<?php echo base_url("images/logo-default-100x28.png"); ?>" alt="" width="100" height="28"></div>
-  <div class="page-loader-body">
-    <div class="cssload-jumping"><span></span><span></span><span></span><span></span><span></span></div>
-  </div>
-</div>
-<div class="page text-center">
-  <section class="section">
-    <header class="page-header">
-      <div class="rd-navbar-wrap">
-        <nav class="rd-navbar rd-navbar-transparent" data-layout="rd-navbar-fixed" data-sm-layout="rd-navbar-fixed" data-sm-device-layout="rd-navbar-fixed" data-md-layout="rd-navbar-static" data-md-device-layout="rd-navbar-fixed" data-lg-device-layout="rd-navbar-static" data-lg-layout="rd-navbar-static" data-body-class="rd-navbar-absolute-linked" data-stick-up-clone="false" data-md-stick-up-offset="72px" data-lg-stick-up-offset="72px" data-stick-up="true" data-sm-stick-up="true" data-md-stick-up="true" data-lg-stick-up="true">
-          <div class="rd-navbar-top-panel novi-background">
-            <div class="rd-navbar-top-panel-toggle" data-rd-navbar-toggle=".rd-navbar-top-panel"><span></span></div>
-            <div class="rd-navbar-top-panel-content">
-              <div class="rd-navbar-top-panel-content-inner">
-                <ul class="inline-list-xs">
-                  <li><a class="icon novi-icon icon-xs icon-white fa fa-facebook" href="#"></a></li>
-                  <li><a class="icon novi-icon icon-xs icon-white fa fa-twitter" href="#"></a></li>
-                  <li><a class="icon novi-icon icon-xs icon-white fa fa-google-plus" href="#"></a></li>
-                  <li><a class="icon novi-icon icon-xs icon-white fa fa-pinterest-p" href="#"></a></li>
-                </ul>
-                <address class="contact-info">
-                5860 Barnes Wallis hwy, 358744, USA
-                </address>
-              </div>
-              <div class="object-inline"><span class="icon novi-icon icon-sm icon-gray material-icons-phone"></span><a class="link link-sm link-white" href="callto:#">+1 (123) 456–7890</a></div>
-            </div>
-          </div>
-          <div class="rd-navbar-inner">
-            <div class="rd-navbar-panel">
-              <div class="rd-navbar-panel-background">
-                <div class="rd-navbar-panel-background-inner novi-background"></div>
-              </div>
-              <button class="rd-navbar-toggle" data-rd-navbar-toggle=".rd-navbar-nav-wrap"><span></span></button>
-              <div class="rd-navbar-brand"><a class="brand-name" href="index.html"><img src="<?php echo base_url("images/logo-15.png"); ?>" alt="" width="100" height="28"></a></div>
-            </div>
-            <div class="rd-navbar-nav-wrap">
-              <div class="rd-navbar-nav-wrap-bg">
-                <div class="rd-navbar-nav-wrap-bg-inner novi-background"></div>
-              </div>
-              <div class="rd-navbar-nav-wrap-inner">
-                <ul class="rd-navbar-items-list rd-navbar-search_collapsable">
-                  <li>
-                    <button class="rd-navbar-search__toggle rd-navbar-fixed--hidden" data-rd-navbar-toggle=".rd-navbar-search_toggled"></button>
-                  </li>
-                  <li class="rd-navbar-nav-wrap__shop"><a class="icon novi-icon fl-bigmug-line-shopping202 link-white" href="#">(2)</a></li>
-                </ul>
-                <div class="rd-navbar-search rd-navbar-search_toggled rd-navbar-search_not-collapsable">
-                  <div class="rd-navbar-search-inner">
-                    <div class="rd-navbar-search-inner-bg novi-background"></div>
-                  </div>
-                  <form class="rd-search" action="search-results.html" method="GET" data-search-live="rd-search-results-live">
-                    <div class="form-wrap">
-                      <input class="form-input" id="rd-navbar-search-form-input" type="text" name="s" autocomplete="off" placeholder="Search...">
-                    </div>
-                    <button class="rd-search__submit" type="submit"></button>
-                    <div class="rd-search-results-live" id="rd-search-results-live"></div>
-                  </form>
-                </div>
-              </div>
-			  
-			  <?php $this->load->view("template/top_menu"); ?>
+    <title>TuApoyo </title>
 
-            </div>
-          </div>
-        </nav>
-      </div>
-    </header>
-	<?php $this->load->view("template/header_contacto"); ?>
-  </section>
-  
-  
- 			<!-- Start of content -->
+    <!-- Bootstrap -->
+	<link href="<?php echo base_url("assets/bootstrap/vendors/bootstrap/dist/css/bootstrap.min.css"); ?>" rel="stylesheet">
+    <!-- Font Awesome -->
+	<link href="<?php echo base_url("assets/bootstrap/vendors/font-awesome/css/font-awesome.min.css"); ?>" rel="stylesheet">
+    <!-- NProgress -->
+	<link href="<?php echo base_url("assets/bootstrap/vendors/nprogress/nprogress.css"); ?>" rel="stylesheet">
+    <!-- iCheck -->
+	<link href="<?php echo base_url("assets/bootstrap/vendors/iCheck/skins/flat/green.css"); ?>" rel="stylesheet">
+	
+    <!-- bootstrap-progressbar -->
+	<link href="<?php echo base_url("assets/bootstrap/vendors/bootstrap-progressbar/css/bootstrap-progressbar-3.3.4.min.css"); ?>" rel="stylesheet">
+    <!-- bootstrap-daterangepicker -->
+	<link href="<?php echo base_url("assets/bootstrap/vendors/bootstrap-daterangepicker/daterangepicker.css"); ?>" rel="stylesheet">
+	<!-- bootstrap-datetimepicker -->
+	<link href="<?php echo base_url("assets/bootstrap/vendors/bootstrap-datetimepicker/build/css/bootstrap-datetimepicker.css"); ?>" rel="stylesheet">	
+	
+    <!-- Datatables -->
+    <link href="<?php echo base_url("assets/bootstrap/vendors/datatables.net-bs/css/dataTables.bootstrap.min.css"); ?>" rel="stylesheet">
+    <link href="<?php echo base_url("assets/bootstrap/vendors/datatables.net-buttons-bs/css/buttons.bootstrap.min.css"); ?>" rel="stylesheet">
+    <link href="<?php echo base_url("assets/bootstrap/vendors/datatables.net-fixedheader-bs/css/fixedHeader.bootstrap.min.css"); ?>" rel="stylesheet">
+    <link href="<?php echo base_url("assets/bootstrap/vendors/datatables.net-responsive-bs/css/responsive.bootstrap.min.css"); ?>" rel="stylesheet">
+    <link href="<?php echo base_url("assets/bootstrap/vendors/datatables.net-scroller-bs/css/scroller.bootstrap.min.css"); ?>" rel="stylesheet">
+
+    <!-- Custom Theme Style -->
+	<link href="<?php echo base_url("assets/bootstrap/build/css/custom.min.css"); ?>" rel="stylesheet">
+	
+    <!-- jQuery -->
+	<script src="<?php echo base_url("assets/bootstrap/vendors/jquery/dist/jquery.min.js"); ?>"></script>
+	<!-- jQuery validate-->
+	<script type="text/javascript" src="<?php echo base_url("assets/js/general/general.js"); ?>"></script>
+	<script type="text/javascript" src="<?php echo base_url("assets/js/general/jquery.validate.js"); ?>"></script>
+	
+  </head>
+
+  <body class="nav-md">
+    <div class="container body">
+      <div class="main_container">
+			
+			<!-- Start of content -->
 			<?php
 			if (isset($view) && ($view != '')) {
 				$this->load->view($view);
 			}
 			?>
 			<!-- End of content -->
-  
-  
-  <footer class="page-footer">
-    <section class="section pre-footer-minimal bg-style-1 novi-background bg-image">
-      <div class="pre-footer-minimal-inner">
-        <div class="container text-center text-sm-left">
-          <div class="row justify-content-sm-center spacing-55">
-            <div class="col-sm-12 col-lg-4">
-              <div class="footer-links style-2">
-                <h6>Contact Us</h6>
-                <hr class="divider-sm divider-left divider-purple" data-caption-animate="fadeInLeftSmall" data-caption-delay="50">
-                <p>Let's make the sed odio sit amet a curabitur pulvinar luctus malesuada fames odio your complete solution partner.</p>
-                <ul class="addresss-info mar-top-2">
-                  <li><i class="fa fa-map-marker"></i>
-                    <p>5353 S Lake Ave #789, Los Angeles, CA 91152, USA</p>
-                  </li>
-                  <li><i class="fa fa-phone"></i><a href="callto:#">+1 (123) 456 7890</a></li>
-                  <li><i class="fa fa-envelope-o"></i><a href="mailto:#">info@yourdomain.com</a></li>
-                </ul>
-                <ul class="inline-list-xxs mar-top-2">
-                  <li><a class="icon novi-icon icon-xxs icon-circle icon-gray-outline icon-effect-1 fa fa-instagram" href="#"></a></li>
-                  <li><a class="icon novi-icon icon-xxs icon-circle icon-gray-outline icon-effect-1 fa fa-facebook" href="#"></a></li>
-                  <li><a class="icon novi-icon icon-xxs icon-circle icon-gray-outline icon-effect-1 fa fa-twitter" href="#"></a></li>
-                  <li><a class="icon novi-icon icon-xxs icon-circle icon-gray-outline icon-effect-1 fa fa-google-plus" href="#"></a></li>
-                </ul>
-              </div>
-            </div>
-            <div class="col-sm-12 col-lg-4">
-              <div class="footer-links style-2">
-                <h6>Recent Posts</h6>
-                <hr class="divider-sm divider-left divider-purple" data-caption-animate="fadeInLeftSmall" data-caption-delay="50">
-                <ul class="recent-posts">
-                  <li>
-                    <div class="mini-post-img"><a href="#"><img src="<?php echo base_url("images/site-img25-1-4.jpg"); ?>" alt=""></a></div>
-                    <div class="post-content"><a href="#">The reasons lorem ipsum dolor</a>
-                      <time class="text-secondary">Aug 16, 2018</time>
-                    </div>
-                  </li>
-                  <li>
-                    <div class="mini-post-img"><a href="#"><img src="<?php echo base_url("images/site-img26-4.jpg"); ?>" alt=""></a></div>
-                    <div class="post-content"><a href="#">The reasons lorem ipsum dolor</a>
-                      <time class="text-secondary">Aug 16, 2018</time>
-                    </div>
-                  </li>
-                  <li>
-                    <div class="mini-post-img"><a href="#"><img src="<?php echo base_url("images/site-img27-1.jpg"); ?>" alt=""></a></div>
-                    <div class="post-content"><a href="#">The reasons lorem ipsum dolor</a>
-                      <time class="text-secondary">Aug 16, 2018</time>
-                    </div>
-                  </li>
-                </ul>
-              </div>
-            </div>
-            <div class="col-sm-4 col-lg-2">
-              <div class="footer-links style-2">
-                <h6>Navigation</h6>
-                <hr class="divider-sm divider-left divider-purple" data-caption-animate="fadeInLeftSmall" data-caption-delay="50">
-                <ul>
-                  <li><a href="#">Home</a></li>
-                  <li><a href="#">About us</a></li>
-                  <li><a href="#">Gallery</a></li>
-                  <li><a href="#">Shop</a></li>
-                  <li><a href="#">Blog</a></li>
-                </ul>
-              </div>
-            </div>
-            <div class="col-sm-12 col-lg-2">
-              <div class="footer-links style-2">
-                <h6>More Links</h6>
-                <hr class="divider-sm divider-left divider-purple" data-caption-animate="fadeInLeftSmall" data-caption-delay="50">
-                <ul>
-                  <li><a href="#">Web Design</a></li>
-                  <li><a href="#">Marketing</a></li>
-                  <li><a href="#">Programming</a></li>
-                  <li><a href="#">Inspired by clouds</a></li>
-                  <li><a href="#">Whitepaper</a></li>
-                </ul>
-              </div>
-            </div>
+
+        <!-- footer content -->
+        <footer>
+          <div class="pull-right">
+            TuApoyo - 2019</a>
           </div>
-        </div>
+          <div class="clearfix"></div>
+        </footer>
+        <!-- /footer content -->
       </div>
-      <div class="container">
-        <hr class="gray">
-      </div>
-    </section>
-    <section class="page-footer-default bg-style-1 copyright novi-background bg-image">
-      <div class="container">
-        <div class="row copyright style-1">
-          <div class="col-lg-6 text-xl-left">
-            <div class="brand-sm"><a href="index-11.html"><img src="<?php echo base_url("images/logo-white-small.png"); ?>" alt=""></a></div>
-          </div>
-          <div class="col-lg-6 text-xl-right">
-            <p class="rights">© 2018 yourdomian.com - All rights reserved.</p>
-          </div>
-        </div>
-      </div>
-    </section>
-  </footer>
-</div>
-<div class="snackbars" id="form-output-global"></div>
-<script async src="https://www.youtube.com/iframe_api"></script>
-<script src="<?php echo base_url("estilos/js/core.min.js"); ?>"></script>
-<script src="<?php echo base_url("estilos/js/script.js"); ?>"></script>
-</body>
+    </div>
+
+    <!-- Bootstrap -->
+	<script src="<?php echo base_url("assets/bootstrap/vendors/bootstrap/dist/js/bootstrap.min.js"); ?>"></script>
+    <!-- FastClick -->
+	<script src="<?php echo base_url("assets/bootstrap/vendors/fastclick/lib/fastclick.js"); ?>"></script>
+    <!-- NProgress -->
+	<script src="<?php echo base_url("assets/bootstrap/vendors/nprogress/nprogress.js"); ?>"></script>
+    <!-- Chart.js -->
+	<script src="<?php echo base_url("assets/bootstrap/vendors/Chart.js/dist/Chart.min.js"); ?>"></script>
+    <!-- gauge.js -->
+	<script src="<?php echo base_url("assets/bootstrap/vendors/gauge.js/dist/gauge.min.js"); ?>"></script>
+    <!-- bootstrap-progressbar -->
+	<script src="<?php echo base_url("assets/bootstrap/vendors/bootstrap-progressbar/bootstrap-progressbar.min.js"); ?>"></script>
+    <!-- iCheck -->
+	<script src="<?php echo base_url("assets/bootstrap/vendors/iCheck/icheck.min.js"); ?>"></script>
+    <!-- Skycons -->
+	<script src="<?php echo base_url("assets/bootstrap/vendors/skycons/skycons.js"); ?>"></script>
+    <!-- Flot -->
+	<script src="<?php echo base_url("assets/bootstrap/vendors/Flot/jquery.flot.js"); ?>"></script>
+	<script src="<?php echo base_url("assets/bootstrap/vendors/Flot/jquery.flot.pie.js"); ?>"></script>
+	<script src="<?php echo base_url("assets/bootstrap/vendors/Flot/jquery.flot.time.js"); ?>"></script>
+	<script src="<?php echo base_url("assets/bootstrap/vendors/Flot/jquery.flot.stack.js"); ?>"></script>
+	<script src="<?php echo base_url("assets/bootstrap/vendors/Flot/jquery.flot.resize.js"); ?>"></script>
+    <!-- Flot plugins -->
+	<script src="<?php echo base_url("assets/bootstrap/vendors/flot.orderbars/js/jquery.flot.orderBars.js"); ?>"></script>
+	<script src="<?php echo base_url("assets/bootstrap/vendors/flot-spline/js/jquery.flot.spline.min.js"); ?>"></script>
+	<script src="<?php echo base_url("assets/bootstrap/vendors/flot.curvedlines/curvedLines.js"); ?>"></script>
+    <!-- DateJS -->
+	<script src="<?php echo base_url("assets/bootstrap/vendors/DateJS/build/date.js"); ?>"></script>
+    <!-- JQVMap -->
+	<script src="<?php echo base_url("assets/bootstrap/vendors/jqvmap/dist/jquery.vmap.js"); ?>"></script>
+	<script src="<?php echo base_url("assets/bootstrap/vendors/jqvmap/dist/maps/jquery.vmap.world.js"); ?>"></script>
+	<script src="<?php echo base_url("assets/bootstrap/vendors/jqvmap/examples/js/jquery.vmap.sampledata.js"); ?>"></script>
+    <!-- bootstrap-daterangepicker -->
+	<script src="<?php echo base_url("assets/bootstrap/vendors/moment/min/moment.min.js"); ?>"></script>
+	<script src="<?php echo base_url("assets/bootstrap/vendors/bootstrap-daterangepicker/daterangepicker.js"); ?>"></script>
+	
+    <!-- Datatables -->
+    <script src="<?php echo base_url("assets/bootstrap/vendors/datatables.net/js/jquery.dataTables.min.js"); ?>"></script>
+    <script src="<?php echo base_url("assets/bootstrap/vendors/datatables.net-bs/js/dataTables.bootstrap.min.js"); ?>"></script>
+    <script src="<?php echo base_url("assets/bootstrap/vendors/datatables.net-buttons/js/dataTables.buttons.min.js"); ?>"></script>
+    <script src="<?php echo base_url("assets/bootstrap/vendors/datatables.net-buttons-bs/js/buttons.bootstrap.min.js"); ?>"></script>
+    <script src="<?php echo base_url("assets/bootstrap/vendors/datatables.net-buttons/js/buttons.flash.min.js"); ?>"></script>
+    <script src="<?php echo base_url("assets/bootstrap/vendors/datatables.net-buttons/js/buttons.html5.min.js"); ?>"></script>
+    <script src="<?php echo base_url("assets/bootstrap/vendors/datatables.net-buttons/js/buttons.print.min.js"); ?>"></script>
+    <script src="<?php echo base_url("assets/bootstrap/vendors/datatables.net-fixedheader/js/dataTables.fixedHeader.min.js"); ?>"></script>
+    <script src="<?php echo base_url("assets/bootstrap/vendors/datatables.net-keytable/js/dataTables.keyTable.min.js"); ?>"></script>
+    <script src="<?php echo base_url("assets/bootstrap/vendors/datatables.net-responsive/js/dataTables.responsive.min.js"); ?>"></script>
+    <script src="<?php echo base_url("assets/bootstrap/vendors/datatables.net-responsive-bs/js/responsive.bootstrap.js"); ?>"></script>
+    <script src="<?php echo base_url("assets/bootstrap/vendors/datatables.net-scroller/js/dataTables.scroller.min.js"); ?>"></script>
+    <script src="<?php echo base_url("assets/bootstrap/vendors/jszip/dist/jszip.min.js"); ?>"></script>
+    <script src="<?php echo base_url("assets/bootstrap/vendors/pdfmake/build/pdfmake.min.js"); ?>"></script>
+    <script src="<?php echo base_url("assets/bootstrap/vendors/pdfmake/build/vfs_fonts.js"); ?>"></script>
+
+    <!-- Custom Theme Scripts -->
+	<script src="<?php echo base_url("assets/bootstrap/build/js/custom.min.js"); ?>"></script>
+	
+  </body>
 </html>

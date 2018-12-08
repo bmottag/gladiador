@@ -21,6 +21,16 @@ class Psicologo extends MX_Controller {
 	 */
 	public function registro()
 	{	
+			$data['information'] = FALSE;
+			$data["view"] = 'form_psicologo';
+			$this->load->view("layout", $data);
+	}
+	
+	/**
+	 * Registro psicologos
+	 */
+	public function registro_borrar()
+	{	
 			$data["view"] = 'form_psicologo';
 			$this->load->view("layout_forms", $data);
 	}
