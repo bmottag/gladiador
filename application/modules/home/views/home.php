@@ -17,7 +17,7 @@
 </head>
 <body>
 <div class="page-loader">
-  <div class="brand-name"><img src="<?php echo base_url("images/logo-default-100x28.png"); ?>" alt="" width="100" height="28"></div>
+  <div class="brand-name"><img src="<?php echo base_url("images/logo.png"); ?>" alt="" width="100" height="28"></div>
   <div class="page-loader-body">
     <div class="cssload-jumping"><span></span><span></span><span></span><span></span><span></span></div>
   </div>
@@ -50,32 +50,13 @@
                 <div class="rd-navbar-panel-background-inner novi-background"></div>
               </div>
               <button class="rd-navbar-toggle" data-rd-navbar-toggle=".rd-navbar-nav-wrap"><span></span></button>
-              <div class="rd-navbar-brand"><a class="brand-name" href="index.html"><img src="<?php echo base_url("images/logo-15.png"); ?>" alt="" width="100" height="28"></a></div>
+              <div class="rd-navbar-brand"><a class="brand-name" href="index.html"><img src="<?php echo base_url("images/logo.png"); ?>" alt="" width="250" height="55"></a></div>
             </div>
             <div class="rd-navbar-nav-wrap">
               <div class="rd-navbar-nav-wrap-bg">
                 <div class="rd-navbar-nav-wrap-bg-inner novi-background"></div>
               </div>
-              <div class="rd-navbar-nav-wrap-inner">
-                <ul class="rd-navbar-items-list rd-navbar-search_collapsable">
-                  <li>
-                    <button class="rd-navbar-search__toggle rd-navbar-fixed--hidden" data-rd-navbar-toggle=".rd-navbar-search_toggled"></button>
-                  </li>
-                  <li class="rd-navbar-nav-wrap__shop"><a class="icon novi-icon fl-bigmug-line-shopping202 link-white" href="#">(2)</a></li>
-                </ul>
-                <div class="rd-navbar-search rd-navbar-search_toggled rd-navbar-search_not-collapsable">
-                  <div class="rd-navbar-search-inner">
-                    <div class="rd-navbar-search-inner-bg novi-background"></div>
-                  </div>
-                  <form class="rd-search" action="search-results.html" method="GET" data-search-live="rd-search-results-live">
-                    <div class="form-wrap">
-                      <input class="form-input" id="rd-navbar-search-form-input" type="text" name="s" autocomplete="off" placeholder="Search...">
-                    </div>
-                    <button class="rd-search__submit" type="submit"></button>
-                    <div class="rd-search-results-live" id="rd-search-results-live"></div>
-                  </form>
-                </div>
-              </div>
+
               <ul class="rd-navbar-nav">
                 <li><a href="<?php echo base_url(); ?>">Inicio</a></li>
 				<li><a href="<?php echo base_url(); ?>">Encontrar Psicólogo</a></li>
@@ -95,9 +76,11 @@
             <div class="swiper-slide" data-slide-bg="<?php echo base_url("images/slide-48.jpg"); ?>">
               <div class="swiper-slide-caption" data-speed="0.5" data-fade="true">
                 <div class="jumbotron-custom jumbotron-custom-variant-1 context-dark">
-                  <h1 data-caption-animate="fxRotateInRight" data-caption-delay="150" class="fxRotateInRight animated"><span data-novi-id="68">Digital marketing services</span></h1>
-                  <p class="subtitle-variant-3 fxRotateInLeft animated" data-caption-animate="fxRotateInLeft" data-caption-delay="350"><span data-novi-id="69">We are creative digital marketing agency</span></p>
-                  <a class="btn btn-primary btn-lg btn-aqil btn-aqil--mod-1" href="<?php echo base_url("home/zona_psicologos"); ?>" data-caption-animate="fxRotateInRight" data-caption-delay="550"><span>Zona Psicólogos</span></a></div>
+                  <h1 data-caption-animate="fxRotateInRight" data-caption-delay="150" class="fxRotateInRight animated"><span data-novi-id="68">Porque tu tranquilidad va primero</span></h1>
+                  <p class="subtitle-variant-3 fxRotateInLeft animated" data-caption-animate="fxRotateInLeft" data-caption-delay="350"><span data-novi-id="69">
+
+				  </span></p>
+                  <a class="btn btn-primary btn-lg btn-aqil btn-aqil--mod-1" href="<?php echo base_url("home/zona_psicologos"); ?>" data-caption-animate="fxRotateInRight" data-caption-delay="550"><span>Encontrar mi Psicólogos</span></a></div>
               </div>
             </div>
           </div>
@@ -110,11 +93,14 @@
       <div class="row">
         <div class="col-sm-10 col-lg-6">
           <div class="feature-box-3">
-            <h5>Welcome to Gova</h5>
-            <h3>Your Complete Web Solution Partner</h3>
-            <p>Let's make the lorem ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's sit amet auctor lacus vestibulum standard dummy text ever since.</p>
-            <p>Let's make the lorem ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's sit amet auctor standard dummy text ever since.</p>
-            <a class="btn btn-primary btn-lg btn-effect-ujarak" href="#"><span>Buy this template</span></a></div>
+            <h3>Un poco sobre TuApoyo...</h3>
+            <p>En TuApoyo sabemos que todos pasamos por épocas de crisis emocional, y que tener
+un apoyo oportuno y adecuado en estos momentos es clave para superar las crisis. También
+tenemos en cuenta que pedir ayuda puede ser difícil por no saber cómo conseguir al psicólogo
+adecuado o porque simplemente nos da pena pedirla.</p>
+            <p>Por estos motivos, TuApoyo es la plataforma que simplifica por ti el proceso de búsqueda de
+apoyo emocional; el primer paso para encaminar la recuperación y el crecimiento personal.</p>
+			</div>
         </div>
         <div class="col-sm-10 col-lg-6"><img src="<?php echo base_url("images/img-01.png"); ?>" alt="" class="img-responsive"></div>
       </div>
@@ -161,291 +147,7 @@
       </div>
     </div>
   </section>
-  <section class="section section-lg bg-black novi-background bg-image" style="background-image: url(<?php echo base_url("images/slide-17.jpg"); ?>);">
-    <div class="container">
-      <div class="row">
-        <div class="col-sm-10 col-lg-4"><img src="<?php echo base_url("images/site-img-1-5.jpg"); ?>" alt="" class="img-responsive bor-radius-5"></div>
-        <div class="col-sm-10 col-lg-8">
-          <div class="row">
-            <div class="col-sm-10 col-lg-6">
-              <div class="feature-box-1 text-gray">
-                <div class="box-head-title">
-                  <h5 class="text-purple">01.</h5>
-                  <span>Retina Ready</span></div>
-                <p>Let's make lorem ipsum is simply text the printing and typesetting standard industry your complete solution partner.</p>
-                <div class="divider-sm divider-left divider-purple"></div>
-              </div>
-            </div>
-            <div class="col-sm-10 col-lg-6">
-              <div class="feature-box-1 text-gray">
-                <div class="box-head-title">
-                  <h5 class="text-purple">02.</h5>
-                  <span>Multi-Purpose</span></div>
-                <p>Let's make lorem ipsum is simply text the printing and typesetting standard industry your complete solution partner.</p>
-                <div class="divider-sm divider-left divider-purple"></div>
-              </div>
-            </div>
-            <div class="col-sm-10 col-lg-6">
-              <div class="feature-box-1 text-gray">
-                <div class="box-head-title">
-                  <h5 class="text-purple">03.</h5>
-                  <span>Unlimited Options</span></div>
-                <p>Let's make lorem ipsum is simply text the printing and typesetting standard industry your complete solution partner.</p>
-                <div class="divider-sm divider-left divider-purple"></div>
-              </div>
-            </div>
-            <div class="col-sm-10 col-lg-6">
-              <div class="feature-box-1 text-gray">
-                <div class="box-head-title">
-                  <h5 class="text-purple">04.</h5>
-                  <span>24/7 Support</span></div>
-                <p>Let's make lorem ipsum is simply text the printing and typesetting standard industry your complete solution partner.</p>
-                <div class="divider-sm divider-left divider-purple"></div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
-  <section class="section section-lg bg-default novi-background bg-image">
-    <div class="container">
-      <div class="row spacing-50">
-        <div class="col-sm-6 col-lg-4">
-          <article class="box-minimal  unit unit-xs-horizontal unit-spacing-sm">
-            <div class="unit-left">
-              <div class="box-minimal-icon">
-                <div class="novi-icon fl-bigmug-line-notification5 icon-gray"></div>
-              </div>
-            </div>
-            <div class="unit-body pad-left-35">
-              <h5 class="box-minimal-title"><a href="#">Creative Strategy</a></h5>
-              <div class="box-minimal-text">Let's make lorem ipsum is simply text the printing and typesetting standard industry.</div>
-            </div>
-          </article>
-        </div>
-        <div class="col-sm-6 col-lg-4">
-          <article class="box-minimal unit unit-xs-horizontal unit-spacing-sm">
-            <div class="unit-left">
-              <div class="box-minimal-icon">
-                <div class="novi-icon fl-bigmug-line-graphical8 icon-gray"></div>
-              </div>
-            </div>
-            <div class="unit-body pad-left-35">
-              <h5 class="box-minimal-title"><a href="#">Digital Solutions</a></h5>
-              <div class="box-minimal-text">Let's make lorem ipsum is simply text the printing and typesetting standard industry.</div>
-            </div>
-          </article>
-        </div>
-        <div class="col-sm-6 col-lg-4">
-          <article class="box-minimal unit unit-xs-horizontal unit-spacing-sm">
-            <div class="unit-left">
-              <div class="box-minimal-icon">
-                <div class="novi-icon fl-bigmug-line-equalizer26 icon-gray"></div>
-              </div>
-            </div>
-            <div class="unit-body pad-left-35">
-              <h5 class="box-minimal-title"><a href="#">Highly Customizable</a></h5>
-              <div class="box-minimal-text">Let's make lorem ipsum is simply text the printing and typesetting standard industry.</div>
-            </div>
-          </article>
-        </div>
-        <div class="col-sm-6 col-lg-4">
-          <article class="box-minimal unit unit-xs-horizontal unit-spacing-sm">
-            <div class="unit-left">
-              <div class="box-minimal-icon">
-                <div class="novi-icon fl-bigmug-line-headphones32 icon-gray"></div>
-              </div>
-            </div>
-            <div class="unit-body pad-left-35">
-              <h5 class="box-minimal-title"><a href="#">Highly Customizable</a></h5>
-              <div class="box-minimal-text">Let's make lorem ipsum is simply text the printing and typesetting standard industry.</div>
-            </div>
-          </article>
-        </div>
-        <div class="col-sm-6 col-lg-4">
-          <article class="box-minimal unit unit-xs-horizontal unit-spacing-sm">
-            <div class="unit-left">
-              <div class="box-minimal-icon">
-                <div class="novi-icon fl-bigmug-line-two317 icon-gray"></div>
-              </div>
-            </div>
-            <div class="unit-body pad-left-35">
-              <h5 class="box-minimal-title"><a href="#">Highly Customizable</a></h5>
-              <div class="box-minimal-text">Let's make lorem ipsum is simply text the printing and typesetting standard industry.</div>
-            </div>
-          </article>
-        </div>
-        <div class="col-sm-6 col-lg-4">
-          <article class="box-minimal unit unit-xs-horizontal unit-spacing-sm">
-            <div class="unit-left">
-              <div class="box-minimal-icon">
-                <div class="novi-icon fl-bigmug-line-cube29 icon-gray"></div>
-              </div>
-            </div>
-            <div class="unit-body pad-left-35">
-              <h5 class="box-minimal-title"><a href="#">Highly Customizable</a></h5>
-              <div class="box-minimal-text">Let's make lorem ipsum is simply text the printing and typesetting standard industry.</div>
-            </div>
-          </article>
-        </div>
-      </div>
-    </div>
-  </section>
-  <section class="section section-lg bg-black novi-background bg-image">
-    <div class="container">
-      <div class="row feature-box-5">
-        <div class="col-sm-10 col-lg-10 section-auto">
-          <h3 class="text-gray"><span class="heading-3">Our Best</span> Services</h3>
-          <p>Let's make lorem ipsum is simply text the printing and standard industry.</p>
-        </div>
-        <div class="container">
-          <div class="row spacing-40 mar-top-6">
-            <div class="col-sm-10 col-lg-4 text-left">
-              <div class="feature-box-1 text-gray">
-                <div class="box-head-title">
-                  <h5 class="text-purple">01.</h5>
-                  <span>Creative Digital Agency</span></div>
-                <p>Let's make lorem ipsum is simply text the printing and typesetting standard industry your complete solution partner.</p>
-                <div class="divider-sm divider-left divider-purple"></div>
-              </div>
-              <div class="feature-box-1 mar-top-4 text-gray">
-                <div class="box-head-title">
-                  <h5 class="text-purple">02.</h5>
-                  <span>Multipurpose Design</span></div>
-                <p>Let's make lorem ipsum is simply text the printing and typesetting standard industry your complete solution partner.</p>
-                <div class="divider-sm divider-left divider-purple"></div>
-              </div>
-            </div>
-            <div class="col-sm-10 col-lg-4"><img src="<?php echo base_url("images/site-img17-1-3.png"); ?>" alt="" class="img-responsive"></div>
-            <div class="col-sm-10 col-lg-4 text-left">
-              <div class="feature-box-1 text-gray">
-                <div class="box-head-title">
-                  <h5 class="text-purple">03.</h5>
-                  <span>Know About Success</span></div>
-                <p>Let's make lorem ipsum is simply text the printing and typesetting standard industry your complete solution partner.</p>
-                <div class="divider-sm divider-left divider-purple"></div>
-              </div>
-              <div class="feature-box-1 mar-top-4 text-gray">
-                <div class="box-head-title">
-                  <h5 class="text-purple">04.</h5>
-                  <span>Free Updates &amp; Support</span></div>
-                <p>Let's make lorem ipsum is simply text the printing and typesetting standard industry your complete solution partner.</p>
-                <div class="divider-sm divider-left divider-purple"></div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
-  <section class="section section-lg bg-default novi-background bg-image">
-    <h3><span class="heading-3">Our</span> Portfolio</h3>
-    <div class="isotope-wrap">
-      <ul class="isotope-filters-responsive">
-        <li>
-          <p>Choose your category:</p>
-        </li>
-        <li class="block-top-level">
-          <button class="isotope-filters-toggle btn btn-sm btn-primary" data-custom-toggle="#isotope-3" data-custom-toggle-hide-on-blur="true">Filter <span class="caret"></span></button>
-          <div class="isotope-filters" id="isotope-3">
-            <ul class="inline-list">
-              <li><a class="active" data-isotope-filter="*" data-isotope-group="gallery2" href="#">All</a></li>
-              <li><a data-isotope-filter="Category 5" data-isotope-group="gallery2" href="#">Web Design</a></li>
-              <li><a data-isotope-filter="Category 6" data-isotope-group="gallery2" href="#">Creative</a></li>
-            </ul>
-          </div>
-        </li>
-      </ul>
-      <div class="row isotope row-no-gutter" data-isotope-layout="fitRows" data-isotope-group="gallery2" data-lightgallery="group">
-        <div class="col-12 col-sm-6 col-lg-4 isotope-item" data-filter="Category 5"><a class="thumbnail-classic" href="<?php echo base_url("images/gallery-1-4.jpg"); ?>" data-lightgallery="item">
-          <figure><img src="<?php echo base_url("images/gallery-s-638x425.jpg"); ?>" alt="" class="img-responsive"></figure>
-          <div class="caption">
-            <p class="caption-title">Photo #1</p>
-            <p class="caption-text"></p>
-          </div>
-          </a></div>
-        <div class="col-12 col-sm-6 col-lg-4 isotope-item" data-filter="Category 6"><a class="thumbnail-classic" href="<?php echo base_url("images/gallery5-7.jpg"); ?>" data-lightgallery="item">
-          <figure><img src="<?php echo base_url("images/gallery-s5-638x425.jpg"); ?>" alt="" class="img-responsive"></figure>
-          <div class="caption">
-            <p class="caption-title">Photo #2</p>
-            <p class="caption-text"></p>
-          </div>
-          </a></div>
-        <div class="col-12 col-sm-6 col-lg-4 isotope-item" data-filter="Category 5"><a class="thumbnail-classic" href="<?php echo base_url("images/gallery1-4.jpg"); ?>" data-lightgallery="item">
-          <figure><img src="<?php echo base_url("images/gallery-s1-638x425.jpg"); ?>" alt="" class="img-responsive"></figure>
-          <div class="caption">
-            <p class="caption-title">Photo #3</p>
-            <p class="caption-text"></p>
-          </div>
-          </a></div>
-        <div class="col-12 col-sm-6 col-lg-4 isotope-item" data-filter="Category 5"><a class="thumbnail-classic" href="<?php echo base_url("images/gallery2-3.jpg"); ?>" data-lightgallery="item">
-          <figure><img src="<?php echo base_url("images/gallery-s2-638x425.jpg"); ?>" alt="" class="img-responsive"></figure>
-          <div class="caption">
-            <p class="caption-title">Photo #4</p>
-            <p class="caption-text"></p>
-          </div>
-          </a></div>
-        <div class="col-12 col-sm-6 col-lg-4 isotope-item" data-filter="Category 5"><a class="thumbnail-classic" href="<?php echo base_url("images/gallery4-3.jpg"); ?>" data-lightgallery="item">
-          <figure><img src="<?php echo base_url("images/gallery-s4-638x425.jpg"); ?>" alt="" class="img-responsive"></figure>
-          <div class="caption">
-            <p class="caption-title">Photo #5</p>
-            <p class="caption-text"></p>
-          </div>
-          </a></div>
-        <div class="col-12 col-sm-6 col-lg-4 isotope-item" data-filter="Category 6"><a class="thumbnail-classic" href="<?php echo base_url("images/gallery8-3.jpg"); ?>" data-lightgallery="item">
-          <figure><img src="<?php echo base_url("images/gallery-s8-638x425.jpg"); ?>" alt="" class="img-responsive"></figure>
-          <div class="caption">
-            <p class="caption-title">Photo #6</p>
-            <p class="caption-text"></p>
-          </div>
-          </a></div>
-      </div>
-    </div>
-  </section>
-  <section class="section section-lg bg-default novi-background bg-image">
-    <div class="container">
-      <div class="row justify-content-center spacing-40">
-        <div class="col-sm-10 col-lg-10 section-auto mar-bottom-2">
-          <h3><span class="heading-3">Our</span> Best Team</h3>
-          <p>Let's make lorem ipsum is simply text the printing and standard industry.</p>
-        </div>
-        <div class="col-sm-6 col-md-4 team-members">
-          <div class="team-member">
-            <div class="team-image"><img src="<?php echo base_url("images/site-img31.jpg"); ?>" alt="" class="img-responsive"></div>
-            <div class="team-desc">
-              <h3>Alex Greenfield</h3>
-              <span>Software Developer</span>
-              <p>Let's make lorem ipsum dolor sit consetetur elt dipscing elitr sed diam mod mpor invidunt tar abore.</p>
-              <div class="social-media align-center"><a href="#"><i class="fa fa-facebook"></i></a><a href="#"><i class="fa fa-twitter"></i></a><a href="#"><i class="fa fa-instagram"></i></a><a href="#"><i class="fa fa-envelope"></i></a></div>
-            </div>
-          </div>
-        </div>
-        <div class="col-sm-6 col-md-4 team-members">
-          <div class="team-member">
-            <div class="team-image"><img src="<?php echo base_url("images/site-img32.jpg"); ?>" alt="" class="img-responsive"></div>
-            <div class="team-desc">
-              <h3>Miriam Richmond</h3>
-              <span>Web Designer</span>
-              <p>Let's make lorem ipsum dolor sit consetetur elt dipscing elitr sed diam mod mpor invidunt tar abore.</p>
-              <div class="social-media align-center"><a href="#"><i class="fa fa-facebook"></i></a><a href="#"><i class="fa fa-twitter"></i></a><a href="#"><i class="fa fa-instagram"></i></a><a href="#"><i class="fa fa-envelope"></i></a></div>
-            </div>
-          </div>
-        </div>
-        <div class="col-sm-6 col-md-4 team-members">
-          <div class="team-member">
-            <div class="team-image"><img src="<?php echo base_url("images/site-img14.jpg"); ?>" alt="" class="img-responsive"></div>
-            <div class="team-desc">
-              <h3>John Richmond</h3>
-              <span>Wed Developer</span>
-              <p>Let's make lorem ipsum dolor sit consetetur elt dipscing elitr sed diam mod mpor invidunt tar abore.</p>
-              <div class="social-media align-center"><a href="#"><i class="fa fa-facebook"></i></a><a href="#"><i class="fa fa-twitter"></i></a><a href="#"><i class="fa fa-instagram"></i></a><a href="#"><i class="fa fa-envelope"></i></a></div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
+  
   <section class="section section-lg bg-gray-light novi-background bg-image">
     <div class="container">
       <div class="row justify-content-center justify-content-lg-start spacing-40">
@@ -579,7 +281,7 @@
             <div class="brand-sm"><a href="index-11.html"><img src="<?php echo base_url("images/logo-white-small.png"); ?>" alt=""></a></div>
           </div>
           <div class="col-lg-6 text-xl-right">
-            <p class="rights">© 2018 yourdomian.com - All rights reserved.</p>
+            <p class="rights">© TuApoyo - All rights reserved.</p>
           </div>
         </div>
       </div>

@@ -16,7 +16,7 @@
 </head>
 <body>
 <div class="page-loader">
-  <div class="brand-name"><img src="<?php echo base_url("images/logo-default-100x28.png"); ?>" alt="" width="100" height="28"></div>
+  <div class="brand-name"><img src="<?php echo base_url("images/logo.png"); ?>" alt="" width="100" height="28"></div>
   <div class="page-loader-body">
     <div class="cssload-jumping"><span></span><span></span><span></span><span></span><span></span></div>
   </div>
