@@ -59,33 +59,33 @@
 				}
 		}
 		
-	    /**
-	     * Update user's password
-	     * @author BMOTTAG
-	     * @since  29/3/2018
-	     */
-	    public function updatePassword()
-		{
-				$idUser = $this->input->post("hddId");
-				$newPassword = $this->input->post("inputPassword");
-				$passwd = str_replace(array("<",">","[","]","*","^","-","'","="),"",$newPassword); 
-				$passwd = md5($passwd);
-				
-				$data = array(
-					'password' => $passwd
-				);
-
-				$this->db->where('id_user', $idUser);
-				$query = $this->db->update('user', $data);
-
-				if ($query) {
-					return true;
-				} else {
-					return false;
-				}
-	    }
-		
-		
+		/**
+		 * Add HISTORICO
+		 * @since 31/5/2018
+		 */
+		public function savePsicologo($idUser) 
+		{		
+			$data = array(
+				'fk_id_user' => $idUser,
+				'fecha' => date("Y-m-d G:i:s"),
+				'ayudarte' => $this->input->post('ayudarte'),
+				'formacion' => $this->input->post('formacion'),
+				'experiencia' => $this->input->post('experiencia'),
+				'tarifa' => $this->input->post('tarifa'),
+				'salud' => $this->input->post('salud'),
+				'consultas' => $this->input->post('consultas'),
+				'idioma' => $this->input->post('idioma'),
+				'horario' => $this->input->post('horario')
+			);
+						
+			$query = $this->db->insert('psicologo', $data);
+			
+			if ($query) {
+				return true;
+			} else {
+				return false;
+			}
+		}
 		
 		
 	    

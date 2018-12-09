@@ -60,7 +60,10 @@ class Psicologo extends MX_Controller {
 				$this->session->set_flashdata('retornoError', '<strong>Error!!!</strong> El Email ya existe.');
 			} else {
 			
-				if ($idUser = $this->psicologo_model->saveUsuario()) {
+				if ($idUser = $this->psicologo_model->saveUsuario()) 
+				{
+					$this->psicologo_model->savePsicologo($idUser); //Guardo info psicologo
+					
 					$data["result"] = true;
 					$data["idRecord"] = $idUser;
 					$this->session->set_flashdata('retornoExito', $msj);

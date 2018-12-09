@@ -10,8 +10,18 @@ $( document ).ready( function () {
 			apellidos: 			{ required: true, minlength: 3, maxlength:25 },
 			email: 				{ required: true, email: true, maxlength:50 },
 			celular:	 		{ required: true, number: true, maxlength:12 },
-			direccion:	 		{ required: true, maxlength:100 },
+			edad:		 		{ required: true },
+			ayudarte:		 	{ required: true },
+			formacion:		 	{ required: true },
+			experiencia:		{ required: true, maxlength:200 },
 			pagina_web:	 		{ maxlength:100 },
+			direccion:	 		{ required: true, maxlength:100 },
+			tarifa:		 		{ required: true, maxlength:20 },
+			salud:			 	{ required: true },
+			consultas:			{ required: true },
+			idioma:			 	{ required: true },
+			horario:		 	{ required: true }
+			
 		},
 		errorElement: "em",
 		errorPlacement: function ( error, element ) {
