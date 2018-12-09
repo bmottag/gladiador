@@ -58,11 +58,11 @@
 							<div class="col-md-6 col-sm-6 col-xs-12">
 								<select class="form-control" id="edad" name="edad" required="required">
 									<option value="">Seleccione</option>
-									<option value="1">23-27</option>
-									<option value="2">28-35</option>
-									<option value="3">36-45</option>
-									<option value="4">45-55</option>
-									<option value="5">Mayor de 55</option>
+									<option value=1>23-27</option>
+									<option value=2>28-35</option>
+									<option value=3>36-45</option>
+									<option value=4>45-55</option>
+									<option value=5>Mayor de 55</option>
 								</select>
 							</div>
 						</div>

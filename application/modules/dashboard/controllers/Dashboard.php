@@ -34,12 +34,9 @@ class Dashboard extends CI_Controller {
 	public function ver_psicologo($idPsicologo)
 	{			
 		$this->load->model("general_model");
-		$data['information'] = FALSE;
 		
-		$arrParam = array(
-						"idUser" => $idPsicologo
-					);
-		$data['information'] = $this->general_model->get_user_list($arrParam);//info solicitudes
+		$arrParam = array("idUser" => $idPsicologo);
+		$data['information'] = $this->general_model->get_info_psicologo($arrParam);//info psicologo
 		
 		$data["view"] = 'info_psicologo';
 		$this->load->view("layout", $data);

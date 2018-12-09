@@ -61,7 +61,7 @@ if ($retornoError) {
 				foreach ($information as $data):
 					echo "<tr>";
 					echo "<td class='text-center'>" . $data['id_user'] . "</td>";
-					echo "<td>" . $data['first_name'] . " " . $data['last_name'] . "</td>";
+					echo "<td>" . $data['name'] . "</td>";
 					echo "<td>" . $data['email'] . "</td>";
 					echo "<td>" . $data['movil'] . "</td>";
 					
