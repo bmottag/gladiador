@@ -37,7 +37,10 @@
 					'email' => $this->input->post('email'),
 					'movil' => $this->input->post('celular'),
 					'fk_id_rol' => 3,
-					'state' => 1
+					'state' => 1,
+					'edad' => $this->input->post('edad'),
+					'direccion' => $this->input->post('direccion'),
+					'pagina_web' => $this->input->post('pagina_web')
 				);	
 
 				//revisar si es para adicionar o editar

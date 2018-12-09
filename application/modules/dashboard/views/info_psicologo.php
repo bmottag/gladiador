@@ -24,7 +24,15 @@
 							
 							<li>
 								<i class="fa fa-phone user-profile-icon"></i> <strong>No. celular:</strong><br> <?php echo $information[0]['movil']; ?>
-							</li>							
+							</li>
+							
+							<li>
+								<i class="fa fa-home user-profile-icon"></i> <strong>Dirección consultorio:</strong><br> <?php echo $information[0]['direccion']; ?>
+							</li>
+							
+							<li>
+								<i class="fa fa-globe user-profile-icon"></i> <strong>Página web:</strong><br> <?php echo $information[0]['pagina_web']; ?>
+							</li>
 						</ul>
 						
 					</div>

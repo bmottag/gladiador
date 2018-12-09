@@ -9,7 +9,9 @@ $( document ).ready( function () {
 			nombres:			{ required: true, minlength: 3, maxlength:25 },
 			apellidos: 			{ required: true, minlength: 3, maxlength:25 },
 			email: 				{ required: true, email: true, maxlength:50 },
-			celular:	 		{ required: true, number: true, maxlength:12 }
+			celular:	 		{ required: true, number: true, maxlength:12 },
+			direccion:	 		{ required: true, maxlength:100 },
+			pagina_web:	 		{ maxlength:100 },
 		},
 		errorElement: "em",
 		errorPlacement: function ( error, element ) {
