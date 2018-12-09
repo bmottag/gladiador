@@ -9,34 +9,39 @@ class Dashboard extends CI_Controller {
 		
 	/**
 	 * Listado de solicitudes para un usuario
-     * @since 1/4/2018
+     * @since 8/12/2018
      * @author BMOTTAG
 	 */
-	public function index($idSolicitud = 'x')
+	public function index()
 	{			
 		$this->load->model("general_model");
-		$data['information'] = FALSE;
 		
-		$arrParam = array();
-
 		$arrParam = array(
 						"idRol" => 3,
 						"state" => 1
 					);
 		$data['information'] = $this->general_model->get_user_list($arrParam);//info solicitudes
-		
-		
-		//si envio el id, entonces busco la informacion 
-		if ($idSolicitud != 'x') {
-			$arrParam = array("idSolicitud" => $idSolicitud);
-			$data['information'] = $this->general_model->get_solicitudes($arrParam);//info inspecciones
-			
-			//busco el historial
-			$arrParam = array("idSolicitud" => $idSolicitud);
-			$data['informationHistorico'] = $this->general_model->get_solicitudes_historico($arrParam);//info inspecciones
-		}
 
 		$data["view"] = 'dashboard';
+		$this->load->view("layout", $data);
+	}
+	
+	/**
+	 * Informacion psicologo
+     * @since 8/12/2018
+     * @author BMOTTAG
+	 */
+	public function ver_psicologo($idPsicologo)
+	{			
+		$this->load->model("general_model");
+		$data['information'] = FALSE;
+		
+		$arrParam = array(
+						"idUser" => $idPsicologo
+					);
+		$data['information'] = $this->general_model->get_user_list($arrParam);//info solicitudes
+		
+		$data["view"] = 'info_psicologo';
 		$this->load->view("layout", $data);
 	}
 	

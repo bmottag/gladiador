@@ -1,12 +1,9 @@
-<script type="text/javascript" src="<?php echo base_url("assets/js/validate/solicitud/solicitud.js"); ?>"></script>
-
 <div class="right_col" role="main">
 	<div class="row">
 		<div class="col-md-12 col-sm-12 col-xs-12">
 			<div class="x_panel">
 				<div class="x_title">
-					<h2><i class='fa fa-list'></i> LISTADO DE PSICOLOGOS
-					</h2> 
+					<h2><i class='fa fa-users'></i> LISTADO DE PSICOLOGOS </h2>
 					
 					<ul class="nav navbar-right panel_toolbox">
 						<li><a class="collapse-link"><i class="fa fa-chevron-up"></i></a>
@@ -17,7 +14,7 @@
 				</div>
 
 				<div class="x_content">
-				
+					
 <?php
 $retornoExito = $this->session->flashdata('retornoExito');
 if ($retornoExito) {
@@ -41,28 +38,51 @@ if ($retornoError) {
     <?php
 }
 ?> 
+				
 					<div class="table-responsive">
-						<table id="dataTables" class="table table-striped jambo_table bulk_action dt-responsive nowrap" cellspacing="0" width="100%">
+					
+						<table id="datatable" class="table table-striped jambo_table bulk_action">
 
 							<thead>
 								<tr class="headings">
-									<th class="column-title" style="width: 12%"><small>Nombre</small></th>
-									<th class="column-title" style="width: 8%"><small>Correo</small></th>
-									<th class="column-title" style="width: 8%"><small>Celular</small></th>
-									<th class="column-title" style="width: 1%"><small>ID</small></th>
+								<th class="column-title">ID </th>
+								<th class="column-title">Nombre </th>
+								<th class="column-title">Correo</th>
+								<th class="column-title">No. Celular</th>
+								<th class="column-title">Estado</th>
+								<th class="column-title">Enlaces</th>
 								</tr>
 							</thead>
 
 							<tbody>
 										
-		<?php
+		<?php 
 			if($information){
 				foreach ($information as $data):
 					echo "<tr>";
+					echo "<td class='text-center'>" . $data['id_user'] . "</td>";
 					echo "<td>" . $data['first_name'] . " " . $data['last_name'] . "</td>";
-					echo "<td class='text-center'><small>" . $data['email'] . "</small></td>";
-					echo "<td class='text-center'><small>" . $data['movil'] . "</small></td>";
-					echo "<td class='text-center'><small>" . $data['id_user'] . "</small></td>";
+					echo "<td>" . $data['email'] . "</td>";
+					echo "<td>" . $data['movil'] . "</td>";
+					
+					echo "<td class='text-center'>";
+						switch ($data['state']) {
+							case 1:
+								$valor = 'Activo';
+								$clase = "text-success";
+								break;
+							case 2:
+								$valor = 'Inactivo';
+								$clase = "text-danger";
+								break;
+						}
+						echo '<p class="' . $clase . '"><strong>' . $valor . '</strong></p>';
+					echo "</td>";
+					echo "<td class='text-center'>";
+					echo "<a href='" . base_url("admin/update_usuario/" . $data['id_user']) . "' class='btn btn-info btn-xs'><i class='fa fa-pencil'></i> Editar </a>";
+					echo "<a href='" . base_url("admin/change_password/" . $data['id_user']) . "' class='btn btn-default btn-xs'><i class='fa fa-pencil'></i> Cambiar contraseña </a>";
+					echo "<a href='" . base_url("dashboard/ver_psicologo/" . $data['id_user']) . "' class='btn btn-success btn-xs'><i class='fa fa-eye'></i> Ver </a>";					
+					echo "</td>";
 					echo "</tr>";
 				endforeach;
 			}
@@ -77,23 +97,3 @@ if ($retornoError) {
 		</div>
 	</div>
 </div>
-
-<!-- Tables -->
-<script>
-$(document).ready(function() {
-    $('#dataTables').DataTable( {
-        "pageLength": 50,
-        "ordering": false,
-        "info":     true
-    } );
-	
-    $('#dataTablesHistorico').DataTable( {
-        "paging":   false,
-        "ordering": false,
-        "info":     false,
-		"searching": false
-    } );
-	
-	
-} );
-</script>
