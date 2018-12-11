@@ -63,7 +63,7 @@
 	    				redirect("/employee","location",301);
 	    				break;
 	    		case 1: //ACTIVE USER
-						if($userRol!=1){//vista para FOREMAN Y USUARIO NORMAL
+						if($userRol==3){//vista para FOREMAN Y USUARIO NORMAL
 							redirect("payroll","location",301);
 						}else{
 							redirect("/dashboard","location",301);
