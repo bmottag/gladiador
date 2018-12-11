@@ -83,21 +83,14 @@ class Psicologo extends MX_Controller {
      * @since 29/3/2018
      * @author BMOTTAG
 	 */
-	public function info($idUser = 'x')
+	public function info($idPsicologo)
 	{	
 		$this->load->model("general_model");
-		$data['information'] = FALSE;
 		
-		//si envio el id, entonces busco la informacion 
-		if ($idUser != 'x') {
-			$arrParam = array("idUser" => $idUser);
-			$data['information'] = $this->general_model->get_user_list($arrParam);//info cliente
-		}
-
+		$arrParam = array("idUser" => $idPsicologo);
+		$data['information'] = $this->general_model->get_info_psicologo($arrParam);//info psicologo
 		
-		pr($data['information']); exit;
-		
-		$data["view"] = 'form_usuario';
+		$data["view"] = 'info_psicologo';
 		$this->load->view("layout", $data);
 	}
 	
