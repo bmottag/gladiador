@@ -39,7 +39,7 @@
 				
 					<div class="col-md-9 col-sm-9 col-xs-12">
 					
-					<div class="table-responsive">
+						<div class="table-responsive">
 					
 <?php
 	switch ($information['edad']) {
@@ -81,47 +81,89 @@
 			break;
 	}
 ?>
-								<table class="countries_list">
-									<tbody>
-										<tr>
-											<td>Rango de edad</td>
-											<td class="fs15 fw700 text-right"><?php echo $edad; ?></td>
-										</tr>
-										<tr>
-											<td>Por qué quiero ayudarte?</td>
-											<td class="fs15 fw700 text-right"><?php echo $information['ayudarte']; ?></td>
-										</tr>
-										<tr>
-											<td>Formación</td>
-											<td class="fs15 fw700 text-right"><?php echo $information['formacion']; ?></td>
-										</tr>
-										<tr>
-											<td>Cuántos años de experiencia en consulta tienes?</td>
-											<td class="fs15 fw700 text-right"><?php echo $information['experiencia']; ?></td>
-										</tr>
-										<tr>
-											<td>Cuál es tu tarifa por sesión?</td>
-											<td class="fs15 fw700 text-right"><?php echo $information['tarifa']; ?></td>
-										</tr>
-										<tr>
-											<td>Cómo manejas tu propia salud emocional para poder servirle a otros?</td>
-											<td class="fs15 fw700 text-right"><?php echo $information['salud']; ?></td>
-										</tr>
-										<tr>
-											<td>Ofreces consultas en persona, virtuales, o ambas?</td>
-											<td class="fs15 fw700 text-right"><?php echo $consultas; ?></td>
-										</tr>
-										<tr>
-											<td>En qué idioma ofreces consultas?</td>
-											<td class="fs15 fw700 text-right"><?php echo $idioma; ?></td>
-										</tr>
-										<tr>
-											<td>Cuáles son tus horarios de atención?</td>
-											<td class="fs15 fw700 text-right"><?php echo $information['horario']; ?></td>
-										</tr>
-										
-									</tbody>
-								</table>
+							<table class="countries_list">
+								<tbody>
+									<tr>
+										<td>Rango de edad</td>
+										<td class="fs15 fw700 text-right"><?php echo $edad; ?></td>
+									</tr>
+									<tr>
+										<td>Por qué quiero ayudarte?</td>
+										<td class="fs15 fw700 text-right"><?php echo $information['ayudarte']; ?></td>
+									</tr>
+									<tr>
+										<td>Formación</td>
+										<td class="fs15 fw700 text-right"><?php echo $information['formacion']; ?></td>
+									</tr>
+									<tr>
+										<td>Cuántos años de experiencia en consulta tienes?</td>
+										<td class="fs15 fw700 text-right"><?php echo $information['experiencia']; ?></td>
+									</tr>
+									<tr>
+										<td>Cuál es tu tarifa por sesión?</td>
+										<td class="fs15 fw700 text-right"><?php echo $information['tarifa']; ?></td>
+									</tr>
+									<tr>
+										<td>Cómo manejas tu propia salud emocional para poder servirle a otros?</td>
+										<td class="fs15 fw700 text-right"><?php echo $information['salud']; ?></td>
+									</tr>
+									<tr>
+										<td>Ofreces consultas en persona, virtuales, o ambas?</td>
+										<td class="fs15 fw700 text-right"><?php echo $consultas; ?></td>
+									</tr>
+									<tr>
+										<td>En qué idioma ofreces consultas?</td>
+										<td class="fs15 fw700 text-right"><?php echo $idioma; ?></td>
+									</tr>
+									<tr>
+										<td>Cuáles son tus horarios de atención?</td>
+										<td class="fs15 fw700 text-right"><?php echo $information['horario']; ?></td>
+									</tr>
+									
+								</tbody>
+							</table>
+					
+						</div>
+
+					<div class="alert alert-success alert-dismissible fade in" role="alert">
+						<strong>Especialidades del psicólogo</strong> 
+						<br>En una escala de 1 a 5, autocalificar su capacidad y experiencia frente a cada tema (7 temas). Hay un máximo de 25 puntos, por ende tienen que escoger cuáles dominan y cuáles no y distribuir los puntos de forma acorde.
+					</div>
+					
+						<div class="table-responsive">
+							<table class="countries_list">
+								<tbody>
+									<tr>
+										<td>Ansiedad</td>
+										<td class="fs15 fw700 text-right"><?php echo $information['especialidad_ansiedad']; ?></td>
+									</tr>
+									<tr>
+										<td>Depresión</td>
+										<td class="fs15 fw700 text-right"><?php echo $information['especialidad_depresion']; ?></td>
+									</tr>
+									<tr>
+										<td>Consumo de sustancias</td>
+										<td class="fs15 fw700 text-right"><?php echo $information['especialidad_sustancias']; ?></td>
+									</tr>
+									<tr>
+										<td>Salud y Bienestar Físico</td>
+										<td class="fs15 fw700 text-right"><?php echo $information['especialidad_salud']; ?></td>
+									</tr>
+									<tr>
+										<td>Autoestima</td>
+										<td class="fs15 fw700 text-right"><?php echo $information['especialidad_autoestima']; ?></td>
+									</tr>
+									<tr>
+										<td>Conflictos de Pareja</td>
+										<td class="fs15 fw700 text-right"><?php echo $information['especialidad_pareja']; ?></td>
+									</tr>
+									<tr>
+										<td>Autolesión/Suicidio</td>
+										<td class="fs15 fw700 text-right"><?php echo $information['especialidad_suicidio']; ?></td>
+									</tr>
+									
+								</tbody>
+							</table>
 					
 						</div>
 					</div>

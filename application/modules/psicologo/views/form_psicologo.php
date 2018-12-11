@@ -159,35 +159,35 @@
 							<div class="col-md-1 col-sm-1 col-xs-12">
 								<div class="radio">
 									<label>
-									  <input type="radio" value="option1" id="optionsAnsiedad1" name="optionsAnsiedad"> 1
+									  <input type="radio" value=1 id="optionsAnsiedad1" name="optionsAnsiedad"> 1
 									</label>
 								</div>
 							</div>
 							<div class="col-md-1 col-sm-1 col-xs-12">
 								<div class="radio">
 									<label>
-									  <input type="radio" value="option2" id="optionsAnsiedad2" name="optionsAnsiedad"> 2
+									  <input type="radio" value=2 id="optionsAnsiedad2" name="optionsAnsiedad"> 2
 									</label>
 								</div>
 							</div>
 							<div class="col-md-1 col-sm-1 col-xs-12">
 								<div class="radio">
 									<label>
-									  <input type="radio" value="option2" id="optionsAnsiedad3" name="optionsAnsiedad"> 3
+									  <input type="radio" value=3 id="optionsAnsiedad3" name="optionsAnsiedad"> 3
 									</label>
 								</div>
 							</div>
 							<div class="col-md-1 col-sm-1 col-xs-12">
 								<div class="radio">
 									<label>
-									  <input type="radio" value="option2" id="optionsAnsiedad4" name="optionsAnsiedad"> 4
+									  <input type="radio" value=4 id="optionsAnsiedad4" name="optionsAnsiedad"> 4
 									</label>
 								</div>
 							</div>
 							<div class="col-md-1 col-sm-1 col-xs-12">
 								<div class="radio">
 									<label>
-									  <input type="radio" value="option2" id="optionsAnsiedad5" name="optionsAnsiedad"> 5
+									  <input type="radio" value=5 id="optionsAnsiedad5" name="optionsAnsiedad"> 5
 									</label>
 								</div>
 							</div>
@@ -198,35 +198,35 @@
 							<div class="col-md-1 col-sm-1 col-xs-12">
 								<div class="radio">
 									<label>
-									  <input type="radio" value="option1" id="optionsRadios1" name="optionsRadios"> 1
+									  <input type="radio" value=1 id="optionsDepresion1" name="optionsDepresion"> 1
 									</label>
 								</div>
 							</div>
 							<div class="col-md-1 col-sm-1 col-xs-12">
 								<div class="radio">
 									<label>
-									  <input type="radio" value="option2" id="optionsRadios2" name="optionsRadios"> 2
+									  <input type="radio" value=2 id="optionsDepresion2" name="optionsDepresion"> 2
 									</label>
 								</div>
 							</div>
 							<div class="col-md-1 col-sm-1 col-xs-12">
 								<div class="radio">
 									<label>
-									  <input type="radio" value="option2" id="optionsRadios2" name="optionsRadios"> 3
+									  <input type="radio" value=3 id="optionsDepresion3" name="optionsDepresion"> 3
 									</label>
 								</div>
 							</div>
 							<div class="col-md-1 col-sm-1 col-xs-12">
 								<div class="radio">
 									<label>
-									  <input type="radio" value="option2" id="optionsRadios2" name="optionsRadios"> 4
+									  <input type="radio" value=4 id="optionsDepresion4" name="optionsDepresion"> 4
 									</label>
 								</div>
 							</div>
 							<div class="col-md-1 col-sm-1 col-xs-12">
 								<div class="radio">
 									<label>
-									  <input type="radio" value="option2" id="optionsRadios2" name="optionsRadios"> 5
+									  <input type="radio" value=5 id="optionsDepresion5" name="optionsDepresion"> 5
 									</label>
 								</div>
 							</div>
@@ -237,35 +237,35 @@
 							<div class="col-md-1 col-sm-1 col-xs-12">
 								<div class="radio">
 									<label>
-									  <input type="radio" value="option1" id="optionsRadios1" name="optionsRadios"> 1
+									  <input type="radio" value=1 id="optionsSustancias1" name="optionsSustancias"> 1
 									</label>
 								</div>
 							</div>
 							<div class="col-md-1 col-sm-1 col-xs-12">
 								<div class="radio">
 									<label>
-									  <input type="radio" value="option2" id="optionsRadios2" name="optionsRadios"> 2
+									  <input type="radio" value=2 id="optionsSustancias2" name="optionsSustancias"> 2
 									</label>
 								</div>
 							</div>
 							<div class="col-md-1 col-sm-1 col-xs-12">
 								<div class="radio">
 									<label>
-									  <input type="radio" value="option2" id="optionsRadios2" name="optionsRadios"> 3
+									  <input type="radio" value=3 id="optionsSustancias3" name="optionsSustancias"> 3
 									</label>
 								</div>
 							</div>
 							<div class="col-md-1 col-sm-1 col-xs-12">
 								<div class="radio">
 									<label>
-									  <input type="radio" value="option2" id="optionsRadios2" name="optionsRadios"> 4
+									  <input type="radio" value=4 id="optionsSustancias4" name="optionsSustancias"> 4
 									</label>
 								</div>
 							</div>
 							<div class="col-md-1 col-sm-1 col-xs-12">
 								<div class="radio">
 									<label>
-									  <input type="radio" value="option2" id="optionsRadios2" name="optionsRadios"> 5
+									  <input type="radio" value=5 id="optionsSustancias5" name="optionsSustancias"> 5
 									</label>
 								</div>
 							</div>
@@ -276,35 +276,35 @@
 							<div class="col-md-1 col-sm-1 col-xs-12">
 								<div class="radio">
 									<label>
-									  <input type="radio" value="option1" id="optionsRadios1" name="optionsRadios"> 1
+									  <input type="radio" value=1 id="optionsSalud1" name="optionsSalud"> 1
 									</label>
 								</div>
 							</div>
 							<div class="col-md-1 col-sm-1 col-xs-12">
 								<div class="radio">
 									<label>
-									  <input type="radio" value="option2" id="optionsRadios2" name="optionsRadios"> 2
+									  <input type="radio" value=2 id="optionsSalud2" name="optionsSalud"> 2
 									</label>
 								</div>
 							</div>
 							<div class="col-md-1 col-sm-1 col-xs-12">
 								<div class="radio">
 									<label>
-									  <input type="radio" value="option2" id="optionsRadios2" name="optionsRadios"> 3
+									  <input type="radio" value=3 id="optionsSalud3" name="optionsSalud"> 3
 									</label>
 								</div>
 							</div>
 							<div class="col-md-1 col-sm-1 col-xs-12">
 								<div class="radio">
 									<label>
-									  <input type="radio" value="option2" id="optionsRadios2" name="optionsRadios"> 4
+									  <input type="radio" value=4 id="optionsSalud4" name="optionsSalud"> 4
 									</label>
 								</div>
 							</div>
 							<div class="col-md-1 col-sm-1 col-xs-12">
 								<div class="radio">
 									<label>
-									  <input type="radio" value="option2" id="optionsRadios2" name="optionsRadios"> 5
+									  <input type="radio" value=5 id="optionsSalud5" name="optionsSalud"> 5
 									</label>
 								</div>
 							</div>
@@ -315,35 +315,35 @@
 							<div class="col-md-1 col-sm-1 col-xs-12">
 								<div class="radio">
 									<label>
-									  <input type="radio" value="option1" id="optionsRadios1" name="optionsRadios"> 1
+									  <input type="radio" value=1 id="optionsAutoestima1" name="optionsAutoestima"> 1
 									</label>
 								</div>
 							</div>
 							<div class="col-md-1 col-sm-1 col-xs-12">
 								<div class="radio">
 									<label>
-									  <input type="radio" value="option2" id="optionsRadios2" name="optionsRadios"> 2
+									  <input type="radio" value=2 id="optionsAutoestima2" name="optionsAutoestima"> 2
 									</label>
 								</div>
 							</div>
 							<div class="col-md-1 col-sm-1 col-xs-12">
 								<div class="radio">
 									<label>
-									  <input type="radio" value="option2" id="optionsRadios2" name="optionsRadios"> 3
+									  <input type="radio" value=3 id="optionsAutoestima3" name="optionsAutoestima"> 3
 									</label>
 								</div>
 							</div>
 							<div class="col-md-1 col-sm-1 col-xs-12">
 								<div class="radio">
 									<label>
-									  <input type="radio" value="option2" id="optionsRadios2" name="optionsRadios"> 4
+									  <input type="radio" value=4 id="optionsAutoestima4" name="optionsAutoestima"> 4
 									</label>
 								</div>
 							</div>
 							<div class="col-md-1 col-sm-1 col-xs-12">
 								<div class="radio">
 									<label>
-									  <input type="radio" value="option2" id="optionsRadios2" name="optionsRadios"> 5
+									  <input type="radio" value=5 id="optionsAutoestima5" name="optionsAutoestima"> 5
 									</label>
 								</div>
 							</div>
@@ -354,35 +354,35 @@
 							<div class="col-md-1 col-sm-1 col-xs-12">
 								<div class="radio">
 									<label>
-									  <input type="radio" value="option1" id="optionsRadios1" name="optionsRadios"> 1
+									  <input type="radio" value=1 id="optionsPareja1" name="optionsPareja"> 1
 									</label>
 								</div>
 							</div>
 							<div class="col-md-1 col-sm-1 col-xs-12">
 								<div class="radio">
 									<label>
-									  <input type="radio" value="option2" id="optionsRadios2" name="optionsRadios"> 2
+									  <input type="radio" value=2 id="optionsPareja2" name="optionsPareja"> 2
 									</label>
 								</div>
 							</div>
 							<div class="col-md-1 col-sm-1 col-xs-12">
 								<div class="radio">
 									<label>
-									  <input type="radio" value="option2" id="optionsRadios2" name="optionsRadios"> 3
+									  <input type="radio" value=3 id="optionsPareja3" name="optionsPareja"> 3
 									</label>
 								</div>
 							</div>
 							<div class="col-md-1 col-sm-1 col-xs-12">
 								<div class="radio">
 									<label>
-									  <input type="radio" value="option2" id="optionsRadios2" name="optionsRadios"> 4
+									  <input type="radio" value=4 id="optionsPareja4" name="optionsPareja"> 4
 									</label>
 								</div>
 							</div>
 							<div class="col-md-1 col-sm-1 col-xs-12">
 								<div class="radio">
 									<label>
-									  <input type="radio" value="option2" id="optionsRadios2" name="optionsRadios"> 5
+									  <input type="radio" value=5 id="optionsPareja5" name="optionsPareja"> 5
 									</label>
 								</div>
 							</div>
@@ -393,35 +393,35 @@
 							<div class="col-md-1 col-sm-1 col-xs-12">
 								<div class="radio">
 									<label>
-									  <input type="radio" value="option1" id="optionsRadios1" name="optionsRadios"> 1
+									  <input type="radio" value=1 id="optionsSuicidio1" name="optionsSuicidio"> 1
 									</label>
 								</div>
 							</div>
 							<div class="col-md-1 col-sm-1 col-xs-12">
 								<div class="radio">
 									<label>
-									  <input type="radio" value="option2" id="optionsRadios2" name="optionsRadios"> 2
+									  <input type="radio" value=2 id="optionsSuicidio2" name="optionsSuicidio"> 2
 									</label>
 								</div>
 							</div>
 							<div class="col-md-1 col-sm-1 col-xs-12">
 								<div class="radio">
 									<label>
-									  <input type="radio" value="option2" id="optionsRadios2" name="optionsRadios"> 3
+									  <input type="radio" value=3 id="optionsSuicidio3" name="optionsSuicidio"> 3
 									</label>
 								</div>
 							</div>
 							<div class="col-md-1 col-sm-1 col-xs-12">
 								<div class="radio">
 									<label>
-									  <input type="radio" value="option2" id="optionsRadios2" name="optionsRadios"> 4
+									  <input type="radio" value=4 id="optionsSuicidio4" name="optionsSuicidio"> 4
 									</label>
 								</div>
 							</div>
 							<div class="col-md-1 col-sm-1 col-xs-12">
 								<div class="radio">
 									<label>
-									  <input type="radio" value="option2" id="optionsRadios2" name="optionsRadios"> 5
+									  <input type="radio" value=5 id="optionsSuicidio5" name="optionsSuicidio"> 5
 									</label>
 								</div>
 							</div>
