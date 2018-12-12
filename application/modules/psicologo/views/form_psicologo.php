@@ -121,29 +121,29 @@
 							<div class="col-md-3 col-sm-3 col-xs-6">
 								  <div class="checkbox">
 									<label>
-									  <input type="checkbox" class="flat"> Cognitivo Conductual
+									  <input type="checkbox" id="cognitivo" name="cognitivo" value=1 class="flat"> Cognitivo Conductual
 									</label>
 								  </div>
 								  <div class="checkbox">
 									<label>
-									  <input type="checkbox" class="flat"> Psicoanálisis
+									  <input type="checkbox" id="psicoanalisis" name="psicoanalisis" value=1 class="flat"> Psicoanálisis
 									</label>
 								  </div>
 								  <div class="checkbox">
 									<label>
-									  <input type="checkbox" class="flat"> Sistémico
+									  <input type="checkbox" id="sistemico" name="sistemico" value=1 class="flat"> Sistémico
 									</label>
 								  </div>
 							</div>
 							<div class="col-md-3 col-sm-3 col-xs-6">
 								  <div class="checkbox">
 									<label>
-									  <input type="checkbox" class="flat"> Transpersonal
+									  <input type="checkbox" id="transpersonal" name="transpersonal" value=1 class="flat"> Transpersonal
 									</label>
 								  </div>
 								  <div class="checkbox">
 									<label>
-									  <input type="checkbox" class="flat"> Humanista
+									  <input type="checkbox" id="humanista" name="humanista" value=1 class="flat"> Humanista
 									</label>
 								  </div>
 							</div>

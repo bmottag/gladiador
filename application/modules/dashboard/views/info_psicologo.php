@@ -104,6 +104,18 @@
 										<td class="fs15 fw700 text-right"><?php echo $information['tarifa']; ?></td>
 									</tr>
 									<tr>
+										<td>Cuáles enfoques utilizas? </td>
+										<td class="fs15 fw700 text-right">									
+										<?php 
+											echo $information['enfoque_cognitivo']?'Cognitivo Conductual<br>':''; 
+											echo $information['enfoque_psicoanalisis']?'Psicoanálisis<br>':''; 
+											echo $information['enfoque_sistemico']?'Sistémico<br>':''; 
+											echo $information['enfoque_transpersonal']?'Transpersonal<br>':''; 
+											echo $information['enfoque_humanista']?'Humanista':''; 
+										?>
+										</td>
+									</tr>
+									<tr>
 										<td>Cómo manejas tu propia salud emocional para poder servirle a otros?</td>
 										<td class="fs15 fw700 text-right"><?php echo $information['salud']; ?></td>
 									</tr>
