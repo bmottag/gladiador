@@ -71,6 +71,15 @@
 							$data = array(
 								'salud' => $this->input->post('salud')
 							);
+						case 6:
+							$data = array(
+								'autoestima' => $this->input->post('autoestima')
+							);
+							break;
+						case 7:
+							$data = array(
+								'pareja' => $this->input->post('pareja')
+							);
 							break;
 					}
 					

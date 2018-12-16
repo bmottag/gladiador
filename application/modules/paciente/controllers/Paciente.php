@@ -182,6 +182,38 @@ class Paciente extends MX_Controller {
 		$this->load->view("layout", $data);
 	}
 	
+	/**
+	 * Form 6 - AUTOESTIMA
+     * @since 16/12/2018
+     * @author BMOTTAG
+	 */
+	public function form_6($idPaciente)
+	{	
+		$this->load->model("general_model");
+		
+		$arrParam = array("idPaciente" => $idPaciente);
+		$data['information'] = $this->general_model->get_info_paciente($arrParam);//info paciente
+		
+		$data["view"] = 'form_paciente_VI';
+		$this->load->view("layout", $data);
+	}
+	
+	/**
+	 * Form 7 - PAREJA
+     * @since 16/12/2018
+     * @author BMOTTAG
+	 */
+	public function form_7($idPaciente)
+	{	
+		$this->load->model("general_model");
+		
+		$arrParam = array("idPaciente" => $idPaciente);
+		$data['information'] = $this->general_model->get_info_paciente($arrParam);//info paciente
+		
+		$data["view"] = 'form_paciente_VII';
+		$this->load->view("layout", $data);
+	}
+	
 
 	
 }
