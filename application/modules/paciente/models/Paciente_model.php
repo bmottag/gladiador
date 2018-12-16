@@ -75,6 +75,28 @@
 			}
 		}
 		
+		/**
+		 * Guardo informacion
+		 * @since 16/12/2018
+		 */
+		public function saveFormII() 
+		{		
+			$idPaciente = $this->input->post('hddId');
+		
+			$data = array(
+				'ansiedad' => $this->input->post('ansiedad')
+			);
+						
+			$this->db->where('id_paciente', $idPaciente);
+			$query = $this->db->update('paciente', $data);
+			
+			if ($query) {
+				return true;
+			} else {
+				return false;
+			}
+		}
+		
 		
 	    
 	}

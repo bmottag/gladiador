@@ -5,7 +5,7 @@
 		<div class="col-md-12 col-sm-12 col-xs-12">
 			<div class="x_panel">
 				<div class="x_title">
-					<h2><i class='fa fa-users'></i> Registro</h2>
+					<h2><i class='fa fa-users'></i> Cuestionario Paciente</h2>
 					<ul class="nav navbar-right panel_toolbox">
 						<li><a class="collapse-link"><i class="fa fa-chevron-up"></i></a>
 						</li>
@@ -17,17 +17,15 @@
 					<div class="alert alert-success alert-dismissible fade in" role="alert">
 						<strong>Info:</strong> Cuestionario para perfilar al paciente de acuerdo a las respuestas que da
 					</div>
-				
+
+					<div class="progress progress-striped progress_wide">
+						<div class="progress-bar progress-bar-info" data-transitiongoal="20">
+							<i class="fa fa-envelope user-profile-icon"></i> <strong>Correo:</strong> <?php echo $information['email_paciente']; ?>
+						</div>
+					</div>
+					
 					<form id="form" data-parsley-validate class="form-horizontal form-label-left">
 						<input type="hidden" id="hddId" name="hddId" value="<?php echo $information?$information["id_paciente"]:""; ?>"/>
-
-						<div class="form-group">
-							<label for="email" class="control-label col-md-3 col-sm-3 col-xs-12">Email <span class="required">*</span></label>
-							<div class="col-md-6 col-sm-6 col-xs-12">
-								<input id="email" name="email" disabled class="form-control col-md-7 col-xs-12 has-feedback-left" type="text" value="<?php echo $information?$information["email_paciente"]:""; ?>" maxlength=50 placeholder="Email">
-								<span class="fa fa-envelope form-control-feedback left" aria-hidden="true"></span>
-							</div>
-						</div>
 						
 						<div class="form-group">
 							<label for="celular" class="control-label col-md-3 col-sm-3 col-xs-12">Ingresa tu número de contacto <span class="required">*</span></label>
