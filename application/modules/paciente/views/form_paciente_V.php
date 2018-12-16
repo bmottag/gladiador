@@ -26,7 +26,7 @@
 					
 					<form id="form" data-parsley-validate class="form-horizontal form-label-left">
 						<input type="hidden" id="hddId" name="hddId" value="<?php echo $information?$information["id_paciente"]:""; ?>"/>
-						<input type="hidden" id="formulario" name="formulario" value=4 />
+						<input type="hidden" id="formulario" name="formulario" value=5 />
 
 						<strong>¿Qué tan afectado(a) te has sentido por tu salud física? (hábitos alimenticios, enfermedades, condiciones físicas, niveles de energía)</strong> 
 						<br><small>

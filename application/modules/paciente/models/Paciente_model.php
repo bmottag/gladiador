@@ -67,6 +67,11 @@
 								'sustancias' => $this->input->post('sustancias')
 							);
 							break;
+						case 5:
+							$data = array(
+								'salud' => $this->input->post('salud')
+							);
+							break;
 					}
 					
 
