@@ -109,6 +109,25 @@ class General_model extends CI_Model {
 				}
 		}
 		
+		/**
+		 * Info paciente
+		 * @since 16/12/2018
+		 */
+		public function get_info_paciente($arrData) 
+		{
+				$this->db->select();
+				if (array_key_exists("id_paciente", $arrData)) {
+					$this->db->where('idPaciente', $arrData["idPaciente"]);
+				}
+				$query = $this->db->get("paciente");
+
+				if ($query->num_rows() >= 1) {
+					return $query->row_array();
+				} else {
+					return false;
+				}
+		}
+		
 		
 		/**
 		 * Consulta menu

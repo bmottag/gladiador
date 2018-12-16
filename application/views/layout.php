@@ -120,7 +120,7 @@
     <script src="<?php echo base_url("assets/bootstrap/vendors/jszip/dist/jszip.min.js"); ?>"></script>
     <script src="<?php echo base_url("assets/bootstrap/vendors/pdfmake/build/pdfmake.min.js"); ?>"></script>
     <script src="<?php echo base_url("assets/bootstrap/vendors/pdfmake/build/vfs_fonts.js"); ?>"></script>
-
+	
     <!-- Custom Theme Scripts -->
 	<script src="<?php echo base_url("assets/bootstrap/build/js/custom.min.js"); ?>"></script>
 	

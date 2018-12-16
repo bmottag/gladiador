@@ -18,12 +18,12 @@ class Paciente extends MX_Controller {
 	}
 	
 	/**
-	 * Registro psicologos
+	 * Registro paciente
 	 */
-	public function encontrar()
+	public function registro()
 	{	
 			$data['information'] = FALSE;
-			$data["view"] = 'form_paciente';
+			$data["view"] = 'form_registro';
 			$this->load->view("layout", $data);
 	}
 	
@@ -35,37 +35,34 @@ class Paciente extends MX_Controller {
 	{			
 			header('Content-Type: application/json');
 			
-			$idUser = $this->input->post('hddId');
-			$log_user = $this->input->post('usuario');
+			$idPaciente = $this->input->post('hddId');
 			$email = $this->input->post('email');
-
-			$msj = "You have add a new User!!";
-			if ($idUser != '') {
-				$msj = "You have update the User!!";
-			}	
 			
 			$result_email = false;
 			
 			//verificar si ya existe el correo
 			$arrParam = array(
-				"idUser" => $idUser,
-				"column" => "email",
+				"idPaciente" => $idPaciente,
+				"column" => "email_paciente",
 				"value" => $email
 			);
-			$result_email = $this->psicologo_model->verifyUser($arrParam);
+			$result_email = $this->paciente_model->verifyPaciente($arrParam);
 
-			if ($result_email) {
-				$data["result"] = "error";
-				$data["mensaje"] = " Error. El email ya existe.";
-				$this->session->set_flashdata('retornoError', '<strong>Error!!!</strong> El Email ya existe.');
+			if ($result_email) 
+			{
+				$msj = "Usted ya se encuentra registrado. Puede continuar revisando su información";
+				
+				$data["result"] = true;
+				$data["idRecord"] = $result_email['id_paciente'];
+				$this->session->set_flashdata('retornoExito', $msj);
 			} else {
 			
-				if ($idUser = $this->psicologo_model->saveUsuario()) 
+				if ($idPaciente = $this->paciente_model->savePaciente()) 
 				{
-					$this->psicologo_model->savePsicologo($idUser); //Guardo info psicologo
+					$msj = "Se guardaron su correo, a continuación diligencie el siguiente formulario";
 					
 					$data["result"] = true;
-					$data["idRecord"] = $idUser;
+					$data["idRecord"] = $idPaciente;
 					$this->session->set_flashdata('retornoExito', $msj);
 				} else {
 					$data["result"] = "error";
@@ -79,18 +76,63 @@ class Paciente extends MX_Controller {
     }
 	
 	/**
-	 * info psicologos
-     * @since 29/3/2018
+	 * Form uno
+     * @since 13/12/2018
      * @author BMOTTAG
 	 */
-	public function info($idPsicologo)
+	public function form_1($idPaciente)
 	{	
 		$this->load->model("general_model");
 		
-		$arrParam = array("idUser" => $idPsicologo);
-		$data['information'] = $this->general_model->get_info_psicologo($arrParam);//info psicologo
+		$arrParam = array("idPaciente" => $idPaciente);
+		$data['information'] = $this->general_model->get_info_paciente($arrParam);//info paciente
+
+		$data["view"] = 'form_paciente_I';
+		$this->load->view("layout", $data);
+	}
+
+	/**
+	 * Guardar psicologo
+     * @since 8/12/2018
+	 */
+	public function save_form_I()
+	{			
+			header('Content-Type: application/json');
+			
+			$idPaciente = $this->input->post('hddId');
+			
+			if ($this->paciente_model->saveFormI()) 
+			{
+				$msj = "Se guardó su información, continue con el formualrio";
+				
+				$data["result"] = true;
+				$data["idRecord"] = $idPaciente;
+				$this->session->set_flashdata('retornoExito', $msj);
+			} else {
+				$data["result"] = "error";
+				$data["idRecord"] = '';
+				$this->session->set_flashdata('retornoError', '<strong>Error!!!</strong> Ask for help, contact the Admin.');
+			}
+			
+
+			echo json_encode($data);
+    }
+	
+	/**
+	 * Form DOS
+     * @since 16/12/2018
+     * @author BMOTTAG
+	 */
+	public function form_2($idPaciente)
+	{	
+		$this->load->model("general_model");
 		
-		$data["view"] = 'info_psicologo';
+		$arrParam = array("idPaciente" => $idPaciente);
+		$data['information'] = $this->general_model->get_info_paciente($arrParam);//info paciente
+
+pr($data['information']); exit;
+		
+		$data["view"] = 'form_paciente_I';
 		$this->load->view("layout", $data);
 	}
 	
