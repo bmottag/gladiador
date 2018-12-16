@@ -81,6 +81,11 @@
 								'pareja' => $this->input->post('pareja')
 							);
 							break;
+						case 8:
+							$data = array(
+								'suicidio' => $this->input->post('suicidio')
+							);
+							break;
 					}
 					
 
