@@ -18,6 +18,22 @@ class Paciente extends MX_Controller {
 	}
 	
 	/**
+	 * info paciente
+     * @since 29/3/2018
+     * @author BMOTTAG
+	 */
+	public function info($idPaciente)
+	{	
+		$this->load->model("general_model");
+		
+		$arrParam = array("idUser" => $idPsicologo);
+		$data['information'] = $this->general_model->get_info_paciente($arrParam);//info paciente
+		
+		$data["view"] = 'info_paciente';
+		$this->load->view("layout", $data);
+	}
+	
+	/**
 	 * Registro paciente
 	 */
 	public function registro()
@@ -227,6 +243,22 @@ class Paciente extends MX_Controller {
 		$data['information'] = $this->general_model->get_info_paciente($arrParam);//info paciente
 		
 		$data["view"] = 'form_paciente_VIII';
+		$this->load->view("layout", $data);
+	}
+	
+	/**
+	 * Form 9 - 
+     * @since 16/12/2018
+     * @author BMOTTAG
+	 */
+	public function form_9($idPaciente)
+	{	
+		$this->load->model("general_model");
+		
+		$arrParam = array("idPaciente" => $idPaciente);
+		$data['information'] = $this->general_model->get_info_paciente($arrParam);//info paciente
+		
+		$data["view"] = 'form_paciente_IX';
 		$this->load->view("layout", $data);
 	}
 	
