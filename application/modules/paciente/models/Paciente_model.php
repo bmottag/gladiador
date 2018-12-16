@@ -29,17 +29,51 @@
 		public function savePaciente() 
 		{
 				$idPaciente = $this->input->post('hddId');
+				$formulario = $this->input->post('formulario');
 				
-				$data = array(
-					'email_paciente' => $this->input->post('email'),
-					'fecha_registro' => date("Y-m-d G:i:s")
-				);	
-
 				//revisar si es para adicionar o editar
 				if ($idPaciente == '') {
+
+					$data = array(
+						'email_paciente' => $this->input->post('email'),
+						'fecha_registro' => date("Y-m-d G:i:s")
+					);	
+				
 					$query = $this->db->insert('paciente', $data);
 					$idPaciente = $this->db->insert_id();
 				} else {
+					
+					switch ($formulario) {
+						case 1:
+							$data = array(
+								'movil_paciente' => $this->input->post('celular'),
+								'razon' => $this->input->post('razon'),
+								'genero' => $this->input->post('genero'),
+								'edad_paciente' => $this->input->post('edad')
+							);
+							break;
+						case 2:
+							$data = array(
+								'ansiedad' => $this->input->post('ansiedad')
+							);
+							break;
+						case 3:
+							$data = array(
+								'depresion' => $this->input->post('depresion')
+							);
+							break;
+						case 4:
+							$data = array(
+								'sustancias' => $this->input->post('sustancias')
+							);
+							break;
+					}
+					
+
+					
+
+					
+					
 					$this->db->where('id_paciente', $idPaciente);
 					$query = $this->db->update('paciente', $data);
 				}
@@ -48,53 +82,6 @@
 				} else {
 					return false;
 				}
-		}
-		
-		/**
-		 * Guardo informacion
-		 * @since 16/12/2018
-		 */
-		public function saveFormI() 
-		{		
-			$idPaciente = $this->input->post('hddId');
-		
-			$data = array(
-				'movil_paciente' => $this->input->post('celular'),
-				'razon' => $this->input->post('razon'),
-				'genero' => $this->input->post('genero'),
-				'edad_paciente' => $this->input->post('edad')
-			);
-						
-			$this->db->where('id_paciente', $idPaciente);
-			$query = $this->db->update('paciente', $data);
-			
-			if ($query) {
-				return true;
-			} else {
-				return false;
-			}
-		}
-		
-		/**
-		 * Guardo informacion
-		 * @since 16/12/2018
-		 */
-		public function saveFormII() 
-		{		
-			$idPaciente = $this->input->post('hddId');
-		
-			$data = array(
-				'ansiedad' => $this->input->post('ansiedad')
-			);
-						
-			$this->db->where('id_paciente', $idPaciente);
-			$query = $this->db->update('paciente', $data);
-			
-			if ($query) {
-				return true;
-			} else {
-				return false;
-			}
 		}
 		
 		

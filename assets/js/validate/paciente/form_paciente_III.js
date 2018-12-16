@@ -2,7 +2,7 @@ $( document ).ready( function () {
 						
 	$( "#form" ).validate( {
 		rules: {
-			ansiedad:			 	{ required: true }
+			depresion:			 	{ required: true }
 		},
 		errorElement: "em",
 		errorPlacement: function ( error, element ) {
@@ -55,7 +55,7 @@ $( document ).ready( function () {
 						{	                                                        
 							$("#div_load").css("display", "none");
 							$('#btnSubmit').removeAttr('disabled');
-							var url = base_url + "paciente/form_3/" + data.idRecord;
+							var url = base_url + "paciente/form_4/" + data.idRecord;
 							$(location).attr("href", url);
 						}
 						else

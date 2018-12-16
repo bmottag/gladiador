@@ -38,7 +38,7 @@ $( document ).ready( function () {
 			
 				$.ajax({
 					type: "POST",	
-					url: base_url + "paciente/save_form_I",	
+					url: base_url + "paciente/save_paciente",	
 					data: $("#form").serialize(),
 					dataType: "json",
 					contentType: "application/x-www-form-urlencoded;charset=UTF-8",

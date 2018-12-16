@@ -15,7 +15,7 @@
 				<div class="x_content">
 
 					<div class="alert alert-success alert-dismissible fade in" role="alert">
-						<strong>Info:</strong> Cuestionario para perfilar al paciente de acuerdo a las respuestas que da
+						<strong>Info:</strong> Cuestionario para perfilar al paciente de acuerdo a las respuestas que da. <small>(I)</small>
 					</div>
 
 					<div class="progress progress-striped progress_wide">
@@ -26,6 +26,7 @@
 					
 					<form id="form" data-parsley-validate class="form-horizontal form-label-left">
 						<input type="hidden" id="hddId" name="hddId" value="<?php echo $information?$information["id_paciente"]:""; ?>"/>
+						<input type="hidden" id="formulario" name="formulario" value=1 />
 						
 						<div class="form-group">
 							<label for="celular" class="control-label col-md-3 col-sm-3 col-xs-12">Ingresa tu número de contacto <span class="required">*</span></label>

@@ -135,33 +135,6 @@ class Paciente extends MX_Controller {
 	}
 	
 	/**
-	 * Guardar FORM II
-     * @since 16/12/2018
-	 */
-	public function save_form_II()
-	{			
-			header('Content-Type: application/json');
-			
-			$idPaciente = $this->input->post('hddId');
-			
-			if ($this->paciente_model->saveFormII()) 
-			{
-				$msj = "Se guardó su información, continue con el formulario";
-				
-				$data["result"] = true;
-				$data["idRecord"] = $idPaciente;
-				$this->session->set_flashdata('retornoExito', $msj);
-			} else {
-				$data["result"] = "error";
-				$data["idRecord"] = '';
-				$this->session->set_flashdata('retornoError', '<strong>Error!!!</strong> Ask for help, contact the Admin.');
-			}
-			
-
-			echo json_encode($data);
-    }
-	
-	/**
 	 * Form TRES
      * @since 16/12/2018
      * @author BMOTTAG
@@ -172,10 +145,24 @@ class Paciente extends MX_Controller {
 		
 		$arrParam = array("idPaciente" => $idPaciente);
 		$data['information'] = $this->general_model->get_info_paciente($arrParam);//info paciente
-
-pr($data['information']); exit;
 		
 		$data["view"] = 'form_paciente_III';
+		$this->load->view("layout", $data);
+	}
+			
+	/**
+	 * Form CUATRO - SUSTACIAS
+     * @since 16/12/2018
+     * @author BMOTTAG
+	 */
+	public function form_4($idPaciente)
+	{	
+		$this->load->model("general_model");
+		
+		$arrParam = array("idPaciente" => $idPaciente);
+		$data['information'] = $this->general_model->get_info_paciente($arrParam);//info paciente
+		
+		$data["view"] = 'form_paciente_IV';
 		$this->load->view("layout", $data);
 	}
 	

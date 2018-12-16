@@ -15,7 +15,7 @@
 				<div class="x_content">
 
 					<div class="alert alert-success alert-dismissible fade in" role="alert">
-						<strong>Info:</strong> Cuestionario para perfilar al paciente de acuerdo a las respuestas que da
+						<strong>Info:</strong> Cuestionario para perfilar al paciente de acuerdo a las respuestas que da. <small>(II)</small>
 					</div>
 
 					<div class="progress progress-striped progress_wide">
@@ -26,6 +26,7 @@
 					
 					<form id="form" data-parsley-validate class="form-horizontal form-label-left">
 						<input type="hidden" id="hddId" name="hddId" value="<?php echo $information?$information["id_paciente"]:""; ?>"/>
+						<input type="hidden" id="formulario" name="formulario" value=2 />
 
 						<strong>¿Qué tan afectado(a) te has sentido por síntomas de ansiedad? (ataques de pánico, fobias, insomnio o pensamientos obsesivos)</strong> 
 						<br><small>
@@ -42,19 +43,19 @@
 							<div class="col-md-12 col-sm-12 col-xs-12">
 								<div id="gender" class="btn-group" data-toggle="buttons">
 									<label class="btn btn-default <?php if($information && $information["ansiedad"] == 1) { echo "active"; }  ?>" data-toggle-class="btn-primary" data-toggle-passive-class="btn-default">
-										<input type="radio" id="ansiedad1" name="ansiedad" value=1 > 1. Levemente
+										<input type="radio" id="ansiedad1" name="ansiedad" value=1 <?php if($information && $information["ansiedad"] == 1) { echo "checked"; }  ?>> 1. Levemente
 									</label>
 									<label class="btn btn-default <?php if($information && $information["ansiedad"] == 2) { echo "active"; }  ?>" data-toggle-class="btn-primary" data-toggle-passive-class="btn-default">
-										<input type="radio" id="ansiedad1" name="ansiedad" value=2 > 2. Moderadamente
+										<input type="radio" id="ansiedad1" name="ansiedad" value=2 <?php if($information && $information["ansiedad"] == 2) { echo "checked"; }  ?>> 2. Moderadamente
 									</label>
 									<label class="btn btn-default <?php if($information && $information["ansiedad"] == 3) { echo "active"; }  ?>" data-toggle-class="btn-primary" data-toggle-passive-class="btn-default">
-										<input type="radio" id="ansiedad1" name="ansiedad" value=3 > 3. Seriamente
+										<input type="radio" id="ansiedad1" name="ansiedad" value=3 <?php if($information && $information["ansiedad"] == 3) { echo "checked"; }  ?>> 3. Seriamente
 									</label>
 									<label class="btn btn-default <?php if($information && $information["ansiedad"] == 4) { echo "active"; }  ?>" data-toggle-class="btn-primary" data-toggle-passive-class="btn-default">
-										<input type="radio" id="ansiedad1" name="ansiedad" value=4 > 4. Severamente
+										<input type="radio" id="ansiedad1" name="ansiedad" value=4 <?php if($information && $information["ansiedad"] == 4) { echo "checked"; }  ?>> 4. Severamente
 									</label>
 									<label class="btn btn-default <?php if($information && $information["ansiedad"] == 5) { echo "active"; }  ?>" data-toggle-class="btn-primary" data-toggle-passive-class="btn-default">
-										<input type="radio" id="ansiedad1" name="ansiedad" value=5 > 5. Extremadamente
+										<input type="radio" id="ansiedad1" name="ansiedad" value=5 <?php if($information && $information["ansiedad"] == 5) { echo "checked"; }  ?>> 5. Extremadamente
 									</label>
 								</div>
 							</div>
