@@ -1,73 +1,176 @@
-<script type="text/javascript" src="<?php echo base_url("assets/js/validate/paciente/form_paciente.js"); ?>"></script>
-
 <div class="right_col" role="main">
 	<div class="row">
 		<div class="col-md-12 col-sm-12 col-xs-12">
 			<div class="x_panel">
 				<div class="x_title">
-					<h2><i class='fa fa-users'></i> Cuestionario Paciente</h2>
+					<h2><i class='fa fa-hand-o-up'></i> INFORMACIÓN PACIENTE</h2>
 					<ul class="nav navbar-right panel_toolbox">
 						<li><a class="collapse-link"><i class="fa fa-chevron-up"></i></a>
 						</li>
 					</ul>
 					<div class="clearfix"></div>
 				</div>
+				
+<?php
+	switch ($information['edad_paciente']) {
+		case 1:
+			$edad = '18-25';
+			break;
+		case 2:
+			$edad = '26-30';
+			break;
+		case 3:
+			$edad = '31-35';
+			break;
+		case 4:
+			$edad = '36-45';
+			break;
+		case 5:
+			$edad = '45-55';
+			break;
+		case 6:
+			$edad = 'Mayor de 55';
+			break;
+	}
+	
+	switch ($information['genero']) {
+		case 1:
+			$genero = 'Hombre';
+			break;
+		case 2:
+			$genero = 'Mujer';
+			break;
+	}
+	
+	switch ($information['sesiones']) {
+		case 1:
+			$sesiones = 'Solo en persona';
+			break;
+		case 2:
+			$sesiones = 'Solo virtual (online)';
+			break;
+		case 3:
+			$sesiones = 'Ambas';
+			break;
+	}
+	
+	switch ($information['presupuesto']) {
+		case 1:
+			$presupuesto = 'Menos de $90.000';
+			break;
+		case 2:
+			$presupuesto = 'Menos de $130.000';
+			break;
+		case 3:
+			$presupuesto = 'Menos de $200.000';
+			break;
+		case 4:
+			$presupuesto = 'No importa el valor de la sesión';
+			break;
+	}
+	
+	
+?>
+				
 				<div class="x_content">
+				
+					<div class="col-md-3 col-sm-3 col-xs-12 profile_left">
+										
+						<ul class="list-unstyled user_data">
 
-					<div class="alert alert-success alert-dismissible fade in" role="alert">
-						<strong>Info:</strong> Cuestionario para perfilar al paciente de acuerdo a las respuestas que da
+							<li>
+								<i class="fa fa-envelope user-profile-icon"></i> <strong>Correo:</strong><br> <?php echo $information['email_paciente']; ?>
+							</li>
+							
+							<li>
+								<i class="fa fa-phone user-profile-icon"></i> <strong>No. celular:</strong><br> <?php echo $information['movil_paciente']; ?>
+							</li>
+							
+							<li>
+								<i class="fa fa-birthday-cake user-profile-icon"></i> <strong>Rango de edad:</strong><br> <?php echo $edad; ?>
+							</li>
+							
+							<li>
+								<i class="fa fa-user user-profile-icon"></i> <strong>Género:</strong><br> <?php echo $genero; ?>
+							</li>
+							
+						</ul>
+						
 					</div>
 				
-					<form id="form" data-parsley-validate class="form-horizontal form-label-left">
-						<input type="hidden" id="hddId" name="hddId" value="<?php echo $information?$information["id_paciente"]:""; ?>"/>
-
-						<div class="form-group">
-							<label for="email" class="control-label col-md-3 col-sm-3 col-xs-12">Email <span class="required">*</span></label>
-							<div class="col-md-6 col-sm-6 col-xs-12">
-								<input id="email" name="email" disabled class="form-control col-md-7 col-xs-12 has-feedback-left" type="text" value="<?php echo $information?$information["email_paciente"]:""; ?>" maxlength=50 placeholder="Email">
-								<span class="fa fa-envelope form-control-feedback left" aria-hidden="true"></span>
-							</div>
+					<div class="col-md-9 col-sm-9 col-xs-12">
+					
+						<div class="table-responsive">
+					
+							<table class="countries_list">
+								<tbody>
+									<tr>
+										<td>¿Cuál es la razón por la que decides buscar apoyo?</td>
+										<td class="fs15 fw700 text-right"><?php echo $information['razon']; ?></td>
+									</tr>
+									<tr>
+										<td>Prefieres sesiones en persona, virtuales, o ambas?</td>
+										<td class="fs15 fw700 text-right"><?php echo $sesiones; ?></td>
+									</tr>
+									<tr>
+										<td>Prefieres un psicólogo con algunas características particulares? </td>
+										<td class="fs15 fw700 text-right">									
+										<?php 
+											echo $information['caracteristica_edad']?'Edad<br>':''; 
+											echo $information['caracteristica_enfoque']?'Enfoque<br>':''; 
+											echo $information['caracteristica_idioma']?'Idioma':''; 
+										?>
+										</td>
+									</tr>
+									<tr>
+										<td>Cuál es tu presupuesto para cada sesión?</td>
+										<td class="fs15 fw700 text-right"><?php echo $presupuesto; ?></td>
+									</tr>
+								</tbody>
+							</table>
+					
 						</div>
-						
-						<div class="form-group">
-							<label for="celular" class="control-label col-md-3 col-sm-3 col-xs-12">Ingresa tu número de contacto <span class="required">*</span></label>
-							<div class="col-md-6 col-sm-6 col-xs-12">
-								<input id="celular" name="celular" required="required" class="form-control col-md-7 col-xs-12 has-feedback-left" type="text" value="<?php echo $information?$information["movil_paciente"]:""; ?>" maxlength=12 placeholder="Número de contacto">
-								<span class="fa fa-phone form-control-feedback left" aria-hidden="true"></span>
-							</div>
+					
+						<div class="table-responsive">
+							<table class="countries_list">
+								<tbody>
+									<tr>
+										<td>Ansiedad</td>
+										<td class="fs15 fw700 text-right"><?php echo $information['ansiedad']; ?></td>
+									</tr>
+									<tr>
+										<td>Depresión</td>
+										<td class="fs15 fw700 text-right"><?php echo $information['depresion']; ?></td>
+									</tr>
+									<tr>
+										<td>Consumo de sustancias</td>
+										<td class="fs15 fw700 text-right"><?php echo $information['sustancias']; ?></td>
+									</tr>
+									<tr>
+										<td>Salud y Bienestar Físico</td>
+										<td class="fs15 fw700 text-right"><?php echo $information['salud']; ?></td>
+									</tr>
+									<tr>
+										<td>Autoestima</td>
+										<td class="fs15 fw700 text-right"><?php echo $information['autoestima']; ?></td>
+									</tr>
+									<tr>
+										<td>Conflictos de Pareja</td>
+										<td class="fs15 fw700 text-right"><?php echo $information['pareja']; ?></td>
+									</tr>
+									<tr>
+										<td>Autolesión/Suicidio</td>
+										<td class="fs15 fw700 text-right"><?php echo $information['suicidio']; ?></td>
+									</tr>
+									
+								</tbody>
+							</table>
+					
 						</div>
-																	
-						<div class="ln_solid"></div>
-						<div class="form-group">
-							<div class="col-md-6 col-sm-6 col-xs-12 col-md-offset-3">
-								<div class="row" align="center">
-									<div style="width:50%;" align="center">
-										<button type="button" id="btnSubmit" name="btnSubmit" class='btn btn-success'>
-												Save <span class="glyphicon glyphicon-floppy-disk" aria-hidden="true">
-										</button>								
-									</div>
-								</div>
-							</div>
-						</div>
-												
-						<div class="form-group">
-							<div class="col-md-6 col-sm-6 col-xs-12 col-md-offset-3">
-								
-								<div id="div_load" style="display:none">		
-									<div class="progress progress-striped active">
-										<div class="progress-bar" role="progressbar" aria-valuenow="45" aria-valuemin="0" aria-valuemax="100" style="width: 45%">
-											<span class="sr-only">45% completado</span>
-										</div>
-									</div>
-								</div>
-								<div id="div_error" style="display:none">			
-									<div class="alert alert-danger"><span class="glyphicon glyphicon-remove" id="span_msj"> &nbsp;</span></div>
-								</div>	
-								
-							</div>
-						</div>
-
-					</form>
+					</div>
+					
+					
+					
 				</div>
 			</div>
 		</div>

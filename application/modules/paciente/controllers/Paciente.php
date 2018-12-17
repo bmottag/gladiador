@@ -26,7 +26,7 @@ class Paciente extends MX_Controller {
 	{	
 		$this->load->model("general_model");
 		
-		$arrParam = array("idUser" => $idPsicologo);
+		$arrParam = array("idPaciente" => $idPaciente);
 		$data['information'] = $this->general_model->get_info_paciente($arrParam);//info paciente
 		
 		$data["view"] = 'info_paciente';
