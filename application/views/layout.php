@@ -55,6 +55,13 @@
 				$this->load->view("template/left_menu");
 			}
 			?>
+			
+			<!-- left navigation -->
+			<?php
+			if (isset($ADMIN)) {
+				$this->load->view("template/top_menu_original");
+			}
+			?>
 	  
 			<!-- Start of content -->
 			<?php
