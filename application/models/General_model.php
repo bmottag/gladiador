@@ -110,6 +110,22 @@ class General_model extends CI_Model {
 		}
 		
 		/**
+		 * Listado paciente
+		 * @since 16/12/2018
+		 */
+		public function get_listado_paciente() 
+		{
+				$this->db->select();
+				$query = $this->db->get("paciente");
+
+				if ($query->num_rows() >= 1) {
+					return $query->result_array();
+				} else {
+					return false;
+				}
+		}
+		
+		/**
 		 * Info paciente
 		 * @since 16/12/2018
 		 */
@@ -126,6 +142,34 @@ class General_model extends CI_Model {
 				} else {
 					return false;
 				}
+		}
+		
+		/**
+		 * Contar psicologos
+		 * @since  16/12/2018
+		 */
+		public function countPsicologos()
+		{
+				$sql = "SELECT count(id_psicologo) CONTEO";
+				$sql.= " FROM psicologo";
+				
+				$query = $this->db->query($sql);
+				$row = $query->row();
+				return $row->CONTEO;
+		}
+		
+		/**
+		 * Contar paciente
+		 * @since  16/12/2018
+		 */
+		public function countPacientes()
+		{
+				$sql = "SELECT count(id_paciente) CONTEO";
+				$sql.= " FROM paciente";
+				
+				$query = $this->db->query($sql);
+				$row = $query->row();
+				return $row->CONTEO;
 		}
 		
 		

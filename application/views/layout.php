@@ -48,7 +48,14 @@
   <body class="nav-md">
     <div class="container body">
       <div class="main_container">
-			
+
+			<!-- left navigation -->
+			<?php
+			if (isset($ADMIN)) {
+				$this->load->view("template/left_menu");
+			}
+			?>
+	  
 			<!-- Start of content -->
 			<?php
 			if (isset($view) && ($view != '')) {

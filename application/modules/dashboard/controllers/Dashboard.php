@@ -8,21 +8,36 @@ class Dashboard extends CI_Controller {
     }
 		
 	/**
-	 * Listado de solicitudes para un usuario
+	 * Index
      * @since 8/12/2018
      * @author BMOTTAG
 	 */
 	public function index()
 	{			
 		$this->load->model("general_model");
+		$data['ADMIN'] = true;
 		
-		$arrParam = array(
-						"idRol" => 3,
-						"state" => 1
-					);
-		$data['information'] = $this->general_model->get_user_list($arrParam);//info solicitudes
+		$data['noPsicologos'] = $this->general_model->countPsicologos();//cuenta de psicolgoos
+		$data['noPacientes'] = $this->general_model->countPacientes();//cuenta de psicolgoos
 
 		$data["view"] = 'dashboard';
+		$this->load->view("layout", $data);
+	}
+	
+	/**
+	 * Listado de psicologos
+     * @since 8/12/2018
+     * @author BMOTTAG
+	 */
+	public function listado_psicologos()
+	{			
+		$this->load->model("general_model");
+		$data['ADMIN'] = true;
+		
+		$arrParam = array();
+		$data['information'] = $this->general_model->get_user_list($arrParam);//info solicitudes
+
+		$data["view"] = 'listado_psicologos';
 		$this->load->view("layout", $data);
 	}
 	
@@ -34,8 +49,42 @@ class Dashboard extends CI_Controller {
 	public function ver_psicologo($idPsicologo)
 	{			
 		$this->load->model("general_model");
+		$data['ADMIN'] = true;
 		
 		$arrParam = array("idUser" => $idPsicologo);
+		$data['information'] = $this->general_model->get_info_psicologo($arrParam);//info psicologo
+		
+		$data["view"] = 'info_psicologo';
+		$this->load->view("layout", $data);
+	}
+
+	/**
+	 * Listado de psicologos
+     * @since 16/12/2018
+     * @author BMOTTAG
+	 */
+	public function listado_pacientes()
+	{			
+		$this->load->model("general_model");
+		$data['ADMIN'] = true;
+		
+		$data['information'] = $this->general_model->get_listado_paciente();//listado pacientes
+
+		$data["view"] = 'listado_pacientes';
+		$this->load->view("layout", $data);
+	}
+	
+	/**
+	 * Informacion psicologo
+     * @since 16/12/2018
+     * @author BMOTTAG
+	 */
+	public function ver_paciente($idPaciente)
+	{			
+		$this->load->model("general_model");
+		$data['ADMIN'] = true;
+		
+		$arrParam = array("idPaciente" => $idPaciente);
 		$data['information'] = $this->general_model->get_info_psicologo($arrParam);//info psicologo
 		
 		$data["view"] = 'info_psicologo';
