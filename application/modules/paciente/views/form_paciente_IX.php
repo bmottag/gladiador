@@ -50,23 +50,13 @@
 						</div>
 						
 						<div class="form-group">
-							<label class="control-label col-md-3 col-sm-3 col-xs-12" for="hora_contrato">Prefieres un psicólogo con algunas características particulares? <span class="required">*</span></label>
+							<label class="control-label col-md-3 col-sm-3 col-xs-12" for="caracteristica_idioma">En que idiomo desea tener las sesiones? <span class="required">*</span></label>
 							<div class="col-md-3 col-sm-3 col-xs-6">
-								  <div class="checkbox">
-									<label>
-									  <input type="checkbox" id="caracteristica_edad" value=1  name="caracteristica_edad" class="flat" <?php if($information && $information["caracteristica_edad"]){echo "checked";} ?>> Edad
-									</label>
-								  </div>
-								  <div class="checkbox">
-									<label>
-									  <input type="checkbox" id="caracteristica_enfoque" value=1  name="caracteristica_enfoque" class="flat" <?php if($information && $information["caracteristica_enfoque"]){echo "checked";} ?>> Enfoque
-									</label>
-								  </div>
-								  <div class="checkbox">
-									<label>
-									  <input type="checkbox" id="caracteristica_idioma" value=1  name="caracteristica_idioma" class="flat" <?php if($information && $information["caracteristica_idioma"]){echo "checked";} ?>> Idioma
-									</label>
-								  </div>
+								<select class="form-control" id="caracteristica_idioma" name="caracteristica_idioma" required="required">
+									<option value="">Seleccione</option>
+									<option value=1>Solo español</option>
+									<option value=2>Español o inglés</option>
+								</select>
 							</div>
 						</div>
 						

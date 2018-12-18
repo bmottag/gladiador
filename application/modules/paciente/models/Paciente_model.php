@@ -89,8 +89,6 @@
 						case 9:
 							$data = array(
 								'sesiones' => $this->input->post('sesiones'),
-								'caracteristica_edad' => $this->input->post('caracteristica_edad'),
-								'caracteristica_enfoque' => $this->input->post('caracteristica_enfoque'),
 								'caracteristica_idioma' => $this->input->post('caracteristica_idioma'),
 								'presupuesto' => $this->input->post('presupuesto')
 							);

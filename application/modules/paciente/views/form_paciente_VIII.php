@@ -28,7 +28,7 @@
 						<input type="hidden" id="hddId" name="hddId" value="<?php echo $information?$information["id_paciente"]:""; ?>"/>
 						<input type="hidden" id="formulario" name="formulario" value=8 />
 
-						<strong>Has pensado que hacerte daño físico o morir mejoraría algo? Si sí, qué tanto crees en estos pensamientos?</strong> 
+						<strong>Has pensado que hacerte daño físico o morir mejoraría algo?</strong> 
 												
 						<div class="form-group">
 							<div class="col-md-12 col-sm-12 col-xs-12">
