@@ -5,7 +5,7 @@
 		<div class="col-md-12 col-sm-12 col-xs-12">
 			<div class="x_panel">
 				<div class="x_title">
-					<h2><i class='fa fa-users'></i> Registro</h2>
+					<h2><i class='fa fa-users'></i> Registrate como psicólogo asociado de TuApoyo</h2>
 					<ul class="nav navbar-right panel_toolbox">
 						<li><a class="collapse-link"><i class="fa fa-chevron-up"></i></a>
 						</li>
@@ -15,7 +15,7 @@
 				<div class="x_content">
 
 					<div class="alert alert-success alert-dismissible fade in" role="alert">
-						<strong>Info:</strong> Cuestionario Psicólogos.
+						<strong> Cuestionario Psicólogos TuApoyo</strong>
 					</div>
 				
 					<form id="form" data-parsley-validate class="form-horizontal form-label-left">
@@ -106,12 +106,16 @@
 								<span class="fa fa-home form-control-feedback left" aria-hidden="true"></span>
 							</div>
 						</div>
-						
+												
 						<div class="form-group">
 							<label class="control-label col-md-3 col-sm-3 col-xs-12" for="tarifa">Cuál es tu tarifa por sesión? <span class="required">*</span></label>
 							<div class="col-md-6 col-sm-6 col-xs-12">
-								<input type="text" id="tarifa" name="tarifa" required="required" class="form-control col-md-7 col-xs-12 has-feedback-left" value="<?php echo $information?$information[0]["hora_contrato_cad"]:""; ?>" maxlength=5 placeholder="Cuál es tu tarifa por sesión?">
-								<span class="fa fa-dollar form-control-feedback left" aria-hidden="true"></span>
+								<select class="form-control" id="tarifa" name="tarifa" required="required">
+									<option value="">Seleccione</option>
+									<option value=1>Menos de $90.000</option>
+									<option value=2>Menos de $130.000</option>
+									<option value=3>Menos de $200.000</option>
+								</select>
 							</div>
 						</div>
 						
