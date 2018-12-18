@@ -430,44 +430,30 @@
 								</div>
 							</div>
 						</div>
-												
+																		
 						<div class="form-group">
 							<label class="control-label col-md-3 col-sm-3 col-xs-12" for="consultas">Ofreces consultas en persona, virtuales, o ambas? <span class="required">*</span></label>
-							<div class="col-md-3 col-sm-3 col-xs-12">
-								<div class="radio">
-									<label>
-									  <input type="radio" value=1 id="consultas1" name="consultas"> Ambas
-									</label>
-								</div>
-								<div class="radio">
-									<label>
-									  <input type="radio" value=2 id="consultas2" name="consultas"> Solo en persona
-									</label>
-								</div>
-								<div class="radio">
-									<label>
-									  <input type="radio" value=3 id="consultas3" name="consultas"> Solo virtual
-									</label>
-								</div>
+							<div class="col-md-6 col-sm-6 col-xs-12">
+								<select class="form-control" id="consultas" name="consultas" required="required">
+									<option value="">Seleccione</option>
+									<option value=1>Ambas</option>
+									<option value=2>Solo en persona</option>
+									<option value=3>Solo virtual</option>
+								</select>
 							</div>
 						</div>
 
 						<div class="form-group">
 							<label class="control-label col-md-3 col-sm-3 col-xs-12" for="idioma">En qué idioma ofreces consultas? <span class="required">*</span></label>
-							<div class="col-md-3 col-sm-3 col-xs-12">
-								<div class="radio">
-									<label>
-									  <input type="radio" value=1 id="idioma1" name="idioma"> Solo español
-									</label>
-								</div>
-								<div class="radio">
-									<label>
-									  <input type="radio" value=2 id="idioma2" name="idioma"> Español o inglés
-									</label>
-								</div>
+							<div class="col-md-6 col-sm-6 col-xs-12">
+								<select class="form-control" id="idioma" name="idioma" required="required">
+									<option value="">Seleccione</option>
+									<option value=1>Solo español</option>
+									<option value=2>Español o inglés</option>
+								</select>
 							</div>
-						</div>						
-						
+						</div>
+												
 						<div class="form-group">
 							<label class="control-label col-md-3 col-sm-3 col-xs-12" for="hora_contrato">Por favor selecciona 6 valores que sean de alta importancia para ti, tanto en el ejercicio de tu profesión como en tu vida personal <span class="required">*</span></label>
 							<div class="col-md-3 col-sm-3 col-xs-6">
