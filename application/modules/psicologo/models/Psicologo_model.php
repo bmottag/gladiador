@@ -84,7 +84,6 @@
 				'especialidad_autoestima' => $this->input->post('optionsAutoestima'),
 				'especialidad_pareja' => $this->input->post('optionsPareja'),
 				'especialidad_suicidio' => $this->input->post('optionsSuicidio'),
-				'salud' => $this->input->post('salud'),
 				'consultas' => $this->input->post('consultas'),
 				'idioma' => $this->input->post('idioma'),
 				'horario' => $this->input->post('horario')

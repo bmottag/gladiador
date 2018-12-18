@@ -430,15 +430,7 @@
 								</div>
 							</div>
 						</div>
-						
-						<div class="form-group">
-							<label class="control-label col-md-3 col-sm-3 col-xs-12" for="salud">Cómo manejas tu propia salud emocional para poder servirle a otros? <span class="required">*</span>
-							</label>
-							<div class="col-md-6 col-sm-6 col-xs-12">
-								<textarea id="salud" name="salud" placeholder="Cómo manejas tu propia salud emocional para poder servirle a otros?"  class="form-control" rows="3" required="required"><?php echo $information?$information[0]["description"]:""; ?></textarea>
-							</div>
-						</div>
-						
+												
 						<div class="form-group">
 							<label class="control-label col-md-3 col-sm-3 col-xs-12" for="consultas">Ofreces consultas en persona, virtuales, o ambas? <span class="required">*</span></label>
 							<div class="col-md-3 col-sm-3 col-xs-12">

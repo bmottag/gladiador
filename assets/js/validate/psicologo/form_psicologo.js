@@ -17,7 +17,6 @@ $( document ).ready( function () {
 			pagina_web:	 		{ maxlength:100 },
 			direccion:	 		{ required: true, maxlength:100 },
 			tarifa:		 		{ required: true, maxlength:20 },
-			salud:			 	{ required: true },
 			consultas:			{ required: true },
 			idioma:			 	{ required: true },
 			horario:		 	{ required: true }
