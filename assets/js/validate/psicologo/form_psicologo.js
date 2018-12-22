@@ -1,9 +1,38 @@
 $( document ).ready( function () {
 
 
-
     $("input[name=optionsAnsiedad]").on("click", function() {
 		$('#ansiedad').val("ok");
+		
+    });
+	
+    $("input[name=optionsDepresion]").on("click", function() {
+		$('#depresion').val("ok");
+		
+    });
+	
+    $("input[name=optionsSustancias]").on("click", function() {
+		$('#sustancias').val("ok");
+		
+    });
+	
+    $("input[name=optionsSalud]").on("click", function() {
+		$('#salud').val("ok");
+		
+    });
+	
+    $("input[name=optionsAutoestima]").on("click", function() {
+		$('#autoestima').val("ok");
+		
+    });
+	
+    $("input[name=optionsPareja]").on("click", function() {
+		$('#pareja').val("ok");
+		
+    });
+	
+    $("input[name=optionsSuicidio]").on("click", function() {
+		$('#suicidio').val("ok");
 		
     });
 
@@ -29,6 +58,29 @@ jQuery.validator.addMethod("enfoque", function(e) {
 	}
 }, "Mínimo 1, máximo 2");
 
+//para la pregunta de valores
+jQuery.validator.addMethod("valores", function(e) {
+	formulario = document.getElementById("form");
+
+		//var nn = formulario.elements[92];
+		//alert(nn.value);
+	var contx = 0; 
+	
+	for(var i=60; i<92; i++) {
+		var elemento = formulario.elements[i];
+		if(elemento.type == "checkbox") {
+			if(elemento.checked) {
+				contx = contx + 1;
+			}
+		}
+	}
+	if(contx==6){
+		return true;
+	}else{
+		return false;
+	}
+}, "Por favor selecciona 6 valores.");
+
 			
 	$("#nombres").convertirMayuscula().maxlength(25);
 	$("#apellidos").convertirMayuscula().maxlength(25);
@@ -51,7 +103,14 @@ jQuery.validator.addMethod("enfoque", function(e) {
 			idioma:			 	{ required: true },
 			horario:		 	{ required: true },
 			hddEnfoques:		{ enfoque: true },
-			ansiedad:			{ required: true }
+			ansiedad:			{ required: true },
+			depresion:			{ required: true },
+			sustancias:			{ required: true },
+			salud:				{ required: true },
+			autoestima:			{ required: true },
+			pareja:				{ required: true },
+			suicidio:			{ required: true },
+			hddValores:			{ valores: true }
 			
 		},
 		errorElement: "em",
@@ -126,7 +185,9 @@ jQuery.validator.addMethod("enfoque", function(e) {
 		
 				});	
 		
-		}//if			
+		}else{
+			alert('Los campos con * son obligatorios.');
+		}			
 	});
 
 });

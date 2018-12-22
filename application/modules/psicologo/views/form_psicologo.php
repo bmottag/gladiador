@@ -87,14 +87,14 @@
 						<div class="form-group">
 							<label class="control-label col-md-3 col-sm-3 col-xs-12" for="experiencia">Cuántos años de experiencia en consulta tienes? <span class="required">*</span></label>
 							<div class="col-md-6 col-sm-6 col-xs-12">
-								<input type="text" id="experiencia" name="experiencia" required="required" class="form-control col-md-7 col-xs-12" value="<?php echo $information?$information[0]["hora_contrato_cad"]:""; ?>" maxlength=5 placeholder="Cuántos años de experiencia en consulta tienes?">
+								<input type="text" id="experiencia" name="experiencia" required="required" class="form-control col-md-7 col-xs-12" value="<?php echo $information?$information[0]["hora_contrato_cad"]:""; ?>" maxlength=100 placeholder="Cuántos años de experiencia en consulta tienes?">
 							</div>
 						</div>
 						
 						<div class="form-group">
 							<label class="control-label col-md-3 col-sm-3 col-xs-12" for="pagina_web">Página web personal </label>
 							<div class="col-md-6 col-sm-6 col-xs-12">
-								<input type="text" id="pagina_web" name="pagina_web" class="form-control col-md-7 col-xs-12 has-feedback-left" value="<?php echo $information?$information[0]["hora_contrato_cad"]:""; ?>" maxlength=5 placeholder="Página web personal">
+								<input type="text" id="pagina_web" name="pagina_web" class="form-control col-md-7 col-xs-12 has-feedback-left" value="<?php echo $information?$information[0]["hora_contrato_cad"]:""; ?>" maxlength=100 placeholder="Página web personal">
 								<span class="fa fa-globe form-control-feedback left" aria-hidden="true"></span>
 							</div>
 						</div>
@@ -102,7 +102,7 @@
 						<div class="form-group">
 							<label class="control-label col-md-3 col-sm-3 col-xs-12" for="direccion">Dirección de tu consultorio <span class="required">*</span></label>
 							<div class="col-md-6 col-sm-6 col-xs-12">
-								<input type="text" id="direccion" name="direccion" required="required" class="form-control col-md-7 col-xs-12 has-feedback-left" value="<?php echo $information?$information[0]["hora_contrato_cad"]:""; ?>" maxlength=5 placeholder="Dirección de tu consultorio">
+								<input type="text" id="direccion" name="direccion" required="required" class="form-control col-md-7 col-xs-12 has-feedback-left" value="<?php echo $information?$information[0]["hora_contrato_cad"]:""; ?>" maxlength=100 placeholder="Dirección de tu consultorio">
 								<span class="fa fa-home form-control-feedback left" aria-hidden="true"></span>
 							</div>
 						</div>
@@ -125,29 +125,29 @@
 							<div class="col-md-3 col-sm-3 col-xs-6">
 								  <div class="checkbox">
 									<label>
-									  <input type="checkbox" id="cognitivo" name="cognitivo" value=1> Cognitivo Conductual
+									  <input type="checkbox" id="cognitivo" name="cognitivo" value=1 class="flat"> Cognitivo Conductual
 									</label>
 								  </div>
 								  <div class="checkbox">
 									<label>
-									  <input type="checkbox" id="psicoanalisis" name="psicoanalisis" value=1> Psicoanálisis
+									  <input type="checkbox" id="psicoanalisis" name="psicoanalisis" value=1 class="flat"> Psicoanálisis
 									</label>
 								  </div>
 								  <div class="checkbox">
 									<label>
-									  <input type="checkbox" id="sistemico" name="sistemico" value=1> Sistémico
+									  <input type="checkbox" id="sistemico" name="sistemico" value=1 class="flat"> Sistémico
 									</label>
 								  </div>
 							</div>
 							<div class="col-md-3 col-sm-3 col-xs-6">
 								  <div class="checkbox">
 									<label>
-									  <input type="checkbox" id="transpersonal" name="transpersonal" value=1> Transpersonal
+									  <input type="checkbox" id="transpersonal" name="transpersonal" value=1 class="flat"> Transpersonal
 									</label>
 								  </div>
 								  <div class="checkbox">
 									<label>
-									  <input type="checkbox" id="humanista" name="humanista" value=1> Humanista
+									  <input type="checkbox" id="humanista" name="humanista" value=1 class="flat"> Humanista
 									</label>
 								  </div>
 							</div>
@@ -204,7 +204,7 @@
 								</div>
 							</div>
 							
-							<div class="col-md-6 col-sm-6 col-xs-12">
+							<div class="col-md-4 col-sm-4 col-xs-12">
 								<div class="radio">
 									<label>
 									  <input type="hidden" id="ansiedad" name="ansiedad" >
@@ -250,6 +250,13 @@
 									</label>
 								</div>
 							</div>
+							<div class="col-md-4 col-sm-4 col-xs-12">
+								<div class="radio">
+									<label>
+									  <input type="hidden" id="depresion" name="depresion" >
+									</label>
+								</div>
+							</div>
 						</div>
 						
 						<div class="form-group">
@@ -286,6 +293,13 @@
 								<div class="radio">
 									<label>
 									  <input type="radio" value=5 id="optionsSustancias5" name="optionsSustancias"> 5
+									</label>
+								</div>
+							</div>
+							<div class="col-md-4 col-sm-4 col-xs-12">
+								<div class="radio">
+									<label>
+									  <input type="hidden" id="sustancias" name="sustancias" >
 									</label>
 								</div>
 							</div>
@@ -328,6 +342,13 @@
 									</label>
 								</div>
 							</div>
+							<div class="col-md-4 col-sm-4 col-xs-12">
+								<div class="radio">
+									<label>
+									  <input type="hidden" id="salud" name="salud" >
+									</label>
+								</div>
+							</div>
 						</div>
 						
 						<div class="form-group">
@@ -364,6 +385,13 @@
 								<div class="radio">
 									<label>
 									  <input type="radio" value=5 id="optionsAutoestima5" name="optionsAutoestima"> 5
+									</label>
+								</div>
+							</div>
+							<div class="col-md-4 col-sm-4 col-xs-12">
+								<div class="radio">
+									<label>
+									  <input type="hidden" id="autoestima" name="autoestima" >
 									</label>
 								</div>
 							</div>
@@ -406,6 +434,13 @@
 									</label>
 								</div>
 							</div>
+							<div class="col-md-4 col-sm-4 col-xs-12">
+								<div class="radio">
+									<label>
+									  <input type="hidden" id="pareja" name="pareja" >
+									</label>
+								</div>
+							</div>
 						</div>
 						
 						<div class="form-group">
@@ -442,6 +477,13 @@
 								<div class="radio">
 									<label>
 									  <input type="radio" value=5 id="optionsSuicidio5" name="optionsSuicidio"> 5
+									</label>
+								</div>
+							</div>
+							<div class="col-md-4 col-sm-4 col-xs-12">
+								<div class="radio">
+									<label>
+									  <input type="hidden" id="suicidio" name="suicidio" >
 									</label>
 								</div>
 							</div>
@@ -627,6 +669,14 @@
 									  <input type="checkbox" id="unidad" name="unidad" value=1 class="flat"> Unidad
 									</label>
 								  </div>
+							</div>
+						</div>
+						
+						<div class="form-group">
+							<label class="control-label col-md-3 col-sm-3 col-xs-12" for="valores">
+							</label>
+							<div class="col-md-6 col-sm-6 col-xs-12">
+								<input type="hidden" id="hddValores" name="hddValores" value=0 >
 							</div>
 						</div>
 

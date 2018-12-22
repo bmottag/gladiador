@@ -69,6 +69,7 @@ class Psicologo extends MX_Controller {
 					$this->session->set_flashdata('retornoExito', $msj);
 				} else {
 					$data["result"] = "error";
+					$data["mensaje"] = " Error. Los campos con * son obligatorios.";
 					$data["idRecord"] = '';
 					$this->session->set_flashdata('retornoError', '<strong>Error!!!</strong> Ask for help, contact the Admin.');
 				}
