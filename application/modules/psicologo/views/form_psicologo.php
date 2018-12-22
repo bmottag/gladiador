@@ -125,31 +125,39 @@
 							<div class="col-md-3 col-sm-3 col-xs-6">
 								  <div class="checkbox">
 									<label>
-									  <input type="checkbox" id="cognitivo" name="cognitivo" value=1 class="flat"> Cognitivo Conductual
+									  <input type="checkbox" id="cognitivo" name="cognitivo" value=1> Cognitivo Conductual
 									</label>
 								  </div>
 								  <div class="checkbox">
 									<label>
-									  <input type="checkbox" id="psicoanalisis" name="psicoanalisis" value=1 class="flat"> Psicoanálisis
+									  <input type="checkbox" id="psicoanalisis" name="psicoanalisis" value=1> Psicoanálisis
 									</label>
 								  </div>
 								  <div class="checkbox">
 									<label>
-									  <input type="checkbox" id="sistemico" name="sistemico" value=1 class="flat"> Sistémico
+									  <input type="checkbox" id="sistemico" name="sistemico" value=1> Sistémico
 									</label>
 								  </div>
 							</div>
 							<div class="col-md-3 col-sm-3 col-xs-6">
 								  <div class="checkbox">
 									<label>
-									  <input type="checkbox" id="transpersonal" name="transpersonal" value=1 class="flat"> Transpersonal
+									  <input type="checkbox" id="transpersonal" name="transpersonal" value=1> Transpersonal
 									</label>
 								  </div>
 								  <div class="checkbox">
 									<label>
-									  <input type="checkbox" id="humanista" name="humanista" value=1 class="flat"> Humanista
+									  <input type="checkbox" id="humanista" name="humanista" value=1> Humanista
 									</label>
 								  </div>
+							</div>
+						</div>
+						
+						<div class="form-group">
+							<label class="control-label col-md-3 col-sm-3 col-xs-12" for="apellidos">
+							</label>
+							<div class="col-md-6 col-sm-6 col-xs-12">
+								<input type="hidden" id="hddEnfoques" name="hddEnfoques" value=0 >
 							</div>
 						</div>
 						
@@ -192,6 +200,14 @@
 								<div class="radio">
 									<label>
 									  <input type="radio" value=5 id="optionsAnsiedad5" name="optionsAnsiedad"> 5
+									</label>
+								</div>
+							</div>
+							
+							<div class="col-md-6 col-sm-6 col-xs-12">
+								<div class="radio">
+									<label>
+									  <input type="hidden" id="ansiedad" name="ansiedad" >
 									</label>
 								</div>
 							</div>
@@ -459,51 +475,156 @@
 							<div class="col-md-3 col-sm-3 col-xs-6">
 								  <div class="checkbox">
 									<label>
-									  <input type="checkbox" class="flat"> Autosuficiencia
+									  <input type="checkbox" id="autosuficiencia" name="autosuficiencia" value=1 class="flat"> Autosuficiencia
 									</label>
 								  </div>
 								  <div class="checkbox">
 									<label>
-									  <input type="checkbox" class="flat"> Bondad
+									  <input type="checkbox" id="bondad" name="bondad" value=1 class="flat"> Bondad
 									</label>
 								  </div>
 								  <div class="checkbox">
 									<label>
-									  <input type="checkbox" class="flat"> Certidumbre
+									  <input type="checkbox" id="certidumbre" name="certidumbre" value=1 class="flat"> Certidumbre
+									</label>
+								  </div>
+								  <div class="checkbox">
+									<label>
+									  <input type="checkbox" id="coherencia" name="coherencia" value=1 class="flat"> Coherencia
+									</label>
+								  </div>
+								  <div class="checkbox">
+									<label>
+									  <input type="checkbox" id="compasivo" name="compasivo" value=1 class="flat"> Compasivo
+									</label>
+								  </div>
+								  <div class="checkbox">
+									<label>
+									  <input type="checkbox" id="confianza" name="confianza" value=1 class="flat"> Confianza
+									</label>
+								  </div>
+								  <div class="checkbox">
+									<label>
+									  <input type="checkbox" id="coperacion" name="coperacion" value=1 class="flat"> Coperación
+									</label>
+								  </div>
+								  <div class="checkbox">
+									<label>
+									  <input type="checkbox" id="coraje" name="coraje" value=1 class="flat"> Coraje
+									</label>
+								  </div>
+								  <div class="checkbox">
+									<label>
+									  <input type="checkbox" id="curiosidad" name="curiosidad" value=1 class="flat"> Curiosidad
+									</label>
+								  </div>
+								  <div class="checkbox">
+									<label>
+									  <input type="checkbox" id="equidad" name="equidad" value=1 class="flat"> Equidad
 									</label>
 								  </div>
 							</div>
 							<div class="col-md-3 col-sm-3 col-xs-6">
 								  <div class="checkbox">
 									<label>
-									  <input type="checkbox" class="flat"> Compasión
+									  <input type="checkbox" id="generosidad" name="generosidad" value=1 class="flat"> Generosidad
 									</label>
 								  </div>
 								  <div class="checkbox">
 									<label>
-									  <input type="checkbox" class="flat"> Confianza
+									  <input type="checkbox" id="gratitud" name="gratitud" value=1 class="flat"> Gratitud
 									</label>
 								  </div>
 								  <div class="checkbox">
 									<label>
-									  <input type="checkbox" class="flat"> Coperación
+									  <input type="checkbox" id="honestidad" name="honestidad" value=1 class="flat"> Honestidad
+									</label>
+								  </div>
+								  <div class="checkbox">
+									<label>
+									  <input type="checkbox" id="humildad" name="humildad" value=1 class="flat"> Humildad
+									</label>
+								  </div>
+								  <div class="checkbox">
+									<label>
+									  <input type="checkbox" id="independencia" name="independencia" value=1 class="flat"> Independencia
+									</label>
+								  </div>
+								  <div class="checkbox">
+									<label>
+									  <input type="checkbox" id="lealtad" name="lealtad" value=1 class="flat"> Lealtad
+									</label>
+								  </div>
+								  <div class="checkbox">
+									<label>
+									  <input type="checkbox" id="libertad" name="libertad" value=1 class="flat"> Libertad
+									</label>
+								  </div>
+								  <div class="checkbox">
+									<label>
+									  <input type="checkbox" id="mente_abierta" name="mente_abierta" value=1 class="flat"> Mente abierta
+									</label>
+								  </div>
+								  <div class="checkbox">
+									<label>
+									  <input type="checkbox" id="moderacion" name="moderacion" value=1 class="flat"> Moderación
+									</label>
+								  </div>
+								  <div class="checkbox">
+									<label>
+									  <input type="checkbox" id="paciencia" name="paciencia" value=1 class="flat"> Paciencia
 									</label>
 								  </div>
 							</div>
 							<div class="col-md-3 col-sm-3 col-xs-6">
 								  <div class="checkbox">
 									<label>
-									  <input type="checkbox" class="flat"> Coraje
+									  <input type="checkbox" id="persistencia" name="persistencia" value=1 class="flat"> Persistencia
 									</label>
 								  </div>
 								  <div class="checkbox">
 									<label>
-									  <input type="checkbox" class="flat"> Curiosidad
+									  <input type="checkbox" id="proactividad" name="proactividad" value=1 class="flat"> Proactividad
 									</label>
 								  </div>
 								  <div class="checkbox">
 									<label>
-									  <input type="checkbox" class="flat"> Equidad
+									  <input type="checkbox" id="proposito" name="proposito" value=1 class="flat"> Propósito
+									</label>
+								  </div>
+								  <div class="checkbox">
+									<label>
+									  <input type="checkbox" id="respeto" name="respeto" value=1 class="flat"> Respeto
+									</label>
+								  </div>
+								  <div class="checkbox">
+									<label>
+									  <input type="checkbox" id="responsabilidad" name="responsabilidad" value=1 class="flat"> Responsabilidad
+									</label>
+								  </div>
+								  <div class="checkbox">
+									<label>
+									  <input type="checkbox" id="servicio" name="servicio" value=1 class="flat"> Servicio
+									</label>
+								  </div>
+								  <div class="checkbox">
+									<label>
+									  <input type="checkbox" id="solidaridad" name="solidaridad" value=1 class="flat"> Solidaridad
+									</label>
+								  </div>
+								  <div class="checkbox">
+									<label>
+									  <input type="checkbox" id="sostenibilidad" name="sostenibilidad" value=1 class="flat"> Sostenibilidad
+									</label>
+								  </div>
+								  <div class="checkbox">
+									<label>
+									  <input type="checkbox" id="tolerancia" name="tolerancia" value=1 class="flat"> Tolerancia
+									</label>
+								  </div>
+								  <div class="checkbox">
+									<label>
+									  <input type="checkbox" id="unidad" name="unidad" value=1 class="flat"> Unidad
 									</label>
 								  </div>
 							</div>

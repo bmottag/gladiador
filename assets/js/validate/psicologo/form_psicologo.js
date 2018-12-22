@@ -1,4 +1,34 @@
 $( document ).ready( function () {
+
+
+
+    $("input[name=optionsAnsiedad]").on("click", function() {
+		$('#ansiedad').val("ok");
+		
+    });
+
+//para la pregunta de enfoque
+jQuery.validator.addMethod("enfoque", function(e) {
+	formulario = document.getElementById("form");
+					
+	var cont = 0; 
+	
+	for(var i=12; i<17; i++) {
+		var elemento = formulario.elements[i];
+		if(elemento.type == "checkbox") {
+			if(elemento.checked) {
+				cont = cont + 1;
+				
+			}
+		}
+	}
+	if(cont==2 || cont==1 ){
+		return true;
+	}else{
+		return false;
+	}
+}, "Mínimo 1, máximo 2");
+
 			
 	$("#nombres").convertirMayuscula().maxlength(25);
 	$("#apellidos").convertirMayuscula().maxlength(25);
@@ -19,7 +49,9 @@ $( document ).ready( function () {
 			tarifa:		 		{ required: true, maxlength:20 },
 			consultas:			{ required: true },
 			idioma:			 	{ required: true },
-			horario:		 	{ required: true }
+			horario:		 	{ required: true },
+			hddEnfoques:		{ enfoque: true },
+			ansiedad:			{ required: true }
 			
 		},
 		errorElement: "em",
