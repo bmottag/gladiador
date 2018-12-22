@@ -5,7 +5,7 @@
 		<div class="col-md-12 col-sm-12 col-xs-12">
 			<div class="x_panel">
 				<div class="x_title">
-					<h2><i class='fa fa-users'></i> Cuestionario Paciente</h2>
+					<h2><i class='fa fa-users'></i> Encontrar mi psicólogo</h2>
 					<ul class="nav navbar-right panel_toolbox">
 						<li><a class="collapse-link"><i class="fa fa-chevron-up"></i></a>
 						</li>
@@ -15,7 +15,7 @@
 				<div class="x_content">
 
 					<div class="alert alert-success alert-dismissible fade in" role="alert">
-						<strong>Info:</strong> Cuestionario para perfilar al paciente de acuerdo a las respuestas que da. <small>(VIX)</small>
+						<strong>Completa el cuestionario TuApoyo y encuentra el mejor psicólogo para ti</strong> <small>(VIX)</small>
 					</div>
 					
 					<div class="progress progress-striped progress_wide">
@@ -31,21 +31,12 @@
 						<div class="form-group">
 							<label class="control-label col-md-3 col-sm-3 col-xs-12" for="sesiones">Prefieres sesiones en persona, virtuales, o ambas? <span class="required">*</span></label>
 							<div class="col-md-3 col-sm-3 col-xs-12">
-								<div class="radio">
-									<label>
-									  <input type="radio" value=1 id="sesiones1" name="sesiones" <?php if($information && $information["sesiones"] == 1) { echo "checked"; }  ?>> Solo en persona
-									</label>
-								</div>
-								<div class="radio">
-									<label>
-									  <input type="radio" value=2 id="sesiones2" name="sesiones" <?php if($information && $information["sesiones"] == 2) { echo "checked"; }  ?>> Solo virtual (online)
-									</label>
-								</div>
-								<div class="radio">
-									<label>
-									  <input type="radio" value=3 id="sesiones3" name="sesiones" <?php if($information && $information["sesiones"] == 3) { echo "checked"; }  ?>> Ambas
-									</label>
-								</div>
+								<select class="form-control" id="sesiones" name="sesiones" required="required">
+									<option value="">Seleccione</option>
+									<option value=1 <?php if($information["sesiones"] == 1) { echo "selected"; }  ?>>Solo en persona</option>
+									<option value=2 <?php if($information["sesiones"] == 2) { echo "selected"; }  ?>>Solo virtual (online)</option>
+									<option value=3 <?php if($information["sesiones"] == 3) { echo "selected"; }  ?>>Ambas</option>
+								</select>
 							</div>
 						</div>
 						
@@ -54,8 +45,8 @@
 							<div class="col-md-3 col-sm-3 col-xs-6">
 								<select class="form-control" id="caracteristica_idioma" name="caracteristica_idioma" required="required">
 									<option value="">Seleccione</option>
-									<option value=1>Solo español</option>
-									<option value=2>Español o inglés</option>
+									<option value=1 <?php if($information["caracteristica_idioma"] == 1) { echo "selected"; }  ?>>Solo español</option>
+									<option value=2 <?php if($information["caracteristica_idioma"] == 2) { echo "selected"; }  ?>>Español o inglés</option>
 								</select>
 							</div>
 						</div>
@@ -63,26 +54,13 @@
 						<div class="form-group">
 							<label class="control-label col-md-3 col-sm-3 col-xs-12" for="presupuesto">Cuál es tu presupuesto para cada sesión? <span class="required">*</span></label>
 							<div class="col-md-3 col-sm-3 col-xs-12">
-								<div class="radio">
-									<label>
-									  <input type="radio" value=1 id="presupuesto1" name="presupuesto" <?php if($information && $information["presupuesto"] == 1) { echo "checked"; }  ?>> Menos de $90.000
-									</label>
-								</div>
-								<div class="radio">
-									<label>
-									  <input type="radio" value=2 id="presupuesto2" name="presupuesto" <?php if($information && $information["presupuesto"] == 2) { echo "checked"; }  ?>> Menos de $130.000
-									</label>
-								</div>
-								<div class="radio">
-									<label>
-									  <input type="radio" value=3 id="presupuesto3" name="presupuesto" <?php if($information && $information["presupuesto"] == 3) { echo "checked"; }  ?>> Menos de $200.000
-									</label>
-								</div>
-								<div class="radio">
-									<label>
-									  <input type="radio" value=4 id="presupuesto4" name="presupuesto" <?php if($information && $information["presupuesto"] == 4) { echo "checked"; }  ?>> No importa el valor de la sesión
-									</label>
-								</div>
+								<select class="form-control" id="presupuesto" name="presupuesto" required="required">
+									<option value="">Seleccione</option>
+									<option value=1 <?php if($information["presupuesto"] == 1) { echo "selected"; }  ?>>Menos de $90.000</option>
+									<option value=2 <?php if($information["presupuesto"] == 2) { echo "selected"; }  ?>>Menos de $130.000</option>
+									<option value=3 <?php if($information["presupuesto"] == 3) { echo "selected"; }  ?>>Menos de $200.000</option>
+									<option value=4 <?php if($information["presupuesto"] == 4) { echo "selected"; }  ?>>No importa el valor de la sesión</option>
+								</select>
 							</div>
 						</div>
 
