@@ -1,5 +1,13 @@
 <script type="text/javascript" src="<?php echo base_url("assets/js/validate/paciente/form_registro.js"); ?>"></script>
 
+<script>
+   $(document).ready(function()
+   {
+      $("#mostrarmodal").modal("show");
+   });
+</script>
+
+
 <div class="right_col" role="main">
 	<div class="row">
 		<div class="col-md-12 col-sm-12 col-xs-12">
@@ -60,8 +68,32 @@
 						</div>
 
 					</form>
+					
 				</div>
 			</div>
 		</div>
 	</div>
 </div>
+
+
+   <div class="modal fade" id="mostrarmodal" tabindex="-1" role="dialog" aria-labelledby="basicModal" aria-hidden="true">
+      <div class="modal-dialog">
+        <div class="modal-content">
+           <div class="modal-header">
+          <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+              <h3>Encontrar mi psicólogo - TuApoyo</h3>
+           </div>
+           <div class="modal-body">
+              <h4>Hola!</h4>
+              Si estás acá es porque deseas cambiar o mejorar algún aspecto de tu vida, lo cual es una
+decisión que requiere coraje. Por parte de TuApoyo, agradecemos tu iniciativa.
+<p>Consejo: Entre más honestidad y sinceridad utilices para responder el cuestionario, habrá mayor
+certeza de cuáles son los psicólogos adecuados para ti. Ten la tranquilidad que toda tu información
+es confidencial y privada.  </p>
+       </div>
+           <div class="modal-footer">
+          <a href="#" data-dismiss="modal" class="btn btn-danger">Comenzar ya!</a>
+           </div>
+      </div>
+   </div>
+   </div>
