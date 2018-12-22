@@ -42,6 +42,18 @@
 						<div class="table-responsive">
 					
 <?php
+	switch ($information['tarifa']) {
+		case 1:
+			$tarifa = 'Menos de $90.000';
+			break;
+		case 2:
+			$tarifa = 'Menos de $130.000';
+			break;
+		case 3:
+			$tarifa = 'Menos de $200.000';
+			break;
+	}
+	
 	switch ($information['edad']) {
 		case 1:
 			$edad = '23-27';
@@ -101,7 +113,7 @@
 									</tr>
 									<tr>
 										<td>Cuál es tu tarifa por sesión?</td>
-										<td class="fs15 fw700 text-right"><?php echo $information['tarifa']; ?></td>
+										<td class="fs15 fw700 text-right"><?php echo $tarifa; ?></td>
 									</tr>
 									<tr>
 										<td>Cuáles enfoques utilizas? </td>
@@ -116,16 +128,49 @@
 										</td>
 									</tr>
 									<tr>
-										<td>Cómo manejas tu propia salud emocional para poder servirle a otros?</td>
-										<td class="fs15 fw700 text-right"><?php echo $information['salud']; ?></td>
-									</tr>
-									<tr>
 										<td>Ofreces consultas en persona, virtuales, o ambas?</td>
 										<td class="fs15 fw700 text-right"><?php echo $consultas; ?></td>
 									</tr>
 									<tr>
 										<td>En qué idioma ofreces consultas?</td>
 										<td class="fs15 fw700 text-right"><?php echo $idioma; ?></td>
+									</tr>
+									<tr>
+										<td>6 valores que sean de alta importancia para ti, tanto en el ejercicio de tu profesión como en tu vida personal </td>
+										<td class="fs15 fw700 text-right">									
+										<?php 
+											echo $information['valores_autosuficiencia']?' Autosuficiencia<br>':''; 
+											echo $information['valores_bondad']?' Bondad                  <br>':''; 
+											echo $information['valores_certidumbre']?' Certidumbre        <br>':''; 
+											echo $information['valores_coherencia']?' Coherencia          <br>':''; 
+											echo $information['valores_compasivo']?' Compasivo            <br>':''; 
+											echo $information['valores_confianza']?' Confianza            <br>':''; 
+											echo $information['valores_coperacion']?' Coperación          <br>':''; 
+											echo $information['valores_coraje']?' Coraje                  <br>':''; 
+											echo $information['valores_curiosidad']?' Curiosidad          <br>':''; 
+											echo $information['valores_equidad']?' Equidad                <br>':''; 
+											echo $information['valores_generosidad']?' Generosidad        <br>':''; 
+											echo $information['valores_gratitud']?' Gratitud              <br>':''; 
+											echo $information['valores_honestidad']?' Honestidad          <br>':''; 
+											echo $information['valores_humildad']?' Humildad              <br>':''; 
+											echo $information['valores_independencia']?' Independencia    <br>':''; 
+											echo $information['valores_lealtad']?' Lealtad                <br>':''; 
+											echo $information['valores_libertad']?' Libertad              <br>':''; 
+											echo $information['valores_mente_abierta']?' Mente Abierta    <br>':''; 
+											echo $information['valores_moderacion']?' Moderación          <br>':''; 
+											echo $information['valores_paciencia']?' Paciencia            <br>':''; 
+											echo $information['valores_persistencia']?' Persistencia      <br>':''; 
+											echo $information['valores_proactividad']?' Proactividad      <br>':''; 
+											echo $information['valores_proposito']?' Propósito            <br>':''; 
+											echo $information['valores_respeto']?' Respeto                <br>':''; 
+											echo $information['valores_responsabilidad']?' Responsabilidad<br>':''; 
+											echo $information['valores_servicio']?' Servicio              <br>':''; 
+											echo $information['valores_solidaridad']?' Solidaridad        <br>':''; 
+											echo $information['valores_sostenibilidad']?' Sostenibilidad  <br>':''; 
+											echo $information['valores_tolerancia']?' Tolerancia          <br>':''; 
+											echo $information['valores_unidad']?' Unidad                  <br>':''; 
+										?>
+										</td>
 									</tr>
 									<tr>
 										<td>Cuáles son tus horarios de atención?</td>
@@ -178,6 +223,7 @@
 							</table>
 					
 						</div>
+						
 					</div>
 					
 					
