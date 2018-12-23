@@ -34,36 +34,48 @@
 							<div class="col-md-12 col-sm-12 col-xs-12">
 								<div class="radio">
 									<label>
-									  <input type="radio" value=1 id="suicidio1" name="suicidio" <?php if($information && $information["suicidio"] == 1) { echo "checked"; }  ?>> No he tenido estos pensamientos
+									  <input type="radio" value=1 id="optionsSuicidio1" name="optionsSuicidio" <?php if($information && $information["suicidio"] == 1) { echo "checked"; }  ?>> No he tenido estos pensamientos
 									</label>
 								</div>
 							</div>
 							<div class="col-md-12 col-sm-12 col-xs-12">
 								<div class="radio">
 									<label>
-									  <input type="radio" value=2 id="suicidio1" name="suicidio" <?php if($information && $information["suicidio"] == 2) { echo "checked"; }  ?>> He tenido este tipo de pensamientos infrecuentemente y no me tomo estos pensamientos en serio.
+									  <input type="radio" value=2 id="optionsSuicidio2" name="optionsSuicidio" <?php if($information && $information["suicidio"] == 2) { echo "checked"; }  ?>> He tenido este tipo de pensamientos infrecuentemente y no me tomo estos pensamientos en serio.
 									</label>
 								</div>
 							</div>
 							<div class="col-md-12 col-sm-12 col-xs-12">
 								<div class="radio">
 									<label>
-									  <input type="radio" value=3 id="suicidio1" name="suicidio" <?php if($information && $information["suicidio"] == 3) { echo "checked"; }  ?>> He tenido este tipo de pensamientos y me siento confundido de por qué estoy pensando de esta forma
+									  <input type="radio" value=3 id="optionsSuicidio3" name="optionsSuicidio" <?php if($information && $information["suicidio"] == 3) { echo "checked"; }  ?>> He tenido este tipo de pensamientos y me siento confundido de por qué estoy pensando de esta forma
 									</label>
 								</div>
 							</div>
 							<div class="col-md-12 col-sm-12 col-xs-12">
 								<div class="radio">
 									<label>
-									  <input type="radio" value=4 id="suicidio1" name="suicidio" <?php if($information && $information["suicidio"] == 4) { echo "checked"; }  ?>> He tenido este tipo de pensamientos frecuentemente y considero que hacerme daño físicamente es una alternativa real
+									  <input type="radio" value=4 id="optionsSuicidio4" name="optionsSuicidio" <?php if($information && $information["suicidio"] == 4) { echo "checked"; }  ?>> He tenido este tipo de pensamientos frecuentemente y considero que hacerme daño físicamente es una alternativa real
 									</label>
 								</div>
 							</div>
 							<div class="col-md-12 col-sm-12 col-xs-12">
 								<div class="radio">
 									<label>
-									  <input type="radio" value=5 id="suicidio1" name="suicidio" <?php if($information && $information["suicidio"] == 5) { echo "checked"; }  ?>> Actualmente estoy pensando y/o planeando en hacerme daño.
+									  <input type="radio" value=5 id="optionsSuicidio5" name="optionsSuicidio" <?php if($information && $information["suicidio"] == 5) { echo "checked"; }  ?>> Actualmente estoy pensando y/o planeando en hacerme daño.
 									</label>
+								</div>
+							</div>
+						</div>
+						
+						<div class="form-group">
+							<div class="col-md-12 col-sm-12 col-xs-12">
+								<div class="row" align="center">
+									<div style="width:80%;" align="center">						
+										<label>
+										  <input type="hidden" id="suicidio" name="suicidio" value="<?php echo $information?$information["suicidio"]:""; ?>">
+										</label>
+									</div>
 								</div>
 							</div>
 						</div>
@@ -73,6 +85,7 @@
 							<div class="col-md-6 col-sm-6 col-xs-12 col-md-offset-3">
 								<div class="row" align="center">
 									<div style="width:50%;" align="center">
+										<a class="btn btn-default" href="<?php echo base_url() . 'paciente/form_7/' . $information["id_paciente"]; ?>"><span class="fa fa-reply" aria-hidden="true"></span> Regresar </a>
 										<button type="button" id="btnSubmit" name="btnSubmit" class='btn btn-success'>
 												Continuar <span class="glyphicon glyphicon-floppy-disk" aria-hidden="true">
 										</button>								

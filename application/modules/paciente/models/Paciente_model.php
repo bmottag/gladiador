@@ -84,7 +84,7 @@
 							break;
 						case 8:
 							$data = array(
-								'suicidio' => $this->input->post('suicidio')
+								'suicidio' => $this->input->post('optionsSuicidio')
 							);
 							break;
 						case 9:
@@ -94,6 +94,41 @@
 								'presupuesto' => $this->input->post('presupuesto')
 							);
 							break;
+						case 10:
+							$data = array(
+								'autosuficiencia' => $this->input->post('autosuficiencia'),
+								'bondad' => $this->input->post('bondad'),
+								'certidumbre' => $this->input->post('certidumbre'),
+								'coherencia' => $this->input->post('coherencia'),
+								'compasivo' => $this->input->post('compasivo'),
+								'confianza' => $this->input->post('confianza'),
+								'coperacion' => $this->input->post('coperacion'),
+								'coraje' => $this->input->post('coraje'),
+								'curiosidad' => $this->input->post('curiosidad'),
+								'equidad' => $this->input->post('equidad'),
+								'generosidad' => $this->input->post('generosidad'),
+								'gratitud' => $this->input->post('gratitud'),
+								'honestidad' => $this->input->post('honestidad'),
+								'humildad' => $this->input->post('humildad'),
+								'independencia' => $this->input->post('independencia'),
+								'lealtad' => $this->input->post('lealtad'),
+								'libertad' => $this->input->post('libertad'),
+								'mente_abierta' => $this->input->post('mente_abierta'),
+								'moderacion' => $this->input->post('moderacion'),
+								'paciencia' => $this->input->post('paciencia'),
+								'persistencia' => $this->input->post('persistencia'),
+								'proactividad' => $this->input->post('proactividad'),
+								'proposito' => $this->input->post('proposito'),
+								'respeto' => $this->input->post('respeto'),
+								'responsabilidad' => $this->input->post('responsabilidad'),
+								'servicio' => $this->input->post('servicio'),
+								'solidaridad' => $this->input->post('solidaridad'),
+								'sostenibilidad' => $this->input->post('sostenibilidad'),
+								'tolerancia' => $this->input->post('tolerancia'),
+								'unidad' => $this->input->post('unidad')
+							);
+							break;
+							
 					}
 					
 

@@ -29,8 +29,8 @@
 						<input type="hidden" id="formulario" name="formulario" value=9 />
 
 						<div class="form-group">
-							<label class="control-label col-md-3 col-sm-3 col-xs-12" for="sesiones">Prefieres sesiones en persona, virtuales, o ambas? <span class="required">*</span></label>
-							<div class="col-md-3 col-sm-3 col-xs-12">
+							<label class="control-label col-md-4 col-sm-4 col-xs-12" for="sesiones">Prefieres sesiones en persona, virtuales, o ambas? <span class="required">*</span></label>
+							<div class="col-md-6 col-sm-6 col-xs-12">
 								<select class="form-control" id="sesiones" name="sesiones" required="required">
 									<option value="">Seleccione</option>
 									<option value=1 <?php if($information["sesiones"] == 1) { echo "selected"; }  ?>>Solo en persona</option>
@@ -41,8 +41,8 @@
 						</div>
 						
 						<div class="form-group">
-							<label class="control-label col-md-3 col-sm-3 col-xs-12" for="caracteristica_idioma">En que idiomo desea tener las sesiones? <span class="required">*</span></label>
-							<div class="col-md-3 col-sm-3 col-xs-6">
+							<label class="control-label col-md-4 col-sm-4 col-xs-12" for="caracteristica_idioma">En que idiomo desea tener las sesiones? <span class="required">*</span></label>
+							<div class="col-md-6 col-sm-6 col-xs-6">
 								<select class="form-control" id="caracteristica_idioma" name="caracteristica_idioma" required="required">
 									<option value="">Seleccione</option>
 									<option value=1 <?php if($information["caracteristica_idioma"] == 1) { echo "selected"; }  ?>>Solo español</option>
@@ -52,8 +52,8 @@
 						</div>
 						
 						<div class="form-group">
-							<label class="control-label col-md-3 col-sm-3 col-xs-12" for="presupuesto">Cuál es tu presupuesto para cada sesión? <span class="required">*</span></label>
-							<div class="col-md-3 col-sm-3 col-xs-12">
+							<label class="control-label col-md-4 col-sm-4 col-xs-12" for="presupuesto">Cuál es tu presupuesto para cada sesión? <span class="required">*</span></label>
+							<div class="col-md-6 col-sm-6 col-xs-12">
 								<select class="form-control" id="presupuesto" name="presupuesto" required="required">
 									<option value="">Seleccione</option>
 									<option value=1 <?php if($information["presupuesto"] == 1) { echo "selected"; }  ?>>Menos de $90.000</option>
@@ -70,6 +70,7 @@
 							<div class="col-md-6 col-sm-6 col-xs-12 col-md-offset-3">
 								<div class="row" align="center">
 									<div style="width:50%;" align="center">
+										<a class="btn btn-default" href="<?php echo base_url() . 'paciente/form_8/' . $information["id_paciente"]; ?>"><span class="fa fa-reply" aria-hidden="true"></span> Regresar </a>
 										<button type="button" id="btnSubmit" name="btnSubmit" class='btn btn-success'>
 												Continuar <span class="glyphicon glyphicon-floppy-disk" aria-hidden="true">
 										</button>								

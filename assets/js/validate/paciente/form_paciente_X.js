@@ -1,13 +1,31 @@
 $( document ).ready( function () {
 
-	$("input[name=optionsSuicidio]").click(function(){		
-		$('#suicidio').val("ok");
-		
-    });
+//para la pregunta de valores
+jQuery.validator.addMethod("valores", function(e) {
+	formulario = document.getElementById("form");
+
+		//var nn = formulario.elements[92];
+		//alert(nn.value);
+	var contx = 0; 
+	
+	for(var i=1; i<30; i++) {
+		var elemento = formulario.elements[i];
+		if(elemento.type == "checkbox") {
+			if(elemento.checked) {
+				contx = contx + 1;
+			}
+		}
+	}
+	if(contx==4){
+		return true;
+	}else{
+		return false;
+	}
+}, "Por favor selecciona 4 valores.");						
 						
 	$( "#form" ).validate( {
 		rules: {
-			suicidio:			 	{ required: true }
+			hddValores:			{ valores: true }
 		},
 		errorElement: "em",
 		errorPlacement: function ( error, element ) {
@@ -60,7 +78,7 @@ $( document ).ready( function () {
 						{	                                                        
 							$("#div_load").css("display", "none");
 							$('#btnSubmit').removeAttr('disabled');
-							var url = base_url + "paciente/form_9/" + data.idRecord;
+							var url = base_url + "paciente/info/" + data.idRecord;
 							$(location).attr("href", url);
 						}
 						else

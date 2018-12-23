@@ -56,7 +56,7 @@ $( document ).ready( function () {
 						{	                                                        
 							$("#div_load").css("display", "none");
 							$('#btnSubmit').removeAttr('disabled');
-							var url = base_url + "paciente/info/" + data.idRecord;
+							var url = base_url + "paciente/form_10/" + data.idRecord;
 							$(location).attr("href", url);
 						}
 						else

@@ -262,4 +262,20 @@ class Paciente extends MX_Controller {
 		$this->load->view("layout", $data);
 	}
 	
+	/**
+	 * Form 10 - 
+     * @since 22/12/2018
+     * @author BMOTTAG
+	 */
+	public function form_10($idPaciente)
+	{	
+		$this->load->model("general_model");
+		
+		$arrParam = array("idPaciente" => $idPaciente);
+		$data['information'] = $this->general_model->get_info_paciente($arrParam);//info paciente
+		
+		$data["view"] = 'form_paciente_X';
+		$this->load->view("layout", $data);
+	}
+	
 }
