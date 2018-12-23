@@ -1,5 +1,11 @@
 $( document ).ready( function () {
-						
+					
+	$("input[name=optionsAnsiedad]").click(function(){		
+		$('#ansiedad').val("ok");
+		
+    });
+
+					
 	$( "#form" ).validate( {
 		rules: {
 			ansiedad:			 	{ required: true }

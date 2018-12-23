@@ -46,7 +46,7 @@
 												
 						<div class="form-group">
 							<label class="control-label col-md-3 col-sm-3 col-xs-12">Eres...</label>
-							<div class="col-md-3 col-sm-3 col-xs-12">
+							<div class="col-md-6 col-sm-6 col-xs-12">
 								<div id="gender" class="btn-group" data-toggle="buttons">
 									<label class="btn btn-default <?php if($information && $information["genero"] == 1) { echo "active"; }  ?>" data-toggle-class="btn-primary" data-toggle-passive-class="btn-default">
 										<input type="radio" id="genero1" name="genero" value=1 <?php if($information && $information["genero"] == 1) { echo "checked"; }  ?>> &nbsp; Hombre &nbsp;

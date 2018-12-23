@@ -29,7 +29,22 @@
 						<input type="hidden" id="formulario" name="formulario" value=2 />
 
 						<strong>¿Qué tan afectado(a) te has sentido por síntomas de ansiedad? (ataques de pánico, fobias, insomnio o pensamientos obsesivos)</strong> 
-						<br><small>
+						
+<!-- Button trigger modal -->
+<button type="button" class="btn btn-danger" data-toggle="modal" data-target="#exampleModal">
+  !
+</button>
+
+<!-- Modal -->
+<div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
 							<ol>
 								<li> Levemente: Siento síntomas de ansiedad infrecuentes, insignificantes o inexistentes.</li>
 								<li> Moderadamente: Siento síntomas de ansiedad esporádicos, pasajeros y su intensidad no alcanza a afectar mis actividades ni mi conducta.</li> 
@@ -37,37 +52,60 @@
 								<li> Severamente: Siento síntomas de ansiedad frecuentes y graves. Pueden llegar a ser tan severos que mis actividades y mi conducta se ven afectadas. </li>
 								<li> Extremadamente: Siento síntomas de ansiedad que son abrumadores y paralizantes. Se me es muy difícil realizar actividades del día a día. Mis actividades y mi conducta se ven gravemente afectadas.</li>
 							</ol>
-						</small>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-primary" data-dismiss="modal">Cerrar</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<br><br>
 												
 						<div class="form-group">
 							<div class="col-md-12 col-sm-12 col-xs-12">
-								<div id="gender" class="btn-group" data-toggle="buttons">
-									<label class="btn btn-default <?php if($information && $information["ansiedad"] == 1) { echo "active"; }  ?>" data-toggle-class="btn-primary" data-toggle-passive-class="btn-default">
-										<input type="radio" id="ansiedad1" name="ansiedad" value=1 <?php if($information && $information["ansiedad"] == 1) { echo "checked"; }  ?>> 1. Levemente
-									</label>
-									<label class="btn btn-default <?php if($information && $information["ansiedad"] == 2) { echo "active"; }  ?>" data-toggle-class="btn-primary" data-toggle-passive-class="btn-default">
-										<input type="radio" id="ansiedad1" name="ansiedad" value=2 <?php if($information && $information["ansiedad"] == 2) { echo "checked"; }  ?>> 2. Moderadamente
-									</label>
-									<label class="btn btn-default <?php if($information && $information["ansiedad"] == 3) { echo "active"; }  ?>" data-toggle-class="btn-primary" data-toggle-passive-class="btn-default">
-										<input type="radio" id="ansiedad1" name="ansiedad" value=3 <?php if($information && $information["ansiedad"] == 3) { echo "checked"; }  ?>> 3. Seriamente
-									</label>
-									<label class="btn btn-default <?php if($information && $information["ansiedad"] == 4) { echo "active"; }  ?>" data-toggle-class="btn-primary" data-toggle-passive-class="btn-default">
-										<input type="radio" id="ansiedad1" name="ansiedad" value=4 <?php if($information && $information["ansiedad"] == 4) { echo "checked"; }  ?>> 4. Severamente
-									</label>
-									<label class="btn btn-default <?php if($information && $information["ansiedad"] == 5) { echo "active"; }  ?>" data-toggle-class="btn-primary" data-toggle-passive-class="btn-default">
-										<input type="radio" id="ansiedad1" name="ansiedad" value=5 <?php if($information && $information["ansiedad"] == 5) { echo "checked"; }  ?>> 5. Extremadamente
-									</label>
+								<div class="row" align="center">
+									<div style="width:80%;" align="center">
+										
+											<label class="btn btn-primary <?php if($information && $information["ansiedad"] == 1) { echo "active"; }  ?>" data-toggle-class="btn-primary" data-toggle-passive-class="btn-default">
+												<input type="radio" id="optionsAnsiedad1" name="optionsAnsiedad" value=1 <?php if($information && $information["ansiedad"] == 1) { echo "checked"; }  ?>> 1. Levemente
+											</label>
+											<label class="btn btn-primary <?php if($information && $information["ansiedad"] == 2) { echo "active"; }  ?>" data-toggle-class="btn-primary" data-toggle-passive-class="btn-default">
+												<input type="radio" id="optionsAnsiedad2" name="optionsAnsiedad" value=2 <?php if($information && $information["ansiedad"] == 2) { echo "checked"; }  ?>> 2. Moderadamente
+											</label>
+											<label class="btn btn-primary <?php if($information && $information["ansiedad"] == 3) { echo "active"; }  ?>" data-toggle-class="btn-primary" data-toggle-passive-class="btn-default">
+												<input type="radio" id="optionsAnsiedad3" name="optionsAnsiedad" value=3 <?php if($information && $information["ansiedad"] == 3) { echo "checked"; }  ?>> 3. Seriamente
+											</label>
+											<label class="btn btn-primary <?php if($information && $information["ansiedad"] == 4) { echo "active"; }  ?>" data-toggle-class="btn-primary" data-toggle-passive-class="btn-default">
+												<input type="radio" id="optionsAnsiedad4" name="optionsAnsiedad" value=4 <?php if($information && $information["ansiedad"] == 4) { echo "checked"; }  ?>> 4. Severamente
+											</label>
+											<label class="btn btn-primary <?php if($information && $information["ansiedad"] == 5) { echo "active"; }  ?>" data-toggle-class="btn-primary" data-toggle-passive-class="btn-default">
+												<input type="radio" id="optionsAnsiedad5" name="optionsAnsiedad" value=5 <?php if($information && $information["ansiedad"] == 5) { echo "checked"; }  ?>> 5. Extremadamente
+											</label>
+										
+									</div>
 								</div>
 							</div>
 						</div>
 						
-
+						<div class="form-group">
+							<div class="col-md-12 col-sm-12 col-xs-12">
+								<div class="row" align="center">
+									<div style="width:80%;" align="center">						
+										<label>
+										  <input type="hidden" id="ansiedad" name="ansiedad" value="<?php echo $information?$information["ansiedad"]:""; ?>">
+										</label>
+									</div>
+								</div>
+							</div>
+						</div>
 																	
 						<div class="ln_solid"></div>
 						<div class="form-group">
 							<div class="col-md-6 col-sm-6 col-xs-12 col-md-offset-3">
 								<div class="row" align="center">
 									<div style="width:50%;" align="center">
+										<a class="btn btn-default" href="<?php echo base_url() . 'paciente/form_1/' . $information["id_paciente"]; ?>"><span class="fa fa-reply" aria-hidden="true"></span> Regresar </a>
 										<button type="button" id="btnSubmit" name="btnSubmit" class='btn btn-success'>
 												Continuar <span class="glyphicon glyphicon-floppy-disk" aria-hidden="true">
 										</button>								
