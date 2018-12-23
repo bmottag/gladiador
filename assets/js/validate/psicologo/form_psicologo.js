@@ -164,7 +164,7 @@ jQuery.validator.addMethod("valores", function(e) {
 						{	                                                        
 							$("#div_load").css("display", "none");
 							$('#btnSubmit').removeAttr('disabled');
-							var url = base_url + "psicologo/info/" + data.idRecord;
+							var url = base_url + "psicologo/ingreso/" + data.idRecord;
 							$(location).attr("href", url);
 						}
 						else

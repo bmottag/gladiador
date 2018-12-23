@@ -80,6 +80,29 @@ class Psicologo extends MX_Controller {
     }
 	
 	/**
+	 * mensaje
+	 */
+	public function ingreso($idPsicologo)
+	{
+			$this->load->model("general_model");
+			
+			$arrParam = array("idUser" => $idPsicologo);
+			$data['information'] = $this->general_model->get_info_psicologo($arrParam);//info psicologo
+						
+			$data['linkBack'] = "login";
+			$data['titulo'] = "<i class='fa fa-users fa-fw'></i>Registrate como psicólogo asociado de TuApoyo";
+			$data['boton'] = "Ingresar <span class='glyphicon glyphicon glyphicon-chevron-right' aria-hidden='true'></span> ";
+			
+			$data["msj"] = "Se guardó su información.";
+			$data["msj"] .= "<br><strong>Usuario: </strong>" . $data['information']['email'];
+			$data["msj"] .= "<br><strong>Contraseña: </strong>123456";
+			$data["clase"] = "alert-success";
+						
+			$data["view"] = "template/answer";
+			$this->load->view("layout", $data);
+	}
+	
+	/**
 	 * info psicologos
      * @since 29/3/2018
      * @author BMOTTAG
