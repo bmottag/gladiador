@@ -60,7 +60,7 @@
 
 	    	switch($state){
 	    		case 0: //NEW USER, must change the password
-	    				redirect("/psicologo","location",301);
+	    				redirect("/general","location",301);
 	    				break;
 	    		case 1: //ACTIVE USER
 						if($userRol==3){//vista para PSICOLOGOS

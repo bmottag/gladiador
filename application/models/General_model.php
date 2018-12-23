@@ -185,7 +185,8 @@ class General_model extends CI_Model {
 				$passwd = md5($passwd);
 				
 				$data = array(
-					'password' => $passwd
+					'password' => $passwd,
+					'state' => 1
 				);
 
 				$this->db->where('id_user', $idUser);

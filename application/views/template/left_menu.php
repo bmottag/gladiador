@@ -50,19 +50,17 @@
 				</li>
 				
 <?php
-		}else{
+		}
 ?>
 
                   <li><a><i class="fa fa-gear"></i> Configuración <span class="fa fa-chevron-down"></span></a>
                     <ul class="nav child_menu">
                       <li><a href="index2.html">Subir foto</a></li>
-                      <li><a href="index3.html">Cambiar contraseña</a></li>
+                      <li><a href="<?php echo base_url("general"); ?>">Cambiar contraseña</a></li>
                     </ul>
                   </li>
 				
-<?php
-		}
-?>
+
 				
 			</ul>
 		</div>

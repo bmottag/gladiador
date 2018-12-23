@@ -18,7 +18,7 @@
 						<strong>Info:</strong> Debe cambiar su contraseña
 					</div>
 				
-					<form id="form" data-parsley-validate class="form-horizontal form-label-left" method="post" action="<?php echo base_url("psicologo/update_password"); ?>">
+					<form id="form" data-parsley-validate class="form-horizontal form-label-left" method="post" action="<?php echo base_url("general/update_password"); ?>">
 						<input type="hidden" id="hddId" name="hddId" value="<?php echo $information?$information[0]["id_user"]:""; ?>"/>
 						<input type="hidden" id="hddUser" name="hddUser" value="<?php echo $information[0]["log_user"]; ?>"/>
 
