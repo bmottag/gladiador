@@ -29,7 +29,22 @@
 						<input type="hidden" id="formulario" name="formulario" value=5 />
 
 						<strong>¿Qué tan afectado(a) te has sentido por tu salud física? (hábitos alimenticios, enfermedades, condiciones físicas, niveles de energía)</strong> 
-						<br><small>
+
+<!-- Button trigger modal -->
+<button type="button" class="btn btn-danger" data-toggle="modal" data-target="#exampleModal">
+  !
+</button>
+
+<!-- Modal -->
+<div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
 							<ol>
 								<li> Levemente: Mi salud y bienestar físico no son un problema para mí. </li>
 								<li> Moderadamente: Tengo algunos inconvenientes que afectan mi salud física, pero son controlables y los puedo resolver. </li>
@@ -37,37 +52,60 @@
 								<li> Severamente: Tengo inconvenientes graves con mi salud física. Considero que estos inconvenientes no los puedo controlar y me afectan emocionalmente. </li>
 								<li> Extremadamente: Tengo inconvenientes extremos con mi salud física. Estos inconvenientes no son controlables, amenazan mi supervivencia física y me afecta emocionalmente en forma extrema.</li>
 							</ol>
-						</small>
-												
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-primary" data-dismiss="modal">Cerrar</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<br><br>
+				
 						<div class="form-group">
 							<div class="col-md-12 col-sm-12 col-xs-12">
-								<div id="gender" class="btn-group" data-toggle="buttons">
-									<label class="btn btn-default <?php if($information && $information["salud"] == 1) { echo "active"; }  ?>" data-toggle-class="btn-primary" data-toggle-passive-class="btn-default">
-										<input type="radio" id="salud1" name="salud" value=1 <?php if($information && $information["salud"] == 1) { echo "checked"; }  ?>> 1. Levemente
+								<div class="row" align="center">
+									<div style="width:80%;" align="center">
+								
+									<label class="btn btn-primary <?php if($information && $information["salud"] == 1) { echo "active"; }  ?>" data-toggle-class="btn-primary" data-toggle-passive-class="btn-default">
+										<input type="radio" id="optionsSalud1" name="optionsSalud" value=1 <?php if($information && $information["salud"] == 1) { echo "checked"; }  ?>> 1. Levemente
 									</label>
-									<label class="btn btn-default <?php if($information && $information["salud"] == 2) { echo "active"; }  ?>" data-toggle-class="btn-primary" data-toggle-passive-class="btn-default">
-										<input type="radio" id="salud1" name="salud" value=2 <?php if($information && $information["salud"] == 2) { echo "checked"; }  ?>> 2. Moderadamente
+									<label class="btn btn-primary <?php if($information && $information["salud"] == 2) { echo "active"; }  ?>" data-toggle-class="btn-primary" data-toggle-passive-class="btn-default">
+										<input type="radio" id="optionsSalud2" name="optionsSalud" value=2 <?php if($information && $information["salud"] == 2) { echo "checked"; }  ?>> 2. Moderadamente
 									</label>
-									<label class="btn btn-default <?php if($information && $information["salud"] == 3) { echo "active"; }  ?>" data-toggle-class="btn-primary" data-toggle-passive-class="btn-default">
-										<input type="radio" id="salud1" name="salud" value=3 <?php if($information && $information["salud"] == 3) { echo "checked"; }  ?>> 3. Seriamente
+									<label class="btn btn-primary <?php if($information && $information["salud"] == 3) { echo "active"; }  ?>" data-toggle-class="btn-primary" data-toggle-passive-class="btn-default">
+										<input type="radio" id="optionsSalud3" name="optionsSalud" value=3 <?php if($information && $information["salud"] == 3) { echo "checked"; }  ?>> 3. Seriamente
 									</label>
-									<label class="btn btn-default <?php if($information && $information["salud"] == 4) { echo "active"; }  ?>" data-toggle-class="btn-primary" data-toggle-passive-class="btn-default">
-										<input type="radio" id="salud1" name="salud" value=4 <?php if($information && $information["salud"] == 4) { echo "checked"; }  ?>> 4. Severamente
+									<label class="btn btn-primary <?php if($information && $information["salud"] == 4) { echo "active"; }  ?>" data-toggle-class="btn-primary" data-toggle-passive-class="btn-default">
+										<input type="radio" id="optionsSalud4" name="optionsSalud" value=4 <?php if($information && $information["salud"] == 4) { echo "checked"; }  ?>> 4. Severamente
 									</label>
-									<label class="btn btn-default <?php if($information && $information["salud"] == 5) { echo "active"; }  ?>" data-toggle-class="btn-primary" data-toggle-passive-class="btn-default">
-										<input type="radio" id="salud1" name="salud" value=5 <?php if($information && $information["salud"] == 5) { echo "checked"; }  ?>> 5. Extremadamente
+									<label class="btn btn-primary <?php if($information && $information["salud"] == 5) { echo "active"; }  ?>" data-toggle-class="btn-primary" data-toggle-passive-class="btn-default">
+										<input type="radio" id="optionsSalud5" name="optionsSalud" value=5 <?php if($information && $information["salud"] == 5) { echo "checked"; }  ?>> 5. Extremadamente
 									</label>
+									
+									</div>
 								</div>
 							</div>
 						</div>
 						
-
+						<div class="form-group">
+							<div class="col-md-12 col-sm-12 col-xs-12">
+								<div class="row" align="center">
+									<div style="width:80%;" align="center">						
+										<label>
+										  <input type="hidden" id="salud" name="salud" value="<?php echo $information?$information["salud"]:""; ?>">
+										</label>
+									</div>
+								</div>
+							</div>
+						</div>
 																	
 						<div class="ln_solid"></div>
 						<div class="form-group">
 							<div class="col-md-6 col-sm-6 col-xs-12 col-md-offset-3">
 								<div class="row" align="center">
 									<div style="width:50%;" align="center">
+										<a class="btn btn-default" href="<?php echo base_url() . 'paciente/form_4/' . $information["id_paciente"]; ?>"><span class="fa fa-reply" aria-hidden="true"></span> Regresar </a>
 										<button type="button" id="btnSubmit" name="btnSubmit" class='btn btn-success'>
 												Continuar <span class="glyphicon glyphicon-floppy-disk" aria-hidden="true">
 										</button>								

@@ -1,5 +1,10 @@
 $( document ).ready( function () {
 						
+	$("input[name=optionsSustancias]").click(function(){		
+		$('#sustancias').val("ok");
+		
+    });
+						
 	$( "#form" ).validate( {
 		rules: {
 			sustancias:			 	{ required: true }

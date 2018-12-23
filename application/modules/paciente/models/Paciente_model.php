@@ -64,13 +64,14 @@
 							break;
 						case 4:
 							$data = array(
-								'sustancias' => $this->input->post('sustancias')
+								'sustancias' => $this->input->post('optionsSustancias')
 							);
 							break;
 						case 5:
 							$data = array(
-								'salud' => $this->input->post('salud')
+								'salud' => $this->input->post('optionsSalud')
 							);
+							break;
 						case 6:
 							$data = array(
 								'autoestima' => $this->input->post('autoestima')

@@ -29,7 +29,22 @@
 						<input type="hidden" id="formulario" name="formulario" value=4 />
 
 						<strong>¿Cómo ha sido tu consumo de sustancias (alcohol/drogas) durante el último mes?</strong> 
-						<br><small>
+
+<!-- Button trigger modal -->
+<button type="button" class="btn btn-danger" data-toggle="modal" data-target="#exampleModal">
+  !
+</button>
+
+<!-- Modal -->
+<div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
 							<ol>
 								<li> Insignificante: Mi consumo es infrecuente (0-2 veces al mes) y las cantidades consumidas son insignificantes.</li>
 								<li> Esporádico: Mi consumo es periódico (2-4 veces al mes) y las cantidades consumidas están bajo mi control. </li>
@@ -37,37 +52,60 @@
 								<li> Habitual: Mi consumo es habitual (más de 3 veces por semana) y no logro controlar la cantidad que consumo. Mi calidad de vida se ve afectada negativamente. </li>
 								<li> Adictivo: Mi consumo es necesario, incontrolable y evidente. Esto impacta gravemente mi calidad de vida.</li>
 							</ol>
-						</small>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-primary" data-dismiss="modal">Cerrar</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<br><br>
 												
 						<div class="form-group">
 							<div class="col-md-12 col-sm-12 col-xs-12">
-								<div id="gender" class="btn-group" data-toggle="buttons">
-									<label class="btn btn-default <?php if($information && $information["sustancias"] == 1) { echo "active"; }  ?>" data-toggle-class="btn-primary" data-toggle-passive-class="btn-default">
-										<input type="radio" id="sustancias1" name="sustancias" value=1 <?php if($information && $information["sustancias"] == 1) { echo "checked"; }  ?>> 1. Insignificante
+								<div class="row" align="center">
+									<div style="width:80%;" align="center">
+									
+									<label class="btn btn-primary <?php if($information && $information["sustancias"] == 1) { echo "active"; }  ?>" data-toggle-class="btn-primary" data-toggle-passive-class="btn-default">
+										<input type="radio" id="optionsSustancias1" name="optionsSustancias" value=1 <?php if($information && $information["sustancias"] == 1) { echo "checked"; }  ?>> 1. Insignificante
 									</label>
-									<label class="btn btn-default <?php if($information && $information["sustancias"] == 2) { echo "active"; }  ?>" data-toggle-class="btn-primary" data-toggle-passive-class="btn-default">
-										<input type="radio" id="sustancias1" name="sustancias" value=2 <?php if($information && $information["sustancias"] == 2) { echo "checked"; }  ?>> 2. Esporádico
+									<label class="btn btn-primary <?php if($information && $information["sustancias"] == 2) { echo "active"; }  ?>" data-toggle-class="btn-primary" data-toggle-passive-class="btn-default">
+										<input type="radio" id="optionsSustancias2" name="optionsSustancias" value=2 <?php if($information && $information["sustancias"] == 2) { echo "checked"; }  ?>> 2. Esporádico
 									</label>
-									<label class="btn btn-default <?php if($information && $information["sustancias"] == 3) { echo "active"; }  ?>" data-toggle-class="btn-primary" data-toggle-passive-class="btn-default">
-										<input type="radio" id="sustancias1" name="sustancias" value=3 <?php if($information && $information["sustancias"] == 3) { echo "checked"; }  ?>> 3. Repetitivo
+									<label class="btn btn-primary <?php if($information && $information["sustancias"] == 3) { echo "active"; }  ?>" data-toggle-class="btn-primary" data-toggle-passive-class="btn-default">
+										<input type="radio" id="optionsSustancias3" name="optionsSustancias" value=3 <?php if($information && $information["sustancias"] == 3) { echo "checked"; }  ?>> 3. Repetitivo
 									</label>
-									<label class="btn btn-default <?php if($information && $information["sustancias"] == 4) { echo "active"; }  ?>" data-toggle-class="btn-primary" data-toggle-passive-class="btn-default">
-										<input type="radio" id="sustancias1" name="sustancias" value=4 <?php if($information && $information["sustancias"] == 4) { echo "checked"; }  ?>> 4. Habitual
+									<label class="btn btn-primary <?php if($information && $information["sustancias"] == 4) { echo "active"; }  ?>" data-toggle-class="btn-primary" data-toggle-passive-class="btn-default">
+										<input type="radio" id="optionsSustancias4" name="optionsSustancias" value=4 <?php if($information && $information["sustancias"] == 4) { echo "checked"; }  ?>> 4. Habitual
 									</label>
-									<label class="btn btn-default <?php if($information && $information["sustancias"] == 5) { echo "active"; }  ?>" data-toggle-class="btn-primary" data-toggle-passive-class="btn-default">
-										<input type="radio" id="sustancias1" name="sustancias" value=5 <?php if($information && $information["sustancias"] == 5) { echo "checked"; }  ?>> 5. Adictivo
+									<label class="btn btn-primary <?php if($information && $information["sustancias"] == 5) { echo "active"; }  ?>" data-toggle-class="btn-primary" data-toggle-passive-class="btn-default">
+										<input type="radio" id="optionsSustancias5" name="optionsSustancias" value=5 <?php if($information && $information["sustancias"] == 5) { echo "checked"; }  ?>> 5. Adictivo
 									</label>
+									
+									</div>
 								</div>
 							</div>
 						</div>
 						
-
+						<div class="form-group">
+							<div class="col-md-12 col-sm-12 col-xs-12">
+								<div class="row" align="center">
+									<div style="width:80%;" align="center">						
+										<label>
+										  <input type="hidden" id="sustancias" name="sustancias" value="<?php echo $information?$information["sustancias"]:""; ?>">
+										</label>
+									</div>
+								</div>
+							</div>
+						</div>
 																	
 						<div class="ln_solid"></div>
 						<div class="form-group">
 							<div class="col-md-6 col-sm-6 col-xs-12 col-md-offset-3">
 								<div class="row" align="center">
 									<div style="width:50%;" align="center">
+										<a class="btn btn-default" href="<?php echo base_url() . 'paciente/form_3/' . $information["id_paciente"]; ?>"><span class="fa fa-reply" aria-hidden="true"></span> Regresar </a>
 										<button type="button" id="btnSubmit" name="btnSubmit" class='btn btn-success'>
 												Continuar <span class="glyphicon glyphicon-floppy-disk" aria-hidden="true">
 										</button>								
