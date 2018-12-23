@@ -172,6 +172,32 @@ class General_model extends CI_Model {
 				return $row->CONTEO;
 		}
 		
+	    /**
+	     * Update user's password
+	     * @author BMOTTAG
+	     * @since  29/3/2018
+	     */
+	    public function updatePassword()
+		{
+				$idUser = $this->input->post("hddId");
+				$newPassword = $this->input->post("inputPassword");
+				$passwd = str_replace(array("<",">","[","]","*","^","-","'","="),"",$newPassword); 
+				$passwd = md5($passwd);
+				
+				$data = array(
+					'password' => $passwd
+				);
+
+				$this->db->where('id_user', $idUser);
+				$query = $this->db->update('user', $data);
+
+				if ($query) {
+					return true;
+				} else {
+					return false;
+				}
+	    }
+		
 		
 		/**
 		 * Consulta menu

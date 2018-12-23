@@ -31,6 +31,41 @@ class Psicologo extends MX_Controller {
 	}
 	
 	/**
+	 * Update user´s password
+	 */
+	public function update_password()
+	{
+			$data['ADMIN'] = true;
+			
+			$newPassword = $this->input->post("inputPassword");
+			$confirm = $this->input->post("inputConfirm");
+			$passwd = str_replace(array("<",">","[","]","*","^","-","'","="),"",$newPassword); 
+			
+			$data['linkBack'] = false;
+			$data['titulo'] = "<i class='fa fa-unlock fa-fw'></i>CAMBIAR CONTRASEÑA";
+			
+			if($newPassword == $confirm)
+			{					
+					$this->load->model("general_model");
+					if ($this->general_model->updatePassword()) {
+						$data["msj"] = "Se cambio la contraseña.";
+						$data["msj"] .= "<br><br><strong>User: </strong>" . $this->input->post("hddUser");
+						$data["msj"] .= "<br><strong>Password: </strong>" . $passwd;
+						$data["clase"] = "alert-success";
+					}else{
+						$data["msj"] = "<strong>Error!!!</strong> Ask for help.";
+						$data["clase"] = "alert-danger";
+					}
+			}else{
+				//definir mensaje de error
+				echo "pailas no son iguales";
+			}
+						
+			$data["view"] = "template/answer";
+			$this->load->view("layout", $data);
+	}
+	
+	/**
 	 * Registro psicologos
 	 */
 	public function registro()
