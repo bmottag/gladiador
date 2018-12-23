@@ -8,7 +8,7 @@ jQuery.validator.addMethod("valores", function(e) {
 		//alert(nn.value);
 	var contx = 0; 
 	
-	for(var i=1; i<30; i++) {
+	for(var i=1; i<33; i++) {
 		var elemento = formulario.elements[i];
 		if(elemento.type == "checkbox") {
 			if(elemento.checked) {
