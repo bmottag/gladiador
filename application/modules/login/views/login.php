@@ -53,16 +53,16 @@
 			<?php } ?>
 		  
 			<form  name="form" id="form" role="form" method="post" action="<?php echo base_url("login/validateUser"); ?>" >
-              <h1>Sign in</h1>
+              <h1>Autenticación</h1>
               <div>
-                <input type="text" id="inputLogin" name="inputLogin" class="form-control" placeholder="User" maxlength="40" data-minlength="5" required />
+                <input type="text" id="inputLogin" name="inputLogin" class="form-control" placeholder="Usuario" maxlength="40" data-minlength="5" required />
               </div>
               <div>
-                <input type="password" id="inputPassword" name="inputPassword" class="form-control" placeholder="Password" required />
+                <input type="password" id="inputPassword" name="inputPassword" class="form-control" placeholder="Contraseña" required />
               </div>
               <div>
 				<button type="submit" class="btn btn-primary" id='btnSubmit' name='btnSubmit'>
-					Login <i class="fa fa-sign-in"></i>
+					Ingresar <i class="fa fa-sign-in"></i>
 				</button>
               </div>
 
@@ -70,7 +70,7 @@
 
               <div class="separator">
                 <div>
-					<h1><img src="<?php echo base_url("images/logo_eap.png"); ?>" /></h1>
+					<h1><img src="<?php echo base_url("images/logo.png"); ?>" width="160" height="60" /></h1>
 					<p>©2018 All Rights Reserved.</p>
                 </div>
               </div>
