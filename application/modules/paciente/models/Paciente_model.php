@@ -59,7 +59,7 @@
 							break;
 						case 3:
 							$data = array(
-								'depresion' => $this->input->post('depresion')
+								'depresion' => $this->input->post('optionsDepresion')
 							);
 							break;
 						case 4:

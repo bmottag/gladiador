@@ -29,7 +29,22 @@
 						<input type="hidden" id="formulario" name="formulario" value=3 />
 
 						<strong>Qué tan afectado(a) te has sentido por síntomas de depresión? (desesperanza, falta de vitalidad, apatía, culpa, insignificancia)</strong> 
-						<br><small>
+						
+<!-- Button trigger modal -->
+<button type="button" class="btn btn-danger" data-toggle="modal" data-target="#exampleModal">
+  !
+</button>
+
+<!-- Modal -->
+<div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
 							<ol>
 								<li> Levemente: Siento síntomas de depresión infrecuentes, insignificantes o inexistentes. </li>
 								<li> Moderadamente: Siento síntomas de depresión esporádicos, pasajeros y su intensidad no alcanza a afectar mis actividades ni mi conducta  </li>
@@ -37,26 +52,50 @@
 								<li> Severamente: Siento síntomas de depresión frecuentes y graves. Pueden llegar a ser tan severos que mis actividades y mi conducta se ven afectadas. </li>
 								<li> Extremadamente: Siento síntomas de depresión que son abrumadores y paralizantes. Se me es muy difícil realizar actividades del día a día. Mis actividades y mi conducta se ven gravemente afectadas </li>
 							</ol>
-						</small>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-primary" data-dismiss="modal">Cerrar</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<br><br>
 												
 						<div class="form-group">
 							<div class="col-md-12 col-sm-12 col-xs-12">
-								<div id="gender" class="btn-group" data-toggle="buttons">
-									<label class="btn btn-default <?php if($information && $information["depresion"] == 1) { echo "active"; }  ?>" data-toggle-class="btn-primary" data-toggle-passive-class="btn-default">
-										<input type="radio" id="depresion1" name="depresion" value=1 <?php if($information && $information["depresion"] == 1) { echo "checked"; }  ?>> 1. Levemente
+								<div class="row" align="center">
+									<div style="width:80%;" align="center">
+									
+									<label class="btn btn-primary <?php if($information && $information["depresion"] == 1) { echo "active"; }  ?>" data-toggle-class="btn-primary" data-toggle-passive-class="btn-default">
+										<input type="radio" id="optionsDepresion1" name="optionsDepresion" value=1 <?php if($information && $information["depresion"] == 1) { echo "checked"; }  ?>> 1. Levemente
 									</label>
-									<label class="btn btn-default <?php if($information && $information["depresion"] == 2) { echo "active"; }  ?>" data-toggle-class="btn-primary" data-toggle-passive-class="btn-default">
-										<input type="radio" id="depresion1" name="depresion" value=2 <?php if($information && $information["depresion"] == 2) { echo "checked"; }  ?>> 2. Moderadamente
+									<label class="btn btn-primary <?php if($information && $information["depresion"] == 2) { echo "active"; }  ?>" data-toggle-class="btn-primary" data-toggle-passive-class="btn-default">
+										<input type="radio" id="optionsDepresion1" name="optionsDepresion" value=2 <?php if($information && $information["depresion"] == 2) { echo "checked"; }  ?>> 2. Moderadamente
 									</label>
-									<label class="btn btn-default <?php if($information && $information["depresion"] == 3) { echo "active"; }  ?>" data-toggle-class="btn-primary" data-toggle-passive-class="btn-default">
-										<input type="radio" id="depresion1" name="depresion" value=3 <?php if($information && $information["depresion"] == 3) { echo "checked"; }  ?>> 3. Seriamente
+									<label class="btn btn-primary <?php if($information && $information["depresion"] == 3) { echo "active"; }  ?>" data-toggle-class="btn-primary" data-toggle-passive-class="btn-default">
+										<input type="radio" id="optionsDepresion1" name="optionsDepresion" value=3 <?php if($information && $information["depresion"] == 3) { echo "checked"; }  ?>> 3. Seriamente
 									</label>
-									<label class="btn btn-default <?php if($information && $information["depresion"] == 4) { echo "active"; }  ?>" data-toggle-class="btn-primary" data-toggle-passive-class="btn-default">
-										<input type="radio" id="depresion1" name="depresion" value=4 <?php if($information && $information["depresion"] == 4) { echo "checked"; }  ?>> 4. Severamente
+									<label class="btn btn-primary <?php if($information && $information["depresion"] == 4) { echo "active"; }  ?>" data-toggle-class="btn-primary" data-toggle-passive-class="btn-default">
+										<input type="radio" id="optionsDepresion1" name="optionsDepresion" value=4 <?php if($information && $information["depresion"] == 4) { echo "checked"; }  ?>> 4. Severamente
 									</label>
-									<label class="btn btn-default <?php if($information && $information["depresion"] == 5) { echo "active"; }  ?>" data-toggle-class="btn-primary" data-toggle-passive-class="btn-default">
-										<input type="radio" id="depresion1" name="depresion" value=5 <?php if($information && $information["depresion"] == 5) { echo "checked"; }  ?>> 5. Extremadamente
+									<label class="btn btn-primary <?php if($information && $information["depresion"] == 5) { echo "active"; }  ?>" data-toggle-class="btn-primary" data-toggle-passive-class="btn-default">
+										<input type="radio" id="optionsDepresion1" name="optionsDepresion" value=5 <?php if($information && $information["depresion"] == 5) { echo "checked"; }  ?>> 5. Extremadamente
 									</label>
+									
+									</div>
+								</div>
+							</div>
+						</div>
+						
+						<div class="form-group">
+							<div class="col-md-12 col-sm-12 col-xs-12">
+								<div class="row" align="center">
+									<div style="width:80%;" align="center">						
+										<label>
+										  <input type="hidden" id="depresion" name="depresion" value="<?php echo $information?$information["depresion"]:""; ?>">
+										</label>
+									</div>
 								</div>
 							</div>
 						</div>
@@ -68,6 +107,7 @@
 							<div class="col-md-6 col-sm-6 col-xs-12 col-md-offset-3">
 								<div class="row" align="center">
 									<div style="width:50%;" align="center">
+										<a class="btn btn-default" href="<?php echo base_url() . 'paciente/form_2/' . $information["id_paciente"]; ?>"><span class="fa fa-reply" aria-hidden="true"></span> Regresar </a>
 										<button type="button" id="btnSubmit" name="btnSubmit" class='btn btn-success'>
 												Continuar <span class="glyphicon glyphicon-floppy-disk" aria-hidden="true">
 										</button>								

@@ -1,4 +1,9 @@
 $( document ).ready( function () {
+
+	$("input[name=optionsDepresion]").click(function(){		
+		$('#depresion').val("ok");
+		
+    });
 						
 	$( "#form" ).validate( {
 		rules: {
