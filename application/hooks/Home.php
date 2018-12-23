@@ -14,7 +14,7 @@ class Home {
 
     public function check_login() {
         $error = FALSE;
-        $arrModules = array("login", "paciente", "psicologo", "ieredirect");
+        $arrModules = array("login", "paciente", "ieredirect");
         if (!in_array($this->ci->uri->segment(1), $arrModules)) {
             if ($this->ci->uri->segment(1) == "menu") {
                 if(($this->ci->uri->segment(2) . '/' . $this->ci->uri->segment(3)) != 'menu/salir') {
@@ -23,7 +23,7 @@ class Home {
                     }
                 }
             } else if ($this->ci->uri->segment(1) == "psicologo") {
-                $arrControllers = array($this->ci->uri->segment(1), "index", "registration_send", "registro", "userAuth", "validaSesion");
+                $arrControllers = array($this->ci->uri->segment(1), "ingreso", "save_psicologo", "registro", "userAuth", "validaSesion");
                 if ($this->ci->uri->segment(2) != FALSE && !in_array($this->ci->uri->segment(2), $arrControllers)) {
                     if (isset($this->ci->session) && $this->ci->session->userdata('id') == FALSE) {
                         $error = TRUE;

@@ -13,12 +13,37 @@
 			<i class="fa fa-sign-out"></i> Logout
 		  </a>
 		</li>
-				
+
+<?php
+/**
+ * Special MENU for ADMIN
+ * @author BMOTTAG
+ * @since  23/12/2018
+ */
+		$userRol = $this->session->rol;
+		if($userRol != 3){ //If it is an ADMIN user, show an special menu
+?>	
+		
 		<li class="">
 		  <a href="<?php echo base_url("dashboard"); ?>" class="user-profile" aria-expanded="false">
 			<i class="fa fa-home"></i> Home
 		  </a>
 		</li>
+		
+		
+<?php
+		}else{
+?>
+
+		<li class="">
+		  <a href="<?php echo base_url("psicologo/info"); ?>" class="user-profile" aria-expanded="false">
+			<i class="fa fa-user"></i> Perfil
+		  </a>
+		</li>
+				
+<?php
+		}
+?>
 
 	  </ul>
 	</nav>

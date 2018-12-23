@@ -60,11 +60,11 @@
 
 	    	switch($state){
 	    		case 0: //NEW USER, must change the password
-	    				redirect("/employee","location",301);
+	    				redirect("/psicologo","location",301);
 	    				break;
 	    		case 1: //ACTIVE USER
-						if($userRol==3){//vista para FOREMAN Y USUARIO NORMAL
-							redirect("payroll","location",301);
+						if($userRol==3){//vista para PSICOLOGOS
+							redirect("/psicologo/info","location",301);
 						}else{
 							redirect("/dashboard","location",301);
 						}

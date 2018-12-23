@@ -13,8 +13,21 @@ class Psicologo extends MX_Controller {
 	 */
 	public function index()
 	{	
-			$this->session->sess_destroy();
-			$this->load->view('home');
+			$idUser = $this->session->userdata("id");
+			
+			$data['ADMIN'] = true;
+			
+			$this->load->model("general_model");
+			$arrParam = array(
+				"table" => "user",
+				"order" => "id_user",
+				"column" => "id_user",
+				"id" => $idUser
+			);
+			$data['information'] = $this->general_model->get_basic_search($arrParam);
+
+			$data["view"] = "form_password";
+			$this->load->view("layout", $data);
 	}
 	
 	/**
@@ -107,11 +120,14 @@ class Psicologo extends MX_Controller {
      * @since 29/3/2018
      * @author BMOTTAG
 	 */
-	public function info($idPsicologo)
+	public function info()
 	{	
 		$this->load->model("general_model");
+		$userId = $this->session->userdata("id");
 		
-		$arrParam = array("idUser" => $idPsicologo);
+		$data['ADMIN'] = true;
+		
+		$arrParam = array("idUser" => $userId);
 		$data['information'] = $this->general_model->get_info_psicologo($arrParam);//info psicologo
 		
 		$data["view"] = 'info_psicologo';

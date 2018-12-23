@@ -31,12 +31,39 @@
 		<div class="menu_section">
 
 			<ul class="nav side-menu">
+			
+<?php
+/**
+ * Special MENU for ADMIN
+ * @author BMOTTAG
+ * @since  23/12/2018
+ */
+		$userRol = $this->session->rol;
+		if($userRol != 3){ //If it is an ADMIN user, show an special menu
+?>	
+			
 				<li>
 					<a href="<?php echo base_url("dashboard/listado_psicologos"); ?>"><i class="fa fa-user"></i> Listado Psicólogos</a>
 				</li>
 				<li>
 					<a href="<?php echo base_url("dashboard/listado_pacientes"); ?>"><i class="fa fa-user"></i> Listado Pacientes</a>
 				</li>
+				
+<?php
+		}else{
+?>
+
+                  <li><a><i class="fa fa-gear"></i> Configuración <span class="fa fa-chevron-down"></span></a>
+                    <ul class="nav child_menu">
+                      <li><a href="index2.html">Subir foto</a></li>
+                      <li><a href="index3.html">Cambiar contraseña</a></li>
+                    </ul>
+                  </li>
+				
+<?php
+		}
+?>
+				
 			</ul>
 		</div>
 
