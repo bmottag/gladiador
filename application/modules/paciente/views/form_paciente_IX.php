@@ -41,7 +41,7 @@
 						</div>
 						
 						<div class="form-group">
-							<label class="control-label col-md-4 col-sm-4 col-xs-12" for="caracteristica_idioma">En que idiomo desea tener las sesiones? <span class="required">*</span></label>
+							<label class="control-label col-md-4 col-sm-4 col-xs-12" for="caracteristica_idioma">En que idioma desea tener las sesiones? <span class="required">*</span></label>
 							<div class="col-md-6 col-sm-6 col-xs-6">
 								<select class="form-control" id="caracteristica_idioma" name="caracteristica_idioma" required="required">
 									<option value="">Seleccione</option>

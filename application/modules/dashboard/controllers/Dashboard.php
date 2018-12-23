@@ -85,9 +85,9 @@ class Dashboard extends CI_Controller {
 		$data['ADMIN'] = true;
 		
 		$arrParam = array("idPaciente" => $idPaciente);
-		$data['information'] = $this->general_model->get_info_psicologo($arrParam);//info psicologo
+		$data['information'] = $this->general_model->get_info_paciente($arrParam);//info psicologo
 		
-		$data["view"] = 'info_psicologo';
+		$data["view"] = 'info_paciente';
 		$this->load->view("layout", $data);
 	}
 	

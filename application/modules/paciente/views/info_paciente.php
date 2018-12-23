@@ -69,6 +69,15 @@
 			break;
 	}
 	
+	switch ($information['caracteristica_idioma']) {
+		case 1:
+			$idioma = 'Solo español';
+			break;
+		case 2:
+			$idioma = 'Español o inglés';
+			break;
+	}	
+
 	
 ?>
 				
@@ -113,14 +122,8 @@
 										<td class="fs15 fw700 text-right"><?php echo $sesiones; ?></td>
 									</tr>
 									<tr>
-										<td>Prefieres un psicólogo con algunas características particulares? </td>
-										<td class="fs15 fw700 text-right">									
-										<?php 
-											echo $information['caracteristica_edad']?'Edad<br>':''; 
-											echo $information['caracteristica_enfoque']?'Enfoque<br>':''; 
-											echo $information['caracteristica_idioma']?'Idioma':''; 
-										?>
-										</td>
+										<td>En que idioma desea tener las sesiones? </td>
+										<td class="fs15 fw700 text-right"><?php echo $idioma; ?></td>
 									</tr>
 									<tr>
 										<td>Cuál es tu presupuesto para cada sesión?</td>
@@ -161,6 +164,44 @@
 									<tr>
 										<td>Autolesión/Suicidio</td>
 										<td class="fs15 fw700 text-right"><?php echo $information['suicidio']; ?></td>
+									</tr>
+									
+									<tr>
+										<td>4 valores personales que para tu vida sean de gran importancia </td>
+										<td class="fs15 fw700 text-right">									
+										<?php 
+											echo $information['autosuficiencia']?' Autosuficiencia<br>':''; 
+											echo $information['bondad']?' Bondad                  <br>':''; 
+											echo $information['certidumbre']?' Certidumbre        <br>':''; 
+											echo $information['coherencia']?' Coherencia          <br>':''; 
+											echo $information['compasivo']?' Compasivo            <br>':''; 
+											echo $information['confianza']?' Confianza            <br>':''; 
+											echo $information['coperacion']?' Coperación          <br>':''; 
+											echo $information['coraje']?' Coraje                  <br>':''; 
+											echo $information['curiosidad']?' Curiosidad          <br>':''; 
+											echo $information['equidad']?' Equidad                <br>':''; 
+											echo $information['generosidad']?' Generosidad        <br>':''; 
+											echo $information['gratitud']?' Gratitud              <br>':''; 
+											echo $information['honestidad']?' Honestidad          <br>':''; 
+											echo $information['humildad']?' Humildad              <br>':''; 
+											echo $information['independencia']?' Independencia    <br>':''; 
+											echo $information['lealtad']?' Lealtad                <br>':''; 
+											echo $information['libertad']?' Libertad              <br>':''; 
+											echo $information['mente_abierta']?' Mente Abierta    <br>':''; 
+											echo $information['moderacion']?' Moderación          <br>':''; 
+											echo $information['paciencia']?' Paciencia            <br>':''; 
+											echo $information['persistencia']?' Persistencia      <br>':''; 
+											echo $information['proactividad']?' Proactividad      <br>':''; 
+											echo $information['proposito']?' Propósito            <br>':''; 
+											echo $information['respeto']?' Respeto                <br>':''; 
+											echo $information['responsabilidad']?' Responsabilidad<br>':''; 
+											echo $information['servicio']?' Servicio              <br>':''; 
+											echo $information['solidaridad']?' Solidaridad        <br>':''; 
+											echo $information['sostenibilidad']?' Sostenibilidad  <br>':''; 
+											echo $information['tolerancia']?' Tolerancia          <br>':''; 
+											echo $information['unidad']?' Unidad                  <br>':''; 
+										?>
+										</td>
 									</tr>
 									
 								</tbody>
