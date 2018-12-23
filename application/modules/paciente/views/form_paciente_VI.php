@@ -29,7 +29,22 @@
 						<input type="hidden" id="formulario" name="formulario" value=6 />
 
 						<strong>¿En cuál nivel de autoestima consideras que estás?</strong> 
-						<br><small>
+						
+<!-- Button trigger modal -->
+<button type="button" class="btn btn-danger" data-toggle="modal" data-target="#exampleModal">
+  !
+</button>
+
+<!-- Modal -->
+<div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
 							<ol>
 								<li> Sana: Me acepto incondicionalmente sin importar las circunstancias. Sé que mi valor intrínseco no depende de la situación externa. </li>
 								<li> Estable: Sé que tengo fortalezas y debilidades. No busco ser perfecto(a) y trato de no juzgar mis errores. No necesito la aprobación externa para sentirme tranquilo(a). </li>
@@ -37,37 +52,60 @@
 								<li> Inestable: No acepto mis errores e imperfecciones. Mi comportamiento es defensivo la mayoría del tiempo. La aprobación externa es necesaria para sentirme bien. </li>
 								<li> Baja: Me siento avergonzado(a) de mí. Creo que no soy suficiente y me juzgo constantemente. Mi comportamiento es retraido y aislado.</li>
 							</ol>
-						</small>
-												
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-primary" data-dismiss="modal">Cerrar</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<br><br>
+				
 						<div class="form-group">
 							<div class="col-md-12 col-sm-12 col-xs-12">
-								<div id="gender" class="btn-group" data-toggle="buttons">
-									<label class="btn btn-default <?php if($information && $information["autoestima"] == 1) { echo "active"; }  ?>" data-toggle-class="btn-primary" data-toggle-passive-class="btn-default">
-										<input type="radio" id="autoestima1" name="autoestima" value=1 <?php if($information && $information["autoestima"] == 1) { echo "checked"; }  ?>> 1. Sana
+								<div class="row" align="center">
+									<div style="width:80%;" align="center">
+									
+									<label class="btn btn-primary <?php if($information && $information["autoestima"] == 1) { echo "active"; }  ?>" data-toggle-class="btn-primary" data-toggle-passive-class="btn-default">
+										<input type="radio" id="optionsAutoestima1" name="optionsAutoestima" value=1 <?php if($information && $information["autoestima"] == 1) { echo "checked"; }  ?>> 1. Sana
 									</label>
-									<label class="btn btn-default <?php if($information && $information["autoestima"] == 2) { echo "active"; }  ?>" data-toggle-class="btn-primary" data-toggle-passive-class="btn-default">
-										<input type="radio" id="autoestima1" name="autoestima" value=2 <?php if($information && $information["autoestima"] == 2) { echo "checked"; }  ?>> 2. Estable
+									<label class="btn btn-primary <?php if($information && $information["autoestima"] == 2) { echo "active"; }  ?>" data-toggle-class="btn-primary" data-toggle-passive-class="btn-default">
+										<input type="radio" id="optionsAutoestima2" name="optionsAutoestima" value=2 <?php if($information && $information["autoestima"] == 2) { echo "checked"; }  ?>> 2. Estable
 									</label>
-									<label class="btn btn-default <?php if($information && $information["autoestima"] == 3) { echo "active"; }  ?>" data-toggle-class="btn-primary" data-toggle-passive-class="btn-default">
-										<input type="radio" id="autoestima1" name="autoestima" value=3 <?php if($information && $information["autoestima"] == 3) { echo "checked"; }  ?>> 3. Condicional
+									<label class="btn btn-primary <?php if($information && $information["autoestima"] == 3) { echo "active"; }  ?>" data-toggle-class="btn-primary" data-toggle-passive-class="btn-default">
+										<input type="radio" id="optionsAutoestima3" name="optionsAutoestima" value=3 <?php if($information && $information["autoestima"] == 3) { echo "checked"; }  ?>> 3. Condicional
 									</label>
-									<label class="btn btn-default <?php if($information && $information["autoestima"] == 4) { echo "active"; }  ?>" data-toggle-class="btn-primary" data-toggle-passive-class="btn-default">
-										<input type="radio" id="autoestima1" name="autoestima" value=4 <?php if($information && $information["autoestima"] == 4) { echo "checked"; }  ?>> 4. Inestable
+									<label class="btn btn-primary <?php if($information && $information["autoestima"] == 4) { echo "active"; }  ?>" data-toggle-class="btn-primary" data-toggle-passive-class="btn-default">
+										<input type="radio" id="optionsAutoestima4" name="optionsAutoestima" value=4 <?php if($information && $information["autoestima"] == 4) { echo "checked"; }  ?>> 4. Inestable
 									</label>
-									<label class="btn btn-default <?php if($information && $information["autoestima"] == 5) { echo "active"; }  ?>" data-toggle-class="btn-primary" data-toggle-passive-class="btn-default">
-										<input type="radio" id="autoestima1" name="autoestima" value=5 <?php if($information && $information["autoestima"] == 5) { echo "checked"; }  ?>> 5. Baja
+									<label class="btn btn-primary <?php if($information && $information["autoestima"] == 5) { echo "active"; }  ?>" data-toggle-class="btn-primary" data-toggle-passive-class="btn-default">
+										<input type="radio" id="optionsAutoestima5" name="optionsAutoestima" value=5 <?php if($information && $information["autoestima"] == 5) { echo "checked"; }  ?>> 5. Baja
 									</label>
+									
+									</div>
 								</div>
 							</div>
 						</div>
 						
-
+						<div class="form-group">
+							<div class="col-md-12 col-sm-12 col-xs-12">
+								<div class="row" align="center">
+									<div style="width:80%;" align="center">						
+										<label>
+										  <input type="hidden" id="autoestima" name="autoestima" value="<?php echo $information?$information["autoestima"]:""; ?>">
+										</label>
+									</div>
+								</div>
+							</div>
+						</div>
 																	
 						<div class="ln_solid"></div>
 						<div class="form-group">
 							<div class="col-md-6 col-sm-6 col-xs-12 col-md-offset-3">
 								<div class="row" align="center">
 									<div style="width:50%;" align="center">
+										<a class="btn btn-default" href="<?php echo base_url() . 'paciente/form_5/' . $information["id_paciente"]; ?>"><span class="fa fa-reply" aria-hidden="true"></span> Regresar </a>
 										<button type="button" id="btnSubmit" name="btnSubmit" class='btn btn-success'>
 												Continuar <span class="glyphicon glyphicon-floppy-disk" aria-hidden="true">
 										</button>								

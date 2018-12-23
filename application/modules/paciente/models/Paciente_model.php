@@ -74,12 +74,12 @@
 							break;
 						case 6:
 							$data = array(
-								'autoestima' => $this->input->post('autoestima')
+								'autoestima' => $this->input->post('optionsAutoestima')
 							);
 							break;
 						case 7:
 							$data = array(
-								'pareja' => $this->input->post('pareja')
+								'pareja' => $this->input->post('optionsPareja')
 							);
 							break;
 						case 8:
