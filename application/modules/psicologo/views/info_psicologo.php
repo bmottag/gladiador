@@ -27,7 +27,7 @@
 							</li>
 							
 							<li>
-								<i class="fa fa-home user-profile-icon"></i> <strong>Dirección consultorio:</strong><br> <?php echo $information['direccion']; ?>
+								<i class="fa fa-map-marker user-profile-icon"></i> <strong>Dirección consultorio:</strong><br> <?php echo $information['direccion']; ?>
 							</li>
 							
 							<li>
