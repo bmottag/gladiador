@@ -13,7 +13,16 @@
 				<div class="x_content">
 				
 					<div class="col-md-3 col-sm-3 col-xs-12 profile_left">
-					
+						
+						<?php if($information['photo']){ ?>
+						<div class="profile_img">
+							<div id="crop-avatar">
+							<!-- Current avatar -->
+								<img class="img-responsive avatar-view" src="<?php echo base_url($information['photo']); ?>" alt="Avatar" title="Cambiar foto">
+							</div>
+						</div>					
+						<?php } ?>
+						
 						<h4><strong><?php echo $information['name']; ?></strong></h4>
 					
 						<ul class="list-unstyled user_data">
@@ -27,7 +36,7 @@
 							</li>
 							
 							<li>
-								<i class="fa fa-home user-profile-icon"></i> <strong>Dirección consultorio:</strong><br> <?php echo $information['direccion']; ?>
+								<i class="fa fa-map-marker user-profile-icon"></i> <strong>Dirección consultorio:</strong><br> <?php echo $information['direccion']; ?>
 							</li>
 							
 							<li>
