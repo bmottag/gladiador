@@ -44,6 +44,14 @@
 							</li>
 						</ul>
 						
+						<div class="col-md-12">
+							<div class="btn-group">
+
+								<a class="btn btn-sm btn-primary" href="<?php echo base_url() . 'general/edicion_psicologo/' . $information['id_user']; ?>"><span class="fa fa-edit" aria-hidden="true"></span> Editar </a>
+
+							</div>
+						</div>
+						
 					</div>
 				
 					<div class="col-md-9 col-sm-9 col-xs-12">

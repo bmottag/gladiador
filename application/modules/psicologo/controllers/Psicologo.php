@@ -125,6 +125,25 @@ class Psicologo extends MX_Controller {
 		$this->load->view("layout", $data);
 	}
 	
+	/**
+	 * Edicion de psicologo
+	 */
+	public function edicion($idPsicologo)
+	{	
+			$data['ADMIN'] = true;
+			
+			$this->load->model("general_model");
+			
+			$data["ruta"] = "psicologo/info/"; //para indicar donde debe regresar
+			$data["titulo"] = "Editar datos Psicólogo";
+			
+			$arrParam = array("idUser" => $idPsicologo);
+			$data['information'] = $this->general_model->get_info_psicologo($arrParam);//info psicologo
+		
+			$data["view"] = 'template/form_psicologo';
+			$this->load->view("layout", $data);
+	}
+	
 
 	
 }
