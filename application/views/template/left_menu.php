@@ -41,14 +41,14 @@
 		$userRol = $this->session->rol;
 		if($userRol != 3){ //If it is an ADMIN user, show an special menu
 ?>	
-			
-				<li>
-					<a href="<?php echo base_url("dashboard/listado_psicologos"); ?>"><i class="fa fa-user"></i> Listado Psicólogos</a>
-				</li>
-				<li>
-					<a href="<?php echo base_url("dashboard/listado_pacientes"); ?>"><i class="fa fa-user"></i> Listado Pacientes</a>
-				</li>
-				
+
+                  <li><a><i class="fa fa-list"></i> Registros <span class="fa fa-chevron-down"></span></a>
+                    <ul class="nav child_menu">
+                      <li><a href="<?php echo base_url("dashboard/listado_psicologos"); ?>">Listado Psicólogo</a></li>
+                      <li><a href="<?php echo base_url("dashboard/listado_pacientes"); ?>">Listado Pacientes</a></li>
+                    </ul>
+                  </li>
+
 <?php
 		}
 ?>

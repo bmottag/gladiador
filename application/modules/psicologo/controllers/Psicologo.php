@@ -23,6 +23,8 @@ class Psicologo extends MX_Controller {
 	{	
 			$data['information'] = FALSE;
 			$data["ruta"] = "psicologo/ingreso/"; //para indicar donde debe regresar
+			$data["titulo"] = "Registrate como psicólogo asociado de TuApoyo";
+			
 			
 			$data["view"] = 'template/form_psicologo';
 			$this->load->view("layout", $data);

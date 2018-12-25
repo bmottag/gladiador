@@ -39,6 +39,7 @@ class General extends MX_Controller {
 			$this->load->model("general_model");
 			
 			$data["ruta"] = "dashboard/ver_psicologo/"; //para indicar donde debe regresar
+			$data["titulo"] = "Editar datos Psicólogo";
 			
 			$arrParam = array("idUser" => $idPsicologo);
 			$data['information'] = $this->general_model->get_info_psicologo($arrParam);//info psicologo
