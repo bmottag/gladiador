@@ -34,7 +34,7 @@ class Dashboard extends CI_Controller {
 		$this->load->model("general_model");
 		$data['ADMIN'] = true;
 		
-		$arrParam = array();
+		$arrParam = array("idRol" => 3);
 		$data['information'] = $this->general_model->get_user_list($arrParam);//info solicitudes
 
 		$data["view"] = 'listado_psicologos';
