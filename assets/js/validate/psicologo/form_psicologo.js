@@ -42,7 +42,7 @@ jQuery.validator.addMethod("enfoque", function(e) {
 					
 	var cont = 0; 
 	
-	for(var i=12; i<17; i++) {
+	for(var i=14; i<19; i++) {
 		var elemento = formulario.elements[i];
 		if(elemento.type == "checkbox") {
 			if(elemento.checked) {
@@ -66,7 +66,7 @@ jQuery.validator.addMethod("valores", function(e) {
 		//alert(nn.value);
 	var contx = 0; 
 	
-	for(var i=60; i<92; i++) {
+	for(var i=62; i<94; i++) {
 		var elemento = formulario.elements[i];
 		if(elemento.type == "checkbox") {
 			if(elemento.checked) {

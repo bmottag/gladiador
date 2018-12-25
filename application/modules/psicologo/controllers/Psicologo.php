@@ -43,9 +43,9 @@ class Psicologo extends MX_Controller {
 			$email = $this->input->post('email');
 			$data["ruta"] = $this->input->post('ruta');
 
-			$msj = "You have add a new User!!";
+			$msj = "Se adicióno un Psicólogo nuevo.";
 			if ($idUser != '') {
-				$msj = "You have update the User!!";
+				$msj = "Se actualizó la información.";
 			}	
 			
 			$result_email = false;
