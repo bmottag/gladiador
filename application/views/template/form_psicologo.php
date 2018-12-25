@@ -19,13 +19,15 @@
 					</div>
 				
 					<form id="form" data-parsley-validate class="form-horizontal form-label-left">
-						<input type="hidden" id="hddId" name="hddId" value="<?php echo $information?$information[0]["id_user"]:""; ?>"/>
+						<input type="hidden" id="hddId" name="hddId" value="<?php echo $information?$information["id_user"]:""; ?>"/>
+						<input type="hidden" id="ruta" name="ruta" value="<?php echo $ruta; ?>"/>
+						<input type="hidden" id="hddIdPsicologo" name="hddIdPsicologo" value="<?php echo $information?$information["id_psicologo"]:""; ?>"/>
 
 						<div class="form-group">
 							<label class="control-label col-md-3 col-sm-3 col-xs-12" for="nombres">Nombres <span class="required">*</span>
 							</label>
 							<div class="col-md-6 col-sm-6 col-xs-12">
-								<input type="text" id="nombres" name="nombres" required="required" class="form-control col-md-7 col-xs-12 has-feedback-left" value="<?php echo $information?$information[0]["first_name"]:""; ?>" maxlength=30 placeholder="Nombres">
+								<input type="text" id="nombres" name="nombres" required="required" class="form-control col-md-7 col-xs-12 has-feedback-left" value="<?php echo $information?$information["first_name"]:""; ?>" maxlength=30 placeholder="Nombres">
 								<span class="fa fa-user form-control-feedback left" aria-hidden="true"></span>
 							</div>
 						</div>
@@ -34,21 +36,21 @@
 							<label class="control-label col-md-3 col-sm-3 col-xs-12" for="apellidos">Apellidos <span class="required">*</span>
 							</label>
 							<div class="col-md-6 col-sm-6 col-xs-12">
-								<input type="text" id="apellidos" name="apellidos" required="required" class="form-control col-md-7 col-xs-12 has-feedback-left" value="<?php echo $information?$information[0]["last_name"]:""; ?>" maxlength=30 placeholder="Apellidos">
+								<input type="text" id="apellidos" name="apellidos" required="required" class="form-control col-md-7 col-xs-12 has-feedback-left" value="<?php echo $information?$information["last_name"]:""; ?>" maxlength=30 placeholder="Apellidos">
 								<span class="fa fa-user form-control-feedback left" aria-hidden="true"></span>
 							</div>
 						</div>
 						<div class="form-group">
 							<label for="email" class="control-label col-md-3 col-sm-3 col-xs-12">Email <span class="required">*</span></label>
 							<div class="col-md-6 col-sm-6 col-xs-12">
-								<input id="email" name="email" required="required" class="form-control col-md-7 col-xs-12 has-feedback-left" type="text" value="<?php echo $information?$information[0]["email"]:""; ?>" maxlength=50 placeholder="Email">
+								<input id="email" name="email" required="required" class="form-control col-md-7 col-xs-12 has-feedback-left" type="text" value="<?php echo $information?$information["email"]:""; ?>" maxlength=50 placeholder="Email">
 								<span class="fa fa-envelope form-control-feedback left" aria-hidden="true"></span>
 							</div>
 						</div>
 						<div class="form-group">
 							<label for="celular" class="control-label col-md-3 col-sm-3 col-xs-12">Número de contacto <span class="required">*</span></label>
 							<div class="col-md-6 col-sm-6 col-xs-12">
-								<input id="celular" name="celular" required="required" class="form-control col-md-7 col-xs-12 has-feedback-left" type="text" value="<?php echo $information?$information[0]["movil"]:""; ?>" maxlength=12 placeholder="Número de contacto">
+								<input id="celular" name="celular" required="required" class="form-control col-md-7 col-xs-12 has-feedback-left" type="text" value="<?php echo $information?$information["movil"]:""; ?>" maxlength=12 placeholder="Número de contacto">
 								<span class="fa fa-phone form-control-feedback left" aria-hidden="true"></span>
 							</div>
 						</div>
@@ -58,11 +60,11 @@
 							<div class="col-md-6 col-sm-6 col-xs-12">
 								<select class="form-control" id="edad" name="edad" required="required">
 									<option value="">Seleccione</option>
-									<option value=1>23-27</option>
-									<option value=2>28-35</option>
-									<option value=3>36-45</option>
-									<option value=4>45-55</option>
-									<option value=5>Mayor de 55</option>
+									<option value=1 <?php if($information["edad"] == 1) { echo "selected"; }  ?>>23-27</option>
+									<option value=2 <?php if($information["edad"] == 2) { echo "selected"; }  ?>>28-35</option>
+									<option value=3 <?php if($information["edad"] == 3) { echo "selected"; }  ?>>36-45</option>
+									<option value=4 <?php if($information["edad"] == 4) { echo "selected"; }  ?>>45-55</option>
+									<option value=5 <?php if($information["edad"] == 5) { echo "selected"; }  ?>>Mayor de 55</option>
 								</select>
 							</div>
 						</div>
@@ -72,7 +74,7 @@
 							<br><small>Respuesta personal sobre por qué quieren ayudar a las personas (no sobre formación, capacitación, experiencia)</small>
 							</label>
 							<div class="col-md-6 col-sm-6 col-xs-12">
-								<textarea id="ayudarte" name="ayudarte" placeholder="Por qué quiero ayudarte?" class="form-control" rows="3" required="required"><?php echo $information?$information[0]["description"]:""; ?></textarea>
+								<textarea id="ayudarte" name="ayudarte" placeholder="Por qué quiero ayudarte?" class="form-control" rows="3" required="required"><?php echo $information?$information["description"]:""; ?></textarea>
 							</div>
 						</div>
 												
@@ -80,21 +82,21 @@
 							<label class="control-label col-md-3 col-sm-3 col-xs-12" for="formacion">Formación <span class="required">*</span>
 							<br><small>Universidad - nivel de educación - Matrícula profesional (títulos)</small></label>
 							<div class="col-md-6 col-sm-6 col-xs-12">
-								<textarea id="formacion" name="formacion" placeholder="Formación" class="form-control" rows="3" required="required"><?php echo $information?$information[0]["description"]:""; ?></textarea>
+								<textarea id="formacion" name="formacion" placeholder="Formación" class="form-control" rows="3" required="required"><?php echo $information?$information["description"]:""; ?></textarea>
 							</div>
 						</div>
 						
 						<div class="form-group">
 							<label class="control-label col-md-3 col-sm-3 col-xs-12" for="experiencia">Cuántos años de experiencia en consulta tienes? <span class="required">*</span></label>
 							<div class="col-md-6 col-sm-6 col-xs-12">
-								<input type="text" id="experiencia" name="experiencia" required="required" class="form-control col-md-7 col-xs-12" value="<?php echo $information?$information[0]["hora_contrato_cad"]:""; ?>" maxlength=100 placeholder="Cuántos años de experiencia en consulta tienes?">
+								<input type="text" id="experiencia" name="experiencia" required="required" class="form-control col-md-7 col-xs-12" value="<?php echo $information?$information["experiencia"]:""; ?>" maxlength=100 placeholder="Cuántos años de experiencia en consulta tienes?">
 							</div>
 						</div>
 						
 						<div class="form-group">
 							<label class="control-label col-md-3 col-sm-3 col-xs-12" for="pagina_web">Página web personal </label>
 							<div class="col-md-6 col-sm-6 col-xs-12">
-								<input type="text" id="pagina_web" name="pagina_web" class="form-control col-md-7 col-xs-12 has-feedback-left" value="<?php echo $information?$information[0]["hora_contrato_cad"]:""; ?>" maxlength=100 placeholder="Página web personal">
+								<input type="text" id="pagina_web" name="pagina_web" class="form-control col-md-7 col-xs-12 has-feedback-left" value="<?php echo $information?$information["pagina_web"]:""; ?>" maxlength=100 placeholder="Página web personal">
 								<span class="fa fa-globe form-control-feedback left" aria-hidden="true"></span>
 							</div>
 						</div>
@@ -102,7 +104,7 @@
 						<div class="form-group">
 							<label class="control-label col-md-3 col-sm-3 col-xs-12" for="direccion">Dirección de tu consultorio <span class="required">*</span></label>
 							<div class="col-md-6 col-sm-6 col-xs-12">
-								<input type="text" id="direccion" name="direccion" required="required" class="form-control col-md-7 col-xs-12 has-feedback-left" value="<?php echo $information?$information[0]["hora_contrato_cad"]:""; ?>" maxlength=100 placeholder="Dirección de tu consultorio">
+								<input type="text" id="direccion" name="direccion" required="required" class="form-control col-md-7 col-xs-12 has-feedback-left" value="<?php echo $information?$information["direccion"]:""; ?>" maxlength=100 placeholder="Dirección de tu consultorio">
 								<span class="fa fa-home form-control-feedback left" aria-hidden="true"></span>
 							</div>
 						</div>
@@ -112,9 +114,9 @@
 							<div class="col-md-6 col-sm-6 col-xs-12">
 								<select class="form-control" id="tarifa" name="tarifa" required="required">
 									<option value="">Seleccione</option>
-									<option value=1>Menos de $90.000</option>
-									<option value=2>Menos de $130.000</option>
-									<option value=3>Menos de $200.000</option>
+									<option value=1 <?php if($information["tarifa"] == 1) { echo "selected"; }  ?>>Menos de $90.000</option>
+									<option value=2 <?php if($information["tarifa"] == 2) { echo "selected"; }  ?>>Menos de $130.000</option>
+									<option value=3 <?php if($information["tarifa"] == 3) { echo "selected"; }  ?>>Menos de $200.000</option>
 								</select>
 							</div>
 						</div>
@@ -125,29 +127,29 @@
 							<div class="col-md-3 col-sm-3 col-xs-6">
 								  <div class="checkbox">
 									<label>
-									  <input type="checkbox" id="cognitivo" name="cognitivo" value=1 class="flat"> Cognitivo Conductual
+									  <input type="checkbox" id="cognitivo" name="cognitivo" value=1 class="flat" <?php if($information && $information["enfoque_cognitivo"] == 1) { echo "checked"; }  ?>> Cognitivo Conductual
 									</label>
 								  </div>
 								  <div class="checkbox">
 									<label>
-									  <input type="checkbox" id="psicoanalisis" name="psicoanalisis" value=1 class="flat"> Psicoanálisis
+									  <input type="checkbox" id="psicoanalisis" name="psicoanalisis" value=1 class="flat" <?php if($information && $information["enfoque_psicoanalisis"] == 1) { echo "checked"; }  ?>> Psicoanálisis
 									</label>
 								  </div>
 								  <div class="checkbox">
 									<label>
-									  <input type="checkbox" id="sistemico" name="sistemico" value=1 class="flat"> Sistémico
+									  <input type="checkbox" id="sistemico" name="sistemico" value=1 class="flat" <?php if($information && $information["enfoque_sistemico"] == 1) { echo "checked"; }  ?>> Sistémico
 									</label>
 								  </div>
 							</div>
 							<div class="col-md-3 col-sm-3 col-xs-6">
 								  <div class="checkbox">
 									<label>
-									  <input type="checkbox" id="transpersonal" name="transpersonal" value=1 class="flat"> Transpersonal
+									  <input type="checkbox" id="transpersonal" name="transpersonal" value=1 class="flat" <?php if($information && $information["enfoque_transpersonal"] == 1) { echo "checked"; }  ?>> Transpersonal
 									</label>
 								  </div>
 								  <div class="checkbox">
 									<label>
-									  <input type="checkbox" id="humanista" name="humanista" value=1 class="flat"> Humanista
+									  <input type="checkbox" id="humanista" name="humanista" value=1 class="flat" <?php if($information && $information["enfoque_humanista"] == 1) { echo "checked"; }  ?>> Humanista
 									</label>
 								  </div>
 							</div>
@@ -171,35 +173,35 @@
 							<div class="col-md-1 col-sm-1 col-xs-12">
 								<div class="radio">
 									<label>
-									  <input type="radio" value=1 id="optionsAnsiedad1" name="optionsAnsiedad"> 1
+									  <input type="radio" value=1 id="optionsAnsiedad1" name="optionsAnsiedad" <?php if($information && $information["especialidad_ansiedad"] == 1) { echo "checked"; }  ?>> 1
 									</label>
 								</div>
 							</div>
 							<div class="col-md-1 col-sm-1 col-xs-12">
 								<div class="radio">
 									<label>
-									  <input type="radio" value=2 id="optionsAnsiedad2" name="optionsAnsiedad"> 2
+									  <input type="radio" value=2 id="optionsAnsiedad2" name="optionsAnsiedad" <?php if($information && $information["especialidad_ansiedad"] == 2) { echo "checked"; }  ?>> 2
 									</label>
 								</div>
 							</div>
 							<div class="col-md-1 col-sm-1 col-xs-12">
 								<div class="radio">
 									<label>
-									  <input type="radio" value=3 id="optionsAnsiedad3" name="optionsAnsiedad"> 3
+									  <input type="radio" value=3 id="optionsAnsiedad3" name="optionsAnsiedad" <?php if($information && $information["especialidad_ansiedad"] == 3) { echo "checked"; }  ?>> 3
 									</label>
 								</div>
 							</div>
 							<div class="col-md-1 col-sm-1 col-xs-12">
 								<div class="radio">
 									<label>
-									  <input type="radio" value=4 id="optionsAnsiedad4" name="optionsAnsiedad"> 4
+									  <input type="radio" value=4 id="optionsAnsiedad4" name="optionsAnsiedad" <?php if($information && $information["especialidad_ansiedad"] == 4) { echo "checked"; }  ?>> 4
 									</label>
 								</div>
 							</div>
 							<div class="col-md-1 col-sm-1 col-xs-12">
 								<div class="radio">
 									<label>
-									  <input type="radio" value=5 id="optionsAnsiedad5" name="optionsAnsiedad"> 5
+									  <input type="radio" value=5 id="optionsAnsiedad5" name="optionsAnsiedad" <?php if($information && $information["especialidad_ansiedad"] == 5) { echo "checked"; }  ?>> 5
 									</label>
 								</div>
 							</div>
@@ -207,7 +209,7 @@
 							<div class="col-md-4 col-sm-4 col-xs-12">
 								<div class="radio">
 									<label>
-									  <input type="hidden" id="ansiedad" name="ansiedad" >
+									  <input type="hidden" id="ansiedad" name="ansiedad" value="<?php echo $information?$information["especialidad_ansiedad"]:""; ?>">
 									</label>
 								</div>
 							</div>
@@ -218,42 +220,42 @@
 							<div class="col-md-1 col-sm-1 col-xs-12">
 								<div class="radio">
 									<label>
-									  <input type="radio" value=1 id="optionsDepresion1" name="optionsDepresion"> 1
+									  <input type="radio" value=1 id="optionsDepresion1" name="optionsDepresion" <?php if($information && $information["especialidad_depresion"] == 1) { echo "checked"; }  ?>> 1
 									</label>
 								</div>
 							</div>
 							<div class="col-md-1 col-sm-1 col-xs-12">
 								<div class="radio">
 									<label>
-									  <input type="radio" value=2 id="optionsDepresion2" name="optionsDepresion"> 2
+									  <input type="radio" value=2 id="optionsDepresion2" name="optionsDepresion" <?php if($information && $information["especialidad_depresion"] == 2) { echo "checked"; }  ?>> 2
 									</label>
 								</div>
 							</div>
 							<div class="col-md-1 col-sm-1 col-xs-12">
 								<div class="radio">
 									<label>
-									  <input type="radio" value=3 id="optionsDepresion3" name="optionsDepresion"> 3
+									  <input type="radio" value=3 id="optionsDepresion3" name="optionsDepresion" <?php if($information && $information["especialidad_depresion"] == 3) { echo "checked"; }  ?>> 3
 									</label>
 								</div>
 							</div>
 							<div class="col-md-1 col-sm-1 col-xs-12">
 								<div class="radio">
 									<label>
-									  <input type="radio" value=4 id="optionsDepresion4" name="optionsDepresion"> 4
+									  <input type="radio" value=4 id="optionsDepresion4" name="optionsDepresion" <?php if($information && $information["especialidad_depresion"] == 4) { echo "checked"; }  ?>> 4
 									</label>
 								</div>
 							</div>
 							<div class="col-md-1 col-sm-1 col-xs-12">
 								<div class="radio">
 									<label>
-									  <input type="radio" value=5 id="optionsDepresion5" name="optionsDepresion"> 5
+									  <input type="radio" value=5 id="optionsDepresion5" name="optionsDepresion" <?php if($information && $information["especialidad_depresion"] == 5) { echo "checked"; }  ?>> 5
 									</label>
 								</div>
 							</div>
 							<div class="col-md-4 col-sm-4 col-xs-12">
 								<div class="radio">
 									<label>
-									  <input type="hidden" id="depresion" name="depresion" >
+									  <input type="hidden" id="depresion" name="depresion" value="<?php echo $information?$information["especialidad_depresion"]:""; ?>">
 									</label>
 								</div>
 							</div>
@@ -264,42 +266,42 @@
 							<div class="col-md-1 col-sm-1 col-xs-12">
 								<div class="radio">
 									<label>
-									  <input type="radio" value=1 id="optionsSustancias1" name="optionsSustancias"> 1
+									  <input type="radio" value=1 id="optionsSustancias1" name="optionsSustancias" <?php if($information && $information["especialidad_sustancias"] == 1) { echo "checked"; }  ?>> 1
 									</label>
 								</div>
 							</div>
 							<div class="col-md-1 col-sm-1 col-xs-12">
 								<div class="radio">
 									<label>
-									  <input type="radio" value=2 id="optionsSustancias2" name="optionsSustancias"> 2
+									  <input type="radio" value=2 id="optionsSustancias2" name="optionsSustancias" <?php if($information && $information["especialidad_sustancias"] == 2) { echo "checked"; }  ?>> 2
 									</label>
 								</div>
 							</div>
 							<div class="col-md-1 col-sm-1 col-xs-12">
 								<div class="radio">
 									<label>
-									  <input type="radio" value=3 id="optionsSustancias3" name="optionsSustancias"> 3
+									  <input type="radio" value=3 id="optionsSustancias3" name="optionsSustancias" <?php if($information && $information["especialidad_sustancias"] == 3) { echo "checked"; }  ?>> 3
 									</label>
 								</div>
 							</div>
 							<div class="col-md-1 col-sm-1 col-xs-12">
 								<div class="radio">
 									<label>
-									  <input type="radio" value=4 id="optionsSustancias4" name="optionsSustancias"> 4
+									  <input type="radio" value=4 id="optionsSustancias4" name="optionsSustancias" <?php if($information && $information["especialidad_sustancias"] == 4) { echo "checked"; }  ?>> 4
 									</label>
 								</div>
 							</div>
 							<div class="col-md-1 col-sm-1 col-xs-12">
 								<div class="radio">
 									<label>
-									  <input type="radio" value=5 id="optionsSustancias5" name="optionsSustancias"> 5
+									  <input type="radio" value=5 id="optionsSustancias5" name="optionsSustancias" <?php if($information && $information["especialidad_sustancias"] == 5) { echo "checked"; }  ?>> 5
 									</label>
 								</div>
 							</div>
 							<div class="col-md-4 col-sm-4 col-xs-12">
 								<div class="radio">
 									<label>
-									  <input type="hidden" id="sustancias" name="sustancias" >
+									  <input type="hidden" id="sustancias" name="sustancias" value="<?php echo $information?$information["especialidad_sustancias"]:""; ?>">
 									</label>
 								</div>
 							</div>
@@ -310,42 +312,42 @@
 							<div class="col-md-1 col-sm-1 col-xs-12">
 								<div class="radio">
 									<label>
-									  <input type="radio" value=1 id="optionsSalud1" name="optionsSalud"> 1
+									  <input type="radio" value=1 id="optionsSalud1" name="optionsSalud" <?php if($information && $information["especialidad_salud"] == 1) { echo "checked"; }  ?>> 1
 									</label>
 								</div>
 							</div>
 							<div class="col-md-1 col-sm-1 col-xs-12">
 								<div class="radio">
 									<label>
-									  <input type="radio" value=2 id="optionsSalud2" name="optionsSalud"> 2
+									  <input type="radio" value=2 id="optionsSalud2" name="optionsSalud" <?php if($information && $information["especialidad_salud"] == 2) { echo "checked"; }  ?>> 2
 									</label>
 								</div>
 							</div>
 							<div class="col-md-1 col-sm-1 col-xs-12">
 								<div class="radio">
 									<label>
-									  <input type="radio" value=3 id="optionsSalud3" name="optionsSalud"> 3
+									  <input type="radio" value=3 id="optionsSalud3" name="optionsSalud" <?php if($information && $information["especialidad_salud"] == 3) { echo "checked"; }  ?>> 3
 									</label>
 								</div>
 							</div>
 							<div class="col-md-1 col-sm-1 col-xs-12">
 								<div class="radio">
 									<label>
-									  <input type="radio" value=4 id="optionsSalud4" name="optionsSalud"> 4
+									  <input type="radio" value=4 id="optionsSalud4" name="optionsSalud" <?php if($information && $information["especialidad_salud"] == 4) { echo "checked"; }  ?>> 4
 									</label>
 								</div>
 							</div>
 							<div class="col-md-1 col-sm-1 col-xs-12">
 								<div class="radio">
 									<label>
-									  <input type="radio" value=5 id="optionsSalud5" name="optionsSalud"> 5
+									  <input type="radio" value=5 id="optionsSalud5" name="optionsSalud" <?php if($information && $information["especialidad_salud"] == 5) { echo "checked"; }  ?>> 5
 									</label>
 								</div>
 							</div>
 							<div class="col-md-4 col-sm-4 col-xs-12">
 								<div class="radio">
 									<label>
-									  <input type="hidden" id="salud" name="salud" >
+									  <input type="hidden" id="salud" name="salud" value="<?php echo $information?$information["especialidad_salud"]:""; ?>">
 									</label>
 								</div>
 							</div>
@@ -356,42 +358,42 @@
 							<div class="col-md-1 col-sm-1 col-xs-12">
 								<div class="radio">
 									<label>
-									  <input type="radio" value=1 id="optionsAutoestima1" name="optionsAutoestima"> 1
+									  <input type="radio" value=1 id="optionsAutoestima1" name="optionsAutoestima" <?php if($information && $information["especialidad_autoestima"] == 1) { echo "checked"; }  ?>> 1
 									</label>
 								</div>
 							</div>
 							<div class="col-md-1 col-sm-1 col-xs-12">
 								<div class="radio">
 									<label>
-									  <input type="radio" value=2 id="optionsAutoestima2" name="optionsAutoestima"> 2
+									  <input type="radio" value=2 id="optionsAutoestima2" name="optionsAutoestima" <?php if($information && $information["especialidad_autoestima"] == 2) { echo "checked"; }  ?>> 2
 									</label>
 								</div>
 							</div>
 							<div class="col-md-1 col-sm-1 col-xs-12">
 								<div class="radio">
 									<label>
-									  <input type="radio" value=3 id="optionsAutoestima3" name="optionsAutoestima"> 3
+									  <input type="radio" value=3 id="optionsAutoestima3" name="optionsAutoestima" <?php if($information && $information["especialidad_autoestima"] == 3) { echo "checked"; }  ?>> 3
 									</label>
 								</div>
 							</div>
 							<div class="col-md-1 col-sm-1 col-xs-12">
 								<div class="radio">
 									<label>
-									  <input type="radio" value=4 id="optionsAutoestima4" name="optionsAutoestima"> 4
+									  <input type="radio" value=4 id="optionsAutoestima4" name="optionsAutoestima" <?php if($information && $information["especialidad_autoestima"] == 4) { echo "checked"; }  ?>> 4
 									</label>
 								</div>
 							</div>
 							<div class="col-md-1 col-sm-1 col-xs-12">
 								<div class="radio">
 									<label>
-									  <input type="radio" value=5 id="optionsAutoestima5" name="optionsAutoestima"> 5
+									  <input type="radio" value=5 id="optionsAutoestima5" name="optionsAutoestima" <?php if($information && $information["especialidad_autoestima"] == 5) { echo "checked"; }  ?>> 5
 									</label>
 								</div>
 							</div>
 							<div class="col-md-4 col-sm-4 col-xs-12">
 								<div class="radio">
 									<label>
-									  <input type="hidden" id="autoestima" name="autoestima" >
+									  <input type="hidden" id="autoestima" name="autoestima" value="<?php echo $information?$information["especialidad_autoestima"]:""; ?>">
 									</label>
 								</div>
 							</div>
@@ -402,42 +404,42 @@
 							<div class="col-md-1 col-sm-1 col-xs-12">
 								<div class="radio">
 									<label>
-									  <input type="radio" value=1 id="optionsPareja1" name="optionsPareja"> 1
+									  <input type="radio" value=1 id="optionsPareja1" name="optionsPareja" <?php if($information && $information["especialidad_pareja"] == 1) { echo "checked"; }  ?>> 1
 									</label>
 								</div>
 							</div>
 							<div class="col-md-1 col-sm-1 col-xs-12">
 								<div class="radio">
 									<label>
-									  <input type="radio" value=2 id="optionsPareja2" name="optionsPareja"> 2
+									  <input type="radio" value=2 id="optionsPareja2" name="optionsPareja" <?php if($information && $information["especialidad_pareja"] == 2) { echo "checked"; }  ?>> 2
 									</label>
 								</div>
 							</div>
 							<div class="col-md-1 col-sm-1 col-xs-12">
 								<div class="radio">
 									<label>
-									  <input type="radio" value=3 id="optionsPareja3" name="optionsPareja"> 3
+									  <input type="radio" value=3 id="optionsPareja3" name="optionsPareja" <?php if($information && $information["especialidad_pareja"] == 3) { echo "checked"; }  ?>> 3
 									</label>
 								</div>
 							</div>
 							<div class="col-md-1 col-sm-1 col-xs-12">
 								<div class="radio">
 									<label>
-									  <input type="radio" value=4 id="optionsPareja4" name="optionsPareja"> 4
+									  <input type="radio" value=4 id="optionsPareja4" name="optionsPareja" <?php if($information && $information["especialidad_pareja"] == 4) { echo "checked"; }  ?>> 4
 									</label>
 								</div>
 							</div>
 							<div class="col-md-1 col-sm-1 col-xs-12">
 								<div class="radio">
 									<label>
-									  <input type="radio" value=5 id="optionsPareja5" name="optionsPareja"> 5
+									  <input type="radio" value=5 id="optionsPareja5" name="optionsPareja" <?php if($information && $information["especialidad_pareja"] == 5) { echo "checked"; }  ?>> 5
 									</label>
 								</div>
 							</div>
 							<div class="col-md-4 col-sm-4 col-xs-12">
 								<div class="radio">
 									<label>
-									  <input type="hidden" id="pareja" name="pareja" >
+									  <input type="hidden" id="pareja" name="pareja" value="<?php echo $information?$information["especialidad_pareja"]:""; ?>">
 									</label>
 								</div>
 							</div>
@@ -448,42 +450,42 @@
 							<div class="col-md-1 col-sm-1 col-xs-12">
 								<div class="radio">
 									<label>
-									  <input type="radio" value=1 id="optionsSuicidio1" name="optionsSuicidio"> 1
+									  <input type="radio" value=1 id="optionsSuicidio1" name="optionsSuicidio" <?php if($information && $information["especialidad_suicidio"] == 1) { echo "checked"; }  ?>> 1
 									</label>
 								</div>
 							</div>
 							<div class="col-md-1 col-sm-1 col-xs-12">
 								<div class="radio">
 									<label>
-									  <input type="radio" value=2 id="optionsSuicidio2" name="optionsSuicidio"> 2
+									  <input type="radio" value=2 id="optionsSuicidio2" name="optionsSuicidio" <?php if($information && $information["especialidad_suicidio"] == 2) { echo "checked"; }  ?>> 2
 									</label>
 								</div>
 							</div>
 							<div class="col-md-1 col-sm-1 col-xs-12">
 								<div class="radio">
 									<label>
-									  <input type="radio" value=3 id="optionsSuicidio3" name="optionsSuicidio"> 3
+									  <input type="radio" value=3 id="optionsSuicidio3" name="optionsSuicidio" <?php if($information && $information["especialidad_suicidio"] == 3) { echo "checked"; }  ?>> 3
 									</label>
 								</div>
 							</div>
 							<div class="col-md-1 col-sm-1 col-xs-12">
 								<div class="radio">
 									<label>
-									  <input type="radio" value=4 id="optionsSuicidio4" name="optionsSuicidio"> 4
+									  <input type="radio" value=4 id="optionsSuicidio4" name="optionsSuicidio" <?php if($information && $information["especialidad_suicidio"] == 4) { echo "checked"; }  ?>> 4
 									</label>
 								</div>
 							</div>
 							<div class="col-md-1 col-sm-1 col-xs-12">
 								<div class="radio">
 									<label>
-									  <input type="radio" value=5 id="optionsSuicidio5" name="optionsSuicidio"> 5
+									  <input type="radio" value=5 id="optionsSuicidio5" name="optionsSuicidio" <?php if($information && $information["especialidad_suicidio"] == 5) { echo "checked"; }  ?>> 5
 									</label>
 								</div>
 							</div>
 							<div class="col-md-4 col-sm-4 col-xs-12">
 								<div class="radio">
 									<label>
-									  <input type="hidden" id="suicidio" name="suicidio" >
+									  <input type="hidden" id="suicidio" name="suicidio" value="<?php echo $information?$information["especialidad_suicidio"]:""; ?>">
 									</label>
 								</div>
 							</div>
@@ -502,9 +504,9 @@
 							<div class="col-md-6 col-sm-6 col-xs-12">
 								<select class="form-control" id="consultas" name="consultas" required="required">
 									<option value="">Seleccione</option>
-									<option value=1>Ambas</option>
-									<option value=2>Solo en persona</option>
-									<option value=3>Solo virtual</option>
+									<option value=1 <?php if($information["consultas"] == 1) { echo "selected"; }  ?>>Ambas</option>
+									<option value=2 <?php if($information["consultas"] == 2) { echo "selected"; }  ?>>Solo en persona</option>
+									<option value=3 <?php if($information["consultas"] == 3) { echo "selected"; }  ?>>Solo virtual</option>
 								</select>
 							</div>
 						</div>
@@ -514,8 +516,8 @@
 							<div class="col-md-6 col-sm-6 col-xs-12">
 								<select class="form-control" id="idioma" name="idioma" required="required">
 									<option value="">Seleccione</option>
-									<option value=1>Solo español</option>
-									<option value=2>Español o inglés</option>
+									<option value=1 <?php if($information["idioma"] == 1) { echo "selected"; }  ?>>Solo español</option>
+									<option value=2 <?php if($information["idioma"] == 2) { echo "selected"; }  ?>>Español o inglés</option>
 								</select>
 							</div>
 						</div>
@@ -525,156 +527,156 @@
 							<div class="col-md-3 col-sm-3 col-xs-6">
 								  <div class="checkbox">
 									<label>
-									  <input type="checkbox" id="autosuficiencia" name="autosuficiencia" value=1 class="flat"> Autosuficiencia
+									  <input type="checkbox" id="autosuficiencia" name="autosuficiencia" value=1 class="flat" <?php if($information && $information["valores_autosuficiencia"] == 1) { echo "checked"; }  ?>> Autosuficiencia
 									</label>
 								  </div>
 								  <div class="checkbox">
 									<label>
-									  <input type="checkbox" id="bondad" name="bondad" value=1 class="flat"> Bondad
+									  <input type="checkbox" id="bondad" name="bondad" value=1 class="flat" <?php if($information && $information["valores_bondad"] == 1) { echo "checked"; }  ?>> Bondad
 									</label>
 								  </div>
 								  <div class="checkbox">
 									<label>
-									  <input type="checkbox" id="certidumbre" name="certidumbre" value=1 class="flat"> Certidumbre
+									  <input type="checkbox" id="certidumbre" name="certidumbre" value=1 class="flat" <?php if($information && $information["valores_certidumbre"] == 1) { echo "checked"; }  ?>> Certidumbre
 									</label>
 								  </div>
 								  <div class="checkbox">
 									<label>
-									  <input type="checkbox" id="coherencia" name="coherencia" value=1 class="flat"> Coherencia
+									  <input type="checkbox" id="coherencia" name="coherencia" value=1 class="flat" <?php if($information && $information["valores_coherencia"] == 1) { echo "checked"; }  ?>> Coherencia
 									</label>
 								  </div>
 								  <div class="checkbox">
 									<label>
-									  <input type="checkbox" id="compasivo" name="compasivo" value=1 class="flat"> Compasivo
+									  <input type="checkbox" id="compasivo" name="compasivo" value=1 class="flat" <?php if($information && $information["valores_compasivo"] == 1) { echo "checked"; }  ?>> Compasivo
 									</label>
 								  </div>
 								  <div class="checkbox">
 									<label>
-									  <input type="checkbox" id="confianza" name="confianza" value=1 class="flat"> Confianza
+									  <input type="checkbox" id="confianza" name="confianza" value=1 class="flat" <?php if($information && $information["valores_confianza"] == 1) { echo "checked"; }  ?>> Confianza
 									</label>
 								  </div>
 								  <div class="checkbox">
 									<label>
-									  <input type="checkbox" id="coperacion" name="coperacion" value=1 class="flat"> Coperación
+									  <input type="checkbox" id="coperacion" name="coperacion" value=1 class="flat" <?php if($information && $information["valores_coperacion"] == 1) { echo "checked"; }  ?>> Coperación
 									</label>
 								  </div>
 								  <div class="checkbox">
 									<label>
-									  <input type="checkbox" id="coraje" name="coraje" value=1 class="flat"> Coraje
+									  <input type="checkbox" id="coraje" name="coraje" value=1 class="flat" <?php if($information && $information["valores_coraje"] == 1) { echo "checked"; }  ?>> Coraje
 									</label>
 								  </div>
 								  <div class="checkbox">
 									<label>
-									  <input type="checkbox" id="curiosidad" name="curiosidad" value=1 class="flat"> Curiosidad
+									  <input type="checkbox" id="curiosidad" name="curiosidad" value=1 class="flat" <?php if($information && $information["valores_curiosidad"] == 1) { echo "checked"; }  ?>> Curiosidad
 									</label>
 								  </div>
 								  <div class="checkbox">
 									<label>
-									  <input type="checkbox" id="equidad" name="equidad" value=1 class="flat"> Equidad
-									</label>
-								  </div>
-							</div>
-							<div class="col-md-3 col-sm-3 col-xs-6">
-								  <div class="checkbox">
-									<label>
-									  <input type="checkbox" id="generosidad" name="generosidad" value=1 class="flat"> Generosidad
-									</label>
-								  </div>
-								  <div class="checkbox">
-									<label>
-									  <input type="checkbox" id="gratitud" name="gratitud" value=1 class="flat"> Gratitud
-									</label>
-								  </div>
-								  <div class="checkbox">
-									<label>
-									  <input type="checkbox" id="honestidad" name="honestidad" value=1 class="flat"> Honestidad
-									</label>
-								  </div>
-								  <div class="checkbox">
-									<label>
-									  <input type="checkbox" id="humildad" name="humildad" value=1 class="flat"> Humildad
-									</label>
-								  </div>
-								  <div class="checkbox">
-									<label>
-									  <input type="checkbox" id="independencia" name="independencia" value=1 class="flat"> Independencia
-									</label>
-								  </div>
-								  <div class="checkbox">
-									<label>
-									  <input type="checkbox" id="lealtad" name="lealtad" value=1 class="flat"> Lealtad
-									</label>
-								  </div>
-								  <div class="checkbox">
-									<label>
-									  <input type="checkbox" id="libertad" name="libertad" value=1 class="flat"> Libertad
-									</label>
-								  </div>
-								  <div class="checkbox">
-									<label>
-									  <input type="checkbox" id="mente_abierta" name="mente_abierta" value=1 class="flat"> Mente abierta
-									</label>
-								  </div>
-								  <div class="checkbox">
-									<label>
-									  <input type="checkbox" id="moderacion" name="moderacion" value=1 class="flat"> Moderación
-									</label>
-								  </div>
-								  <div class="checkbox">
-									<label>
-									  <input type="checkbox" id="paciencia" name="paciencia" value=1 class="flat"> Paciencia
+									  <input type="checkbox" id="equidad" name="equidad" value=1 class="flat" <?php if($information && $information["valores_equidad"] == 1) { echo "checked"; }  ?>> Equidad
 									</label>
 								  </div>
 							</div>
 							<div class="col-md-3 col-sm-3 col-xs-6">
 								  <div class="checkbox">
 									<label>
-									  <input type="checkbox" id="persistencia" name="persistencia" value=1 class="flat"> Persistencia
+									  <input type="checkbox" id="generosidad" name="generosidad" value=1 class="flat" <?php if($information && $information["valores_generosidad"] == 1) { echo "checked"; }  ?>> Generosidad
 									</label>
 								  </div>
 								  <div class="checkbox">
 									<label>
-									  <input type="checkbox" id="proactividad" name="proactividad" value=1 class="flat"> Proactividad
+									  <input type="checkbox" id="gratitud" name="gratitud" value=1 class="flat" <?php if($information && $information["valores_gratitud"] == 1) { echo "checked"; }  ?>> Gratitud
 									</label>
 								  </div>
 								  <div class="checkbox">
 									<label>
-									  <input type="checkbox" id="proposito" name="proposito" value=1 class="flat"> Propósito
+									  <input type="checkbox" id="honestidad" name="honestidad" value=1 class="flat" <?php if($information && $information["valores_honestidad"] == 1) { echo "checked"; }  ?>> Honestidad
 									</label>
 								  </div>
 								  <div class="checkbox">
 									<label>
-									  <input type="checkbox" id="respeto" name="respeto" value=1 class="flat"> Respeto
+									  <input type="checkbox" id="humildad" name="humildad" value=1 class="flat" <?php if($information && $information["valores_humildad"] == 1) { echo "checked"; }  ?>> Humildad
 									</label>
 								  </div>
 								  <div class="checkbox">
 									<label>
-									  <input type="checkbox" id="responsabilidad" name="responsabilidad" value=1 class="flat"> Responsabilidad
+									  <input type="checkbox" id="independencia" name="independencia" value=1 class="flat" <?php if($information && $information["valores_independencia"] == 1) { echo "checked"; }  ?>> Independencia
 									</label>
 								  </div>
 								  <div class="checkbox">
 									<label>
-									  <input type="checkbox" id="servicio" name="servicio" value=1 class="flat"> Servicio
+									  <input type="checkbox" id="lealtad" name="lealtad" value=1 class="flat" <?php if($information && $information["valores_lealtad"] == 1) { echo "checked"; }  ?>> Lealtad
 									</label>
 								  </div>
 								  <div class="checkbox">
 									<label>
-									  <input type="checkbox" id="solidaridad" name="solidaridad" value=1 class="flat"> Solidaridad
+									  <input type="checkbox" id="libertad" name="libertad" value=1 class="flat" <?php if($information && $information["valores_libertad"] == 1) { echo "checked"; }  ?>> Libertad
 									</label>
 								  </div>
 								  <div class="checkbox">
 									<label>
-									  <input type="checkbox" id="sostenibilidad" name="sostenibilidad" value=1 class="flat"> Sostenibilidad
+									  <input type="checkbox" id="mente_abierta" name="mente_abierta" value=1 class="flat" <?php if($information && $information["valores_mente_abierta"] == 1) { echo "checked"; }  ?>> Mente abierta
 									</label>
 								  </div>
 								  <div class="checkbox">
 									<label>
-									  <input type="checkbox" id="tolerancia" name="tolerancia" value=1 class="flat"> Tolerancia
+									  <input type="checkbox" id="moderacion" name="moderacion" value=1 class="flat" <?php if($information && $information["valores_moderacion"] == 1) { echo "checked"; }  ?>> Moderación
 									</label>
 								  </div>
 								  <div class="checkbox">
 									<label>
-									  <input type="checkbox" id="unidad" name="unidad" value=1 class="flat"> Unidad
+									  <input type="checkbox" id="paciencia" name="paciencia" value=1 class="flat" <?php if($information && $information["valores_paciencia"] == 1) { echo "checked"; }  ?>> Paciencia
+									</label>
+								  </div>
+							</div>
+							<div class="col-md-3 col-sm-3 col-xs-6">
+								  <div class="checkbox">
+									<label>
+									  <input type="checkbox" id="persistencia" name="persistencia" value=1 class="flat" <?php if($information && $information["valores_persistencia"] == 1) { echo "checked"; }  ?>> Persistencia
+									</label>
+								  </div>
+								  <div class="checkbox">
+									<label>
+									  <input type="checkbox" id="proactividad" name="proactividad" value=1 class="flat" <?php if($information && $information["valores_proactividad"] == 1) { echo "checked"; }  ?>> Proactividad
+									</label>
+								  </div>
+								  <div class="checkbox">
+									<label>
+									  <input type="checkbox" id="proposito" name="proposito" value=1 class="flat" <?php if($information && $information["valores_proposito"] == 1) { echo "checked"; }  ?>> Propósito
+									</label>
+								  </div>
+								  <div class="checkbox">
+									<label>
+									  <input type="checkbox" id="respeto" name="respeto" value=1 class="flat" <?php if($information && $information["valores_respeto"] == 1) { echo "checked"; }  ?>> Respeto
+									</label>
+								  </div>
+								  <div class="checkbox">
+									<label>
+									  <input type="checkbox" id="responsabilidad" name="responsabilidad" value=1 class="flat" <?php if($information && $information["valores_responsabilidad"] == 1) { echo "checked"; }  ?>> Responsabilidad
+									</label>
+								  </div>
+								  <div class="checkbox">
+									<label>
+									  <input type="checkbox" id="servicio" name="servicio" value=1 class="flat" <?php if($information && $information["valores_servicio"] == 1) { echo "checked"; }  ?>> Servicio
+									</label>
+								  </div>
+								  <div class="checkbox">
+									<label>
+									  <input type="checkbox" id="solidaridad" name="solidaridad" value=1 class="flat" <?php if($information && $information["valores_solidaridad"] == 1) { echo "checked"; }  ?>> Solidaridad
+									</label>
+								  </div>
+								  <div class="checkbox">
+									<label>
+									  <input type="checkbox" id="sostenibilidad" name="sostenibilidad" value=1 class="flat" <?php if($information && $information["valores_sostenibilidad"] == 1) { echo "checked"; }  ?>> Sostenibilidad
+									</label>
+								  </div>
+								  <div class="checkbox">
+									<label>
+									  <input type="checkbox" id="tolerancia" name="tolerancia" value=1 class="flat" <?php if($information && $information["valores_tolerancia"] == 1) { echo "checked"; }  ?>> Tolerancia
+									</label>
+								  </div>
+								  <div class="checkbox">
+									<label>
+									  <input type="checkbox" id="unidad" name="unidad" value=1 class="flat" <?php if($information && $information["valores_unidad"] == 1) { echo "checked"; }  ?>> Unidad
 									</label>
 								  </div>
 							</div>
@@ -692,7 +694,7 @@
 							<label class="control-label col-md-3 col-sm-3 col-xs-12" for="horario">Cuáles son tus horarios de atención? <span class="required">*</span>
 							</label>
 							<div class="col-md-6 col-sm-6 col-xs-12">
-								<textarea id="horario" name="horario" placeholder="Cuáles son tus horarios de atención?" class="form-control" rows="3" required="required"><?php echo $information?$information[0]["description"]:""; ?></textarea>
+								<textarea id="horario" name="horario" placeholder="Cuáles son tus horarios de atención?" class="form-control" rows="3" required="required"><?php echo $information?$information["horario"]:""; ?></textarea>
 							</div>
 						</div>
 						
@@ -703,7 +705,7 @@
 								<div class="row" align="center">
 									<div style="width:50%;" align="center">
 										<button type="button" id="btnSubmit" name="btnSubmit" class='btn btn-success'>
-												Save <span class="glyphicon glyphicon-floppy-disk" aria-hidden="true">
+												Guardar <span class="glyphicon glyphicon-floppy-disk" aria-hidden="true">
 										</button>								
 									</div>
 								</div>

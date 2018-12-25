@@ -22,7 +22,9 @@ class Psicologo extends MX_Controller {
 	public function registro()
 	{	
 			$data['information'] = FALSE;
-			$data["view"] = 'form_psicologo';
+			$data["ruta"] = "psicologo/ingreso/"; //para indicar donde debe regresar
+			
+			$data["view"] = 'template/form_psicologo';
 			$this->load->view("layout", $data);
 	}
 	
@@ -37,6 +39,7 @@ class Psicologo extends MX_Controller {
 			$idUser = $this->input->post('hddId');
 			$log_user = $this->input->post('usuario');
 			$email = $this->input->post('email');
+			$data["ruta"] = $this->input->post('ruta');
 
 			$msj = "You have add a new User!!";
 			if ($idUser != '') {

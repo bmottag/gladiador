@@ -186,7 +186,7 @@ jQuery.validator.addMethod("valMaximo", function(e) {
 						{	                                                        
 							$("#div_load").css("display", "none");
 							$('#btnSubmit').removeAttr('disabled');
-							var url = base_url + "psicologo/ingreso/" + data.idRecord;
+							var url = base_url + data.ruta + data.idRecord;
 							$(location).attr("href", url);
 						}
 						else

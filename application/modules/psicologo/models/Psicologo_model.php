@@ -36,8 +36,6 @@
 					'log_user' => $this->input->post('email'),
 					'email' => $this->input->post('email'),
 					'movil' => $this->input->post('celular'),
-					'fk_id_rol' => 3,
-					'state' => 0,
 					'edad' => $this->input->post('edad'),
 					'direccion' => $this->input->post('direccion'),
 					'pagina_web' => $this->input->post('pagina_web')
@@ -46,6 +44,8 @@
 				//revisar si es para adicionar o editar
 				if ($idUser == '') {
 					$data['password'] = 'e10adc3949ba59abbe56e057f20f883e';//123456
+					$data['fk_id_rol'] = 3;//rol de psicologo
+					$data['state'] = 0;//estado como usuario nuevo
 					$query = $this->db->insert('user', $data);
 					$idUser = $this->db->insert_id();
 				} else {
@@ -60,14 +60,14 @@
 		}
 		
 		/**
-		 * Add HISTORICO
-		 * @since 31/5/2018
+		 * Se guarda el resto de informacion del formulario
+		 * @since 22/12/2018
 		 */
 		public function savePsicologo($idUser) 
 		{		
+			$idPsicologo = $this->input->post('hddIdPsicologo');
+		
 			$data = array(
-				'fk_id_user' => $idUser,
-				'fecha' => date("Y-m-d G:i:s"),
 				'ayudarte' => $this->input->post('ayudarte'),
 				'formacion' => $this->input->post('formacion'),
 				'experiencia' => $this->input->post('experiencia'),
@@ -118,8 +118,17 @@
 				'valores_unidad' => $this->input->post('unidad'),
 				'horario' => $this->input->post('horario')
 			);
-						
-			$query = $this->db->insert('psicologo', $data);
+
+
+			//revisar si es para adicionar o editar
+			if ($idPsicologo == '') {
+				$data['fk_id_user'] = $idUser;
+				$data['fecha'] = date("Y-m-d G:i:s");
+				$query = $this->db->insert('psicologo', $data);
+			} else {
+				$this->db->where('id_psicologo', $idPsicologo);
+				$query = $this->db->update('psicologo', $data);
+			}			
 			
 			if ($query) {
 				return true;

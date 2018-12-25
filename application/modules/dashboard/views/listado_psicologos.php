@@ -103,7 +103,7 @@ if ($retornoError) {
 					Estado <span class="glyphicon glyphicon-edit" aria-hidden="true">
 				</button>				
 <?php
-					echo "<a href='" . base_url("admin/update_usuario/" . $data['id_user']) . "' class='btn btn-danger btn-xs'><i class='fa fa-pencil'></i> Editar </a>";
+					echo "<a href='" . base_url("general/edicion_psicologo/" . $data['id_user']) . "' class='btn btn-danger btn-xs'><i class='fa fa-pencil'></i> Editar </a>";
 					echo "<a href='" . base_url("dashboard/ver_psicologo/" . $data['id_user']) . "' class='btn btn-success btn-xs'><i class='fa fa-eye'></i> Ver </a>";					
 					echo "</td>";
 					echo "</tr>";

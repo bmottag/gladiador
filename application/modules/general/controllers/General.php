@@ -30,6 +30,24 @@ class General extends MX_Controller {
 	}
 	
 	/**
+	 * Edicion de psicologo
+	 */
+	public function edicion_psicologo($idPsicologo)
+	{	
+			$data['ADMIN'] = true;
+			
+			$this->load->model("general_model");
+			
+			$data["ruta"] = "dashboard/ver_psicologo/"; //para indicar donde debe regresar
+			
+			$arrParam = array("idUser" => $idPsicologo);
+			$data['information'] = $this->general_model->get_info_psicologo($arrParam);//info psicologo
+		
+			$data["view"] = 'template/form_psicologo';
+			$this->load->view("layout", $data);
+	}
+	
+	/**
 	 * Update user´s password
 	 */
 	public function update_password()
