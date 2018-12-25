@@ -80,7 +80,6 @@ if ($retornoError) {
 					echo "</td>";
 					echo "<td class='text-center'>";
 					echo "<a href='" . base_url("admin/update_usuario/" . $data['id_user']) . "' class='btn btn-info btn-xs'><i class='fa fa-pencil'></i> Editar </a>";
-					echo "<a href='" . base_url("admin/change_password/" . $data['id_user']) . "' class='btn btn-default btn-xs'><i class='fa fa-pencil'></i> Cambiar contraseña </a>";
 					echo "<a href='" . base_url("dashboard/ver_psicologo/" . $data['id_user']) . "' class='btn btn-success btn-xs'><i class='fa fa-eye'></i> Ver </a>";					
 					echo "</td>";
 					echo "</tr>";
