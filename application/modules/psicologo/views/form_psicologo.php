@@ -488,6 +488,14 @@
 								</div>
 							</div>
 						</div>
+						
+						<div class="form-group">
+							<label class="control-label col-md-3 col-sm-3 col-xs-12" for="apellidos">
+							</label>
+							<div class="col-md-6 col-sm-6 col-xs-12">
+								<input type="hidden" id="hddEspecialidad" name="hddEspecialidad" >
+							</div>
+						</div>
 																		
 						<div class="form-group">
 							<label class="control-label col-md-3 col-sm-3 col-xs-12" for="consultas">Ofreces consultas en persona, virtuales, o ambas? <span class="required">*</span></label>

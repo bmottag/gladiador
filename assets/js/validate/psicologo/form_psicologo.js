@@ -81,6 +81,27 @@ jQuery.validator.addMethod("valores", function(e) {
 	}
 }, "Por favor selecciona 6 valores.");
 
+//para la pregunta de especialidades no puede superar mas de 25 puntos
+jQuery.validator.addMethod("valMaximo", function(e) {
+
+	var ansiedad	 = $("input[name=optionsAnsiedad]:checked").val();
+	var depresion	 = $("input[name=optionsDepresion]:checked").val();
+	var sustancias	 = $("input[name=optionsSustancias]:checked").val();
+	var salud		 = $("input[name=optionsSalud]:checked").val();
+	var autoestima	 = $("input[name=optionsAutoestima]:checked").val();
+	var pareja		 = $("input[name=optionsPareja]:checked").val();
+	var suicidio	 = $("input[name=optionsSuicidio]:checked").val();
+
+	var total = parseInt(ansiedad) + parseInt(depresion) + parseInt(sustancias) + parseInt(salud) + parseInt(autoestima) + parseInt(pareja) + parseInt(suicidio);
+	
+	if (total <= 25) {
+		return true;
+	}else{
+		return false;
+	}
+
+}, "EL número máximo de punto es 25.");
+
 			
 	$("#nombres").convertirMayuscula().maxlength(25);
 	$("#apellidos").convertirMayuscula().maxlength(25);
@@ -110,6 +131,7 @@ jQuery.validator.addMethod("valores", function(e) {
 			autoestima:			{ required: true },
 			pareja:				{ required: true },
 			suicidio:			{ required: true },
+			hddEspecialidad:	{ valMaximo: true },
 			hddValores:			{ valores: true }
 			
 		},
