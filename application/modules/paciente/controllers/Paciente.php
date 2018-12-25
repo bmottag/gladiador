@@ -85,7 +85,7 @@ class Paciente extends MX_Controller {
 					$formulario = $this->input->post('formulario');
 					
 					if($formulario == 10){
-						$this->puntaje_individual($idPaciente); //puntaje individual
+						$this->calculo_algoritmo($idPaciente); //puntaje individual y puntaje tecnico
 					}
 	 
 					/**
@@ -121,33 +121,6 @@ class Paciente extends MX_Controller {
 		$data["view"] = 'form_paciente_I';
 		$this->load->view("layout", $data);
 	}
-
-	/**
-	 * Guardar form I
-     * @since 8/12/2018
-	 */
-	public function save_form_I()
-	{			
-			header('Content-Type: application/json');
-			
-			$idPaciente = $this->input->post('hddId');
-			
-			if ($this->paciente_model->saveFormI()) 
-			{
-				$msj = "Se guardó su información, continue con el formulario";
-				
-				$data["result"] = true;
-				$data["idRecord"] = $idPaciente;
-				$this->session->set_flashdata('retornoExito', $msj);
-			} else {
-				$data["result"] = "error";
-				$data["idRecord"] = '';
-				$this->session->set_flashdata('retornoError', '<strong>Error!!!</strong> Ask for help, contact the Admin.');
-			}
-			
-
-			echo json_encode($data);
-    }
 	
 	/**
 	 * Form DOS
@@ -294,11 +267,11 @@ class Paciente extends MX_Controller {
 	}
 	
 	/**
-	 * Calculo puntaje individual de paciente con cada psicologo
+	 * Calculo puntaje individual y puntaje tecnico de paciente con cada psicologo
      * @since 25/12/2018
      * @author BMOTTAG
 	 */
-	public function puntaje_individual($idPaciente)
+	public function calculo_algoritmo($idPaciente)
 	{
 			$this->load->model("general_model");
 			
@@ -316,12 +289,15 @@ class Paciente extends MX_Controller {
 			
 			$psicologos = $this->general_model->get_psicologo_activos();//lista psicologos ativos
 			
-			$puntaje_individual = 0;
+			
 			
 			if($psicologos){
 				foreach ($psicologos as $data):
 				
 					$idPsicologo = $data['id_user'];
+					
+					//INICIO PUNTAJE INDIVIDUAL
+					$puntaje_individual = 0;
 					
 					if($information['autosuficiencia'] && $data['valores_autosuficiencia'])
 					{
@@ -443,9 +419,97 @@ class Paciente extends MX_Controller {
 					{
 						$puntaje_individual = $puntaje_individual + 25;
 					}
+					//FIN PUNTAJE INDIVIDUAL
 
+					
+					//inicio PUNTAJE TECNICO
+					$puntaje_tecnico = 0;
+					$numero_evaluados = 0;
+					$ansiedad = 0;
+					$depresion = 0;
+					$sustancias = 0;
+					$salud = 0;
+					$autoestima = 0;
+					$pareja = 0;
+					$suicidio = 0;
+					
+					if($information['ansiedad'] > 2){						
+						$ansiedad = $data['especialidad_ansiedad'] * $data['especialidad_ansiedad'] * 0.2 / $information['ansiedad'];
+						
+						if(($ansiedad) > 1){
+							$ansiedad = 1;
+						}
+							
+						$numero_evaluados = $numero_evaluados + 1;
+					}
+					
+					if($information['depresion'] > 2){						
+						$depresion = $data['especialidad_depresion'] * $data['especialidad_depresion'] * 0.2 / $information['depresion'];
+						
+						if(($depresion) > 1){
+							$depresion = 1;
+						}
+							
+						$numero_evaluados = $numero_evaluados + 1;
+					}
+
+					if($information['sustancias'] > 2){						
+						$sustancias = $data['especialidad_sustancias'] * $data['especialidad_sustancias'] * 0.2 / $information['sustancias'];
+						
+						if(($sustancias) > 1){
+							$sustancias = 1;
+						}
+							
+						$numero_evaluados = $numero_evaluados + 1;
+					}					
+					
+					if($information['salud'] > 2){						
+						$salud = $data['especialidad_salud'] * $data['especialidad_salud'] * 0.2 / $information['salud'];
+						
+						if(($salud) > 1){
+							$salud = 1;
+						}
+							
+						$numero_evaluados = $numero_evaluados + 1;
+					}
+					
+					if($information['autoestima'] > 2){						
+						$autoestima = $data['especialidad_autoestima'] * $data['especialidad_autoestima'] * 0.2 / $information['autoestima'];
+						
+						if(($autoestima) > 1){
+							$autoestima = 1;
+						}
+							
+						$numero_evaluados = $numero_evaluados + 1;
+					}
+
+					if($information['pareja'] > 2){						
+						$pareja = $data['especialidad_pareja'] * $data['especialidad_pareja'] * 0.2 / $information['pareja'];
+						
+						if(($pareja) > 1){
+							$pareja = 1;
+						}
+							
+						$numero_evaluados = $numero_evaluados + 1;
+					}
+					
+					if($information['suicidio'] > 2){						
+						$suicidio = $data['especialidad_suicidio'] * $data['especialidad_suicidio'] * 0.2 / $information['suicidio'];
+						
+						if(($suicidio) > 1){
+							$suicidio = 1;
+						}
+							
+						$numero_evaluados = $numero_evaluados + 1;
+					}
+					
+					$subTotal = $ansiedad + $depresion + $sustancias + $salud + $autoestima + $pareja + $suicidio;
+					$puntaje_tecnico = $subTotal/$numero_evaluados * 100;
+					
+					$total = ($puntaje_tecnico * 0.65) + ($puntaje_individual * 0.35);
+					
 					//guardo puntaje en la base de datos
-					$this->paciente_model->savePuntajeIndividual($idPaciente, $idPsicologo, $puntaje_individual);
+					$this->paciente_model->savePuntajeIndividual($idPaciente, $idPsicologo, $puntaje_individual, $puntaje_tecnico, $total);
 					
 				endforeach;
 			}

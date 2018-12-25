@@ -145,12 +145,14 @@
 		 * Add PUNTAJE INDIVIDUAL algoritmo
 		 * @since 25/12/2018
 		 */
-		public function savePuntajeIndividual($idPaciente, $idPsicologo, $puntaje_individual) 
+		public function savePuntajeIndividual($idPaciente, $idPsicologo, $puntaje_individual, $puntaje_tecnico, $total) 
 		{				
 				$data = array(
 					'fk_id_paciente' => $idPaciente,
 					'fk_id_user' => $idPsicologo,
-					'puntaje_individual' => $puntaje_individual
+					'puntaje_individual' => $puntaje_individual,
+					'puntaje_tecnico' => $puntaje_tecnico,
+					'puntaje_general' => $total
 				);	
 
 				$query = $this->db->insert('algoritmo', $data);
