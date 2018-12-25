@@ -5,6 +5,7 @@ class Dashboard extends CI_Controller {
 	
     public function __construct() {
         parent::__construct();
+		$this->load->model("dashboard_model");
     }
 		
 	/**
@@ -35,11 +36,57 @@ class Dashboard extends CI_Controller {
 		$data['ADMIN'] = true;
 		
 		$arrParam = array("idRol" => 3);
-		$data['information'] = $this->general_model->get_user_list($arrParam);//info solicitudes
+		$data['information'] = $this->general_model->get_user_list($arrParam);//info usuario
 
 		$data["view"] = 'listado_psicologos';
 		$this->load->view("layout", $data);
 	}
+	
+    /**
+     * Cargo modal - formulario estado psicologos
+     * @since 24/12/2018
+     */
+    public function cargarModalEstado() 
+	{
+			header("Content-Type: text/plain; charset=utf-8"); //Para evitar problemas de acentos
+			
+			$data['information'] = FALSE;
+			$idUser = $this->input->post("idUser");	
+			
+			$this->load->model("general_model");
+			$arrParam = array("idUser" => $idUser);
+			$data['information'] = $this->general_model->get_info_psicologo($arrParam);//info usuario
+			
+			$this->load->view("estado_modal", $data);
+    }
+	
+	/**
+	 * Update estado
+     * @since 24/12/2018
+     * @author BMOTTAG
+	 */
+	public function save_estado()
+	{			
+			header('Content-Type: application/json');
+			$data = array();
+			
+			$idUser = $this->input->post('hddIdUser');
+			
+			$msj = "You have add a new skill!!";
+			if ($idUser != '') {
+				$msj = "Se actualizó el estado del Psicólogo.";
+			}
+
+			if ($this->dashboard_model->saveEstado()) {
+				$data["result"] = true;
+				$this->session->set_flashdata('retornoExito', $msj);
+			} else {
+				$data["result"] = "error";
+				$this->session->set_flashdata('retornoError', '<strong>Error!!!</strong> Ask for help');
+			}
+
+			echo json_encode($data);	
+    }
 	
 	/**
 	 * Informacion psicologo
