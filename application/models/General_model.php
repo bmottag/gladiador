@@ -110,6 +110,26 @@ class General_model extends CI_Model {
 		}
 		
 		/**
+		 * Lista de psicologos activos
+		 * @since 9/12/2018
+		 */
+		public function get_psicologo_activos() 
+		{
+				$this->db->select('U.*, S.*, CONCAT(U.first_name, " " , U.last_name) name');
+				$this->db->where('U.fk_id_rol', 3);//psicologos
+				$this->db->where('U.state', 1); //psicologos activos
+				$this->db->join('psicologo S', 'S.fk_id_user = U.id_user', 'INNER');
+				$this->db->order_by("U.first_name, U.last_name", "ASC");
+				$query = $this->db->get("user U");
+
+				if ($query->num_rows() >= 1) {
+					return $query->result_array();
+				} else {
+					return false;
+				}
+		}
+		
+		/**
 		 * Listado paciente
 		 * @since 16/12/2018
 		 */

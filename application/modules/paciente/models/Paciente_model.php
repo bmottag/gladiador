@@ -131,11 +131,6 @@
 							
 					}
 					
-
-					
-
-					
-					
 					$this->db->where('id_paciente', $idPaciente);
 					$query = $this->db->update('paciente', $data);
 				}
@@ -145,6 +140,28 @@
 					return false;
 				}
 		}
+		
+		/**
+		 * Add PUNTAJE INDIVIDUAL algoritmo
+		 * @since 25/12/2018
+		 */
+		public function savePuntajeIndividual($idPaciente, $idPsicologo, $puntaje_individual) 
+		{				
+				$data = array(
+					'fk_id_paciente' => $idPaciente,
+					'fk_id_user' => $idPsicologo,
+					'puntaje_individual' => $puntaje_individual
+				);	
+
+				$query = $this->db->insert('algoritmo', $data);
+
+				if ($query) {
+					return true;
+				} else {
+					return false;
+				}
+		}
+
 		
 		
 	    
