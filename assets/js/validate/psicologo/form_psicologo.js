@@ -62,11 +62,12 @@ jQuery.validator.addMethod("enfoque", function(e) {
 jQuery.validator.addMethod("valores", function(e) {
 	formulario = document.getElementById("form");
 
-		//var nn = formulario.elements[92];
+		//var nn = formulario.elements[96];
 		//alert(nn.value);
+		
 	var contx = 0; 
 	
-	for(var i=62; i<94; i++) {
+	for(var i=64; i<95; i++) {
 		var elemento = formulario.elements[i];
 		if(elemento.type == "checkbox") {
 			if(elemento.checked) {
