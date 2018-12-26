@@ -28,7 +28,7 @@
 	
 	<!-- jQuery validate-->
 	<script type="text/javascript" src="<?php echo base_url("assets/js/general/jquery.validate.js"); ?>"></script>
-	<script type="text/javascript" src="<?php echo base_url("assets/js/validate/login/login.js"); ?>"></script>
+	<script type="text/javascript" src="<?php echo base_url("assets/js/validate/login/correo.js"); ?>"></script>
 	
     <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
     <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
@@ -51,20 +51,22 @@
 						<?php echo $msj;//mensaje de error ?>
 					</div>
 			<?php } ?>
+			
+			<?php if(isset($msjSuccess)){?>
+					<div class="alert alert-success"><span class="glyphicon glyphicon-check">&nbsp;</span>
+						<?php echo $msjSuccess;//mensaje de error ?>
+					</div>
+			<?php } ?>
 		  
-			<form  name="form" id="form" role="form" method="post" action="<?php echo base_url("login/validateUser"); ?>" >
-              <h1>Autenticación</h1>
+			<form  name="form" id="form" role="form" method="post" action="<?php echo base_url("login/validateEmail"); ?>" >
+              <h1>Recuperar contraseña</h1>
               <div>
-                <input type="text" id="inputLogin" name="inputLogin" class="form-control" placeholder="Usuario" maxlength="40" data-minlength="5" required />
-              </div>
-              <div>
-                <input type="password" id="inputPassword" name="inputPassword" class="form-control" placeholder="Contraseña" required />
+					<input id="email" name="email" required="required" class="form-control" type="text" maxlength=50 placeholder="Email">
               </div>
               <div>
 				<button type="submit" class="btn btn-primary" id='btnSubmit' name='btnSubmit'>
-					Ingresar <i class="fa fa-sign-in"></i>
+					Enviar <i class="fa fa-sign-in"></i>
 				</button>
-				<a class="reset_pass" href="<?php echo base_url("login/recuperar"); ?>">Recuperar contraseña</a>
               </div>
 
               <div class="clearfix"></div>
