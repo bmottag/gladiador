@@ -290,15 +290,41 @@ class Paciente extends MX_Controller {
 			$psicologos = $this->general_model->get_psicologo_activos();//lista psicologos ativos
 			
 			
-			
 			if($psicologos){
 				foreach ($psicologos as $data):
 				
 					$idPsicologo = $data['id_user'];
+					$consultasPsicologo = $data['consultas'];// 1 = 'Ambas'; 2 = 'Solo en persona'; 3 = 'Solo virtual (online)'
+					$tarifaPsicologo = $data['tarifa'];// 1 = 'Menos de $90.000'; 2 = 'Menos de $130.000'; 3 = 'Menos de $200.000';
+					
+					$sesionesPaciente = $information['sesiones'];// 1 = 'Solo en persona'; 2 = 'Solo virtual (online)'; 3 = 'Ambas';
+					$presupuestoPaciente = $information['presupuesto'];// 1 = 'Menos de $90.000'; 2 = 'Menos de $130.000'; 3 = 'Menos de $200.000';
+					
+					//validaciones iniciales
+					$bandera = true;//cumple validaciones
+					
+					if($sesionesPaciente == 1 && $consultasPsicologo == 3){
+							$bandera = false;//no cumple validaciones
+					}
+					if($sesionesPaciente == 2 && $consultasPsicologo == 2){
+							$bandera = false;//no cumple validaciones
+					}
+					
+					if($presupuestoPaciente == 1 && $tarifaPsicologo >= 2){
+							$bandera = false;//no cumple validaciones
+					}
+					if($presupuestoPaciente == 2 && $tarifaPsicologo >= 3){
+							$bandera = false;//no cumple validaciones
+					}
+					
 					
 					//INICIO PUNTAJE INDIVIDUAL
 					$puntaje_individual = 0;
-					
+
+//si pasa validaciones iniciales entonces corra algoritmo
+if($bandera)
+{
+			
 					if($information['autosuficiencia'] && $data['valores_autosuficiencia'])
 					{
 						$puntaje_individual = $puntaje_individual + 25;
@@ -510,6 +536,8 @@ class Paciente extends MX_Controller {
 					
 					//guardo puntaje en la base de datos
 					$this->paciente_model->savePuntajeIndividual($idPaciente, $idPsicologo, $puntaje_individual, $puntaje_tecnico, $total);
+					
+}
 					
 				endforeach;
 			}
