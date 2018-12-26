@@ -139,6 +139,26 @@ class Dashboard extends CI_Controller {
 	}
 	
 	/**
+	 * Match de paciente con psicologos
+     * @since 25/12/2018
+     * @author BMOTTAG
+	 */
+	public function match($idPaciente)
+	{			
+		$this->load->model("general_model");
+		$data['ADMIN'] = true;
+
+		$arrParam = array("idPaciente" => $idPaciente);
+		$data['information'] = $this->general_model->get_info_paciente($arrParam);//info psicologo
+		
+		$arrParam = array("idPaciente" => $idPaciente);
+		$data['infoAlgoritmo'] = $this->general_model->get_algoritmo($arrParam);//info psicologo
+		
+		$data["view"] = 'match';
+		$this->load->view("layout", $data);
+	}
+	
+	/**
 	 * Evio de correo al usuario 
      * @since 5/6/2018
      * @author BMOTTAG

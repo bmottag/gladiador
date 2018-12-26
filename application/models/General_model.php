@@ -130,6 +130,28 @@ class General_model extends CI_Model {
 		}
 		
 		/**
+		 * Listado de algoritmo para un paciente
+		 * @since 25/12/2018
+		 */
+		public function get_algoritmo($arrData) 
+		{
+				$this->db->select('A.*, CONCAT(U.first_name, " " , U.last_name) name');
+				
+				$this->db->where('A.fk_id_paciente', $arrData["idPaciente"]);
+				
+				$this->db->join('user U', 'U.id_user = A.fk_id_user', 'INNER');
+				$this->db->join('paciente P', 'P.id_paciente = A.fk_id_paciente', 'INNER');
+				$this->db->order_by("A.puntaje_general", "DESC");
+				$query = $this->db->get("algoritmo A");
+
+				if ($query->num_rows() >= 1) {
+					return $query->result_array();
+				} else {
+					return false;
+				}
+		}
+		
+		/**
 		 * Listado paciente
 		 * @since 16/12/2018
 		 */
