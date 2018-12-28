@@ -27,23 +27,7 @@
     <header class="page-header">
       <div class="rd-navbar-wrap">
         <nav class="rd-navbar rd-navbar-transparent" data-layout="rd-navbar-fixed" data-sm-layout="rd-navbar-fixed" data-sm-device-layout="rd-navbar-fixed" data-md-layout="rd-navbar-static" data-md-device-layout="rd-navbar-fixed" data-lg-device-layout="rd-navbar-static" data-lg-layout="rd-navbar-static" data-body-class="rd-navbar-absolute-linked" data-stick-up-clone="false" data-md-stick-up-offset="72px" data-lg-stick-up-offset="72px" data-stick-up="true" data-sm-stick-up="true" data-md-stick-up="true" data-lg-stick-up="true">
-          <div class="rd-navbar-top-panel novi-background">
-            <div class="rd-navbar-top-panel-toggle" data-rd-navbar-toggle=".rd-navbar-top-panel"><span></span></div>
-            <div class="rd-navbar-top-panel-content">
-              <div class="rd-navbar-top-panel-content-inner">
-                <ul class="inline-list-xs">
-                  <li><a class="icon novi-icon icon-xs icon-white fa fa-facebook" href="#"></a></li>
-                  <li><a class="icon novi-icon icon-xs icon-white fa fa-twitter" href="#"></a></li>
-                  <li><a class="icon novi-icon icon-xs icon-white fa fa-google-plus" href="#"></a></li>
-                  <li><a class="icon novi-icon icon-xs icon-white fa fa-pinterest-p" href="#"></a></li>
-                </ul>
-                <address class="contact-info">
-                5860 Barnes Wallis hwy, 358744, USA
-                </address>
-              </div>
-              <div class="object-inline"><span class="icon novi-icon icon-sm icon-gray material-icons-phone"></span><a class="link link-sm link-white" href="callto:#">+1 (123) 456–7890</a></div>
-            </div>
-          </div>
+
           <div class="rd-navbar-inner">
             <div class="rd-navbar-panel">
               <div class="rd-navbar-panel-background">
@@ -59,7 +43,7 @@
 
               <ul class="rd-navbar-nav">
                 <li><a href="<?php echo base_url(); ?>">Inicio</a></li>
-				<li><a href="<?php echo base_url(); ?>">Encontrar Psicólogo</a></li>
+				<li><a href="<?php echo base_url("paciente/registro"); ?>">Encontrar Psicólogo</a></li>
 				<li><a href="<?php echo base_url(); ?>">Acercad de</a></li>
 				<li><a href="<?php echo base_url("home/zona_psicologos"); ?>">Zona Psicólogos</a></li>
 				<li><a href="<?php echo base_url("home/contacto"); ?>">Contacto</a></li>
@@ -69,16 +53,18 @@
         </nav>
       </div>
     </header>
-    <section>
+		
+    <section class="section-md text-center vide_bg bg-gray-dark " data-vide-bg="mp4: images/video.mp4, poster: images/slide-26-2.jpg" data-vide-options="posterType: jpg">
       <div class="swiper-bg-wrap swiper-style-1">
         <div class="swiper-container swiper-slider swiper-bg swiper-height-1" data-autoplay="false" data-slide-effect="fade">
           <div class="swiper-wrapper">
-            <div class="swiper-slide" data-slide-bg="<?php echo base_url("images/slide-48.jpg"); ?>">
+            <div class="swiper-slide">
               <div class="swiper-slide-caption" data-speed="0.5" data-fade="true">
                 <div class="jumbotron-custom jumbotron-custom-variant-1 context-dark">
                   <h1 data-caption-animate="fxRotateInRight" data-caption-delay="150" class="fxRotateInRight animated"><span data-novi-id="68">Porque tu tranquilidad va primero</span></h1>
                   <p class="subtitle-variant-3 fxRotateInLeft animated" data-caption-animate="fxRotateInLeft" data-caption-delay="350"><span data-novi-id="69">
-
+TuApoyo es la plataforma que encuentra al psicólogo más adecuado para tu situación,
+<br>para que puedas sobrepasar las épocas de crisis por las que todos pasamos.
 				  </span></p>
                   <a class="btn btn-primary btn-lg btn-aqil btn-aqil--mod-1" href="<?php echo base_url("paciente/registro"); ?>" data-caption-animate="fxRotateInRight" data-caption-delay="550"><span>Encontrar mi Psicólogos</span></a></div>
               </div>
@@ -88,6 +74,142 @@
       </div>
     </section>
   </section>
+  
+  <section class="section section-lg bg-gray-light novi-background bg-image">
+    <div class="container">
+	<h3><span class="heading-3">Cómo</span> funciona TuApoyo?</h3>
+    
+        <div class="col-sm-10 col-lg-6">
+          <div class="feature-box-3">
+            <h3>Si BUSCAS psicólogo en Bogotá..</h3>
+			</div>
+        </div>
+      
+
+      <div class="row mar-top-8">
+	  
+        <div class="col-sm-6 col-lg-3">
+          <article class="box-minimal unit unit-xs-horizontal unit-spacing-sm">
+            <div class="unit-left">
+              <div class="box-minimal-icon">
+                <div class="novi-icon fl-bigmug-line-headphones32 text-purple"></div>
+              </div>
+            </div>
+            <div class="unit-body pad-left-35">
+              <h5 class="box-minimal-title"><a href="#">Registrate</a></h5>
+              <div class="box-minimal-text">Crea tu cuenta en TuApoyo</div>
+            </div>
+          </article>
+        </div>
+        <div class="col-sm-6 col-lg-3">
+          <article class="box-minimal unit unit-xs-horizontal unit-spacing-sm">
+            <div class="unit-left">
+              <div class="box-minimal-icon">
+                <div class="novi-icon fl-bigmug-line-two317 text-purple"></div>
+              </div>
+            </div>
+            <div class="unit-body pad-left-35">
+              <h5 class="box-minimal-title"><a href="#">Responde nuestro cuestionario</a></h5>
+              <div class="box-minimal-text">De esta manera podemos saber cuáles son los mejores profesionales para ti.</div>
+            </div>
+          </article>
+        </div>
+        <div class="col-sm-6 col-lg-3">
+          <article class="box-minimal unit unit-xs-horizontal unit-spacing-sm">
+            <div class="unit-left">
+              <div class="box-minimal-icon">
+                <div class="novi-icon fl-bigmug-line-cube29 text-purple"></div>
+              </div>
+            </div>
+            <div class="unit-body pad-left-35">
+              <h5 class="box-minimal-title"><a href="#">Escoge dentro de los mejores</a></h5>
+              <div class="box-minimal-text">Tienes la libertad de elegir dentro de los profesionales que encontramos para ti.</div>
+            </div>
+          </article>
+        </div>
+        <div class="col-sm-6 col-lg-3">
+          <article class="box-minimal unit unit-xs-horizontal unit-spacing-sm">
+            <div class="unit-left">
+              <div class="box-minimal-icon">
+                <div class="novi-icon fl-bigmug-line-cube29 text-purple"></div>
+              </div>
+            </div>
+            <div class="unit-body pad-left-35">
+              <h5 class="box-minimal-title"><a href="#">Empieza</a></h5>
+              <div class="box-minimal-text">Ponte en contacto con el psicólogo y comienza a trabajar en ti, sin ningún costo adicional.</div>
+            </div>
+          </article>
+        </div>
+
+      </div>
+	  
+        <div class="col-sm-10 col-lg-6">
+          <div class="feature-box-3">
+            <h3>Si eres psicólogo en Bogotá...</h3>
+			</div>
+        </div>
+      
+      <div class="row mar-top-8">
+
+        <div class="col-sm-6 col-lg-3">
+          <article class="box-minimal unit unit-xs-horizontal unit-spacing-sm">
+            <div class="unit-left">
+              <div class="box-minimal-icon">
+                <div class="novi-icon fl-bigmug-line-headphones32 text-purple"></div>
+              </div>
+            </div>
+            <div class="unit-body pad-left-35">
+              <h5 class="box-minimal-title"><a href="#">Registrate</a></h5>
+              <div class="box-minimal-text">Crea tu cuenta en TuApoyo a través de Zona Psicólogos</div>
+            </div>
+          </article>
+        </div>
+        <div class="col-sm-6 col-lg-3">
+          <article class="box-minimal unit unit-xs-horizontal unit-spacing-sm">
+            <div class="unit-left">
+              <div class="box-minimal-icon">
+                <div class="novi-icon fl-bigmug-line-two317 text-purple"></div>
+              </div>
+            </div>
+            <div class="unit-body pad-left-35">
+              <h5 class="box-minimal-title"><a href="#">Llena el formato de profesionales asociados</a></h5>
+              <div class="box-minimal-text">De esta manera conocemos cuáles son tus mejores aptitudes y podemos conectarte con los clientes adecuados.</div>
+            </div>
+          </article>
+        </div>
+        <div class="col-sm-6 col-lg-3">
+          <article class="box-minimal unit unit-xs-horizontal unit-spacing-sm">
+            <div class="unit-left">
+              <div class="box-minimal-icon">
+                <div class="novi-icon fl-bigmug-line-cube29 text-purple"></div>
+              </div>
+            </div>
+            <div class="unit-body pad-left-35">
+              <h5 class="box-minimal-title"><a href="#">Espera confirmación</a></h5>
+              <div class="box-minimal-text">El equipo de TuApoyo te contactará para definir tu aprobación.</div>
+            </div>
+          </article>
+        </div>
+        <div class="col-sm-6 col-lg-3">
+          <article class="box-minimal unit unit-xs-horizontal unit-spacing-sm">
+            <div class="unit-left">
+              <div class="box-minimal-icon">
+                <div class="novi-icon fl-bigmug-line-cube29 text-purple"></div>
+              </div>
+            </div>
+            <div class="unit-body pad-left-35">
+              <h5 class="box-minimal-title"><a href="#">Trabaja con TuApoyo</a></h5>
+              <div class="box-minimal-text">Empieza a trabajar con un mejor y mayor número de clientes a través de la plataforma.</div>
+            </div>
+          </article>
+        </div>
+      </div>
+	  
+    </div>
+  </section>
+
+  
+  
   <section class="section section-lg bg-white novi-background bg-image">
     <div class="container">
       <div class="row">
@@ -104,6 +226,15 @@ apoyo emocional; el primer paso para encaminar la recuperación y el crecimiento
         </div>
         <div class="col-sm-10 col-lg-6"><img src="<?php echo base_url("images/img-01.png"); ?>" alt="" class="img-responsive"></div>
       </div>
+	  
+
+		
+        <div class="col-sm-10 col-lg-6">
+          <div class="feature-box-3">
+            <h3>Nuestros Propósitos</h3>
+			</div>
+        </div>
+	  
       <div class="row mar-top-8">
         <div class="col-sm-6 col-lg-4">
           <article class="box-minimal unit unit-xs-horizontal unit-spacing-sm">
@@ -113,8 +244,8 @@ apoyo emocional; el primer paso para encaminar la recuperación y el crecimiento
               </div>
             </div>
             <div class="unit-body pad-left-35">
-              <h5 class="box-minimal-title"><a href="#">Highly Customizable</a></h5>
-              <div class="box-minimal-text">Let's make lorem ipsum is simply text the printing and typesetting standard industry.</div>
+              <h5 class="box-minimal-title"><a href="#">Contribuimos</a></h5>
+              <div class="box-minimal-text">a que el proceso de buscar ayuda psicológica y emocional no sea un obstáculo.</div>
             </div>
           </article>
         </div>
@@ -126,8 +257,8 @@ apoyo emocional; el primer paso para encaminar la recuperación y el crecimiento
               </div>
             </div>
             <div class="unit-body pad-left-35">
-              <h5 class="box-minimal-title"><a href="#">Highly Customizable</a></h5>
-              <div class="box-minimal-text">Let's make lorem ipsum is simply text the printing and typesetting standard industry.</div>
+              <h5 class="box-minimal-title"><a href="#">Ayudamos</a></h5>
+              <div class="box-minimal-text">a disminuir el estigma social que viene con el hecho de buscar ayuda psicológica.</div>
             </div>
           </article>
         </div>
@@ -139,8 +270,8 @@ apoyo emocional; el primer paso para encaminar la recuperación y el crecimiento
               </div>
             </div>
             <div class="unit-body pad-left-35">
-              <h5 class="box-minimal-title"><a href="#">Highly Customizable</a></h5>
-              <div class="box-minimal-text">Let's make lorem ipsum is simply text the printing and typesetting standard industry.</div>
+              <h5 class="box-minimal-title"><a href="#">Promovemos</a></h5>
+              <div class="box-minimal-text">la importancia de la salud mental para la calidad y satisfacción de vida.</div>
             </div>
           </article>
         </div>
@@ -152,19 +283,12 @@ apoyo emocional; el primer paso para encaminar la recuperación y el crecimiento
     <div class="container">
       <div class="row justify-content-center justify-content-lg-start spacing-40">
         <div class="col-sm-10 col-md-12">
-          <h3>What <span class="heading-3">People</span> Says</h3>
+          <h3>Que <span class="heading-3">dicen </span> de nosotros</h3>
         </div>
         <div class="col-sm-6 col-lg-4">
-          <div class="quote-classic"><q>Let's make lorem ipsum is simply text the printing and typesetting ornare nulla varius consequat magna&nbsp;and molestie ipsum volutpat quis facilisis hendrerit augue cras standard industry your complete                 solution partner.</q>
-            <div class="unit unit-horizontal unit-spacing-xs unit-middle">
-              <div class="unit-left"><img class="img-responsive rounded-circle" src="<?php echo base_url("images/site-img49.jpg"); ?>" alt="" width="75" height="75"></div>
-              <div class="unit-body">
-                <h5>Anna Whitebird </h5>
-                <p class="quote-classic-subcite">Web Developer</p>
-              </div>
-            </div>
-          </div>
+
         </div>
+		
         <div class="col-sm-6 col-lg-4">
           <div class="quote-classic"><q>Let's make lorem ipsum is simply text the printing and typesetting ornare nulla varius consequat magna and molestie ipsum volutpat quis facilisis hendrerit augue cras standard industry your complete solution                 partner.</q>
             <div class="unit unit-horizontal unit-spacing-xs unit-middle">
@@ -176,16 +300,9 @@ apoyo emocional; el primer paso para encaminar la recuperación y el crecimiento
             </div>
           </div>
         </div>
+		
         <div class="col-sm-6 col-lg-4">
-          <div class="quote-classic"><q>Let's make lorem ipsum is simply text the printing and typesetting ornare nulla varius consequat magna and molestie ipsum volutpat quis facilisis hendrerit augue cras standard industry your complete solution                 partner.</q>
-            <div class="unit unit-horizontal unit-spacing-xs unit-middle">
-              <div class="unit-left"><img class="img-responsive rounded-circle" src="<?php echo base_url("images/site-img50.jpg"); ?>" alt="" width="75" height="75"></div>
-              <div class="unit-body">
-                <h5>Brown Smith </h5>
-                <p class="quote-classic-subcite">Designer</p>
-              </div>
-            </div>
-          </div>
+
         </div>
       </div>
     </div>
