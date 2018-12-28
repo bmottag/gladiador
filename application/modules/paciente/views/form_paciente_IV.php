@@ -1,5 +1,25 @@
 <script type="text/javascript" src="<?php echo base_url("assets/js/validate/paciente/form_paciente_IV.js"); ?>"></script>
 
+<script>
+$(document).ready(function () {
+		
+    $("#btnDescripcion").on("click", function() {
+
+		var descripcion = $('#descripcion').val();
+	
+		if(descripcion == 1){
+			$("#div_descripcion").css("display", "inline");
+			$('#descripcion').val(2);
+		}else{
+			$("#div_descripcion").css("display", "none");
+			$('#descripcion').val(1);
+		}
+		
+    });
+	
+});
+</script>
+
 <div class="right_col" role="main">
 	<div class="row">
 		<div class="col-md-12 col-sm-12 col-xs-12">
@@ -20,7 +40,7 @@
 
 					<div class="progress progress-striped progress_wide">
 						<div class="progress-bar progress-bar-info" data-transitiongoal="40">
-							<i class="fa fa-envelope user-profile-icon"></i> <strong>Correo:</strong> <?php echo $information['email_paciente']; ?>
+							
 						</div>
 					</div>
 					
@@ -31,20 +51,13 @@
 						<strong>¿Cómo ha sido tu consumo de sustancias (alcohol/drogas) durante el último mes?</strong> 
 
 <!-- Button trigger modal -->
-<button type="button" class="btn btn-danger" data-toggle="modal" data-target="#exampleModal">
-  !
+<button type="button" id="btnDescripcion" name="btnDescripcion" class="btn btn-dark btn-xs">
+  Ver descripción
 </button>
+<input type="hidden" id="descripcion" name="descripcion" value=1 />
 
-<!-- Modal -->
-<div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
-  <div class="modal-dialog" role="document">
-    <div class="modal-content">
-      <div class="modal-header">
-        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-          <span aria-hidden="true">&times;</span>
-        </button>
-      </div>
-      <div class="modal-body">
+						<div class="form-group" id="div_descripcion" style="display: none">
+							<div class="col-sm-12">
 							<ol>
 								<li> Insignificante: Mi consumo es infrecuente (0-2 veces al mes) y las cantidades consumidas son insignificantes.</li>
 								<li> Esporádico: Mi consumo es periódico (2-4 veces al mes) y las cantidades consumidas están bajo mi control. </li>
@@ -52,13 +65,8 @@
 								<li> Habitual: Mi consumo es habitual (más de 3 veces por semana) y no logro controlar la cantidad que consumo. Mi calidad de vida se ve afectada negativamente. </li>
 								<li> Adictivo: Mi consumo es necesario, incontrolable y evidente. Esto impacta gravemente mi calidad de vida.</li>
 							</ol>
-      </div>
-      <div class="modal-footer">
-        <button type="button" class="btn btn-primary" data-dismiss="modal">Cerrar</button>
-      </div>
-    </div>
-  </div>
-</div>
+							</div>
+						</div>
 
 <br><br>
 												

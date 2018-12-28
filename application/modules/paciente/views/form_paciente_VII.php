@@ -1,5 +1,25 @@
 <script type="text/javascript" src="<?php echo base_url("assets/js/validate/paciente/form_paciente_VII.js"); ?>"></script>
 
+<script>
+$(document).ready(function () {
+		
+    $("#btnDescripcion").on("click", function() {
+
+		var descripcion = $('#descripcion').val();
+	
+		if(descripcion == 1){
+			$("#div_descripcion").css("display", "inline");
+			$('#descripcion').val(2);
+		}else{
+			$("#div_descripcion").css("display", "none");
+			$('#descripcion').val(1);
+		}
+		
+    });
+	
+});
+</script>
+
 <div class="right_col" role="main">
 	<div class="row">
 		<div class="col-md-12 col-sm-12 col-xs-12">
@@ -20,7 +40,7 @@
 
 					<div class="progress progress-striped progress_wide">
 						<div class="progress-bar progress-bar-info" data-transitiongoal="70">
-							<i class="fa fa-envelope user-profile-icon"></i> <strong>Correo:</strong> <?php echo $information['email_paciente']; ?>
+							
 						</div>
 					</div>
 					
@@ -31,20 +51,13 @@
 						<strong>¿Qué tan afectado(a) te has sentido en cuanto a tu relación de pareja?</strong> 
 						
 <!-- Button trigger modal -->
-<button type="button" class="btn btn-danger" data-toggle="modal" data-target="#exampleModal">
-  !
+<button type="button" id="btnDescripcion" name="btnDescripcion" class="btn btn-dark btn-xs">
+  Ver descripción
 </button>
+<input type="hidden" id="descripcion" name="descripcion" value=1 />
 
-<!-- Modal -->
-<div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
-  <div class="modal-dialog" role="document">
-    <div class="modal-content">
-      <div class="modal-header">
-        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-          <span aria-hidden="true">&times;</span>
-        </button>
-      </div>
-      <div class="modal-body">
+						<div class="form-group" id="div_descripcion" style="display: none">
+							<div class="col-sm-12">
 							<ol>
 								<li> Levemente: Mi relación de pareja no es un problema o no aplica para mí.</li>
 								<li> Moderadamente: Ocasionalmente tengo problemas con mi pareja pero los podemos resolver entre nosotros a través de buena comunicación.</li>
@@ -52,13 +65,8 @@
 								<li> Severamente: Tengo problemas graves con mi pareja. No podemos resolver los problemas entre nosotros debido a la mala comunicación o falta de interés en resolver los problemas. </li>
 								<li> Extremadamente: Tengo problemas extremos y constantes con mi pareja. Cualquier intento de comunicar y solucionar los problemas agrava más la situación.</li>
 							</ol>
-      </div>
-      <div class="modal-footer">
-        <button type="button" class="btn btn-primary" data-dismiss="modal">Cerrar</button>
-      </div>
-    </div>
-  </div>
-</div>
+							</div>
+						</div>
 
 <br><br>
 												

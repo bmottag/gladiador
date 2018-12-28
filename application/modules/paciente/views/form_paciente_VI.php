@@ -1,5 +1,25 @@
 <script type="text/javascript" src="<?php echo base_url("assets/js/validate/paciente/form_paciente_VI.js"); ?>"></script>
 
+<script>
+$(document).ready(function () {
+		
+    $("#btnDescripcion").on("click", function() {
+
+		var descripcion = $('#descripcion').val();
+	
+		if(descripcion == 1){
+			$("#div_descripcion").css("display", "inline");
+			$('#descripcion').val(2);
+		}else{
+			$("#div_descripcion").css("display", "none");
+			$('#descripcion').val(1);
+		}
+		
+    });
+	
+});
+</script>
+
 <div class="right_col" role="main">
 	<div class="row">
 		<div class="col-md-12 col-sm-12 col-xs-12">
@@ -20,7 +40,7 @@
 
 					<div class="progress progress-striped progress_wide">
 						<div class="progress-bar progress-bar-info" data-transitiongoal="60">
-							<i class="fa fa-envelope user-profile-icon"></i> <strong>Correo:</strong> <?php echo $information['email_paciente']; ?>
+							
 						</div>
 					</div>
 					
@@ -31,20 +51,13 @@
 						<strong>¿En cuál nivel de autoestima consideras que estás?</strong> 
 						
 <!-- Button trigger modal -->
-<button type="button" class="btn btn-danger" data-toggle="modal" data-target="#exampleModal">
-  !
+<button type="button" id="btnDescripcion" name="btnDescripcion" class="btn btn-dark btn-xs">
+  Ver descripción
 </button>
+<input type="hidden" id="descripcion" name="descripcion" value=1 />
 
-<!-- Modal -->
-<div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
-  <div class="modal-dialog" role="document">
-    <div class="modal-content">
-      <div class="modal-header">
-        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-          <span aria-hidden="true">&times;</span>
-        </button>
-      </div>
-      <div class="modal-body">
+						<div class="form-group" id="div_descripcion" style="display: none">
+							<div class="col-sm-12">
 							<ol>
 								<li> Sana: Me acepto incondicionalmente sin importar las circunstancias. Sé que mi valor intrínseco no depende de la situación externa. </li>
 								<li> Estable: Sé que tengo fortalezas y debilidades. No busco ser perfecto(a) y trato de no juzgar mis errores. No necesito la aprobación externa para sentirme tranquilo(a). </li>
@@ -52,13 +65,8 @@
 								<li> Inestable: No acepto mis errores e imperfecciones. Mi comportamiento es defensivo la mayoría del tiempo. La aprobación externa es necesaria para sentirme bien. </li>
 								<li> Baja: Me siento avergonzado(a) de mí. Creo que no soy suficiente y me juzgo constantemente. Mi comportamiento es retraido y aislado.</li>
 							</ol>
-      </div>
-      <div class="modal-footer">
-        <button type="button" class="btn btn-primary" data-dismiss="modal">Cerrar</button>
-      </div>
-    </div>
-  </div>
-</div>
+							</div>
+						</div>
 
 <br><br>
 				

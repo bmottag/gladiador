@@ -1,5 +1,25 @@
 <script type="text/javascript" src="<?php echo base_url("assets/js/validate/paciente/form_paciente_V.js"); ?>"></script>
 
+<script>
+$(document).ready(function () {
+		
+    $("#btnDescripcion").on("click", function() {
+
+		var descripcion = $('#descripcion').val();
+	
+		if(descripcion == 1){
+			$("#div_descripcion").css("display", "inline");
+			$('#descripcion').val(2);
+		}else{
+			$("#div_descripcion").css("display", "none");
+			$('#descripcion').val(1);
+		}
+		
+    });
+	
+});
+</script>
+
 <div class="right_col" role="main">
 	<div class="row">
 		<div class="col-md-12 col-sm-12 col-xs-12">
@@ -20,7 +40,7 @@
 
 					<div class="progress progress-striped progress_wide">
 						<div class="progress-bar progress-bar-info" data-transitiongoal="50">
-							<i class="fa fa-envelope user-profile-icon"></i> <strong>Correo:</strong> <?php echo $information['email_paciente']; ?>
+							
 						</div>
 					</div>
 					
@@ -31,20 +51,13 @@
 						<strong>¿Qué tan afectado(a) te has sentido por tu salud física? (hábitos alimenticios, enfermedades, condiciones físicas, niveles de energía)</strong> 
 
 <!-- Button trigger modal -->
-<button type="button" class="btn btn-danger" data-toggle="modal" data-target="#exampleModal">
-  !
+<button type="button" id="btnDescripcion" name="btnDescripcion" class="btn btn-dark btn-xs">
+  Ver descripción
 </button>
+<input type="hidden" id="descripcion" name="descripcion" value=1 />
 
-<!-- Modal -->
-<div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
-  <div class="modal-dialog" role="document">
-    <div class="modal-content">
-      <div class="modal-header">
-        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-          <span aria-hidden="true">&times;</span>
-        </button>
-      </div>
-      <div class="modal-body">
+						<div class="form-group" id="div_descripcion" style="display: none">
+							<div class="col-sm-12">
 							<ol>
 								<li> Levemente: Mi salud y bienestar físico no son un problema para mí. </li>
 								<li> Moderadamente: Tengo algunos inconvenientes que afectan mi salud física, pero son controlables y los puedo resolver. </li>
@@ -52,13 +65,8 @@
 								<li> Severamente: Tengo inconvenientes graves con mi salud física. Considero que estos inconvenientes no los puedo controlar y me afectan emocionalmente. </li>
 								<li> Extremadamente: Tengo inconvenientes extremos con mi salud física. Estos inconvenientes no son controlables, amenazan mi supervivencia física y me afecta emocionalmente en forma extrema.</li>
 							</ol>
-      </div>
-      <div class="modal-footer">
-        <button type="button" class="btn btn-primary" data-dismiss="modal">Cerrar</button>
-      </div>
-    </div>
-  </div>
-</div>
+							</div>
+						</div>
 
 <br><br>
 				

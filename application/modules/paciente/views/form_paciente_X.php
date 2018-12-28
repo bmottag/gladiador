@@ -20,7 +20,7 @@
 
 					<div class="progress progress-striped progress_wide">
 						<div class="progress-bar progress-bar-info" data-transitiongoal="100">
-							<i class="fa fa-envelope user-profile-icon"></i> <strong>Correo:</strong> <?php echo $information['email_paciente']; ?>
+							
 						</div>
 					</div>
 					

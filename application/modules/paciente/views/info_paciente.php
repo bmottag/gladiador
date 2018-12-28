@@ -105,9 +105,39 @@
 							
 						</ul>
 						
+						<div class="col-md-12">
+							<div class="btn-group">
+
+								<a class="btn btn-sm btn-primary" href="<?php echo base_url() . 'paciente/form_10/' . $information['id_paciente']; ?>"><span class="fa fa-reply" aria-hidden="true"></span> Regresar </a>
+
+							</div>
+						</div>
+						
 					</div>
 				
 					<div class="col-md-9 col-sm-9 col-xs-12">
+					
+					
+						<form  name="form" id="form" method="post" action="<?php echo base_url("workorders/save_rate"); ?>">
+						
+
+						<input type="hidden" id="hddId" name="hddId" value="<?php echo $information['id_paciente']; ?>"/>
+
+						
+						
+
+					<button type="submit" class="btn btn-danger" >
+						<i class="fa fa-plus"></i> Ver Psicólogos adecuados para ti
+					</button>
+									
+						
+						
+
+
+						
+
+						</form>
+					
 					
 						<div class="table-responsive">
 					
