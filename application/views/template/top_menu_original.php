@@ -25,7 +25,7 @@
 ?>	
 		
 		<li class="">
-		  <a href="<?php echo base_url("dashboard"); ?>" class="user-profile" aria-expanded="false">
+		  <a href="<?php echo base_url(); ?>" class="user-profile" aria-expanded="false">
 			<i class="fa fa-home"></i> Home
 		  </a>
 		</li>
