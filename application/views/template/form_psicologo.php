@@ -165,7 +165,8 @@
 						
 					<div class="alert alert-success alert-dismissible fade in" role="alert">
 						<strong>Especialidades del psicólogo</strong> 
-						<br>En una escala de 1 a 5, autocalificar su capacidad y experiencia frente a cada tema (7 temas). Hay un máximo de 25 puntos, por ende tienen que escoger cuáles dominan y cuáles no y distribuir los puntos de forma acorde.
+						<br>En una escala de 1 a 5, autocalificar su capacidad y experiencia frente a cada tema (7 temas). 
+						Hay un máximo de 25 puntos, por ende distribuir los puntos de acuerdo a su perfil.
 					</div>
 					
 						<div class="form-group">

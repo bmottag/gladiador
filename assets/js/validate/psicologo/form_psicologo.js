@@ -101,7 +101,7 @@ jQuery.validator.addMethod("valMaximo", function(e) {
 		return false;
 	}
 
-}, "EL número máximo de punto es 25.");
+}, "La cantidad máxima de puntos es 25.");
 
 			
 	$("#nombres").convertirMayuscula().maxlength(25);
