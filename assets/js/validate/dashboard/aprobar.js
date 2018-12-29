@@ -53,7 +53,7 @@ $( document ).ready( function () {
 							$("#div_load").css("display", "none");
 							$('#btnSubmit').removeAttr('disabled');
 
-							var url = base_url + "dashboard/psicologos_nuevos";
+							var url = base_url + "dashboard/listado_psicologos";
 							$(location).attr("href", url);
 						}
 						else

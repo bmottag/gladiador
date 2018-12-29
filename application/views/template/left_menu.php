@@ -49,7 +49,9 @@
                     </ul>
                   </li>
 				  
-                  <li><a href="<?php echo base_url("dashboard/psicologos_nuevos"); ?>"><i class="fa fa-laptop"></i> Psicólogo nuevos <span class="label label-success pull-right"><?php echo $psicologosNuevos; ?></span></a></li>
+                  <li><a href="<?php echo base_url("dashboard/psicologos_nuevos"); ?>"><i class="fa fa-star"></i> Psicólogo nuevos <span class="label label-success pull-right"><?php echo $psicologosNuevos; ?></span></a></li>
+				  
+				  <li><a href="<?php echo base_url("dashboard/psicologos_desaprobados"); ?>"><i class="fa fa-times"></i> Psicólogo desaprobados </a></li>
 
 <?php
 		}

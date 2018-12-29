@@ -59,6 +59,24 @@ class Dashboard extends CI_Controller {
 		$data["view"] = 'listado_psicologos_nuevos';
 		$this->load->view("layout", $data);
 	}
+
+	/**
+	 * Listado de psicologos nuevos
+     * @since 8/12/2018
+     * @author BMOTTAG
+	 */
+	public function psicologos_desaprobados()
+	{			
+		$this->load->model("general_model");
+		$data['ADMIN'] = true;
+		
+		$arrParam = array("idRol" => 3, "aprobado" => 3);//lista de psicologos desaprobados
+		$data['information'] = $this->general_model->get_user_list($arrParam);//info usuario
+
+		$data["view"] = 'listado_psicologos_desaprobados';
+		$this->load->view("layout", $data);
+	}
+
 	
     /**
      * Cargo modal - formulario estado psicologos
