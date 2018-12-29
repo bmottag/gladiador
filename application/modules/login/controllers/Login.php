@@ -50,7 +50,8 @@ class Login extends MX_Controller {
 							"logUser" => $user["logUser"],
 							"state" => $user["state"],
 							"rol" => $user["rol"],
-							"photo" => $user["photo"]
+							"photo" => $user["photo"],
+							"aprobado" => $user["aprobado"]
 						);
 						$this->session->set_userdata($sessionData);
 						

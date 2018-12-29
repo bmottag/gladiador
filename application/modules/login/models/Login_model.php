@@ -37,6 +37,7 @@
 						$user["state"] = $row->state;
 						$user["rol"] = $row->fk_id_rol;
 						$user["photo"] = $row->photo;
+						$user["aprobado"] = $row->aprobado;
 	    			//}	    			
 	    		}
 	    	}
@@ -55,32 +56,37 @@
 		{
 			$state = $this->session->userdata("state");
 			$userRol = $this->session->userdata("rol");
-			$userId = $this->session->userdata("id");
-			$logUser = $this->session->userdata("logUser");
-
-	    	switch($state){
-	    		case 0: //NEW USER, must change the password
-	    				redirect("/general","location",301);
-	    				break;
-	    		case 1: //ACTIVE USER
-						if($userRol==3){//vista para PSICOLOGOS
-							redirect("/psicologo/info","location",301);
-						}else{
-							redirect("/dashboard","location",301);
-						}
-	    				break;
-	    		case 2: //INACTIVE USER
-	    				$this->session->sess_destroy();
-	    				redirect("/login","location",301);
-	    				break;
-	    		case 99: //USUARIO QUE INGRESO CON LLAVE DE RECUPERACION, LO REDIRECCIONO AL CAMBIO DE CONTRASEÑA
-						redirect("general","location",301);
-	    				break;
-	    		default: //No sé como llegaron hasta acá, pero los devuelvo al Login.
-	    				$this->session->sess_destroy();
-	    				redirect("/login","location",301);
-	    				break;
-	    	}
+			$aprobado = $this->session->userdata("aprobado");
+			
+			if($aprobado == 1)
+			{
+				switch($state){
+					case 0: //NEW USER, must change the password
+							redirect("/general","location",301);
+							break;
+					case 1: //ACTIVE USER
+							if($userRol==3){//vista para PSICOLOGOS
+								redirect("/psicologo/info","location",301);
+							}else{
+								redirect("/dashboard","location",301);
+							}
+							break;
+					case 2: //INACTIVE USER
+							$this->session->sess_destroy();
+							redirect("/login","location",301);
+							break;
+					case 99: //USUARIO QUE INGRESO CON LLAVE DE RECUPERACION, LO REDIRECCIONO AL CAMBIO DE CONTRASEÑA
+							redirect("general","location",301);
+							break;
+					default: //No sé como llegaron hasta acá, pero los devuelvo al Login.
+							$this->session->sess_destroy();
+							redirect("/login","location",301);
+							break;
+				}
+	    	}else{
+					$this->session->sess_destroy();
+					redirect("/login","location",301);
+			}
 	    }
 		
 		/**
