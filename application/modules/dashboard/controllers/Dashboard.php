@@ -36,7 +36,7 @@ class Dashboard extends CI_Controller {
 		$this->load->model("general_model");
 		$data['ADMIN'] = true;
 		
-		$arrParam = array("idRol" => 3);
+		$arrParam = array("idRol" => 3, "aprobado" => 1);//lista de psicologos aprobados
 		$data['information'] = $this->general_model->get_user_list($arrParam);//info usuario
 
 		$data["view"] = 'listado_psicologos';
@@ -53,7 +53,7 @@ class Dashboard extends CI_Controller {
 		$this->load->model("general_model");
 		$data['ADMIN'] = true;
 		
-		$arrParam = array("idRol" => 3, "aprobado" => 2);
+		$arrParam = array("idRol" => 3, "aprobado" => 2);//lista de psicologos nuevos
 		$data['information'] = $this->general_model->get_user_list($arrParam);//info usuario
 
 		$data["view"] = 'listado_psicologos_nuevos';

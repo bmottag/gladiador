@@ -64,7 +64,6 @@ if ($retornoError) {
 
 							<thead>
 								<tr class="headings">
-								<th class="column-title">ID </th>
 								<th class="column-title">Nombre </th>
 								<th class="column-title">Correo</th>
 								<th class="column-title">No. Celular</th>
@@ -79,7 +78,6 @@ if ($retornoError) {
 			if($information){
 				foreach ($information as $data):
 					echo "<tr>";
-					echo "<td class='text-center'>" . $data['id_user'] . "</td>";
 					echo "<td>" . $data['name'] . "</td>";
 					echo "<td>" . $data['email'] . "</td>";
 					echo "<td>" . $data['movil'] . "</td>";
