@@ -76,6 +76,9 @@ class General_model extends CI_Model {
 				if (array_key_exists("state", $arrData)) {
 					$this->db->where('U.state', $arrData["state"]);
 				}
+				if (array_key_exists("aprobado", $arrData)) {
+					$this->db->where('U.aprobado', $arrData["aprobado"]);
+				}
 				$this->db->join('param_rol R', 'R.id_rol = U.fk_id_rol', 'INNER');
 				$this->db->order_by("U.first_name, U.last_name", "ASC");
 				$query = $this->db->get("user U");
@@ -190,10 +193,14 @@ class General_model extends CI_Model {
 		 * Contar psicologos
 		 * @since  16/12/2018
 		 */
-		public function countPsicologos()
+		public function countPsicologos($arrData)
 		{
 				$sql = "SELECT count(id_psicologo) CONTEO";
-				$sql.= " FROM psicologo";
+				$sql.= " FROM psicologo P";
+				if(array_key_exists("nuevos", $arrData)) {
+					$sql.= " INNER JOIN user U ON U.id_user = P.fk_id_user";	
+					$sql.= " WHERE aprobado = 2 and fk_id_rol = 3";
+				}
 				
 				$query = $this->db->query($sql);
 				$row = $query->row();

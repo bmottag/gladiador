@@ -93,17 +93,15 @@ class Psicologo extends MX_Controller {
 			$arrParam = array("idUser" => $idPsicologo);
 			$data['information'] = $this->general_model->get_info_psicologo($arrParam);//info psicologo
 						
-			$data['linkBack'] = "login";
+			$data['linkBack'] = "";
 			$data['titulo'] = "<i class='fa fa-users fa-fw'></i>Registrate como psicólogo asociado de TuApoyo";
-			$data['boton'] = "Ingresar <span class='glyphicon glyphicon glyphicon-chevron-right' aria-hidden='true'></span> ";
+			$data['boton'] = "Inicio <span class='glyphicon glyphicon glyphicon-chevron-right' aria-hidden='true'></span> ";
 			
-			$data["msj"] = "Se guardó su información.";
-			$data["msj"] .= "<br><strong>Usuario: </strong>" . $data['information']['email'];
-			$data["msj"] .= "<br><strong>Contraseña: </strong>123456";
+			$data["msj"] = "Gracias por registrarte en 3 días te estaremos contactando para finalizar el proceso de aprobación.";
 			$data["clase"] = "alert-success";
 						
 			$data["view"] = "template/answer";
-			$this->load->view("layout", $data);
+			$this->load->view("layout_forms", $data);
 	}
 	
 	/**

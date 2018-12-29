@@ -52,7 +52,14 @@
 			<!-- left navigation -->
 			<?php
 			if (isset($ADMIN)) {
-				$this->load->view("template/left_menu");
+				//consultar numero de psicologos nuevos
+				$ci = &get_instance();
+				$ci->load->model("general_model");
+			
+				$arrParam = array("nuevos" => true);
+				$data["psicologosNuevos"]  = $this->general_model->countPsicologos($arrParam);
+				
+				$this->load->view("template/left_menu", $data);
 			}
 			?>
 			
