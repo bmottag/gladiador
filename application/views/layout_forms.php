@@ -1,181 +1,122 @@
 <!DOCTYPE html>
 <html lang="en">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <!-- Meta, title, CSS, favicons, etc. -->
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+	<meta name="baseurl" content="<?php echo base_url()?>" />
+	<link rel="icon" href="<?php echo base_url("images/favicon.ico"); ?>" type="image/ico" />
 
-<head>
-	<meta charset="utf-8">
-	<meta http-equiv="X-UA-Compatible" content="IE=edge">
-	<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-	<meta name="description" content="MAVIA - Register, Reservation, Questionare, Reviews form wizard">
-	<meta name="author" content="Ansonika">
-	<title>TuApoyo</title>
+    <title>TuApoyo </title>
 
-	<!-- Favicons-->
-	<link rel="shortcut icon" href="<?php echo base_url("estilos_formularios/img/favicon.ico"); ?>" type="image/x-icon">
-	<link rel="apple-touch-icon" type="image/x-icon" href="<?php echo base_url("estilos_formularios/img/apple-touch-icon-57x57-precomposed.png"); ?>">
-	<link rel="apple-touch-icon" type="image/x-icon" sizes="72x72" href="<?php echo base_url("estilos_formularios/img/apple-touch-icon-72x72-precomposed.png"); ?>">
-	<link rel="apple-touch-icon" type="image/x-icon" sizes="114x114" href="<?php echo base_url("estilos_formularios/img/apple-touch-icon-114x114-precomposed.png"); ?>">
-	<link rel="apple-touch-icon" type="image/x-icon" sizes="144x144" href="<?php echo base_url("estilos_formularios/img/apple-touch-icon-144x144-precomposed.png"); ?>">
+    <!-- Bootstrap -->
+	<link href="<?php echo base_url("assets/bootstrap/vendors/bootstrap/dist/css/bootstrap.min.css"); ?>" rel="stylesheet">
+    <!-- Font Awesome -->
+	<link href="<?php echo base_url("assets/bootstrap/vendors/font-awesome/css/font-awesome.min.css"); ?>" rel="stylesheet">
+    <!-- NProgress -->
+	<link href="<?php echo base_url("assets/bootstrap/vendors/nprogress/nprogress.css"); ?>" rel="stylesheet">
+    <!-- iCheck -->
+	<link href="<?php echo base_url("assets/bootstrap/vendors/iCheck/skins/flat/green.css"); ?>" rel="stylesheet">
+	
+    <!-- bootstrap-progressbar -->
+	<link href="<?php echo base_url("assets/bootstrap/vendors/bootstrap-progressbar/css/bootstrap-progressbar-3.3.4.min.css"); ?>" rel="stylesheet">
+    <!-- bootstrap-daterangepicker -->
+	<link href="<?php echo base_url("assets/bootstrap/vendors/bootstrap-daterangepicker/daterangepicker.css"); ?>" rel="stylesheet">
+	<!-- bootstrap-datetimepicker -->
+	<link href="<?php echo base_url("assets/bootstrap/vendors/bootstrap-datetimepicker/build/css/bootstrap-datetimepicker.css"); ?>" rel="stylesheet">	
+	
+    <!-- Datatables -->
+    <link href="<?php echo base_url("assets/bootstrap/vendors/datatables.net-bs/css/dataTables.bootstrap.min.css"); ?>" rel="stylesheet">
+    <link href="<?php echo base_url("assets/bootstrap/vendors/datatables.net-buttons-bs/css/buttons.bootstrap.min.css"); ?>" rel="stylesheet">
+    <link href="<?php echo base_url("assets/bootstrap/vendors/datatables.net-fixedheader-bs/css/fixedHeader.bootstrap.min.css"); ?>" rel="stylesheet">
+    <link href="<?php echo base_url("assets/bootstrap/vendors/datatables.net-responsive-bs/css/responsive.bootstrap.min.css"); ?>" rel="stylesheet">
+    <link href="<?php echo base_url("assets/bootstrap/vendors/datatables.net-scroller-bs/css/scroller.bootstrap.min.css"); ?>" rel="stylesheet">
 
-	<!-- GOOGLE WEB FONT -->
-	<link href="https://fonts.googleapis.com/css?family=Roboto+Condensed:300,300i,400,400i,700,700i" rel="stylesheet">
-
-	<!-- BASE CSS -->
-	<link href="<?php echo base_url("estilos_formularios/css/bootstrap.min.css"); ?>" rel="stylesheet">
-	<link href="<?php echo base_url("estilos_formularios/css/style.css"); ?>" rel="stylesheet">
-	<link href="<?php echo base_url("estilos_formularios/css/responsive.css"); ?>" rel="stylesheet">
-	<link href="<?php echo base_url("estilos_formularios/css/menu.css"); ?>" rel="stylesheet">
-	<link href="<?php echo base_url("estilos_formularios/css/animate.min.css"); ?>" rel="stylesheet">
-	<link href="<?php echo base_url("estilos_formularios/css/icon_fonts/css/all_icons_min.css"); ?>" rel="stylesheet">
-	<link href="<?php echo base_url("estilos_formularios/css/skins/square/grey.css"); ?>" rel="stylesheet">
-
-	<!-- YOUR CUSTOM CSS -->
-	<link href="<?php echo base_url("estilos_formularios/css/custom.css"); ?>" rel="stylesheet">
-
-	<script src="<?php echo base_url("estilos_formularios/js/modernizr.js"); ?>"></script>
-	<!-- Modernizr -->
-
-	<!-- Jquery-->
-	<script src="<?php echo base_url("estilos_formularios/js/jquery-3.2.1.min.js"); ?>"></script>	
+    <!-- Custom Theme Style -->
+	<link href="<?php echo base_url("assets/bootstrap/build/css/custom.min.forms.css"); ?>" rel="stylesheet">
+	
+    <!-- jQuery -->
+	<script src="<?php echo base_url("assets/bootstrap/vendors/jquery/dist/jquery.min.js"); ?>"></script>
+	<!-- jQuery validate-->
 	<script type="text/javascript" src="<?php echo base_url("assets/js/general/general.js"); ?>"></script>
-</head>
-
-<body>
+	<script type="text/javascript" src="<?php echo base_url("assets/js/general/jquery.validate.js"); ?>"></script>
 	
-	<div id="preloader">
-		<div data-loader="circle-side"></div>
-	</div><!-- /Preload -->
-	
-	<div id="loader_form">
-		<div data-loader="circle-side-2"></div>
-	</div><!-- /loader_form -->
+  </head>
 
-	<header>
-		<div class="container-fluid">
-		    <div class="row">
-                <div class="col-3">
-                    <div id="logo_home">
-                        <h1><a href="index.html">MAVIA | Register, Reservation, Questionare, Reviews form wizard</a></h1>
-                    </div>
-                </div>
-                <div class="col-9">
-                    <div id="social">
-                        <ul>
-                            <li><a href="#0"><i class="icon-facebook"></i></a></li>
-                            <li><a href="#0"><i class="icon-twitter"></i></a></li>
-                            <li><a href="#0"><i class="icon-google"></i></a></li>
-                            <li><a href="#0"><i class="icon-linkedin"></i></a></li>
-                        </ul>
-                    </div>
-                    <!-- /social -->
-                    <nav>
-                        <ul class="cd-primary-nav">
-                            <li><a href="index.html" class="animated_link">Register Version</a></li>
-                            <li><a href="reservation_version.html" class="animated_link">Reservation Version</a></li>
-                            <li><a href="questionare_version.html" class="animated_link">Questionare Version</a></li>
-                            <li><a href="review_version.html" class="animated_link">Review Version</a></li>
-                            <li><a href="about.html" class="animated_link">About Us</a></li>
-                            <li><a href="contacts.html" class="animated_link">Contact Us</a></li>
-                        </ul>
-                    </nav>
-                </div>
-            </div>
-		</div>
-		<!-- container -->
-	</header>
-	<!-- End Header -->
+  <body class="nav-md">
+    <div class="container body">
+      <div class="main_container">
 
-	<main>
-
- 			<!-- Start of content -->
+	  
+			<!-- Start of content -->
 			<?php
 			if (isset($view) && ($view != '')) {
 				$this->load->view($view);
 			}
 			?>
-			<!-- End of content -->	
+			<!-- End of content -->
+
+
+      </div>
+    </div>
+
+    <!-- Bootstrap -->
+	<script src="<?php echo base_url("assets/bootstrap/vendors/bootstrap/dist/js/bootstrap.min.js"); ?>"></script>
+    <!-- FastClick -->
+	<script src="<?php echo base_url("assets/bootstrap/vendors/fastclick/lib/fastclick.js"); ?>"></script>
+    <!-- NProgress -->
+	<script src="<?php echo base_url("assets/bootstrap/vendors/nprogress/nprogress.js"); ?>"></script>
+    <!-- Chart.js -->
+	<script src="<?php echo base_url("assets/bootstrap/vendors/Chart.js/dist/Chart.min.js"); ?>"></script>
+    <!-- gauge.js -->
+	<script src="<?php echo base_url("assets/bootstrap/vendors/gauge.js/dist/gauge.min.js"); ?>"></script>
+    <!-- bootstrap-progressbar -->
+	<script src="<?php echo base_url("assets/bootstrap/vendors/bootstrap-progressbar/bootstrap-progressbar.min.js"); ?>"></script>
+    <!-- iCheck -->
+	<script src="<?php echo base_url("assets/bootstrap/vendors/iCheck/icheck.min.js"); ?>"></script>
+    <!-- Skycons -->
+	<script src="<?php echo base_url("assets/bootstrap/vendors/skycons/skycons.js"); ?>"></script>
+    <!-- Flot -->
+	<script src="<?php echo base_url("assets/bootstrap/vendors/Flot/jquery.flot.js"); ?>"></script>
+	<script src="<?php echo base_url("assets/bootstrap/vendors/Flot/jquery.flot.pie.js"); ?>"></script>
+	<script src="<?php echo base_url("assets/bootstrap/vendors/Flot/jquery.flot.time.js"); ?>"></script>
+	<script src="<?php echo base_url("assets/bootstrap/vendors/Flot/jquery.flot.stack.js"); ?>"></script>
+	<script src="<?php echo base_url("assets/bootstrap/vendors/Flot/jquery.flot.resize.js"); ?>"></script>
+    <!-- Flot plugins -->
+	<script src="<?php echo base_url("assets/bootstrap/vendors/flot.orderbars/js/jquery.flot.orderBars.js"); ?>"></script>
+	<script src="<?php echo base_url("assets/bootstrap/vendors/flot-spline/js/jquery.flot.spline.min.js"); ?>"></script>
+	<script src="<?php echo base_url("assets/bootstrap/vendors/flot.curvedlines/curvedLines.js"); ?>"></script>
+    <!-- DateJS -->
+	<script src="<?php echo base_url("assets/bootstrap/vendors/DateJS/build/date.js"); ?>"></script>
+    <!-- JQVMap -->
+	<script src="<?php echo base_url("assets/bootstrap/vendors/jqvmap/dist/jquery.vmap.js"); ?>"></script>
+	<script src="<?php echo base_url("assets/bootstrap/vendors/jqvmap/dist/maps/jquery.vmap.world.js"); ?>"></script>
+	<script src="<?php echo base_url("assets/bootstrap/vendors/jqvmap/examples/js/jquery.vmap.sampledata.js"); ?>"></script>
+    <!-- bootstrap-daterangepicker -->
+	<script src="<?php echo base_url("assets/bootstrap/vendors/moment/min/moment.min.js"); ?>"></script>
+	<script src="<?php echo base_url("assets/bootstrap/vendors/bootstrap-daterangepicker/daterangepicker.js"); ?>"></script>
 	
+    <!-- Datatables -->
+    <script src="<?php echo base_url("assets/bootstrap/vendors/datatables.net/js/jquery.dataTables.min.js"); ?>"></script>
+    <script src="<?php echo base_url("assets/bootstrap/vendors/datatables.net-bs/js/dataTables.bootstrap.min.js"); ?>"></script>
+    <script src="<?php echo base_url("assets/bootstrap/vendors/datatables.net-buttons/js/dataTables.buttons.min.js"); ?>"></script>
+    <script src="<?php echo base_url("assets/bootstrap/vendors/datatables.net-buttons-bs/js/buttons.bootstrap.min.js"); ?>"></script>
+    <script src="<?php echo base_url("assets/bootstrap/vendors/datatables.net-buttons/js/buttons.flash.min.js"); ?>"></script>
+    <script src="<?php echo base_url("assets/bootstrap/vendors/datatables.net-buttons/js/buttons.html5.min.js"); ?>"></script>
+    <script src="<?php echo base_url("assets/bootstrap/vendors/datatables.net-buttons/js/buttons.print.min.js"); ?>"></script>
+    <script src="<?php echo base_url("assets/bootstrap/vendors/datatables.net-fixedheader/js/dataTables.fixedHeader.min.js"); ?>"></script>
+    <script src="<?php echo base_url("assets/bootstrap/vendors/datatables.net-keytable/js/dataTables.keyTable.min.js"); ?>"></script>
+    <script src="<?php echo base_url("assets/bootstrap/vendors/datatables.net-responsive/js/dataTables.responsive.min.js"); ?>"></script>
+    <script src="<?php echo base_url("assets/bootstrap/vendors/datatables.net-responsive-bs/js/responsive.bootstrap.js"); ?>"></script>
+    <script src="<?php echo base_url("assets/bootstrap/vendors/datatables.net-scroller/js/dataTables.scroller.min.js"); ?>"></script>
+    <script src="<?php echo base_url("assets/bootstrap/vendors/jszip/dist/jszip.min.js"); ?>"></script>
+    <script src="<?php echo base_url("assets/bootstrap/vendors/pdfmake/build/pdfmake.min.js"); ?>"></script>
+    <script src="<?php echo base_url("assets/bootstrap/vendors/pdfmake/build/vfs_fonts.js"); ?>"></script>
 	
-	</main>
+    <!-- Custom Theme Scripts -->
+	<script src="<?php echo base_url("assets/bootstrap/build/js/custom.min.js"); ?>"></script>
 	
-	<footer id="home" class="clearfix">
-		<p>© 2018 Mavia</p>
-		<ul>
-			<li><a href="#0" class="animated_link">Purchase this template</a></li>
-			<li><a href="#0" class="animated_link">Terms and conditions</a></li>
-			<li><a href="#0" class="animated_link">Contacts</a></li>
-		</ul>
-	</footer>
-	<!-- end footer-->
-	
-	<div class="cd-overlay-nav">
-		<span></span>
-	</div>
-	<!-- cd-overlay-nav -->
-
-	<div class="cd-overlay-content">
-		<span></span>
-	</div>
-	<!-- cd-overlay-content -->
-
-	<a href="#0" class="cd-nav-trigger">Menu<span class="cd-icon"></span></a>
-
-	<!-- Modal terms -->
-	<div class="modal fade" id="terms-txt" tabindex="-1" role="dialog" aria-labelledby="termsLabel" aria-hidden="true">
-		<div class="modal-dialog modal-dialog-centered">
-			<div class="modal-content">
-				<div class="modal-header">
-					<h4 class="modal-title" id="termsLabel">Terms and conditions</h4>
-					<button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
-				</div>
-				<div class="modal-body">
-					<p>Lorem ipsum dolor sit amet, in porro albucius qui, in <strong>nec quod novum accumsan</strong>, mei ludus tamquam dolores id. No sit debitis meliore postulant, per ex prompta alterum sanctus, pro ne quod dicunt sensibus.</p>
-					<p>Lorem ipsum dolor sit amet, in porro albucius qui, in nec quod novum accumsan, mei ludus tamquam dolores id. No sit debitis meliore postulant, per ex prompta alterum sanctus, pro ne quod dicunt sensibus. Lorem ipsum dolor sit amet, <strong>in porro albucius qui</strong>, in nec quod novum accumsan, mei ludus tamquam dolores id. No sit debitis meliore postulant, per ex prompta alterum sanctus, pro ne quod dicunt sensibus.</p>
-					<p>Lorem ipsum dolor sit amet, in porro albucius qui, in nec quod novum accumsan, mei ludus tamquam dolores id. No sit debitis meliore postulant, per ex prompta alterum sanctus, pro ne quod dicunt sensibus.</p>
-				</div>
-				<div class="modal-footer">
-					<button type="button" class="btn_1" data-dismiss="modal">Close</button>
-				</div>
-			</div>
-			<!-- /.modal-content -->
-		</div>
-		<!-- /.modal-dialog -->
-	</div>
-	<!-- /.modal -->
-
-	<!-- Modal info -->
-	<div class="modal fade" id="more-info" tabindex="-1" role="dialog" aria-labelledby="more-infoLabel" aria-hidden="true">
-		<div class="modal-dialog modal-dialog-centered">
-			<div class="modal-content">
-				<div class="modal-header">
-					<h4 class="modal-title" id="more-infoLabel">Frequently asked questions</h4>
-					<button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
-				</div>
-				<div class="modal-body">
-					<p>Lorem ipsum dolor sit amet, in porro albucius qui, in <strong>nec quod novum accumsan</strong>, mei ludus tamquam dolores id. No sit debitis meliore postulant, per ex prompta alterum sanctus, pro ne quod dicunt sensibus.</p>
-					<p>Lorem ipsum dolor sit amet, in porro albucius qui, in nec quod novum accumsan, mei ludus tamquam dolores id. No sit debitis meliore postulant, per ex prompta alterum sanctus, pro ne quod dicunt sensibus. Lorem ipsum dolor sit amet, <strong>in porro albucius qui</strong>, in nec quod novum accumsan, mei ludus tamquam dolores id. No sit debitis meliore postulant, per ex prompta alterum sanctus, pro ne quod dicunt sensibus.</p>
-					<p>Lorem ipsum dolor sit amet, in porro albucius qui, in nec quod novum accumsan, mei ludus tamquam dolores id. No sit debitis meliore postulant, per ex prompta alterum sanctus, pro ne quod dicunt sensibus.</p>
-				</div>
-				<div class="modal-footer">
-					<button type="button" class="btn_1" data-dismiss="modal">Close</button>
-				</div>
-			</div>
-			<!-- /.modal-content -->
-		</div>
-		<!-- /.modal-dialog -->
-	</div>
-	<!-- /.modal -->
-
-	<!-- SCRIPTS -->
-
-	<!-- Common script -->
-	<script src="<?php echo base_url("estilos_formularios/js/common_scripts_min.js"); ?>"></script>
-	<!-- Wizard script -->
-	<script src="<?php echo base_url("estilos_formularios/js/registration_wizard_func.js"); ?>"></script>
-	<!-- Menu script -->
-	<script src="<?php echo base_url("estilos_formularios/js/velocity.min.js"); ?>"></script>
-	<script src="<?php echo base_url("estilos_formularios/js/main.js"); ?>"></script>
-	<!-- Theme script -->
-	<script src="<?php echo base_url("estilos_formularios/js/functions.js"); ?>"></script>
-
-</body>
+  </body>
 </html>

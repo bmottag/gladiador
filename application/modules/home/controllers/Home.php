@@ -17,6 +17,14 @@ class Home extends MX_Controller {
 	}
 	
 	/**
+	 * Pacientes
+	 */
+	public function pacientes()
+	{	
+			$this->load->view("layout_main");
+	}
+	
+	/**
 	 * Zona psicologos
 	 */
 	public function zona_psicologos()

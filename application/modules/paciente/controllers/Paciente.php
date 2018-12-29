@@ -40,7 +40,7 @@ class Paciente extends MX_Controller {
 	{	
 			$data['information'] = FALSE;
 			$data["view"] = 'form_registro';
-			$this->load->view("layout", $data);
+			$this->load->view("layout_forms", $data);
 	}
 	
 	/**
@@ -119,7 +119,7 @@ class Paciente extends MX_Controller {
 		$data['information'] = $this->general_model->get_info_paciente($arrParam);//info paciente
 
 		$data["view"] = 'form_paciente_I';
-		$this->load->view("layout", $data);
+		$this->load->view("layout_forms", $data);
 	}
 	
 	/**
@@ -135,7 +135,7 @@ class Paciente extends MX_Controller {
 		$data['information'] = $this->general_model->get_info_paciente($arrParam);//info paciente
 		
 		$data["view"] = 'form_paciente_II';
-		$this->load->view("layout", $data);
+		$this->load->view("layout_forms", $data);
 	}
 	
 	/**
@@ -151,7 +151,7 @@ class Paciente extends MX_Controller {
 		$data['information'] = $this->general_model->get_info_paciente($arrParam);//info paciente
 		
 		$data["view"] = 'form_paciente_III';
-		$this->load->view("layout", $data);
+		$this->load->view("layout_forms", $data);
 	}
 			
 	/**
@@ -167,7 +167,7 @@ class Paciente extends MX_Controller {
 		$data['information'] = $this->general_model->get_info_paciente($arrParam);//info paciente
 		
 		$data["view"] = 'form_paciente_IV';
-		$this->load->view("layout", $data);
+		$this->load->view("layout_forms", $data);
 	}
 	
 	/**
@@ -183,7 +183,7 @@ class Paciente extends MX_Controller {
 		$data['information'] = $this->general_model->get_info_paciente($arrParam);//info paciente
 		
 		$data["view"] = 'form_paciente_V';
-		$this->load->view("layout", $data);
+		$this->load->view("layout_forms", $data);
 	}
 	
 	/**
@@ -199,7 +199,7 @@ class Paciente extends MX_Controller {
 		$data['information'] = $this->general_model->get_info_paciente($arrParam);//info paciente
 		
 		$data["view"] = 'form_paciente_VI';
-		$this->load->view("layout", $data);
+		$this->load->view("layout_forms", $data);
 	}
 	
 	/**
@@ -215,7 +215,7 @@ class Paciente extends MX_Controller {
 		$data['information'] = $this->general_model->get_info_paciente($arrParam);//info paciente
 		
 		$data["view"] = 'form_paciente_VII';
-		$this->load->view("layout", $data);
+		$this->load->view("layout_forms", $data);
 	}
 	
 	/**
@@ -231,7 +231,7 @@ class Paciente extends MX_Controller {
 		$data['information'] = $this->general_model->get_info_paciente($arrParam);//info paciente
 		
 		$data["view"] = 'form_paciente_VIII';
-		$this->load->view("layout", $data);
+		$this->load->view("layout_forms", $data);
 	}
 	
 	/**
@@ -247,7 +247,7 @@ class Paciente extends MX_Controller {
 		$data['information'] = $this->general_model->get_info_paciente($arrParam);//info paciente
 		
 		$data["view"] = 'form_paciente_IX';
-		$this->load->view("layout", $data);
+		$this->load->view("layout_forms", $data);
 	}
 	
 	/**
@@ -263,7 +263,7 @@ class Paciente extends MX_Controller {
 		$data['information'] = $this->general_model->get_info_paciente($arrParam);//info paciente
 		
 		$data["view"] = 'form_paciente_X';
-		$this->load->view("layout", $data);
+		$this->load->view("layout_forms", $data);
 	}
 	
 	/**

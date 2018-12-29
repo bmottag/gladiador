@@ -73,7 +73,7 @@ $(document).ready(function () {
 						<div class="form-group">
 							<div class="col-md-12 col-sm-12 col-xs-12">
 								<div class="row" align="center">
-									<div style="width:80%;" align="center">
+									<div style="width:90%;" align="center">
 									
 									<label class="btn btn-primary <?php if($information && $information["pareja"] == 1) { echo "active"; }  ?>" data-toggle-class="btn-primary" data-toggle-passive-class="btn-default">
 										<input type="radio" id="optionsPareja1" name="optionsPareja" value=1 <?php if($information && $information["pareja"] == 1) { echo "checked"; }  ?>> 1. Levemente
