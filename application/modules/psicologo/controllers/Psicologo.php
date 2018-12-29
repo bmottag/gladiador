@@ -27,7 +27,7 @@ class Psicologo extends MX_Controller {
 			
 			
 			$data["view"] = 'template/form_psicologo';
-			$this->load->view("layout", $data);
+			$this->load->view("layout_forms", $data);
 	}
 	
 	/**

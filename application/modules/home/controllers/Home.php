@@ -21,7 +21,9 @@ class Home extends MX_Controller {
 	 */
 	public function pacientes()
 	{	
-			$this->load->view("layout_main");
+			$data['alto'] = "600px";
+			$data['ruta'] = "paciente/registro";
+			$this->load->view("layout_main", $data);
 	}
 	
 	/**
@@ -29,9 +31,17 @@ class Home extends MX_Controller {
 	 */
 	public function zona_psicologos()
 	{	
-			$data["view_header"] = 'template/header_psicologos';
-			$data["view"] = 'zona_psicologos';
-			$this->load->view("layout_secundario", $data);
+			$this->load->view('psicologos');
+	}
+	
+	/**
+	 * Zona psicologos
+	 */
+	public function psicologos()
+	{	
+			$data['alto'] = "2460px";
+			$data['ruta'] = "psicologo/registro";
+			$this->load->view('layout_main', $data);
 	}
 	
 	/**
@@ -44,13 +54,6 @@ class Home extends MX_Controller {
 			$this->load->view("layout_secundario", $data);
 	}
 	
-	/**
-	 * Registro psicologos
-	 */
-	public function psicologos()
-	{	
-			$this->load->view("layout_wraper", $data);
-	}
 
 	
 }

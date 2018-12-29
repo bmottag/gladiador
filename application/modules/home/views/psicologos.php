@@ -12,11 +12,12 @@
 <link href="<?php echo base_url("estilos/css/style.css"); ?>" rel="stylesheet">
 <link href="<?php echo base_url("estilos/css/custom.css"); ?>" rel="stylesheet">
 <link href="<?php echo base_url("estilos/css/novi.css"); ?>" rel="stylesheet">
+
 <!--[if lt IE 10]><div style="background: #212121; padding: 10px 0; box-shadow: 3px 3px 5px 0 rgba(0,0,0,.3); clear: both; text-align:center; position: relative; z-index:1;"><a href="http://windows.microsoft.com/en-US/internet-explorer/"><img src="images/ie8-panel/warning_bar_0000_us.jpg" border="0" height="42" width="820" alt="You are using an outdated browser. For a faster, safer browsing experience, upgrade for free today."></a></div><script src="js/html5shiv.min.js"></script><![endif]-->
 </head>
 <body>
 <div class="page-loader">
-  <div class="brand-name"><img src="<?php echo base_url("images/logo-default-100x28.png"); ?>" alt="" width="100" height="28"></div>
+  <div class="brand-name"><img src="<?php echo base_url("images/logo.png"); ?>" alt="" width="100" height="28"></div>
   <div class="page-loader-body">
     <div class="cssload-jumping"><span></span><span></span><span></span><span></span><span></span></div>
   </div>
@@ -25,45 +26,49 @@
   <section class="section">
     <header class="page-header">
       <div class="rd-navbar-wrap">
-        <nav class="rd-navbar rd-navbar-default novi-background" data-layout="rd-navbar-fixed" data-sm-layout="rd-navbar-fixed" data-sm-device-layout="rd-navbar-fixed" data-md-layout="rd-navbar-static" data-md-device-layout="rd-navbar-fixed" data-lg-device-layout="rd-navbar-static" data-lg-layout="rd-navbar-static" data-stick-up-clone="true" data-md-stick-up-offset="190px" data-lg-stick-up-offset="190px" data-stick-up="true" data-sm-stick-up="true" data-md-stick-up="true" data-lg-stick-up="true">
+        <nav class="rd-navbar rd-navbar-transparent" data-layout="rd-navbar-fixed" data-sm-layout="rd-navbar-fixed" data-sm-device-layout="rd-navbar-fixed" data-md-layout="rd-navbar-static" data-md-device-layout="rd-navbar-fixed" data-lg-device-layout="rd-navbar-static" data-lg-layout="rd-navbar-static" data-body-class="rd-navbar-absolute-linked" data-stick-up-clone="false" data-md-stick-up-offset="72px" data-lg-stick-up-offset="72px" data-stick-up="true" data-sm-stick-up="true" data-md-stick-up="true" data-lg-stick-up="true">
           <div class="rd-navbar-inner">
             <div class="rd-navbar-panel">
+              <div class="rd-navbar-panel-background">
+                <div class="rd-navbar-panel-background-inner novi-background"></div>
+              </div>
               <button class="rd-navbar-toggle" data-rd-navbar-toggle=".rd-navbar-nav-wrap"><span></span></button>
-              <div class="rd-navbar-brand"><a class="brand-name" href="index.html"><img src="<?php echo base_url("images/logo-13.png"); ?>" alt="" width="100" height="28"></a></div>
+              <div class="rd-navbar-brand"><a class="brand-name" href="index.html"><img src="<?php echo base_url("images/logo.png"); ?>" alt="" width="250" height="55"></a></div>
             </div>
             <div class="rd-navbar-nav-wrap">
-              <ul class="rd-navbar-nav">
+              <div class="rd-navbar-nav-wrap-bg">
+                <div class="rd-navbar-nav-wrap-bg-inner novi-background"></div>
+              </div>
+
+			  <?php $this->load->view("template/top_menu"); ?>
 			  
-				<?php $this->load->view("template/top_menu"); ?>
-			  
-              </ul>
             </div>
           </div>
         </nav>
       </div>
     </header>
-			
- 			<!-- Start of content -->
-			<?php
-			if (isset($view_header) && ($view_header != '')) {
-				$this->load->view($view_header);
-			}
-			?>
-			<!-- End of content -->  
-		
+    <section>
+      <div class="swiper-bg-wrap swiper-style-1">
+        <div class="swiper-container swiper-slider swiper-bg swiper-height-1" data-autoplay="false" data-slide-effect="fade">
+          <div class="swiper-wrapper">
+            <div class="swiper-slide" data-slide-bg="<?php echo base_url("images/slide-48.jpg"); ?>">
+              <div class="swiper-slide-caption" data-speed="0.5" data-fade="true">
+                <div class="jumbotron-custom jumbotron-custom-variant-1 context-dark">
+
+                  <p class="subtitle-variant-3 fxRotateInLeft animated" data-caption-animate="fxRotateInLeft" data-caption-delay="350"><span data-novi-id="69">
+Trabaja como psicólogo asociado de TuApoyo y obtén un mayor y mejor número de clientes.
+				  </span></p>
+                  <a class="btn btn-primary btn-lg btn-aqil btn-aqil--mod-1" href="<?php echo base_url("home/psicologos"); ?>" data-caption-animate="fxRotateInRight" data-caption-delay="550"><span>Registro nuevos</span></a>
+				  <a class="btn btn-primary btn-lg btn-aqil btn-aqil--mod-1" href="<?php echo base_url("login"); ?>" data-caption-animate="fxRotateInRight" data-caption-delay="550"><span>Inicio sesión</span></a>
+				 </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
   </section>
 
- 			<!-- Start of content -->
-			<?php
-			if (isset($view) && ($view != '')) {
-				
-			}
-			?>
-			<!-- End of content -->  
-			
-			
-			<iframe src="<?php echo base_url(); ?>" style="border:none; height:700px;width:100%;"></iframe> 
-  
   <footer class="page-footer">
     <section class="section pre-footer-minimal bg-style-1 novi-background bg-image">
       <div class="pre-footer-minimal-inner">
@@ -78,14 +83,14 @@
                   <li><i class="fa fa-map-marker"></i>
                     <p>5353 S Lake Ave #789, Los Angeles, CA 91152, USA</p>
                   </li>
-                  <li><i class="fa fa-phone"></i> <a href="callto:#">+1 (123) 456 7890</a></li>
-                  <li><i class="fa fa-envelope-o"></i> <a href="mailto:#">info@yourdomain.com</a></li>
+                  <li><i class="fa fa-phone"></i><a href="callto:#">+1 (123) 456 7890</a></li>
+                  <li><i class="fa fa-envelope-o"></i><a href="mailto:#">info@yourdomain.com</a></li>
                 </ul>
                 <ul class="inline-list-xxs mar-top-2">
-                  <li> <a class="icon novi-icon icon-xxs icon-circle icon-gray-outline icon-effect-1 fa fa-instagram" href="#"></a> </li>
-                  <li> <a class="icon novi-icon icon-xxs icon-circle icon-gray-outline icon-effect-1 fa fa-facebook" href="#"></a> </li>
-                  <li> <a class="icon novi-icon icon-xxs icon-circle icon-gray-outline icon-effect-1 fa fa-twitter" href="#"></a> </li>
-                  <li> <a class="icon novi-icon icon-xxs icon-circle icon-gray-outline icon-effect-1 fa fa-google-plus" href="#"></a> </li>
+                  <li><a class="icon novi-icon icon-xxs icon-circle icon-gray-outline icon-effect-1 fa fa-instagram" href="#"></a></li>
+                  <li><a class="icon novi-icon icon-xxs icon-circle icon-gray-outline icon-effect-1 fa fa-facebook" href="#"></a></li>
+                  <li><a class="icon novi-icon icon-xxs icon-circle icon-gray-outline icon-effect-1 fa fa-twitter" href="#"></a></li>
+                  <li><a class="icon novi-icon icon-xxs icon-circle icon-gray-outline icon-effect-1 fa fa-google-plus" href="#"></a></li>
                 </ul>
               </div>
             </div>
@@ -152,10 +157,10 @@
       <div class="container">
         <div class="row copyright style-1">
           <div class="col-lg-6 text-xl-left">
-            <div class="brand-sm"> <a href="index-11.html"> <img src="<?php echo base_url("images/logo-white-small.png"); ?>" alt=""> </a> </div>
+            <div class="brand-sm"><a href="index-11.html"><img src="<?php echo base_url("images/logo-white-small.png"); ?>" alt=""></a></div>
           </div>
           <div class="col-lg-6 text-xl-right">
-            <p class="rights">© 2018 yourdomian.com - All rights reserved.</p>
+            <p class="rights">© TuApoyo - All rights reserved.</p>
           </div>
         </div>
       </div>

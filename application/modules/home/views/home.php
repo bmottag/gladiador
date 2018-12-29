@@ -41,13 +41,8 @@
                 <div class="rd-navbar-nav-wrap-bg-inner novi-background"></div>
               </div>
 
-              <ul class="rd-navbar-nav">
-                <li><a href="<?php echo base_url(); ?>">Inicio</a></li>
-				<li><a href="<?php echo base_url("paciente/registro"); ?>">Encontrar Psicólogo</a></li>
-				<li><a href="<?php echo base_url(); ?>">Acercad de</a></li>
-				<li><a href="<?php echo base_url("home/zona_psicologos"); ?>">Zona Psicólogos</a></li>
-				<li><a href="<?php echo base_url("home/contacto"); ?>">Contacto</a></li>
-              </ul>
+				<?php $this->load->view("template/top_menu"); ?>
+				
             </div>
           </div>
         </nav>
@@ -66,7 +61,7 @@
 TuApoyo es la plataforma que encuentra al psicólogo más adecuado para tu situación,
 <br>para que puedas sobrepasar las épocas de crisis por las que todos pasamos.
 				  </span></p>
-                  <a class="btn btn-primary btn-lg btn-aqil btn-aqil--mod-1" href="<?php echo base_url("paciente/registro"); ?>" data-caption-animate="fxRotateInRight" data-caption-delay="550"><span>Encontrar mi Psicólogos</span></a></div>
+                  <a class="btn btn-primary btn-lg btn-aqil btn-aqil--mod-1" href="<?php echo base_url("home/pacientes"); ?>" data-caption-animate="fxRotateInRight" data-caption-delay="550"><span>Encontrar mi Psicólogos</span></a></div>
               </div>
             </div>
           </div>

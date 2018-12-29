@@ -47,7 +47,7 @@
 		
   </section>
 
-<iframe src="<?php echo base_url('paciente/registro'); ?>" style="border:none; height:600px;width:100%;"></iframe> 
+<iframe src="<?php echo base_url($ruta); ?>" style="border:none; height:<?php echo $alto; ?>;width:100%;"></iframe> 
   
   <footer class="page-footer">
     <section class="section pre-footer-minimal bg-style-1 novi-background bg-image">
