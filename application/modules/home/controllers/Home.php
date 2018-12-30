@@ -45,6 +45,14 @@ class Home extends MX_Controller {
 	}
 	
 	/**
+	 * Index Page for this controller.
+	 */
+	public function acerca()
+	{	
+			$this->load->view('acerca');
+	}
+	
+	/**
 	 * Contacto
 	 */
 	public function contacto()
