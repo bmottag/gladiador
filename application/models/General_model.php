@@ -156,6 +156,28 @@ class General_model extends CI_Model {
 		}
 		
 		/**
+		 * Listado de psicologos adecuados para un paciente macimo 3
+		 * @since 30/12/2018
+		 */
+		public function get_psicologos_adecuados($arrData) 
+		{
+				$this->db->select('U.*, P.*, CONCAT(U.first_name, " " , U.last_name) name');
+				
+				$this->db->where('A.fk_id_paciente', $arrData["idPaciente"]);
+				
+				$this->db->join('user U', 'U.id_user = A.fk_id_user', 'INNER');
+				$this->db->join('psicologo P', 'P.fk_id_user = A.fk_id_user', 'INNER');
+				$this->db->order_by("A.puntaje_general", "DESC");
+				$query = $this->db->get("algoritmo A", 3);
+
+				if ($query->num_rows() >= 1) {
+					return $query->result_array();
+				} else {
+					return false;
+				}
+		}
+		
+		/**
 		 * Listado paciente
 		 * @since 16/12/2018
 		 */
