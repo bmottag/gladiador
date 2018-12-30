@@ -26,13 +26,30 @@ class Paciente extends MX_Controller {
 	{	
 		$this->load->model("general_model");
 		
-		$arrParam = array("idPaciente" => $idPaciente);
-		$data['information'] = $this->general_model->get_info_paciente($arrParam);//info paciente
+		$data['idPaciente'] = $idPaciente;
 		
 		$arrParam = array("idPaciente" => $idPaciente);
 		$data['infoPsicologos'] = $this->general_model->get_psicologos_adecuados($arrParam);//psicologos adecuados para el pacientes
 		
-		$data["view"] = 'info_paciente';
+		$data["view"] = 'tus_psicologos';
+		$this->load->view("layout_forms", $data);
+	}
+	
+	/**
+	 * info psicologos
+     * @since 30/12/2018
+     * @author BMOTTAG
+	 */
+	public function infoPsicologo($idPsicologo, $idPaciente)
+	{	
+		$this->load->model("general_model");
+
+		$data['idPaciente'] = $idPaciente;
+		
+		$arrParam = array("idUser" => $idPsicologo);
+		$data['information'] = $this->general_model->get_info_psicologo($arrParam);//info psicologo
+		
+		$data["view"] = 'info_psicologo';
 		$this->load->view("layout_forms", $data);
 	}
 	

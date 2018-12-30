@@ -45,9 +45,11 @@
 									<button type="button" class="btn btn-success btn-xs"> 
 										<i class="fa fa-comments-o"></i> Contactar
 									</button>
-									<button type="button" class="btn btn-primary btn-xs">
-										<i class="fa fa-user"> </i> View Perfil
-									</button>
+
+									
+<a class="btn btn-xs btn-primary" href="<?php echo base_url() . 'paciente/infoPsicologo/' . $data['id_user'] . '/' . $idPaciente; ?>"><span class="fa fa-user" aria-hidden="true"></span> Ver Perfil </a>
+									
+									
 								</div>
 							</div>
 						</div>
