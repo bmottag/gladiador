@@ -21,7 +21,7 @@ class Home extends MX_Controller {
 	 */
 	public function encontrar_psicologo()
 	{	
-			$data['alto'] = "600px";
+			$data['alto'] = "670px";
 			$data['ruta'] = "paciente/registro";
 			$this->load->view("layout_main", $data);
 	}
