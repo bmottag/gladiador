@@ -19,7 +19,7 @@ class Home extends MX_Controller {
 	/**
 	 * Pacientes
 	 */
-	public function pacientes()
+	public function encontrar_psicologo()
 	{	
 			$data['alto'] = "600px";
 			$data['ruta'] = "paciente/registro";

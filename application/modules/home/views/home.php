@@ -61,7 +61,7 @@
 TuApoyo es la plataforma que encuentra al psicólogo más adecuado para tu situación,
 <br>para que puedas sobrepasar las épocas de crisis por las que todos pasamos.
 				  </span></p>
-                  <a class="btn btn-primary btn-lg btn-aqil btn-aqil--mod-1" href="<?php echo base_url("home/pacientes"); ?>" data-caption-animate="fxRotateInRight" data-caption-delay="550"><span>Encontrar mi Psicólogos</span></a></div>
+                  <a class="btn btn-primary btn-lg btn-aqil btn-aqil--mod-1" href="<?php echo base_url("home/encontrar_psicologo"); ?>" data-caption-animate="fxRotateInRight" data-caption-delay="550"><span>Encontrar mi Psicólogos</span></a></div>
               </div>
             </div>
           </div>
