@@ -171,8 +171,8 @@ class General extends MX_Controller {
         $config['maintain_ratio'] = TRUE;
         //CARPETA EN LA QUE GUARDAMOS LA MINIATURA
         $config['new_image'] = 'images/foto/thumbs/';
-        $config['width'] = 220;
-        $config['height'] = 220;
+        $config['width'] = 200;
+        $config['height'] = 200;
         $this->load->library('image_lib', $config);
         $this->image_lib->resize();
     }
