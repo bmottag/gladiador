@@ -12,7 +12,6 @@
 <link href="<?php echo base_url("estilos/css/style.css"); ?>" rel="stylesheet">
 <link href="<?php echo base_url("estilos/css/custom.css"); ?>" rel="stylesheet">
 <link href="<?php echo base_url("estilos/css/novi.css"); ?>" rel="stylesheet">
-
 <!--[if lt IE 10]><div style="background: #212121; padding: 10px 0; box-shadow: 3px 3px 5px 0 rgba(0,0,0,.3); clear: both; text-align:center; position: relative; z-index:1;"><a href="http://windows.microsoft.com/en-US/internet-explorer/"><img src="images/ie8-panel/warning_bar_0000_us.jpg" border="0" height="42" width="820" alt="You are using an outdated browser. For a faster, safer browsing experience, upgrade for free today."></a></div><script src="js/html5shiv.min.js"></script><![endif]-->
 </head>
 <body>
@@ -26,45 +25,27 @@
   <section class="section">
     <header class="page-header">
       <div class="rd-navbar-wrap">
-        <nav class="rd-navbar rd-navbar-transparent" data-layout="rd-navbar-fixed" data-sm-layout="rd-navbar-fixed" data-sm-device-layout="rd-navbar-fixed" data-md-layout="rd-navbar-static" data-md-device-layout="rd-navbar-fixed" data-lg-device-layout="rd-navbar-static" data-lg-layout="rd-navbar-static" data-body-class="rd-navbar-absolute-linked" data-stick-up-clone="false" data-md-stick-up-offset="72px" data-lg-stick-up-offset="72px" data-stick-up="true" data-sm-stick-up="true" data-md-stick-up="true" data-lg-stick-up="true">
-
+        <nav class="rd-navbar rd-navbar-default novi-background" data-layout="rd-navbar-fixed" data-sm-layout="rd-navbar-fixed" data-sm-device-layout="rd-navbar-fixed" data-md-layout="rd-navbar-static" data-md-device-layout="rd-navbar-fixed" data-lg-device-layout="rd-navbar-static" data-lg-layout="rd-navbar-static" data-stick-up-clone="true" data-md-stick-up-offset="190px" data-lg-stick-up-offset="190px" data-stick-up="true" data-sm-stick-up="true" data-md-stick-up="true" data-lg-stick-up="true">
           <div class="rd-navbar-inner">
             <div class="rd-navbar-panel">
-              <div class="rd-navbar-panel-background">
-                <div class="rd-navbar-panel-background-inner novi-background"></div>
-              </div>
               <button class="rd-navbar-toggle" data-rd-navbar-toggle=".rd-navbar-nav-wrap"><span></span></button>
-              <div class="rd-navbar-brand"><a class="brand-name" href="<?php echo base_url(); ?>"><img src="<?php echo base_url("images/logo.png"); ?>" alt="" width="250" height="55"></a></div>
+			  <div class="rd-navbar-brand"><a class="brand-name" href="<?php echo base_url(); ?>"><img src="<?php echo base_url("images/logo.png"); ?>" alt="" width="250" height="55"></a></div>
             </div>
             <div class="rd-navbar-nav-wrap">
-              <div class="rd-navbar-nav-wrap-bg">
-                <div class="rd-navbar-nav-wrap-bg-inner novi-background"></div>
-              </div>
-
+              <ul class="rd-navbar-nav">
+			  
 				<?php $this->load->view("template/top_menu"); ?>
-				
+			  
+              </ul>
             </div>
           </div>
         </nav>
       </div>
     </header>
-		
-    <section>
-      <div class="swiper-bg-wrap swiper-style-1">
-        <div class="swiper-container swiper-slider swiper-bg swiper-height-1" data-autoplay="false" data-slide-effect="fade">
-          <div class="swiper-wrapper">
-            <div class="swiper-slide" data-slide-bg="<?php echo base_url("images/slide-48.jpg"); ?>">
-              <div class="swiper-slide-caption" data-speed="0.5" data-fade="true">
-                <div class="jumbotron-custom jumbotron-custom-variant-1 context-dark">
+			
 
-				 </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
-  </section> 
+		
+  </section>
   
   <section class="section section-lg bg-white novi-background bg-image">
     <div class="container">
