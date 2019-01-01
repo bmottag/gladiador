@@ -156,10 +156,17 @@ class Dashboard extends CI_Controller {
 			
 			$msj = "You have add a new skill!!";
 			if ($idUser != '') {
-				$msj = "Se actualizó el Psicólogo.";
+				$msj = "Se actualizó el Psicólogo y se envió correo con la información para ingresar al sistema.";
 			}
 
-			if ($this->dashboard_model->saveAprobado()) {
+			if ($this->dashboard_model->saveAprobado()) 
+			{
+				//se se APRUEBA entonces se envia correo al psicologo con los datos de ingreso
+				$estado = $this->input->post('state');
+				if($estado == 1){
+					$this->email($idUser); //envio correo
+				}
+				
 				$data["result"] = true;
 				$this->session->set_flashdata('retornoExito', $msj);
 			} else {
@@ -241,83 +248,47 @@ class Dashboard extends CI_Controller {
 	}
 	
 	/**
-	 * Evio de correo al usuario 
-     * @since 5/6/2018
-     * @author BMOTTAG
+     * @since /1/2019
+	 * Evio de correo al psicologo con la contraseña
 	 */
-	public function email($idSolicitud, $estado)
+	public function email($idUsuario)
 	{
 			$this->load->model("general_model");
-			//busco informacion de la solicitud en la base de datos
-			$arrParam = array("idSolicitud" => $idSolicitud);
-			$information = $this->general_model->get_solicitudes($arrParam);//info solicitud
-				
-			$subjet = "Información reserva - ZONA 2";
-			$user = $information[0]["first_name"] . ' ' . $information[0]["last_name"];
-			$to = $information[0]["email"];
+			
+			$arrParam = array("idUser" => $idUsuario);
+			$infoUsuario = $this->general_model->get_info_psicologo($arrParam);//info psicologo
+			
+			$subjet = "Ingreso al sistema - TuApoyo";
+			$user = $infoUsuario["name"];
+			$to = $infoUsuario["email"];
 		
 			//mensaje del correo
-			$msj = "<p>Información de su reserva:</p>";
-			$msj .= "<strong>Estado: </strong>";
-			switch ($estado) {
-				case 1:
-					$msj .= 'Nueva';
-					break;
-				case 2:
-					$msj .= 'Eliminada';
-					break;
-				case 3:
-					$msj .= 'Modificada';
-					break;
-			}
-			$msj .= "<br><strong>Usuario que reserva: </strong>" . $information[0]["first_name"] . ' ' . $information[0]["last_name"];
-			$msj .= "<br><strong>Hora inicial: </strong>" . $information[0]["hora_inicial_24"];
-			$msj .= "<br><strong>Hora final: </strong>" . $information[0]["hora_final_24"];
-			$msj .= "<br><strong>Prueba: </strong>" . $information[0]["examen"] . " - ";
-			
-			if($information[0]['fk_id_prueba'] == 69){
-				$msj .= $information[0]['cual_prueba'];
-				$msj .= " <strong>Grupo items: </strong>" . $information[0]['cual'];
-			}else{
-				$msj .= " <strong>Grupo items: </strong>" . $information[0]['prueba'];
-			}
-			
-			$msj .= "<br><strong>No. items: </strong>";
-
-			if (99 == $information[0]["numero_items"])
-			{ 
-				$msj .= 'Sin definir'; 
-			}else{
-				$msj .= $information[0]['numero_items'];
-			}
-			
-			$msj .= "<br><strong>Tipificación: </strong>" . $information[0]["tipificacion"];
-			$msj .= "<br><strong>No. computadores reservados: </strong>" . $information[0]["numero_computadores"];
-			$msj .= "<br><strong>Fecha reserva: </strong>" . $information[0]["fecha_apartado"];
-			
+			$msj = "<p>Los datos para ingresar a TuApoyo son los siguientes:</p>";
+			$msj .= "<br><strong>Usuario: </strong>" . $to;
+			$msj .= "<br><strong>Contraseña: </strong> 123456";
+			$msj .= "<br><br><strong><a href='http://tuapoyo.com.co/login'>Enlace Aplicación </a></strong><br>";
+				
 			$mensaje = "<html>
-			<head>
-			  <title> $subjet </title>
-			</head>
-			<body>
-				<p>Señor(a)	$user:</p>
-				<p>$msj</p>
-				<p>Cordialmente,</p>
-				<p><strong>Administrador aplicativo de ZONA 2</strong></p>
-			</body>
-			</html>";
-			
+						<head>
+						  <title> $subjet </title>
+						</head>
+						<body>
+							<p>Señor(a): $user</p>
+							<p>$msj</p>
+							<p>Cordialmente,</p>
+							<p><strong>Administrador aplicativo TuApoyo</strong></p>
+						</body>
+						</html>";
+						
 			$cabeceras  = 'MIME-Version: 1.0' . "\r\n";
 			$cabeceras .= 'Content-type: text/html; charset=iso-8859-1' . "\r\n";
 			$cabeceras .= 'To: ' . $user . '<' . $to . '>' . "\r\n";
-			$cabeceras .= 'From: APP ZONA 2 <administrador@operativoicfes.com>' . "\r\n";
-			$cabeceras .= 'Cc: jelozanoo@gmail.com \r\n';
+			$cabeceras .= 'From: TuApoyo <admin@tuapoyo.com.co>' . "\r\n";
 
-			//enviar correo al cliente
+			//enviar correo
 			mail($to, $subjet, $mensaje, $cabeceras);
-			
-			return true;
 	}
+
 	
 	
 	
