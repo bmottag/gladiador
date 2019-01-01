@@ -71,14 +71,9 @@
 							</div>
 							<div class="col-xs-12 bottom text-center">
 								<div class="col-xs-12 col-sm-12 emphasis">
-									<button type="button" class="btn btn-success btn-xs"> 
-										<i class="fa fa-comments-o"></i> Contactar
-									</button>
-
 									
 <a class="btn btn-xs btn-primary" href="<?php echo base_url() . 'paciente/infoPsicologo/' . $data['id_user'] . '/' . $idPaciente; ?>"><span class="fa fa-user" aria-hidden="true"></span> Ver Perfil </a>
-									
-									
+																		
 								</div>
 							</div>
 						</div>

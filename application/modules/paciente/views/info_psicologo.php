@@ -53,14 +53,6 @@ if ($retornoError) {
 						<h4><strong><?php echo $information['name']; ?></strong></h4>
 					
 						<ul class="list-unstyled user_data">
-
-							<li>
-								<i class="fa fa-envelope user-profile-icon"></i> <strong>Correo:</strong><br> <?php echo $information['email']; ?>
-							</li>
-							
-							<li>
-								<i class="fa fa-phone user-profile-icon"></i> <strong>No. celular:</strong><br> <?php echo $information['movil']; ?>
-							</li>
 							
 							<li>
 								<i class="fa fa-map-marker user-profile-icon"></i> <strong>Dirección consultorio:</strong><br> <?php echo $information['direccion']; ?>
@@ -75,6 +67,8 @@ if ($retornoError) {
 							<div class="btn-group">
 
 								<a class="btn btn-sm btn-primary" href="<?php echo base_url() . 'paciente/info/' . $idPaciente; ?>"><span class="fa fa-reply" aria-hidden="true"></span> Regresar </a>
+								
+								<a class="btn btn-sm btn-success" href="<?php echo base_url() . 'paciente/contactar/' . $idPsicologo . '/' . $idPaciente; ?>"><span class="fa fa-level-down" aria-hidden="true"></span> Contactar </a>
 
 							</div>
 						</div>

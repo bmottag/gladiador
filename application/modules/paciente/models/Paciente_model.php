@@ -164,7 +164,40 @@
 				}
 		}
 
+		/**
+		 * Delete Record
+		 * @since 25/5/2017
+		 */
+		public function deleteRegistrosAnteriores($arrDatos) 
+		{
+				$query = $this->db->delete('contactar', array('fk_id_paciente' => $arrDatos ["idPaciente"], 'fk_id_user' => $arrDatos ["idPsicologo"])); 
+
+				if ($query) {
+					return true;
+				} else {
+					return false;
+				}
+		}
 		
+		/**
+		 * Add CONTACTAR
+		 * @since 1/1/2019
+		 */
+		public function saveContactar($idPaciente, $idPsicologo)
+		{				
+				$data = array(
+					'fk_id_paciente' => $idPaciente,
+					'fk_id_user' => $idPsicologo,
+				);	
+
+				$query = $this->db->insert('contactar', $data);
+
+				if ($query) {
+					return true;
+				} else {
+					return false;
+				}
+		}		
 		
 	    
 	}

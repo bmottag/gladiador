@@ -45,6 +45,7 @@ class Paciente extends MX_Controller {
 		$this->load->model("general_model");
 
 		$data['idPaciente'] = $idPaciente;
+		$data['idPsicologo'] = $idPsicologo;
 		
 		$arrParam = array("idUser" => $idPsicologo);
 		$data['information'] = $this->general_model->get_info_psicologo($arrParam);//info psicologo
@@ -563,6 +564,39 @@ if($bandera)
 			}
 		
 			return true;
+	}
+	
+	/**
+	 * mensaje para contactar psicolgoo
+	 */
+	public function contactar($idPsicologo, $idPaciente)
+	{
+			$this->load->model("general_model");
+			
+			//elimino registros anteriores
+			$arrParam = array(
+				"idPsicologo" => $idPsicologo,
+				"idPaciente" => $idPaciente
+			);
+			$this->paciente_model->deleteRegistrosAnteriores($arrParam);
+			
+			//guardar informacion de contactar en la base de datos
+			$this->paciente_model->saveContactar($idPaciente, $idPsicologo);
+			
+			$arrParam = array("idUser" => $idPsicologo);
+			$information = $this->general_model->get_info_psicologo($arrParam);//info psicologo
+
+			$data['linkBack'] = "paciente/infoPsicologo/" . $idPsicologo . "/" . $idPaciente;
+			$data['titulo'] = "<i class='fa fa-users fa-fw'></i>Información de cotacto del Psicólogo";
+			$data['boton'] = "<span class='glyphicon glyphicon glyphicon-chevron-left' aria-hidden='true'></span> Regresar";
+			
+			$data["msj"] = "<br><strong>Nombre: </strong>". $information['name'];
+			$data["msj"] .= "<br><strong>No. celular: </strong>" . $information['movil'];
+			$data["msj"] .= "<br><strong>Correo: </strong>" . $information['email'];
+			$data["clase"] = "alert-success";
+						
+			$data["view"] = "template/answer";
+			$this->load->view("layout_forms", $data);
 	}
 
 	
