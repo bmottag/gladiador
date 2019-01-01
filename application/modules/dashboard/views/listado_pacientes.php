@@ -45,7 +45,6 @@ if ($retornoError) {
 
 							<thead>
 								<tr class="headings">
-								<th class="column-title">ID </th>
 								<th class="column-title">Correo</th>
 								<th class="column-title">No. Celular</th>
 								<th class="column-title">Enlaces</th>
@@ -58,13 +57,13 @@ if ($retornoError) {
 			if($information){
 				foreach ($information as $data):
 					echo "<tr>";
-					echo "<td class='text-center'>" . $data['id_paciente'] . "</td>";
 					echo "<td>" . $data['email_paciente'] . "</td>";
 					echo "<td>" . $data['movil_paciente'] . "</td>";
 					
 					echo "<td class='text-center'>";
 					echo "<a href='" . base_url("dashboard/ver_paciente/" . $data['id_paciente']) . "' class='btn btn-success btn-xs'><i class='fa fa-eye'></i> Ver </a>";
 					echo "<a href='" . base_url("dashboard/match/" . $data['id_paciente']) . "' class='btn btn-danger btn-xs'><i class='fa fa-share-alt'></i> Match </a>";
+					echo "<a href='" . base_url("dashboard/contactados/" . $data['id_paciente']) . "' class='btn btn-warning btn-xs'><i class='fa fa-random'></i> Psicólogos contactados </a>";
 					echo "</td>";
 					echo "</tr>";
 				endforeach;
