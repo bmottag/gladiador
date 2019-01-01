@@ -92,6 +92,10 @@ if ($retornoError) {
 								$valor = 'Inactivo';
 								$clase = "text-danger";
 								break;
+							default:
+								$valor = 'Nuevo';
+								$clase = "text-warning";
+								break;
 						}
 						echo '<p class="' . $clase . '"><strong>' . $valor . '</strong></p>';
 					echo "</td>";
