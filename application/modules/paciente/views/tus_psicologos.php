@@ -27,7 +27,36 @@
 							<div class="col-sm-12">
 								<div class="left col-xs-7">
 									<h2><?php echo $data['name']; ?></h2>
-									<p><strong>Por qué quiero ayudarte? </strong> <?php echo $data['ayudarte']; ?> </p>
+									<p><strong>Por qué quiero ayudarte? </strong><br> <?php echo $data['ayudarte']; ?> </p>
+									<p><strong>Especialidades del Psicólogo:</strong><br> 
+									<?php 									
+										$valores = array(
+											"ansiedad" => $data['especialidad_ansiedad'],
+											"depresion" => $data['especialidad_depresion'],
+											"sustancias" => $data['especialidad_sustancias'],
+											"salud" => $data['especialidad_salud'],
+											"autoestima" => $data['especialidad_autoestima'],
+											"pareja" => $data['especialidad_pareja'],
+											"suicidio" => $data['especialidad_suicidio']
+										);
+										
+										arsort($valores);//organizo especialidades por mejores puntajes 
+
+										//creo un nuevo array para que quede con el nombre de la variable
+										$nuevoArrary = array();
+										$i = 0;
+										foreach ($valores as $key => $val) {
+											 $nuevoArrary[$i] = ucwords($key);
+											 $i++;
+										}
+
+										//imprimo los tres primeros valores
+										for($i=0; $i<3; $i++)
+										{
+											  echo $nuevoArrary[$i] . "<br>";
+										}
+									?> 
+									</p>
 								</div>
 								<div class="right col-xs-5 text-center">
 			<?php 
