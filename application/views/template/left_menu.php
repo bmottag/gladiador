@@ -80,7 +80,7 @@
 	  <a data-toggle="tooltip" data-placement="top" title="FullScreen">
 		<span class="glyphicon glyphicon-fullscreen" aria-hidden="true"></span>
 	  </a>
-	  <a data-toggle="tooltip" data-placement="top" title="Home" href="<?php echo base_url("dashboard"); ?>">
+	  <a data-toggle="tooltip" data-placement="top" title="Home" href="<?php echo base_url(); ?>">
 		<span class="glyphicon glyphicon-home" aria-hidden="true"></span>
 	  </a>
 	  <a data-toggle="tooltip" data-placement="top" title="Logout" href="<?php echo base_url("menu/salir"); ?>">
