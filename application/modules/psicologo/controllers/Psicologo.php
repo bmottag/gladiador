@@ -67,6 +67,9 @@ class Psicologo extends MX_Controller {
 				if ($idUser = $this->psicologo_model->saveUsuario()) 
 				{
 					$this->psicologo_model->savePsicologo($idUser); //Guardo info psicologo
+
+					//envio correo al adminstrador que se creo un nuevo psicologo
+					$this->email($idUser); //envio correo
 					
 					$data["result"] = true;
 					$data["idRecord"] = $idUser;
@@ -141,6 +144,47 @@ class Psicologo extends MX_Controller {
 			$data["view"] = 'template/form_psicologo';
 			$this->load->view("layout", $data);
 	}
+	
+	
+	/**
+	 * Evio de correo al administrador que se creo un nuevo psicologo
+     * @since 1/1/2019
+     * @author BMOTTAG
+	 */
+	public function email($idUser)
+	{
+			$this->load->model("general_model");
+				
+			$subjet = "Nuevo asociado registrado - TuApoyo";
+			$user = 'Administrador';
+			$to = 'admin@tuapoyo.com.co';
+		
+			//mensaje del correo
+			$msj = "<p>Un nuevo asociado se registro en la aplicacion TuApoyo debe ingresar a sistema y aprobar el Psicólogo para que este pueda ingresar.</p>";
+			
+			$mensaje = "<html>
+			<head>
+			  <title> Nuevo asociado </title>
+			</head>
+			<body>
+				<p>Señor(a)	ADMINISTRADOR:</p>
+				<p>$msj</p>
+				<p>Cordialmente,</p>
+				<p><strong>Administrador aplicativo TuApoyo</strong></p>
+			</body>
+			</html>";
+			
+			$cabeceras  = 'MIME-Version: 1.0' . "\r\n";
+			$cabeceras .= 'Content-type: text/html; charset=iso-8859-1' . "\r\n";
+			$cabeceras .= 'To: ' . $user . '<' . $to . '>' . "\r\n";
+			$cabeceras .= 'From: TuApoyo <admin@tuapoyo.com.co>' . "\r\n";
+
+			//enviar correo al cliente
+			mail($to, $subjet, $mensaje, $cabeceras);
+			
+			return true;
+	}
+
 	
 
 	
