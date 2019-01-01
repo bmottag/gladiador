@@ -34,7 +34,7 @@
                 <div class="rd-navbar-panel-background-inner novi-background"></div>
               </div>
               <button class="rd-navbar-toggle" data-rd-navbar-toggle=".rd-navbar-nav-wrap"><span></span></button>
-              <div class="rd-navbar-brand"><a class="brand-name" href="index.html"><img src="<?php echo base_url("images/logo.png"); ?>" alt="" width="250" height="55"></a></div>
+              <div class="rd-navbar-brand"><a class="brand-name" href="<?php echo base_url(); ?>"><img src="<?php echo base_url("images/logo.png"); ?>" alt="" width="250" height="55"></a></div>
             </div>
             <div class="rd-navbar-nav-wrap">
               <div class="rd-navbar-nav-wrap-bg">
@@ -56,12 +56,12 @@
             <div class="swiper-slide">
               <div class="swiper-slide-caption" data-speed="0.5" data-fade="true">
                 <div class="jumbotron-custom jumbotron-custom-variant-1 context-dark">
-                  <h1 data-caption-animate="fxRotateInRight" data-caption-delay="150" class="fxRotateInRight animated"><span data-novi-id="68">Porque tu tranquilidad va primero</span></h1>
+                  <h1 data-caption-animate="fxRotateInRight" data-caption-delay="150" class="fxRotateInRight animated"><span data-novi-id="68">Porque tu tranquilidad <br>va primero</span></h1>
                   <p class="subtitle-variant-3 fxRotateInLeft animated" data-caption-animate="fxRotateInLeft" data-caption-delay="350"><span data-novi-id="69">
 TuApoyo es la plataforma que encuentra al psicólogo más adecuado para tu situación,
 <br>para que puedas sobrepasar las épocas de crisis por las que todos pasamos.
 				  </span></p>
-                  <a class="btn btn-primary btn-lg btn-aqil btn-aqil--mod-1" href="<?php echo base_url("home/encontrar_psicologo"); ?>" data-caption-animate="fxRotateInRight" data-caption-delay="550"><span>Encontrar mi Psicólogos</span></a></div>
+                  <a class="btn btn-primary btn-lg btn-aqil btn-aqil--mod-1" href="<?php echo base_url("home/encontrar_psicologo"); ?>" data-caption-animate="fxRotateInRight" data-caption-delay="550"><span>Encontrar mi Psicólogo</span></a></div>
               </div>
             </div>
           </div>
@@ -76,7 +76,7 @@ TuApoyo es la plataforma que encuentra al psicólogo más adecuado para tu situa
     
         <div class="col-sm-10 col-lg-6">
           <div class="feature-box-3">
-            <h3>Si BUSCAS psicólogo en Bogotá..</h3>
+            <h3>Buscas Psicólogo?</h3>
 			</div>
         </div>
       
@@ -87,7 +87,7 @@ TuApoyo es la plataforma que encuentra al psicólogo más adecuado para tu situa
           <article class="box-minimal unit unit-xs-horizontal unit-spacing-sm">
             <div class="unit-left">
               <div class="box-minimal-icon">
-                <div class="novi-icon fl-bigmug-line-headphones32 text-purple"></div>
+                <div class="novi-icon fl-bigmug-line-add137 text-purple"></div>
               </div>
             </div>
             <div class="unit-body pad-left-35">
@@ -100,7 +100,7 @@ TuApoyo es la plataforma que encuentra al psicólogo más adecuado para tu situa
           <article class="box-minimal unit unit-xs-horizontal unit-spacing-sm">
             <div class="unit-left">
               <div class="box-minimal-icon">
-                <div class="novi-icon fl-bigmug-line-two317 text-purple"></div>
+                <div class="novi-icon fl-bigmug-line-pencil85 text-purple"></div>
               </div>
             </div>
             <div class="unit-body pad-left-35">
@@ -126,7 +126,7 @@ TuApoyo es la plataforma que encuentra al psicólogo más adecuado para tu situa
           <article class="box-minimal unit unit-xs-horizontal unit-spacing-sm">
             <div class="unit-left">
               <div class="box-minimal-icon">
-                <div class="novi-icon fl-bigmug-line-cube29 text-purple"></div>
+                <div class="novi-icon fl-bigmug-line-chat51 text-purple"></div>
               </div>
             </div>
             <div class="unit-body pad-left-35">
@@ -140,7 +140,7 @@ TuApoyo es la plataforma que encuentra al psicólogo más adecuado para tu situa
 	  
         <div class="col-sm-10 col-lg-6">
           <div class="feature-box-3">
-            <h3>Si eres psicólogo en Bogotá...</h3>
+            <h3>Eres psicólogo? </h3>
 			</div>
         </div>
       
@@ -150,51 +150,12 @@ TuApoyo es la plataforma que encuentra al psicólogo más adecuado para tu situa
           <article class="box-minimal unit unit-xs-horizontal unit-spacing-sm">
             <div class="unit-left">
               <div class="box-minimal-icon">
-                <div class="novi-icon fl-bigmug-line-headphones32 text-purple"></div>
-              </div>
-            </div>
-            <div class="unit-body pad-left-35">
-              <h5 class="box-minimal-title"><a href="#">Registrate</a></h5>
-              <div class="box-minimal-text">Crea tu cuenta en TuApoyo a través de Zona Psicólogos</div>
-            </div>
-          </article>
-        </div>
-        <div class="col-sm-6 col-lg-3">
-          <article class="box-minimal unit unit-xs-horizontal unit-spacing-sm">
-            <div class="unit-left">
-              <div class="box-minimal-icon">
                 <div class="novi-icon fl-bigmug-line-two317 text-purple"></div>
               </div>
             </div>
             <div class="unit-body pad-left-35">
-              <h5 class="box-minimal-title"><a href="#">Llena el formato de profesionales asociados</a></h5>
-              <div class="box-minimal-text">De esta manera conocemos cuáles son tus mejores aptitudes y podemos conectarte con los clientes adecuados.</div>
-            </div>
-          </article>
-        </div>
-        <div class="col-sm-6 col-lg-3">
-          <article class="box-minimal unit unit-xs-horizontal unit-spacing-sm">
-            <div class="unit-left">
-              <div class="box-minimal-icon">
-                <div class="novi-icon fl-bigmug-line-cube29 text-purple"></div>
-              </div>
-            </div>
-            <div class="unit-body pad-left-35">
-              <h5 class="box-minimal-title"><a href="#">Espera confirmación</a></h5>
-              <div class="box-minimal-text">El equipo de TuApoyo te contactará para definir tu aprobación.</div>
-            </div>
-          </article>
-        </div>
-        <div class="col-sm-6 col-lg-3">
-          <article class="box-minimal unit unit-xs-horizontal unit-spacing-sm">
-            <div class="unit-left">
-              <div class="box-minimal-icon">
-                <div class="novi-icon fl-bigmug-line-cube29 text-purple"></div>
-              </div>
-            </div>
-            <div class="unit-body pad-left-35">
-              <h5 class="box-minimal-title"><a href="#">Trabaja con TuApoyo</a></h5>
-              <div class="box-minimal-text">Empieza a trabajar con un mejor y mayor número de clientes a través de la plataforma.</div>
+              <h5 class="box-minimal-title"><a href="<?php echo base_url('home/zona_psicologos'); ?>">Zona Psicólogos</a></h5>
+              <div class="box-minimal-text">Dirigete a <a href="<?php echo base_url('home/zona_psicologos'); ?>">Zona Psicólogos</a> y empieza a trabajar como que Psicólogo asociado.</div>
             </div>
           </article>
         </div>
@@ -235,7 +196,7 @@ apoyo emocional; el primer paso para encaminar la recuperación y el crecimiento
           <article class="box-minimal unit unit-xs-horizontal unit-spacing-sm">
             <div class="unit-left">
               <div class="box-minimal-icon">
-                <div class="novi-icon fl-bigmug-line-headphones32 text-purple"></div>
+                <div class="novi-icon fl-bigmug-line-two316 text-purple"></div>
               </div>
             </div>
             <div class="unit-body pad-left-35">
@@ -248,7 +209,7 @@ apoyo emocional; el primer paso para encaminar la recuperación y el crecimiento
           <article class="box-minimal unit unit-xs-horizontal unit-spacing-sm">
             <div class="unit-left">
               <div class="box-minimal-icon">
-                <div class="novi-icon fl-bigmug-line-two317 text-purple"></div>
+                <div class="novi-icon fl-bigmug-line-sunrise3 text-purple"></div>
               </div>
             </div>
             <div class="unit-body pad-left-35">
@@ -261,7 +222,7 @@ apoyo emocional; el primer paso para encaminar la recuperación y el crecimiento
           <article class="box-minimal unit unit-xs-horizontal unit-spacing-sm">
             <div class="unit-left">
               <div class="box-minimal-icon">
-                <div class="novi-icon fl-bigmug-line-cube29 text-purple"></div>
+                <div class="novi-icon fl-bigmug-line-like51 text-purple"></div>
               </div>
             </div>
             <div class="unit-body pad-left-35">

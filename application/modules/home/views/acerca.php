@@ -34,7 +34,7 @@
                 <div class="rd-navbar-panel-background-inner novi-background"></div>
               </div>
               <button class="rd-navbar-toggle" data-rd-navbar-toggle=".rd-navbar-nav-wrap"><span></span></button>
-              <div class="rd-navbar-brand"><a class="brand-name" href="index.html"><img src="<?php echo base_url("images/logo.png"); ?>" alt="" width="250" height="55"></a></div>
+              <div class="rd-navbar-brand"><a class="brand-name" href="<?php echo base_url(); ?>"><img src="<?php echo base_url("images/logo.png"); ?>" alt="" width="250" height="55"></a></div>
             </div>
             <div class="rd-navbar-nav-wrap">
               <div class="rd-navbar-nav-wrap-bg">
@@ -103,7 +103,7 @@ afrontamos y aprendemos de los problemas SI lo indica.</p>
           <article class="box-minimal unit unit-xs-horizontal unit-spacing-sm">
             <div class="unit-left">
               <div class="box-minimal-icon">
-                <div class="novi-icon fl-bigmug-line-headphones32 text-purple"></div>
+                <div class="novi-icon fl-bigmug-line-two316 text-purple"></div>
               </div>
             </div>
             <div class="unit-body pad-left-35">
@@ -116,7 +116,7 @@ afrontamos y aprendemos de los problemas SI lo indica.</p>
           <article class="box-minimal unit unit-xs-horizontal unit-spacing-sm">
             <div class="unit-left">
               <div class="box-minimal-icon">
-                <div class="novi-icon fl-bigmug-line-two317 text-purple"></div>
+                <div class="novi-icon fl-bigmug-line-sunrise3 text-purple"></div>
               </div>
             </div>
             <div class="unit-body pad-left-35">
@@ -129,7 +129,7 @@ afrontamos y aprendemos de los problemas SI lo indica.</p>
           <article class="box-minimal unit unit-xs-horizontal unit-spacing-sm">
             <div class="unit-left">
               <div class="box-minimal-icon">
-                <div class="novi-icon fl-bigmug-line-cube29 text-purple"></div>
+                <div class="novi-icon fl-bigmug-line-like51 text-purple"></div>
               </div>
             </div>
             <div class="unit-body pad-left-35">

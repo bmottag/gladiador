@@ -33,7 +33,7 @@
                 <div class="rd-navbar-panel-background-inner novi-background"></div>
               </div>
               <button class="rd-navbar-toggle" data-rd-navbar-toggle=".rd-navbar-nav-wrap"><span></span></button>
-              <div class="rd-navbar-brand"><a class="brand-name" href="index.html"><img src="<?php echo base_url("images/logo.png"); ?>" alt="" width="250" height="55"></a></div>
+              <div class="rd-navbar-brand"><a class="brand-name" href="<?php echo base_url(); ?>"><img src="<?php echo base_url("images/logo.png"); ?>" alt="" width="250" height="55"></a></div>
             </div>
             <div class="rd-navbar-nav-wrap">
               <div class="rd-navbar-nav-wrap-bg">
