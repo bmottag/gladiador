@@ -268,6 +268,27 @@ class Dashboard extends CI_Controller {
 	}
 	
 	/**
+	 * Lista de pacientes que contactaron al Psicolgos
+     * @since 1/1/2019
+     * @author BMOTTAG
+	 */
+	public function contactados_pacientes($idPsicologo)
+	{			
+		$this->load->model("general_model");
+		$data['ADMIN'] = true;
+		
+		$arrParam = array("idUser" => $idPsicologo);
+		$data['information'] = $this->general_model->get_info_psicologo($arrParam);//info psicologo
+		
+		
+		$arrParam = array("idPsicologo" => $idPsicologo);
+		$data['infoContactados'] = $this->general_model->get_contactados_pacientes($arrParam);//lista de contactados
+				
+		$data["view"] = 'contactados_pacientes';
+		$this->load->view("layout", $data);
+	}
+	
+	/**
      * @since /1/2019
 	 * Evio de correo al psicologo con la contraseña
 	 */

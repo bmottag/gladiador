@@ -106,7 +106,8 @@ if ($retornoError) {
 				</button>				
 <?php
 					echo "<a href='" . base_url("general/edicion_psicologo/" . $data['id_user']) . "' class='btn btn-danger btn-xs'><i class='fa fa-pencil'></i> Editar </a>";
-					echo "<a href='" . base_url("dashboard/ver_psicologo/" . $data['id_user']) . "' class='btn btn-success btn-xs'><i class='fa fa-eye'></i> Ver </a>";					
+					echo "<a href='" . base_url("dashboard/ver_psicologo/" . $data['id_user']) . "' class='btn btn-success btn-xs'><i class='fa fa-eye'></i> Ver </a>";
+					echo "<a href='" . base_url("dashboard/contactados_pacientes/" . $data['id_user']) . "' class='btn btn-warning btn-xs'><i class='fa fa-random'></i> Pacientes </a>";
 					echo "</td>";
 					echo "</tr>";
 				endforeach;

@@ -163,7 +163,12 @@ class General_model extends CI_Model {
 		{
 				$this->db->select('U.*, CONCAT(U.first_name, " " , U.last_name) name');
 				
-				$this->db->where('A.fk_id_paciente', $arrData["idPaciente"]);
+				if (array_key_exists("idPaciente", $arrData)) {
+					$this->db->where('A.fk_id_paciente', $arrData["idPaciente"]);
+				}
+				if (array_key_exists("idPsicologo", $arrData)) {
+					$this->db->where('A.fk_id_user', $arrData["idPsicologo"]);
+				}
 				
 				$this->db->join('user U', 'U.id_user = A.fk_id_user', 'INNER');
 				$this->db->join('paciente P', 'P.id_paciente = A.fk_id_paciente', 'INNER');
@@ -178,7 +183,29 @@ class General_model extends CI_Model {
 		}
 		
 		/**
-		 * Listado de psicologos adecuados para un paciente macimo 3
+		 * Listado de psicologos contactados para un paciente
+		 * @since 1/1/2019
+		 */
+		public function get_contactados_pacientes($arrData) 
+		{
+				$this->db->select('P.*');
+				
+				if (array_key_exists("idPsicologo", $arrData)) {
+					$this->db->where('A.fk_id_user', $arrData["idPsicologo"]);
+				}
+				
+				$this->db->join('paciente P', 'P.id_paciente = A.fk_id_paciente', 'INNER');
+				$query = $this->db->get("contactar A");
+
+				if ($query->num_rows() >= 1) {
+					return $query->result_array();
+				} else {
+					return false;
+				}
+		}
+		
+		/**
+		 * Listado de psicologos adecuados para un paciente maximo 3
 		 * @since 30/12/2018
 		 */
 		public function get_psicologos_adecuados($arrData) 
