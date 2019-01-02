@@ -160,14 +160,14 @@ class Psicologo extends MX_Controller {
 			$to = 'admin@tuapoyo.com.co';
 		
 			//mensaje del correo
-			$msj = "<p>Un nuevo asociado se registro en la aplicacion TuApoyo debe ingresar a sistema y aprobar el Psicólogo para que este pueda ingresar.</p>";
+			$msj = "<p>Un nuevo asociado se registr&oacute; en la aplicaci&oacute;n TuApoyo debe ingresar al sistema y aprobar el Psic&oacute;logo para que este pueda ingresar.</p>";
 			
 			$mensaje = "<html>
 			<head>
 			  <title> Nuevo asociado </title>
 			</head>
 			<body>
-				<p>Señor(a)	ADMINISTRADOR:</p>
+				<p>Se&ntilde;or(a)	ADMINISTRADOR:</p>
 				<p>$msj</p>
 				<p>Cordialmente,</p>
 				<p><strong>Administrador aplicativo TuApoyo</strong></p>
