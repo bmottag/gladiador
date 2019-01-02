@@ -39,6 +39,7 @@
  * @since  23/12/2018
  */
 		$userRol = $this->session->rol;
+		$userID = $this->session->id;
 		if($userRol != 3){ //If it is an ADMIN user, show an special menu
 ?>	
 
@@ -53,6 +54,10 @@
 				  
 				  <li><a href="<?php echo base_url("dashboard/psicologos_desaprobados"); ?>"><i class="fa fa-times"></i> Psicólogo desaprobados </a></li>
 
+<?php
+		}else{
+?>
+				<li><a href="<?php echo base_url("dashboard/contactados_pacientes/" . $userID); ?>"><i class="fa fa-random"></i> Listado Pacientes </a></li>
 <?php
 		}
 ?>
