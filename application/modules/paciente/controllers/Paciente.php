@@ -580,12 +580,18 @@ if($bandera)
 			);
 			$this->paciente_model->deleteRegistrosAnteriores($arrParam);
 			
+			//envio correo al psicologo que se hizo contactacto con el 
+			$this->email_psicologo($arrParam); //envio correo
+			
+			//envio correo al ADMINISTRADOR que se hizo contacto de un paciente con un psicologo
+			$this->email_administrador($arrParam); //envio correo
+			
 			//guardar informacion de contactar en la base de datos
 			$this->paciente_model->saveContactar($idPaciente, $idPsicologo);
 			
-			$arrParam = array("idUser" => $idPsicologo);
-			$information = $this->general_model->get_info_psicologo($arrParam);//info psicologo
-
+			$arrParam2 = array("idUser" => $idPsicologo);
+			$information = $this->general_model->get_info_psicologo($arrParam2);//info psicologo
+			
 			$data['linkBack'] = "paciente/infoPsicologo/" . $idPsicologo . "/" . $idPaciente;
 			$data['titulo'] = "<i class='fa fa-users fa-fw'></i>Información de cotacto del Psicólogo";
 			$data['boton'] = "<span class='glyphicon glyphicon glyphicon-chevron-left' aria-hidden='true'></span> Regresar";
@@ -598,6 +604,102 @@ if($bandera)
 			$data["view"] = "template/answer";
 			$this->load->view("layout_forms", $data);
 	}
+	
+	/**
+	 * Evio de correo al administrador que se creo un nuevo psicologo
+     * @since 1/1/2019
+     * @author BMOTTAG
+	 */
+	public function email_administrador($arrData)
+	{
+			$this->load->model("general_model");
+			
+			$arrParam = array("idUser" => $arrData["idPsicologo"]);
+			$infoPsicologo = $this->general_model->get_info_psicologo($arrParam);//info psicologo
+			
+			$arrParam = array("idPaciente" => $arrData["idPaciente"]);
+			$infoPaciente = $this->general_model->get_info_paciente($arrParam);//info paciente
+							
+			$subjet = "Contacto - TuApoyo";
+			$user = 'Administrador';
+			$to = 'admin@tuapoyo.com.co';
+
+			//mensaje del correo
+			$msj = "<p>Un Paciente consult&oacute; el contacto de un Psic&oacute;logo.</p>";
+			$msj .= "<br><strong>Paciente: </strong>" . $infoPsicologo['name'];
+			$msj .= "<br><strong>Psic&oacute;logo: </strong>" . $infoPaciente['email_paciente'];
+			$msj .= "<br><br><strong><a href='http://tuapoyo.com.co/login'>Enlace Aplicaci&oacute;n </a></strong><br>";
+			
+			$mensaje = "<html>
+			<head>
+			  <title> $subjet </title>
+			</head>
+			<body>
+				<p>Se&ntilde;or(a)	ADMINISTRADOR:</p>
+				<p>$msj</p>
+				<p>Cordialmente,</p>
+				<p><strong>Administrador aplicativo TuApoyo</strong></p>
+			</body>
+			</html>";
+			
+			$cabeceras  = 'MIME-Version: 1.0' . "\r\n";
+			$cabeceras .= 'Content-type: text/html; charset=iso-8859-1' . "\r\n";
+			$cabeceras .= 'To: ' . $user . '<' . $to . '>' . "\r\n";
+			$cabeceras .= 'From: TuApoyo <admin@tuapoyo.com.co>' . "\r\n";
+
+			//enviar correo al cliente
+			mail($to, $subjet, $mensaje, $cabeceras);
+			
+			return true;
+	}
+	
+	/**
+	 * Evio de correo al administrador que se creo un nuevo psicologo
+     * @since 1/1/2019
+     * @author BMOTTAG
+	 */
+	public function email_psicologo($arrData)
+	{
+			$this->load->model("general_model");
+			
+			$arrParam = array("idUser" => $arrData["idPsicologo"]);
+			$infoPsicologo = $this->general_model->get_info_psicologo($arrParam);//info psicologo
+			
+			$arrParam = array("idPaciente" => $arrData["idPaciente"]);
+			$infoPaciente = $this->general_model->get_info_paciente($arrParam);//info paciente
+						
+			$subjet = "Contacto - TuApoyo";
+			$user = $infoPsicologo["name"];
+			$to = $infoPsicologo["email"];
+			$to = "benmotta@gmail.com";
+		
+			//mensaje del correo
+			$msj = "<p>Un Paciente registrado en TuApoyo consultó sus datos de contacto.</p>";
+			$msj .= "<br><strong>Paciente: </strong>" . $infoPaciente["email_paciente"];
+			$msj .= "<br><strong>No. Celular: </strong>" . $infoPaciente["movil_paciente"];
+			$msj .= "<br><br><strong><a href='http://tuapoyo.com.co/login'>Enlace Aplicación </a></strong><br>";
+				
+			$mensaje = "<html>
+						<head>
+						  <title> $subjet </title>
+						</head>
+						<body>
+							<p>Señor(a): $user</p>
+							<p>$msj</p>
+							<p>Cordialmente,</p>
+							<p><strong>Administrador aplicativo TuApoyo</strong></p>
+						</body>
+						</html>";
+						
+			$cabeceras  = 'MIME-Version: 1.0' . "\r\n";
+			$cabeceras .= 'Content-type: text/html; charset=iso-8859-1' . "\r\n";
+			$cabeceras .= 'To: ' . $user . '<' . $to . '>' . "\r\n";
+			$cabeceras .= 'From: TuApoyo <admin@tuapoyo.com.co>' . "\r\n";
+
+			//enviar correo
+			mail($to, $subjet, $mensaje, $cabeceras);
+	}
+
 
 	
 }
