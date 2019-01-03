@@ -671,7 +671,6 @@ if($bandera)
 			$subjet = "Contacto - TuApoyo";
 			$user = $infoPsicologo["name"];
 			$to = $infoPsicologo["email"];
-			$to = "benmotta@gmail.com";
 		
 			//mensaje del correo
 			$msj = "<p>Un Paciente registrado en TuApoyo consultó sus datos de contacto.</p>";
