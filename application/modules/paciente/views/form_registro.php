@@ -92,7 +92,7 @@ certeza de cuáles son los psicólogos adecuados para ti. Ten la tranquilidad qu
 es confidencial y privada.  </p>
        </div>
            <div class="modal-footer">
-          <a href="#" data-dismiss="modal" class="btn btn-danger">Comenzar ya!</a>
+          <a href="#" data-dismiss="modal" class="btn btn-primary">Comenzar ya!</a>
            </div>
       </div>
    </div>

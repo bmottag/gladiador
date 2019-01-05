@@ -47,26 +47,26 @@
         </nav>
       </div>
     </header>
-    <section>
+	
+    <section class="section-md text-center vide_bg bg-gray-dark " data-vide-bg="mp4: <?php echo base_url('images/video.mp4'); ?>, poster: images/slide-26-2.jpg" data-vide-options="posterType: jpg">
       <div class="swiper-bg-wrap swiper-style-1">
         <div class="swiper-container swiper-slider swiper-bg swiper-height-1" data-autoplay="false" data-slide-effect="fade">
           <div class="swiper-wrapper">
-            <div class="swiper-slide" data-slide-bg="<?php echo base_url("images/slide-48.jpg"); ?>">
+            <div class="swiper-slide">
               <div class="swiper-slide-caption" data-speed="0.5" data-fade="true">
                 <div class="jumbotron-custom jumbotron-custom-variant-1 context-dark">
-
                   <p class="subtitle-variant-3 fxRotateInLeft animated" data-caption-animate="fxRotateInLeft" data-caption-delay="350"><span data-novi-id="69">
 Trabaja como psicólogo asociado de TuApoyo y obtén un mayor y mejor número de clientes.
 				  </span></p>
                   <a class="btn btn-primary btn-lg btn-aqil btn-aqil--mod-1" href="<?php echo base_url("home/psicologos"); ?>" data-caption-animate="fxRotateInRight" data-caption-delay="550"><span>Registro nuevos</span></a>
 				  <a class="btn btn-primary btn-lg btn-aqil btn-aqil--mod-1" href="<?php echo base_url("login"); ?>" data-caption-animate="fxRotateInRight" data-caption-delay="550"><span>Inicio sesión</span></a>
-				 </div>
               </div>
             </div>
           </div>
         </div>
       </div>
     </section>
+	
   </section>
 
   <footer class="page-footer">
