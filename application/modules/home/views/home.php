@@ -180,7 +180,7 @@ adecuado o porque simplemente nos da pena pedirla.</p>
 apoyo emocional; el primer paso para encaminar la recuperación y el crecimiento personal.</p>
 			</div>
         </div>
-        <div class="col-sm-10 col-lg-6"><img src="<?php echo base_url("images/img-01.png"); ?>" alt="" class="img-responsive"></div>
+        <div class="col-sm-10 col-lg-6"><img src="<?php echo base_url("images/principal.jpg"); ?>" alt="" class="img-responsive"></div>
       </div>
 	  
 

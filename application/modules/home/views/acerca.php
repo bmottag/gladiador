@@ -68,7 +68,7 @@ problemas y obstáculos NO indica qué tipo de persona somos, mientras que la ma
 afrontamos y aprendemos de los problemas SI lo indica.</p>
 			</div>
         </div>
-        <div class="col-sm-10 col-lg-6"><img src="<?php echo base_url("images/img-01.png"); ?>" alt="" class="img-responsive"></div>
+        <div class="col-sm-10 col-lg-6"><img src="<?php echo base_url("images/acerca.jpg"); ?>" alt="" class="img-responsive"></div>
       </div>
 	  
 
