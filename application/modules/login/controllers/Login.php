@@ -139,7 +139,7 @@ class Login extends MX_Controller {
 
 			$arrParam = array("llave" => $valor);
 			$user = $this->login_model->validateLoginKey($arrParam);//brings user information from user table
-					
+
 			if (($user["valid"] == true)) {
 				$sessionData = array(
 					"auth" => "OK",
@@ -150,10 +150,11 @@ class Login extends MX_Controller {
 					"logUser" => $user["logUser"],
 					"state" => 99,
 					"rol" => $user["rol"],
-					"photo" => $user["photo"]
+					"photo" => $user["photo"],
+					"aprobado" => $user["aprobado"]
 				);
 				$this->session->set_userdata($sessionData);
-				
+
 				$this->login_model->redireccionarUsuario();			
 			}else{					
 				$data["msj"] = "<strong>Error</strong> datos incorrectos.";
@@ -206,7 +207,7 @@ class Login extends MX_Controller {
 			$cabeceras  = 'MIME-Version: 1.0' . "\r\n";
 			$cabeceras .= 'Content-type: text/html; charset=iso-8859-1' . "\r\n";
 			$cabeceras .= 'To: ' . $user . '<' . $to . '>' . "\r\n";
-			$cabeceras .= 'From: TuApoyo <admin@thibot.com>' . "\r\n";
+			$cabeceras .= 'From: TuApoyo <admin@tuapoyo.com.co>' . "\r\n";
 
 			//enviar correo al cliente
 			mail($to, $subjet, $mensaje, $cabeceras);

@@ -138,6 +138,7 @@
 						$user["state"] = $row->state;
 						$user["rol"] = $row->fk_id_rol;
 						$user["photo"] = $row->photo;
+						$user["aprobado"] = $row->aprobado;
 	    		}
 	    	}
 			
