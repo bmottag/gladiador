@@ -478,8 +478,8 @@
   color: #fff;
   font-weight: 700;
   text-transform: uppercase;
-  font-family: 'Montserrat', sans-serif;
-  font-size: 50px;
+  font-family: 'Calibri', sans-serif; /* font-family: 'Montserrat', sans-serif; */
+  font-size: 60px;
   letter-spacing: 1.5px;
   
 }

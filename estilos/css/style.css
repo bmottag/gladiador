@@ -2357,7 +2357,7 @@ html.lt-ie-10 .range>[class*="cell-lg-preffix-"] {
 body {
   -webkit-text-size-adjust: none;
   -webkit-font-smoothing: subpixel-antialiased;
-  font-family: "Roboto", sans-serif;
+  font-family: "Calibri", sans-serif; /* font-family: "Roboto", sans-serif; */
   font-weight: 300;
   letter-spacing: .05em;
 }
@@ -2976,7 +2976,7 @@ code {
 
 @media (min-width: 768px) {
   .subtitle-variant-3 {
-    font-size: 18px;
+    font-size: 20px;
   }
 }
 
