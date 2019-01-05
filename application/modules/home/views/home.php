@@ -319,7 +319,7 @@ apoyo emocional; el primer paso para encaminar la recuperación y el crecimiento
             <div class="brand-sm"><a href="<?php echo base_url(); ?>"><img src="<?php echo base_url("images/logo.png"); ?>" alt=""></a></div>
           </div>
           <div class="col-lg-6 text-xl-right">
-            <p class="rights">© TuApoyo - All rights reserved.</p>
+            <p class="rights">© TuApoyo - Todos los derechos reservados.</p>
           </div>
         </div>
       </div>

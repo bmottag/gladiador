@@ -127,76 +127,41 @@ afrontamos y aprendemos de los problemas SI lo indica.</p>
     <section class="section pre-footer-minimal bg-style-1 novi-background bg-image">
       <div class="pre-footer-minimal-inner">
         <div class="container text-center text-sm-left">
-          <div class="row justify-content-sm-center spacing-55">
+          <div class="row spacing-55">
             <div class="col-sm-12 col-lg-4">
               <div class="footer-links style-2">
-                <h6>Contact Us</h6>
+                <h6>Contacto</h6>
                 <hr class="divider-sm divider-left divider-purple" data-caption-animate="fadeInLeftSmall" data-caption-delay="50">
-                <p>Let's make the sed odio sit amet a curabitur pulvinar luctus malesuada fames odio your complete solution partner.</p>
                 <ul class="addresss-info mar-top-2">
                   <li><i class="fa fa-map-marker"></i>
-                    <p>5353 S Lake Ave #789, Los Angeles, CA 91152, USA</p>
+                    <p>Calle 92 No. 16 - 11, Bogotá, Colombia</p>
                   </li>
-                  <li><i class="fa fa-phone"></i><a href="callto:#">+1 (123) 456 7890</a></li>
-                  <li><i class="fa fa-envelope-o"></i><a href="mailto:#">info@yourdomain.com</a></li>
-                </ul>
-                <ul class="inline-list-xxs mar-top-2">
-                  <li><a class="icon novi-icon icon-xxs icon-circle icon-gray-outline icon-effect-1 fa fa-instagram" href="#"></a></li>
-                  <li><a class="icon novi-icon icon-xxs icon-circle icon-gray-outline icon-effect-1 fa fa-facebook" href="#"></a></li>
-                  <li><a class="icon novi-icon icon-xxs icon-circle icon-gray-outline icon-effect-1 fa fa-twitter" href="#"></a></li>
-                  <li><a class="icon novi-icon icon-xxs icon-circle icon-gray-outline icon-effect-1 fa fa-google-plus" href="#"></a></li>
-                </ul>
-              </div>
-            </div>
-            <div class="col-sm-12 col-lg-4">
-              <div class="footer-links style-2">
-                <h6>Recent Posts</h6>
-                <hr class="divider-sm divider-left divider-purple" data-caption-animate="fadeInLeftSmall" data-caption-delay="50">
-                <ul class="recent-posts">
-                  <li>
-                    <div class="mini-post-img"><a href="#"><img src="<?php echo base_url("images/site-img25-1-4.jpg"); ?>" alt=""></a></div>
-                    <div class="post-content"><a href="#">The reasons lorem ipsum dolor</a>
-                      <time class="text-secondary">Aug 16, 2018</time>
-                    </div>
-                  </li>
-                  <li>
-                    <div class="mini-post-img"><a href="#"><img src="<?php echo base_url("images/site-img26-4.jpg"); ?>" alt=""></a></div>
-                    <div class="post-content"><a href="#">The reasons lorem ipsum dolor</a>
-                      <time class="text-secondary">Aug 16, 2018</time>
-                    </div>
-                  </li>
-                  <li>
-                    <div class="mini-post-img"><a href="#"><img src="<?php echo base_url("images/site-img27-1.jpg"); ?>" alt=""></a></div>
-                    <div class="post-content"><a href="#">The reasons lorem ipsum dolor</a>
-                      <time class="text-secondary">Aug 16, 2018</time>
-                    </div>
-                  </li>
+                  <li><i class="fa fa-phone"></i><a href="callto:+573175029882">+(57) 317 502 9882</a></li>
+                  <li><i class="fa fa-envelope-o"></i><a href="mailto:admin@tuapoyo.com.co">admin@tuapoyo.com.co</a></li>
                 </ul>
               </div>
             </div>
             <div class="col-sm-4 col-lg-2">
               <div class="footer-links style-2">
-                <h6>Navigation</h6>
+                <h6>Enlaces</h6>
                 <hr class="divider-sm divider-left divider-purple" data-caption-animate="fadeInLeftSmall" data-caption-delay="50">
                 <ul>
-                  <li><a href="#">Home</a></li>
-                  <li><a href="#">About us</a></li>
-                  <li><a href="#">Gallery</a></li>
-                  <li><a href="#">Shop</a></li>
-                  <li><a href="#">Blog</a></li>
+                  
+                  <li><a href="<?php echo base_url('home/encontrar_psicologo'); ?>">Encontrar mi psicólogo</a></li>
+                  <li><a href="<?php echo base_url('home/zona_psicologos'); ?>">Zona Psicólogos</a></li>
+                  <li><a href="<?php echo base_url('home/contacto'); ?>">Contacto</a></li>
                 </ul>
               </div>
             </div>
             <div class="col-sm-12 col-lg-2">
               <div class="footer-links style-2">
-                <h6>More Links</h6>
+                <h6>Más</h6>
                 <hr class="divider-sm divider-left divider-purple" data-caption-animate="fadeInLeftSmall" data-caption-delay="50">
                 <ul>
-                  <li><a href="#">Web Design</a></li>
-                  <li><a href="#">Marketing</a></li>
-                  <li><a href="#">Programming</a></li>
-                  <li><a href="#">Inspired by clouds</a></li>
-                  <li><a href="#">Whitepaper</a></li>
+					<li><a href="<?php echo base_url(); ?>">Inicio</a></li>
+					<li><a href="<?php echo base_url('home/acerca'); ?>">Acerca de</a></li>
+					<li><a href="<?php echo base_url('login'); ?>">Inicio sesión</a></li>
+					
                 </ul>
               </div>
             </div>
@@ -211,10 +176,10 @@ afrontamos y aprendemos de los problemas SI lo indica.</p>
       <div class="container">
         <div class="row copyright style-1">
           <div class="col-lg-6 text-xl-left">
-            <div class="brand-sm"><a href="index-11.html"><img src="<?php echo base_url("images/logo-white-small.png"); ?>" alt=""></a></div>
+            <div class="brand-sm"><a href="<?php echo base_url(); ?>"><img src="<?php echo base_url("images/logo.png"); ?>" alt=""></a></div>
           </div>
           <div class="col-lg-6 text-xl-right">
-            <p class="rights">© TuApoyo - All rights reserved.</p>
+            <p class="rights">© TuApoyo - Todos los derechos reservados.</p>
           </div>
         </div>
       </div>
