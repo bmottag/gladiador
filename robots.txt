@@ -1,0 +1,8 @@
+# Bloquear el acceso de googlebot a la aplicacion
+User-agent: googlebot
+Disallow: /paciente/
+Disallow: /psicologo/
+Disallow: /login/
+Disallow: /home/form_contacto
+
+Sitemap: http://tuapoyo.com.co/sitemap.xml
