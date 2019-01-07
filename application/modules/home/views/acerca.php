@@ -1,11 +1,13 @@
 <!DOCTYPE html>
 <html class="wide wow-animation" lang="en">
 <head>
-<title>TuApoyo</title>
+<title>Acerca de nosotros | TuApoyo</title>
 <meta name="format-detection" content="telephone=no">
 <meta name="viewport" content="width=device-width, height=device-height, initial-scale=1.0, maximum-scale=1.0, user-scalable=0">
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta charset="utf-8">
+<meta name="description" content="TuApoyo es la plataforma que conecta las personas que buscan apoyo emocional en Bogotá al mejor psicólogo para su situación.">
+<meta name="keywords" content="psicólogo, bogota">
 <link rel="icon" type="image/x-icon" href="<?php echo base_url("images/faviocn.png"); ?>">
 <link rel="stylesheet" type="text/css" href="//fonts.googleapis.com/css?family=Montserrat:400,700%7CRoboto:100,300,400,700,900">
 <link href="<?php echo base_url("estilos/css/bootstrap.css"); ?>" rel="stylesheet">
