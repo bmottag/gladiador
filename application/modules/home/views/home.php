@@ -8,7 +8,7 @@
 <meta charset="utf-8">
 <meta name="description" content="Estás buscando psicólogo en Bogotá? TuApoyo te conecta al mejor psicólogo para tu situación de forma sencilla, confidencial y gratuita.">
 <meta name="keywords" content="psicólogo, bogota">
-<link rel="icon" type="image/x-icon" href="<?php echo base_url("images/faviocn.png"); ?>">
+<link rel="icon" type="image/x-icon" href="<?php echo base_url("images/favicon.ico"); ?>">
 <link rel="stylesheet" type="text/css" href="//fonts.googleapis.com/css?family=Montserrat:400,700%7CRoboto:100,300,400,700,900">
 <link href="<?php echo base_url("estilos/css/bootstrap.css"); ?>" rel="stylesheet">
 <link href="<?php echo base_url("estilos/css/style.css"); ?>" rel="stylesheet">

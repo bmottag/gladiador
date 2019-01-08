@@ -8,7 +8,7 @@
 <meta charset="utf-8">
 <meta name="description" content="Eres psicólogo en Bogotá y buscas conseguir un mejor número de clientes? Asóciate con TuApoyo y te conseguimos los clientes más adecuados para ti">
 <meta name="keywords" content="psicólogo, bogota">
-<link rel="icon" type="image/x-icon" href="<?php echo base_url("images/faviocn.png"); ?>">
+<link rel="icon" type="image/x-icon" href="<?php echo base_url("images/favicon.ico"); ?>">
 <link rel="stylesheet" type="text/css" href="//fonts.googleapis.com/css?family=Montserrat:400,700%7CRoboto:100,300,400,700,900">
 <link href="<?php echo base_url("estilos/css/bootstrap.css"); ?>" rel="stylesheet">
 <link href="<?php echo base_url("estilos/css/style.css"); ?>" rel="stylesheet">
