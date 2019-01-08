@@ -26,37 +26,11 @@
 						<div class="well profile_view">
 							<div class="col-sm-12">
 								<div class="left col-xs-7">
-									<h2><?php echo $data['name']; ?></h2>
-									<p><strong>Por qué quiero ayudarte? </strong><br> <?php echo $data['ayudarte']; ?> </p>
-									<p><strong>Especialidades del Psicólogo:</strong><br> 
-									<?php 									
-										$valores = array(
-											"ansiedad" => $data['especialidad_ansiedad'],
-											"depresion" => $data['especialidad_depresion'],
-											"sustancias" => $data['especialidad_sustancias'],
-											"salud" => $data['especialidad_salud'],
-											"autoestima" => $data['especialidad_autoestima'],
-											"pareja" => $data['especialidad_pareja'],
-											"suicidio" => $data['especialidad_suicidio']
-										);
-										
-										arsort($valores);//organizo especialidades por mejores puntajes 
-
-										//creo un nuevo array para que quede con el nombre de la variable
-										$nuevoArrary = array();
-										$i = 0;
-										foreach ($valores as $key => $val) {
-											 $nuevoArrary[$i] = ucwords($key);
-											 $i++;
-										}
-
-										//imprimo los tres primeros valores
-										for($i=0; $i<3; $i++)
-										{
-											  echo $nuevoArrary[$i] . "<br>";
-										}
-									?> 
-									</p>
+									<h2>
+<a href="<?php echo base_url() . 'paciente/infoPsicologo/' . $data['id_user'] . '/' . $idPaciente; ?>">
+<?php echo $data['name']; ?>
+</a>
+									</h2>
 								</div>
 								<div class="right col-xs-5 text-center">
 			<?php 
@@ -69,10 +43,60 @@
 									<img src="<?php echo $rutaImagen; ?>" alt="" class="img-circle img-responsive">
 								</div>
 							</div>
+							
+							<div class="col-sm-12">
+								<div class="left col-xs-12">
+									<p><strong>Por qué quiero ayudarte? </strong><br> <?php echo $data['ayudarte']; ?> </p>
+									<p><strong>Especialidades del Psicólogo:</strong><br> 
+									<?php 									
+										$valores = array(
+											"ansiedad" => $data['especialidad_ansiedad'],
+											"depresion" => $data['especialidad_depresion'],
+											"sustancias" => $data['especialidad_sustancias'],//consumo de sustancias
+											"salud" => $data['especialidad_salud'],//bienestar físico
+											"autoestima" => $data['especialidad_autoestima'],
+											"pareja" => $data['especialidad_pareja'],//conflictos de pareja
+											"suicidio" => $data['especialidad_suicidio']//autolesiones
+										);
+										
+										arsort($valores);//organizo especialidades por mejores puntajes 
+
+										//creo un nuevo array para que quede con el nombre de la variable
+										$nuevoArrary = array();
+										$i = 0;
+										foreach ($valores as $key => $val) {
+											 $nuevoArrary[$i] = $key;
+											 $i++;
+										}
+
+										//imprimo los tres primeros valores
+										for($i=0; $i<3; $i++)
+										{
+											if($nuevoArrary[$i] == "ansiedad"){
+												echo "Ansiedad<br>";
+											}elseif($nuevoArrary[$i] == "depresion"){
+												echo "Depresion<br>";
+											}elseif($nuevoArrary[$i] == "sustancias"){
+												echo "Consumo de sustancias<br>";
+											}elseif($nuevoArrary[$i] == "salud"){
+												echo "Salud y Bienestar Físico<br>";
+											}elseif($nuevoArrary[$i] == "autoestima"){
+												echo "Autoestima<br>";
+											}elseif($nuevoArrary[$i] == "pareja"){
+												echo "Conflictos de Pareja<br>";
+											}elseif($nuevoArrary[$i] == "suicidio"){
+												echo "Autolesión/Suicidio";
+											}
+										}
+									?> 
+									</p>
+								</div>
+							</div>
+
 							<div class="col-xs-12 bottom text-center">
 								<div class="col-xs-12 col-sm-12 emphasis">
 									
-<a class="btn btn-xs btn-primary" href="<?php echo base_url() . 'paciente/infoPsicologo/' . $data['id_user'] . '/' . $idPaciente; ?>"><span class="fa fa-user" aria-hidden="true"></span> Ver Perfil </a>
+<a class="btn btn-sm btn-primary" href="<?php echo base_url() . 'paciente/infoPsicologo/' . $data['id_user'] . '/' . $idPaciente; ?>"><span class="fa fa-user" aria-hidden="true"></span> Ver Perfil </a>
 																		
 								</div>
 							</div>

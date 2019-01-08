@@ -36,49 +36,6 @@ if ($retornoError) {
 }
 ?> 
 
-				
-					<div class="col-md-3 col-sm-3 col-xs-12 profile_left">
-						
-						<?php if($information['photo']){ ?>
-						<div class="profile_img">
-							<div id="crop-avatar">
-							<!-- Current avatar -->
-								<a href="<?php echo base_url() . 'general/foto'; ?>"> 
-									<img class="img-responsive avatar-view" src="<?php echo base_url($information['photo']); ?>" alt="Avatar" title="Cambiar foto">
-								</a>
-							</div>
-						</div>					
-						<?php } ?>
-						
-						<h4><strong><?php echo $information['name']; ?></strong></h4>
-					
-						<ul class="list-unstyled user_data">
-							
-							<li>
-								<i class="fa fa-map-marker user-profile-icon"></i> <strong>Dirección consultorio:</strong><br> <?php echo $information['direccion']; ?>
-							</li>
-							
-							<li>
-								<i class="fa fa-globe user-profile-icon"></i> <strong>Página web:</strong><br> <?php echo $information['pagina_web']; ?>
-							</li>
-						</ul>
-						
-						<div class="col-md-12">
-							<div class="btn-group">
-
-								<a class="btn btn-sm btn-primary" href="<?php echo base_url() . 'paciente/info/' . $idPaciente; ?>"><span class="fa fa-reply" aria-hidden="true"></span> Regresar </a>
-								
-								<a class="btn btn-sm btn-success" href="<?php echo base_url() . 'paciente/contactar/' . $idPsicologo . '/' . $idPaciente; ?>"><span class="fa fa-level-down" aria-hidden="true"></span> Contactar </a>
-
-							</div>
-						</div>
-						
-					</div>
-				
-					<div class="col-md-9 col-sm-9 col-xs-12">
-					
-						<div class="table-responsive">
-					
 <?php
 	switch ($information['tarifa']) {
 		case 1:
@@ -112,13 +69,13 @@ if ($retornoError) {
 	
 	switch ($information['consultas']) {
 		case 1:
-			$consultas = 'Ambas';
+			$consultas = 'Si';
 			break;
 		case 2:
-			$consultas = 'Solo en persona';
+			$consultas = 'No';
 			break;
 		case 3:
-			$consultas = 'Solo virtual';
+			$consultas = 'Si';
 			break;
 	}
 	
@@ -131,141 +88,138 @@ if ($retornoError) {
 			break;
 	}
 ?>
-							<table class="countries_list">
-								<tbody>
-									<tr>
-										<td>Rango de edad</td>
-										<td class="fs15 fw700 text-right"><?php echo $edad; ?></td>
-									</tr>
-									<tr>
-										<td>Por qué quiero ayudarte?</td>
-										<td class="fs15 fw700 text-right"><?php echo $information['ayudarte']; ?></td>
-									</tr>
-									<tr>
-										<td>Formación</td>
-										<td class="fs15 fw700 text-right"><?php echo $information['formacion']; ?></td>
-									</tr>
-									<tr>
-										<td>Cuántos años de experiencia en consulta tienes?</td>
-										<td class="fs15 fw700 text-right"><?php echo $information['experiencia']; ?></td>
-									</tr>
-									<tr>
-										<td>Cuál es tu tarifa por sesión?</td>
-										<td class="fs15 fw700 text-right"><?php echo $tarifa; ?></td>
-									</tr>
-									<tr>
-										<td>Cuáles enfoques utilizas? </td>
-										<td class="fs15 fw700 text-right">									
-										<?php 
-											echo $information['enfoque_cognitivo']?'Cognitivo Conductual<br>':''; 
-											echo $information['enfoque_psicoanalisis']?'Psicoanálisis<br>':''; 
-											echo $information['enfoque_sistemico']?'Sistémico<br>':''; 
-											echo $information['enfoque_transpersonal']?'Transpersonal<br>':''; 
-											echo $information['enfoque_humanista']?'Humanista':''; 
-										?>
-										</td>
-									</tr>
-									<tr>
-										<td>Ofreces consultas en persona, virtuales, o ambas?</td>
-										<td class="fs15 fw700 text-right"><?php echo $consultas; ?></td>
-									</tr>
-									<tr>
-										<td>En qué idioma ofreces consultas?</td>
-										<td class="fs15 fw700 text-right"><?php echo $idioma; ?></td>
-									</tr>
-									<tr>
-										<td>6 valores que sean de alta importancia para ti, tanto en el ejercicio de tu profesión como en tu vida personal </td>
-										<td class="fs15 fw700 text-right">									
-										<?php 
-											echo $information['valores_autosuficiencia']?' Autosuficiencia<br>':''; 
-											echo $information['valores_bondad']?' Bondad                  <br>':''; 
-											echo $information['valores_certidumbre']?' Certidumbre        <br>':''; 
-											echo $information['valores_coherencia']?' Coherencia          <br>':''; 
-											echo $information['valores_compasivo']?' Compasivo            <br>':''; 
-											echo $information['valores_confianza']?' Confianza            <br>':''; 
-											echo $information['valores_coperacion']?' Coperación          <br>':''; 
-											echo $information['valores_coraje']?' Coraje                  <br>':''; 
-											echo $information['valores_curiosidad']?' Curiosidad          <br>':''; 
-											echo $information['valores_equidad']?' Equidad                <br>':''; 
-											echo $information['valores_generosidad']?' Generosidad        <br>':''; 
-											echo $information['valores_gratitud']?' Gratitud              <br>':''; 
-											echo $information['valores_honestidad']?' Honestidad          <br>':''; 
-											echo $information['valores_humildad']?' Humildad              <br>':''; 
-											echo $information['valores_independencia']?' Independencia    <br>':''; 
-											echo $information['valores_lealtad']?' Lealtad                <br>':''; 
-											echo $information['valores_libertad']?' Libertad              <br>':''; 
-											echo $information['valores_mente_abierta']?' Mente Abierta    <br>':''; 
-											echo $information['valores_moderacion']?' Moderación          <br>':''; 
-											echo $information['valores_paciencia']?' Paciencia            <br>':''; 
-											echo $information['valores_persistencia']?' Persistencia      <br>':''; 
-											echo $information['valores_proactividad']?' Proactividad      <br>':''; 
-											echo $information['valores_proposito']?' Propósito            <br>':''; 
-											echo $information['valores_respeto']?' Respeto                <br>':''; 
-											echo $information['valores_responsabilidad']?' Responsabilidad<br>':''; 
-											echo $information['valores_servicio']?' Servicio              <br>':''; 
-											echo $information['valores_solidaridad']?' Solidaridad        <br>':''; 
-											echo $information['valores_sostenibilidad']?' Sostenibilidad  <br>':''; 
-											echo $information['valores_tolerancia']?' Tolerancia          <br>':''; 
-											echo $information['valores_unidad']?' Unidad                  <br>':''; 
-										?>
-										</td>
-									</tr>
-									<tr>
-										<td>Cuáles son tus horarios de atención?</td>
-										<td class="fs15 fw700 text-right"><?php echo $information['horario']; ?></td>
-									</tr>
-									
-								</tbody>
-							</table>
-					
-						</div>
 
-					<div class="alert alert-success alert-dismissible fade in" role="alert">
-						<strong>Especialidades del psicólogo</strong> 
-						<br>En una escala de 1 a 5, autocalificar su capacidad y experiencia frente a cada tema (7 temas). Hay un máximo de 25 puntos, por ende tienen que escoger cuáles dominan y cuáles no y distribuir los puntos de forma acorde.
-					</div>
-					
-						<div class="table-responsive">
-							<table class="countries_list">
-								<tbody>
-									<tr>
-										<td>Ansiedad</td>
-										<td class="fs15 fw700 text-right"><?php echo $information['especialidad_ansiedad']; ?></td>
-									</tr>
-									<tr>
-										<td>Depresión</td>
-										<td class="fs15 fw700 text-right"><?php echo $information['especialidad_depresion']; ?></td>
-									</tr>
-									<tr>
-										<td>Consumo de sustancias</td>
-										<td class="fs15 fw700 text-right"><?php echo $information['especialidad_sustancias']; ?></td>
-									</tr>
-									<tr>
-										<td>Salud y Bienestar Físico</td>
-										<td class="fs15 fw700 text-right"><?php echo $information['especialidad_salud']; ?></td>
-									</tr>
-									<tr>
-										<td>Autoestima</td>
-										<td class="fs15 fw700 text-right"><?php echo $information['especialidad_autoestima']; ?></td>
-									</tr>
-									<tr>
-										<td>Conflictos de Pareja</td>
-										<td class="fs15 fw700 text-right"><?php echo $information['especialidad_pareja']; ?></td>
-									</tr>
-									<tr>
-										<td>Autolesión/Suicidio</td>
-										<td class="fs15 fw700 text-right"><?php echo $information['especialidad_suicidio']; ?></td>
-									</tr>
-									
-								</tbody>
-							</table>
-					
+					<div class="col-md-6 col-sm-6 col-xs-12 profile_left">
+												
+						<h1><strong><?php echo $information['name']; ?></strong></h1>
+<br>					
+						<ul class="list-unstyled user_data">
+							
+
+							<li>
+								 <strong>Por qué quiero ayudarte?</strong><br> <?php echo $information['ayudarte']; ?>
+							</li>
+
+							<li>
+								 <strong>Especialidades del Psicólogo:</strong><br> 
+								 
+									<?php 									
+										$valores = array(
+											"ansiedad" => $information['especialidad_ansiedad'],
+											"depresion" => $information['especialidad_depresion'],
+											"sustancias" => $information['especialidad_sustancias'],//consumo de sustancias
+											"salud" => $information['especialidad_salud'],//bienestar físico
+											"autoestima" => $information['especialidad_autoestima'],
+											"pareja" => $information['especialidad_pareja'],//conflictos de pareja
+											"suicidio" => $information['especialidad_suicidio']//autolesiones
+										);
+										
+										arsort($valores);//organizo especialidades por mejores puntajes 
+
+										//creo un nuevo array para que quede con el nombre de la variable
+										$nuevoArrary = array();
+										$i = 0;
+										foreach ($valores as $key => $val) {
+											 $nuevoArrary[$i] = $key;
+											 $i++;
+										}
+
+										//imprimo los tres primeros valores
+										for($i=0; $i<3; $i++)
+										{
+											if($nuevoArrary[$i] == "ansiedad"){
+												echo "Ansiedad<br>";
+											}elseif($nuevoArrary[$i] == "depresion"){
+												echo "Depresion<br>";
+											}elseif($nuevoArrary[$i] == "sustancias"){
+												echo "Consumo de sustancias<br>";
+											}elseif($nuevoArrary[$i] == "salud"){
+												echo "Salud y Bienestar Físico<br>";
+											}elseif($nuevoArrary[$i] == "autoestima"){
+												echo "Autoestima<br>";
+											}elseif($nuevoArrary[$i] == "pareja"){
+												echo "Conflictos de Pareja<br>";
+											}elseif($nuevoArrary[$i] == "suicidio"){
+												echo "Autolesión/Suicidio";
+											}
+										}
+									?> 
+								 
+							</li>
+							
+							<li>
+								 <strong>Formación del Psicólogo</strong><br> <?php echo $information['formacion']; ?>
+							</li>
+							
+							<li>
+								 <strong>Enfoques del Psicólogo</strong><br> 
+								 <?php
+									echo $information['enfoque_cognitivo']?'Cognitivo Conductual<br>':''; 
+									echo $information['enfoque_psicoanalisis']?'Psicoanálisis<br>':''; 
+									echo $information['enfoque_sistemico']?'Sistémico<br>':''; 
+									echo $information['enfoque_transpersonal']?'Transpersonal<br>':''; 
+									echo $information['enfoque_humanista']?'Humanista':''; 
+								 ?>
+							</li>
+							
+							<li>
+								 <strong>Rango de edad del Psicólogo</strong><br> <?php echo $edad; ?>
+							</li>
+
+						</ul>
+						
+						<div class="col-md-12">
+							<div class="btn-group">
+
+								<a class="btn btn-default btn-lg" href="<?php echo base_url() . 'paciente/info/' . $idPaciente; ?>"><span class="fa fa-reply" aria-hidden="true"></span> Regresar </a>
+								
+								<a class="btn btn-success btn-lg" href="<?php echo base_url() . 'paciente/contactar/' . $idPsicologo . '/' . $idPaciente; ?>"><span class="fa fa-level-down" aria-hidden="true"></span> Contactar </a>
+
+							</div>
 						</div>
 						
 					</div>
 					
 					
-					
+					<div class="col-md-6 col-sm-6 col-xs-12 profile_left">
+						
+						<?php if($information['photo']){ ?>
+						<div class="profile_img">
+							<div id="crop-avatar">
+							<!-- Current avatar -->
+								<a href="<?php echo base_url() . 'general/foto'; ?>"> 
+									<img class="img-responsive avatar-view" src="<?php echo base_url($information['photo']); ?>" alt="Avatar" title="Cambiar foto">
+								</a>
+							</div>
+						</div>					
+						<?php } ?>
+						
+						<h3><strong>Información general</strong></h3>
+<br>					
+						<ul class="list-unstyled user_data">
+							
+
+							<li>
+								 <strong>Tarifa:</strong><br> <?php echo $tarifa; ?>
+							</li>
+							
+							<li>
+								 <strong>Consultas virtuales:</strong><br> <?php echo $consultas; ?>
+							</li>
+
+							<li>
+								 <strong>Dirección del consultorio:</strong><br> <?php echo $information['direccion']; ?>
+							</li>
+
+							<li>
+								 <strong>Horarios de atención:</strong><br> <?php echo $information['horario']; ?>
+							</li>
+							
+
+						</ul>
+						
+					</div>
+				
 				</div>
 			</div>
 		</div>
