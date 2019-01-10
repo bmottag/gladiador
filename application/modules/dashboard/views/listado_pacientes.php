@@ -45,8 +45,9 @@ if ($retornoError) {
 
 							<thead>
 								<tr class="headings">
+								<th class="column-title">Nombre</th>
 								<th class="column-title">Correo</th>
-								<th class="column-title">No. Celular</th>
+								<th class="column-title">Celular</th>
 								<th class="column-title">Enlaces</th>
 								</tr>
 							</thead>
@@ -57,6 +58,7 @@ if ($retornoError) {
 			if($information){
 				foreach ($information as $data):
 					echo "<tr>";
+					echo "<td>" . $data['nombre_paciente'] . "</td>";
 					echo "<td>" . $data['email_paciente'] . "</td>";
 					echo "<td>" . $data['movil_paciente'] . "</td>";
 					

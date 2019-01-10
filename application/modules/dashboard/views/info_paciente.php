@@ -84,7 +84,9 @@
 				<div class="x_content">
 				
 					<div class="col-md-3 col-sm-3 col-xs-12 profile_left">
-										
+					
+						<h4><strong><?php echo $information['nombre_paciente']; ?></strong></h4>
+						<br>
 						<ul class="list-unstyled user_data">
 
 							<li>
@@ -92,7 +94,7 @@
 							</li>
 							
 							<li>
-								<i class="fa fa-phone user-profile-icon"></i> <strong>No. celular:</strong><br> <?php echo $information['movil_paciente']; ?>
+								<i class="fa fa-phone user-profile-icon"></i> <strong>Celular:</strong><br> <?php echo $information['movil_paciente']; ?>
 							</li>
 							
 							<li>
