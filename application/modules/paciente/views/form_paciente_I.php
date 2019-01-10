@@ -27,6 +27,15 @@
 					<form id="form" data-parsley-validate class="form-horizontal form-label-left">
 						<input type="hidden" id="hddId" name="hddId" value="<?php echo $information?$information["id_paciente"]:""; ?>"/>
 						<input type="hidden" id="formulario" name="formulario" value=1 />
+
+						<div class="form-group">
+							<label class="control-label col-md-3 col-sm-3 col-xs-12" for="nombres">Nombre <span class="required">*</span>
+							</label>
+							<div class="col-md-6 col-sm-6 col-xs-12">
+								<input type="text" id="nombre" name="nombre" required="required" class="form-control col-md-7 col-xs-12 has-feedback-left" value="<?php echo $information?$information["nombre_paciente"]:""; ?>" maxlength=30 placeholder="Nombre">
+								<span class="fa fa-user form-control-feedback left" aria-hidden="true"></span>
+							</div>
+						</div>
 						
 						<div class="form-group">
 							<label for="celular" class="control-label col-md-3 col-sm-3 col-xs-12">Ingresa tu número de contacto <span class="required">*</span></label>
@@ -78,7 +87,7 @@
 							<div class="col-md-6 col-sm-6 col-xs-12 col-md-offset-3">
 								<div class="row" align="center">
 									<div style="width:50%;" align="center">
-										<button type="button" id="btnSubmit" name="btnSubmit" class='btn btn-success'>
+										<button type="button" id="btnSubmit" name="btnSubmit" class='btn btn-primary'>
 												Continuar <span class="glyphicon glyphicon-floppy-disk" aria-hidden="true">
 										</button>								
 									</div>

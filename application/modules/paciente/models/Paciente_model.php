@@ -46,6 +46,7 @@
 					switch ($formulario) {
 						case 1:
 							$data = array(
+								'nombre_paciente' => $this->input->post('nombre'),
 								'movil_paciente' => $this->input->post('celular'),
 								'razon' => $this->input->post('razon'),
 								'genero' => $this->input->post('genero'),

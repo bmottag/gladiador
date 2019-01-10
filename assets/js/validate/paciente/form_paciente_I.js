@@ -1,9 +1,11 @@
 $( document ).ready( function () {
 			
+	$("#nombre").convertirMayuscula().maxlength(100);
 	$("#celular").bloquearTexto().maxlength(12);
 			
 	$( "#form" ).validate( {
 		rules: {
+			nombre:				{ required: true, minlength: 3, maxlength:100 },
 			celular:	 		{ required: true, number: true, maxlength:12 },
 			razon:			 	{ required: true },
 			genero:			 	{ required: true },

@@ -36,13 +36,13 @@
 								<span class="fa fa-envelope form-control-feedback left" aria-hidden="true"></span>
 							</div>
 						</div>
-																							
+																													
 						<div class="ln_solid"></div>
 						<div class="form-group">
 							<div class="col-md-6 col-sm-6 col-xs-12 col-md-offset-3">
 								<div class="row" align="center">
 									<div style="width:50%;" align="center">
-										<button type="button" id="btnSubmit" name="btnSubmit" class='btn btn-success'>
+										<button type="button" id="btnSubmit" name="btnSubmit" class='btn btn-primary'>
 												Continuar <span class="glyphicon glyphicon-floppy-disk" aria-hidden="true">
 										</button>								
 									</div>
