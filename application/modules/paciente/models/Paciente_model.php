@@ -36,7 +36,8 @@
 
 					$data = array(
 						'email_paciente' => $this->input->post('email'),
-						'fecha_registro' => date("Y-m-d G:i:s")
+						'fecha_registro' => date("Y-m-d G:i:s"),
+						'estado_form' => 1
 					);	
 				
 					$query = $this->db->insert('paciente', $data);
@@ -126,7 +127,8 @@
 								'solidaridad' => $this->input->post('solidaridad'),
 								'sostenibilidad' => $this->input->post('sostenibilidad'),
 								'tolerancia' => $this->input->post('tolerancia'),
-								'unidad' => $this->input->post('unidad')
+								'unidad' => $this->input->post('unidad'),
+								'estado_form' => 2
 							);
 							break;
 							

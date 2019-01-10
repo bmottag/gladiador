@@ -256,14 +256,15 @@ class General_model extends CI_Model {
 		}
 		
 		/**
-		 * Listado paciente
+		 * Listado paciente, que terminaron el formulario
 		 * @since 16/12/2018
 		 */
 		public function get_listado_paciente() 
 		{
 				$this->db->select();
+				$this->db->where('estado_form', 2);
 				$query = $this->db->get("paciente");
-
+				
 				if ($query->num_rows() >= 1) {
 					return $query->result_array();
 				} else {
@@ -309,13 +310,14 @@ class General_model extends CI_Model {
 		}
 		
 		/**
-		 * Contar paciente
+		 * Contar paciente, que terminaron el formulario
 		 * @since  16/12/2018
 		 */
 		public function countPacientes()
 		{
 				$sql = "SELECT count(id_paciente) CONTEO";
 				$sql.= " FROM paciente";
+				$sql.= " WHERE estado_form = 2";
 				
 				$query = $this->db->query($sql);
 				$row = $query->row();
