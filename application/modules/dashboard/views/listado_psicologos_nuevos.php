@@ -68,6 +68,7 @@ if ($retornoError) {
 								<th class="column-title">Correo</th>
 								<th class="column-title">No. Celular</th>
 								<th class="column-title">Aprobado</th>
+								<th class="column-title">Fecha registro</th>
 								<th class="column-title">Enlace</th>
 								</tr>
 							</thead>
@@ -81,7 +82,7 @@ if ($retornoError) {
 					echo "<td>" . $data['name'] . "</td>";
 					echo "<td>" . $data['email'] . "</td>";
 					echo "<td>" . $data['movil'] . "</td>";
-										
+															
 					echo "<td class='text-center'>";
 						switch ($data['aprobado']) {
 							case 1:
@@ -99,6 +100,11 @@ if ($retornoError) {
 						}
 						echo '<p class="' . $clase . '"><strong>' . $valor . '</strong></p>';
 					echo "</td>";
+					
+					echo "<td class='text-center'>";
+					echo date('j-m-Y', strtotime($data['fecha']));
+					echo "</td>";
+					
 					echo "<td class='text-center'>";
 ?>
 				<button type="button" class="btn btn-warning btn-xs" data-toggle="modal" data-target="#modal" id="<?php echo $data['id_user']; ?>" >

@@ -48,6 +48,7 @@ if ($retornoError) {
 								<th class="column-title">Nombre</th>
 								<th class="column-title">Correo</th>
 								<th class="column-title">Celular</th>
+								<th class="column-title">Fecha registro</th>
 								<th class="column-title">Enlaces</th>
 								</tr>
 							</thead>
@@ -61,6 +62,10 @@ if ($retornoError) {
 					echo "<td>" . $data['nombre_paciente'] . "</td>";
 					echo "<td>" . $data['email_paciente'] . "</td>";
 					echo "<td>" . $data['movil_paciente'] . "</td>";
+					
+					echo "<td class='text-center'>";
+					echo date('j-m-Y', strtotime($data['fecha_registro']));
+					echo "</td>";
 					
 					echo "<td class='text-center'>";
 					echo "<a href='" . base_url("dashboard/ver_paciente/" . $data['id_paciente']) . "' class='btn btn-success btn-xs'><i class='fa fa-eye'></i> Ver </a>";

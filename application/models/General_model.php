@@ -91,6 +91,35 @@ class General_model extends CI_Model {
 		}
 		
 		/**
+		 * Lista de psicologos activos y aprobados
+		 * @since 9/12/2018
+		 */
+		public function get_psicologo_listado($arrData) 
+		{
+				$this->db->select('U.*, S.*, CONCAT(U.first_name, " " , U.last_name) name');
+				
+				if (array_key_exists("idRol", $arrData)) {
+					$this->db->where('U.fk_id_rol', $arrData["idRol"]);
+				}
+				if (array_key_exists("state", $arrData)) {
+					$this->db->where('U.state', $arrData["state"]);
+				}
+				if (array_key_exists("aprobado", $arrData)) {
+					$this->db->where('U.aprobado', $arrData["aprobado"]);
+				}
+								
+				$this->db->join('psicologo S', 'S.fk_id_user = U.id_user', 'INNER');
+				$this->db->order_by("U.first_name, U.last_name", "ASC");
+				$query = $this->db->get("user U");
+
+				if ($query->num_rows() >= 1) {
+					return $query->result_array();
+				} else {
+					return false;
+				}
+		}
+		
+		/**
 		 * Info psicologo
 		 * @since 9/12/2018
 		 */
