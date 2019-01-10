@@ -173,7 +173,7 @@ if ($retornoError) {
 
 								<a class="btn btn-default btn-lg" href="<?php echo base_url() . 'paciente/info/' . $idPaciente; ?>"><span class="fa fa-reply" aria-hidden="true"></span> Regresar </a>
 								
-								<a class="btn btn-success btn-lg" href="<?php echo base_url() . 'paciente/contactar/' . $idPsicologo . '/' . $idPaciente; ?>"><span class="fa fa-level-down" aria-hidden="true"></span> Contactar </a>
+								<a class="btn btn-primary btn-lg" href="<?php echo base_url() . 'paciente/contactar/' . $idPsicologo . '/' . $idPaciente; ?>"><span class="fa fa-level-down" aria-hidden="true"></span> Contactar </a>
 
 							</div>
 						</div>

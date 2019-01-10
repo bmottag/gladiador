@@ -116,7 +116,7 @@ $(document).ready(function () {
 								<div class="row" align="center">
 									<div style="width:50%;" align="center">
 										<a class="btn btn-default" href="<?php echo base_url() . 'paciente/form_2/' . $information["id_paciente"]; ?>"><span class="fa fa-reply" aria-hidden="true"></span> Regresar </a>
-										<button type="button" id="btnSubmit" name="btnSubmit" class='btn btn-success'>
+										<button type="button" id="btnSubmit" name="btnSubmit" class='btn btn-primary'>
 												Continuar <span class="glyphicon glyphicon-floppy-disk" aria-hidden="true">
 										</button>								
 									</div>
