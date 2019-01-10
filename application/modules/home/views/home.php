@@ -51,11 +51,11 @@
       </div>
     </header>
 		
-    <section class="section-md text-center vide_bg bg-gray-dark " data-vide-bg="mp4: images/video.mp4, poster: images/slide-26-2.jpg" data-vide-options="posterType: jpg">
+    <section>
       <div class="swiper-bg-wrap swiper-style-1">
         <div class="swiper-container swiper-slider swiper-bg swiper-height-1" data-autoplay="false" data-slide-effect="fade">
           <div class="swiper-wrapper">
-            <div class="swiper-slide">
+            <div class="swiper-slide" data-slide-bg="images/home.jpg">
               <div class="swiper-slide-caption" data-speed="0.5" data-fade="true">
                 <div class="jumbotron-custom jumbotron-custom-variant-1 context-dark">
                   <h1 data-caption-animate="fxRotateInRight" data-caption-delay="150" class="fxRotateInRight animated"><span data-novi-id="68">Porque tu tranquilidad <br>va primero</span></h1>
@@ -70,6 +70,7 @@ TuApoyo es la plataforma que encuentra al psicólogo más adecuado para tu situa
         </div>
       </div>
     </section>
+		
   </section>
   
   <section class="section section-lg bg-gray-light novi-background bg-image">
