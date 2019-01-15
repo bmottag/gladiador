@@ -19,7 +19,7 @@
 </head>
 <body>
 <div class="page-loader">
-  <div class="brand-name"><img src="<?php echo base_url("images/logo.png"); ?>" alt="" width="100" height="28"></div>
+  <div class="brand-name"><img src="<?php echo base_url("images/logo.png"); ?>" alt="" width="200" height="100"></div>
   <div class="page-loader-body">
     <div class="cssload-jumping"><span></span><span></span><span></span><span></span><span></span></div>
   </div>
@@ -36,7 +36,7 @@
                 <div class="rd-navbar-panel-background-inner novi-background"></div>
               </div>
               <button class="rd-navbar-toggle" data-rd-navbar-toggle=".rd-navbar-nav-wrap"><span></span></button>
-              <div class="rd-navbar-brand"><a class="brand-name" href="<?php echo base_url(); ?>"><img src="<?php echo base_url("images/logo.png"); ?>" alt="" width="250" height="55"></a></div>
+              <div class="rd-navbar-brand"><a class="brand-name" href="<?php echo base_url(); ?>"><img src="<?php echo base_url("images/logo.png"); ?>" alt="" width="200" height="100"></a></div>
             </div>
             <div class="rd-navbar-nav-wrap">
               <div class="rd-navbar-nav-wrap-bg">
