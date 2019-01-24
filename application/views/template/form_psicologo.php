@@ -74,7 +74,7 @@
 							<br><small>Respuesta personal sobre por qué quieren ayudar a las personas (no sobre formación, capacitación, experiencia)</small>
 							</label>
 							<div class="col-md-6 col-sm-6 col-xs-12">
-								<textarea id="ayudarte" name="ayudarte" placeholder="Por qué quiero ayudarte?" class="form-control" rows="3" required="required"><?php echo $information?$information["description"]:""; ?></textarea>
+								<textarea id="ayudarte" name="ayudarte" placeholder="Por qué quiero ayudarte?" class="form-control" rows="3" required="required"><?php echo $information?$information["ayudarte"]:""; ?></textarea>
 							</div>
 						</div>
 												
@@ -82,7 +82,7 @@
 							<label class="control-label col-md-3 col-sm-3 col-xs-12" for="formacion">Formación <span class="required">*</span>
 							<br><small>Universidad - nivel de educación - Matrícula profesional (títulos)</small></label>
 							<div class="col-md-6 col-sm-6 col-xs-12">
-								<textarea id="formacion" name="formacion" placeholder="Formación" class="form-control" rows="3" required="required"><?php echo $information?$information["description"]:""; ?></textarea>
+								<textarea id="formacion" name="formacion" placeholder="Formación" class="form-control" rows="3" required="required"><?php echo $information?$information["formacion"]:""; ?></textarea>
 							</div>
 						</div>
 						
