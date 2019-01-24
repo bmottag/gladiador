@@ -93,6 +93,18 @@
                 </ul>
               </div>
             </div>
+			
+            <div class="col-sm-12 col-lg-2">
+              <div class="footer-links style-2">
+                <h6>Documentos</h6>
+                <hr class="divider-sm divider-left divider-purple" data-caption-animate="fadeInLeftSmall" data-caption-delay="50">
+                <ul>
+					<li><a href="<?php echo base_url('images/T_C_TuApoyo.pdf'); ?>" target="_blanck">Términos y Condiciones</a></li>
+					<li><a href="<?php echo base_url('images/politica_confidencialidad_TuApoyo.pdf'); ?>" target="_blanck">Política de Privacidad</a></li>
+                </ul>
+              </div>
+            </div>
+			
           </div>
         </div>
       </div>
