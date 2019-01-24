@@ -44,7 +44,9 @@ class Psicologo extends MX_Controller {
 			$data["ruta"] = $this->input->post('ruta');
 
 			$msj = "Se adicióno un Psicólogo nuevo.";
+			$bandera = true;
 			if ($idUser != '') {
+				$bandera = false;
 				$msj = "Se actualizó la información.";
 			}	
 			
@@ -68,8 +70,10 @@ class Psicologo extends MX_Controller {
 				{
 					$this->psicologo_model->savePsicologo($idUser); //Guardo info psicologo
 
-					//envio correo al adminstrador que se creo un nuevo psicologo
-					$this->email($idUser); //envio correo
+					if($bandera){//bandera de usuario nuevo
+						//envio correo al adminstrador que se creo un nuevo psicologo
+						$this->email($idUser); //envio correo
+					}
 					
 					$data["result"] = true;
 					$data["idRecord"] = $idUser;
@@ -154,6 +158,9 @@ class Psicologo extends MX_Controller {
 	public function email($idUser)
 	{
 			$this->load->model("general_model");
+			
+			$arrParam = array("idUser" => $idUser);
+			$information = $this->general_model->get_info_psicologo($arrParam);//info psicologo
 				
 			$subjet = "Nuevo asociado registrado - TuApoyo";
 			$user = 'Administrador';
@@ -161,6 +168,7 @@ class Psicologo extends MX_Controller {
 		
 			//mensaje del correo
 			$msj = "<p>Un nuevo asociado se registr&oacute; en la aplicaci&oacute;n TuApoyo debe ingresar al sistema y aprobar el Psic&oacute;logo para que este pueda ingresar.</p>";
+			$msj .= "<p><strong>Nombre: " . $information['name'] . "</strong></p>";
 			
 			$mensaje = "<html>
 			<head>
